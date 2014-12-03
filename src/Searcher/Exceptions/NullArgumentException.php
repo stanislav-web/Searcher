@@ -18,10 +18,7 @@ class NullArgumentException extends \UnexpectedValueException
 	 * @param int $code
 	 */
 	public function __construct($class, $method, $code = 0) {
-
-		$throwMessage	=	'Wrong value NULL in : '.$class.'. '.$method.' Expected NOT NULL >> '.$this->getLine();
-		return parent::__construct($throwMessage, $code);
-
+		return parent::__construct('Wrong value NULL in : '.$class.'. '.$method.' Expected NOT NULL >> '.$this->getLine(), $code);
 	}
 }
   
