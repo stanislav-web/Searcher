@@ -1,8 +1,9 @@
 <?php
 namespace Phalcon\Searcher;
 
-use \Phalcon\Mvc\Model,
-	Phalcon\Searcher\Exceptions;
+use Phalcon\Mvc\Model,
+	Phalcon\Searcher\Exceptions,
+	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 
 /**
  * Searcher daemon class
@@ -55,7 +56,11 @@ class Searcher extends Model {
 	 */
 	public function setQuery($query)
 	{
-		$this->_query	=	$query;
+		if(false === $this->_strict)
+			$this->_query = [':query:' => '%'.$query.'%'];
+		else
+			$this->_query = [':query:' => $query];
+
 		return $this;
 	}
 
@@ -104,10 +109,27 @@ class Searcher extends Model {
 		if(!is_array($this->_searchList))
 			throw new Exceptions\InvalidTypeException($this->_searchList, __METHOD__, 'array', __LINE__);
 
-		//$this->modelsList[] =  $this->_modelsManager->load('\Models\Currency', $this);
-		//$this->modelsList[] =  $this->_modelsManager->getNamespaceAliases();
+		// validate fields by exist in those tables
 
-		//var_dump($this->getSearchList()); exit;
+			foreach($this->_searchList as $table => $fields) {
+
+				// load model metaData
+				$model =  $this->_modelsManager->load($table, $this);
+				$metaData = $model->getModelsMetaData();
+
+				// check fields of table
+				if(!empty($not = array_diff($fields, $metaData->getAttributes($model))))
+					throw new Exceptions\FieldDoesNotExistException($table, $not, $metaData->getAttributes($model), __LINE__);
+
+
+				$dataTypes = $metaData->getDataTypes($model);
+
+				//var_dump('Input', $fields);
+				//var_dump('Exist',$metaData->readMetaData($model));
+				//var_dump('Types', $dataTypes);
+
+				exit;
+			}
 
 		return $this;
 	}
