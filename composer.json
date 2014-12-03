@@ -2,23 +2,23 @@
 	"name": "stanislav-web/phalcon-searcher",
 	"description": "Phalcon Database Searcher",
 	"type": "library",
-    "keywords" : ["phalocn", "phalcon search"],
-    "homepage" : "https://github.com/stanislav-web/Searcher",
-    "license" : "MIT",
-    "authors" : [
-        {
+    	"keywords" : ["phalocn", "phalcon search"],
+    	"homepage" : "https://github.com/stanislav-web/Searcher",
+    	"license" : "MIT",
+    	"authors" : [
+        	{
 			"name": "Stanislav WEB",
 			"email": "stanisov@gmail.com",
 			"homepage": "http://reds.com",
 			"role": "Developer"
-        }
-    ],
-    "require" : {
-        "php" : ">=5.4.35"
-    },
+        	}
+    	],
+    	"require" : {
+        	"php" : ">=5.4.35"
+    	},
 	"autoload": {
 		"psr-4": {
-			"Phalcon\\Searcher\\": "src/Searcher/"
+			"Phalcon\Searcher\\": "src/Searcher/"
 		}
-	},
+	}
 }
