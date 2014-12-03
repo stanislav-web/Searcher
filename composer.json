@@ -18,7 +18,7 @@
     	},
 	"autoload": {
 		"psr-4": {
-			"Phalcon\Searcher\\": "src/Searcher/"
+			"Phalcon\\Searcher\\": "src/Searcher/"
 		}
 	}
 }
