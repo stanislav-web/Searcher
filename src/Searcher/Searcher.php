@@ -105,7 +105,7 @@ class Searcher extends Model {
 	 * Search procedure started
 	 *
 	 * @param null $query
-	 * @return mxed getSearchResult()
+	 * @return array
 	 */
 	public function run($query = null)
 	{
@@ -132,11 +132,7 @@ class Searcher extends Model {
 
 			 $dataTypes = $metaData->getDataTypes($model);
 
-			//var_dump('Input', $fields);
-			//var_dump('Exist',$metaData->readMetaData($model));
-			//var_dump('Types', $dataTypes);
-
-			die;
+			return  $dataTypes;
 		}
 
 		return $this;
