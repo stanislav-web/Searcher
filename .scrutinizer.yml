@@ -10,3 +10,11 @@ build:
         mongodb: false
         neo4j: false
         memcached: false
+        
+tools:
+    php_sim: true
+    php_pdepend: true
+    php_analyzer: true
+    php_code_sniffer: true
+    php_changetracking: true
+    sensiolabs_security_checker: true        
