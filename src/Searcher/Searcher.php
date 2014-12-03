@@ -107,7 +107,7 @@ class Searcher extends Model {
 		//$this->modelsList[] =  $this->_modelsManager->load('\Models\Currency', $this);
 		//$this->modelsList[] =  $this->_modelsManager->getNamespaceAliases();
 
-		var_dump($this->getSearchList()); exit;
+		//var_dump($this->getSearchList()); exit;
 
 		return $this;
 	}
