@@ -2,3 +2,11 @@ build:
     environment:
         php:
             version: 5.5.12
+        mysql: true
+        postgresql: false
+        redis: false
+        elasticsearch: false
+        rabbitmq: false
+        mongodb: false
+        neo4j: false
+        memcached: false
