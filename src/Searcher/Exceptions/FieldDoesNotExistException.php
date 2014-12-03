@@ -16,11 +16,13 @@ class FieldDoesNotExistException extends \LogicException
 	 * @param string $object
 	 * @param array $param
 	 * @param array $supported
-	 * @param int $line
+	 * @param int $code
 	 */
-	public function __construct($object, array $param, array $supported, $line = 0)
-	{
-		return parent::__construct('Field `'.implode('`, `', $param).'` not supported in '.$object.'. Only `'.implode('`, `', $supported).'`', $line);
+	public function __construct($object, array $param, array $supported, $code = 0) {
+
+		$throwMessage	=	'Field `'.implode('`, `', $param).'` not supported in '.$object.'. Only `'.implode('`, `', $supported).'` >> '.$this->getLine();
+		return parent::__construct($throwMessage, $code);
+
 	}
 }
   

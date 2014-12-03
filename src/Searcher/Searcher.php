@@ -22,7 +22,7 @@ class Searcher extends Model {
 		 * Available search criteria
 		 * @var array
 		 */
-		$_searchList	=	[],
+		$_searchList	=	false,
 
 		/**
 		 * Query value for DB
@@ -34,12 +34,18 @@ class Searcher extends Model {
 		 * Strict flag
 		 * @var boolean
 		 */
-		$_strict	=	false;
+		$_strict	=	false,
+
+		/**
+		 * Results data
+		 * @var mixed
+		 */
+		$_results	=	null;
 
 	/**
-	 * setSearchList($models) Set models to participate in search
+	 * setSearchList(array $models) Set models to participate in search
 	 *
-	 * @param mixed $models
+	 * @param array $models
 	 * @return Searcher
 	 */
 	public function setSearchList(array $models)
@@ -99,37 +105,39 @@ class Searcher extends Model {
 	 * Search procedure started
 	 *
 	 * @param null $query
-	 * @return mixed
+	 * @return mxed getSearchResult()
 	 */
-	public function getResult()
+	public function run($query = null)
 	{
-		if(null == $this->_query)
-			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__);
+		if(is_null($this->_query))
+			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__, 1);
 
 		if(!is_array($this->_searchList))
-			throw new Exceptions\InvalidTypeException($this->_searchList, __METHOD__, 'array', __LINE__);
+			throw new Exceptions\InvalidTypeException($this->_searchList, __METHOD__, 'array', 2);
+
+		// setup query if it true
+		if(!is_null($query)) $this->setQuery($query);
 
 		// validate fields by exist in those tables
 
-			foreach($this->_searchList as $table => $fields) {
+		foreach($this->_searchList as $table => $fields) {
 
-				// load model metaData
-				$model =  $this->_modelsManager->load($table, $this);
-				$metaData = $model->getModelsMetaData();
+			// load model metaData
+			$model 		=  	$this->_modelsManager->load($table, $this);
+			$metaData 	= 	$model->getModelsMetaData();
 
-				// check fields of table
-				if(!empty($not = array_diff($fields, $metaData->getAttributes($model))))
-					throw new Exceptions\FieldDoesNotExistException($table, $not, $metaData->getAttributes($model), __LINE__);
+			// check fields of table
+			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))))
+				throw new Exceptions\FieldDoesNotExistException($table, $not, $metaData->getAttributes($model), 3);
 
+			 $dataTypes = $metaData->getDataTypes($model);
 
-				$dataTypes = $metaData->getDataTypes($model);
+			//var_dump('Input', $fields);
+			//var_dump('Exist',$metaData->readMetaData($model));
+			//var_dump('Types', $dataTypes);
 
-				//var_dump('Input', $fields);
-				//var_dump('Exist',$metaData->readMetaData($model));
-				//var_dump('Types', $dataTypes);
-
-				exit;
-			}
+			die;
+		}
 
 		return $this;
 	}

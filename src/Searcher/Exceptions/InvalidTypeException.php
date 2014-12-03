@@ -1,5 +1,5 @@
 <?php
-namespace Phalcon\Searcher\Exceptions;
+namespace	Phalcon\Searcher\Exceptions;
 
 /**
  * Class InvalidTypeException
@@ -13,13 +13,15 @@ namespace Phalcon\Searcher\Exceptions;
 class InvalidTypeException extends \RuntimeException
 {
 	/**
-	 * @param string $objectName
-	 * @param int $object
-	 * @param \Exception $expected
+	 * @param mixed $object
+	 * @param string $method
+	 * @param string $expected
 	 * @param int $code
 	 */
-	public function __construct($objectName, $object, $expected, $code = 0)
-	{
-        return parent::__construct('Wrong Type: '.gettype($objectName).' in '.$object.'. Expected '.$expected, $code);
+	public function __construct($object, $method, $expected, $code = 0) {
+
+		$throwMessage	=	'Wrong Type: '.gettype($object).' in '.$method.'. Expected '.$expected.' >> '.$this->getLine();
+        return parent::__construct($throwMessage, $code);
+
     }
 }
