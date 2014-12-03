@@ -130,11 +130,10 @@ class Searcher extends Model {
 			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))))
 				throw new Exceptions\FieldDoesNotExistException($table, $not, $metaData->getAttributes($model), 3);
 
-			 $dataTypes = $metaData->getDataTypes($model);
-
-			return  $dataTypes;
+			$dataTypes = (array)$metaData->getDataTypes($model);
+				
 		}
 
-		return $this;
+		return $dataTypes;
 	}
 }
