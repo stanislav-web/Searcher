@@ -18,3 +18,8 @@ tools:
     php_code_sniffer: true
     php_changetracking: true
     sensiolabs_security_checker: true        
+    
+checks:
+    php:
+        code_rating: true
+        duplication: true
