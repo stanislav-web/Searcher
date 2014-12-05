@@ -108,14 +108,14 @@ class Searcher extends Model {
 		if(is_null($this->_query) === true)
 			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__);
 
-		if(is_array($this->_list) === false)
+		if(!is_array($this->_list))
 			throw new Exceptions\InvalidTypeException($this->_list, __METHOD__, 'array');
 
-		if(empty($this->_list) === true)
+		if(!empty($this->_list))
 			throw new \Exception('Search list does not configured');
 
 		// setup query if it true
-		if(is_null($query) === false) $this->setQuery($query);
+		if(!is_null($query)) $this->setQuery($query);
 
 		// validate fields by exist in those tables
 
