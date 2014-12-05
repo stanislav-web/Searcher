@@ -139,7 +139,7 @@ class Searcher extends Model {
 			$columnDefines = $this->getReadConnection()->describeColumns($model->getSource());
 
 			// checking columns
-			foreach($columnDefines as $n => $column)
+			foreach($columnDefines as $column)
 			{
 				if(in_array($column->getName(), $fields) === true)
 				{

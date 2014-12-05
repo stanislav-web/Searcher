@@ -20,7 +20,7 @@ class NullArgumentException extends \UnexpectedValueException
 	 * @return \UnexpectedValueException
 	 */
 	public function __construct($class, $method) {
-		return parent::__construct('Wrong value NULL in : '.$class.'. '.$method.' Expected NOT NULL. Line '.$this->getLine(), $code);
+		return parent::__construct('Wrong value NULL in : '.$class.'. '.$method.' Expected NOT NULL. Line '.$this->getLine());
 	}
 
 	/**

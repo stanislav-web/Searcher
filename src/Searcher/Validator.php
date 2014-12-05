@@ -76,7 +76,7 @@ class Validator {
 	 * @return bool
 	 */
 	public function isValid() {
-		foreach($this->_defined as $i => $type)
+		foreach($this->_defined as $type)
 		{
 			if($this->{'is'.ucfirst($type)}() === true)
 				return true;
