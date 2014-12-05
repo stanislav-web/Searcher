@@ -97,6 +97,10 @@ class Searcher extends Model {
 		return $this->_tables[key($table)]	=	array_values($table)[0];
 	}
 
+	public function prepare() {
+
+	}
+
 	/**
 	 * Search procedure started
 	 *
@@ -105,17 +109,24 @@ class Searcher extends Model {
 	 */
 	public function run($query = null) {
 
+		try {
+			$this->prepare();
+		}
+		catch(\Exception $e) {
+			echo $e->getMessage();
+		}
+
 		if(is_null($this->_query) === true)
 			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__);
 
-		if(!is_array($this->_list))
+		if(is_array($this->_list) === false)
 			throw new Exceptions\InvalidTypeException($this->_list, __METHOD__, 'array');
 
-		if(!empty($this->_list))
+		if(empty($this->_list) === true)
 			throw new \Exception('Search list does not configured');
 
 		// setup query if it true
-		if(!is_null($query)) $this->setQuery($query);
+		if(is_null($query) === false) $this->setQuery($query);
 
 		// validate fields by exist in those tables
 
