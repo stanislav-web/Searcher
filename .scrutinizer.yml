@@ -15,10 +15,7 @@ tools:
     php_sim: true
     php_pdepend: true
     php_analyzer: true
-    php_code_sniffer: true
-    php_changetracking: true
-    sensiolabs_security_checker: true        
-    
+
 checks:
     php:
         code_rating: true
@@ -44,22 +41,14 @@ checks:
         avoid_useless_overridden_methods: true
         avoid_conflicting_incrementers: true
         assignment_of_null_return: true
+        verify_access_scope_valid: true
         verify_property_names: true
         verify_argument_usable_as_reference: true
-        verify_access_scope_valid: true
-        use_self_instead_of_fqcn: true
-        uppercase_constants: true
-        uppercase_basic_constants: true
         too_many_arguments: true
-        spacing_around_non_conditional_operators: true
-        spacing_around_conditional_operators: true
-        simplify_boolean_return: true
-        side_effects_or_types: true
+        symfony_request_injection: true
         return_doc_comments: true
-        return_doc_comment_if_not_inferrable: true
-        require_scope_for_properties: true
-        require_scope_for_methods: true
         require_php_tag_first: true
+        parameter_doc_comments: true
         no_eval: true
         no_duplicate_arguments: true
         missing_arguments: true
@@ -67,5 +56,7 @@ checks:
         instanceof_class_exists: true
         foreach_usable_as_reference: true
         foreach_traversable: true
+        encourage_shallow_comparison: true
         catch_class_exists: true
+        avoid_unnecessary_concatenation: true
         argument_type_checks: true

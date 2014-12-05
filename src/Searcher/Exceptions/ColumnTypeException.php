@@ -2,7 +2,7 @@
 namespace Phalcon\Searcher\Exceptions;
 
 /**
- * Class InvalidTypeException
+ * Class ColumnTypeException
  * @package Phalcon
  * @subpackage Phalcon\Searcher\Exceptions
  * @since PHP >=5.5.12
@@ -10,20 +10,19 @@ namespace Phalcon\Searcher\Exceptions;
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanilav WEB
  */
-class InvalidTypeException extends \RuntimeException
+class ColumnTypeException extends \LogicException
 {
 	/**
 	 * Rise error message
 	 *
-	 * @param mixed $object
-	 * @param string $method
-	 * @param string $expected
+	 * @param string $column
+	 * @param int $type
 	 * @param int $code
-	 * @return \RuntimeException
+	 * @return \LogicException
 	 */
-	public function __construct($object, $method, $expected, $code = 0) {
-        return parent::__construct('Wrong Type: '.gettype($object).' in '.$method.'. Expected '.$expected.' >> '.$this->getLine(), $code);
-    }
+	public function __construct($column, $type, $code = 0) {
+		return parent::__construct('The type {'.$type.'} of column `'.$column.'` does not supported >> '.$this->getLine(), $code);
+	}
 
 	/**
 	 * toString overload
@@ -34,3 +33,4 @@ class InvalidTypeException extends \RuntimeException
 		return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
 	}
 }
+  

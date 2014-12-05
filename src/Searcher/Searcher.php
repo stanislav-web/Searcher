@@ -9,7 +9,7 @@ use Phalcon\Mvc\Model,
  * Searcher daemon class
  * @package Phalcon
  * @subpackage Phalcon\Searcher
- * @since PHP >=5.4
+ * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanilav WEB
@@ -22,7 +22,7 @@ class Searcher extends Model {
 		 * Available search criteria
 		 * @var array
 		 */
-		$_searchList	=	false,
+		$_list	=	false,
 
 		/**
 		 * Query value for DB
@@ -37,25 +37,25 @@ class Searcher extends Model {
 		$_strict	=	false,
 
 		/**
-		 * Results data
+		 * Verified tables
 		 * @var mixed
 		 */
-		$_results	=	null;
+		$_tables	=	[];
 
 	/**
-	 * setSearchList(array $models) Set models to participate in search
+	 * setList(array $models) Set models to participate in search
 	 *
 	 * @param array $models
 	 * @return Searcher
 	 */
-	public function setSearchList(array $models)
+	public function setList(array $models)
 	{
-		$this->_searchList	=	$models;
+		$this->_list	=	$models;
 		return $this;
 	}
 
 	/**
-	 * setQuery($query) Set query value
+	 * Set query value
 	 *
 	 * @param string $query
 	 * @return Searcher
@@ -71,7 +71,7 @@ class Searcher extends Model {
 	}
 
 	/**
-	 * useStrict($flag) Use Strict mode ?
+	 * Use Strict mode ?
 	 *
 	 * @param boolean $type
 	 * @return Searcher
@@ -83,22 +83,23 @@ class Searcher extends Model {
 	}
 
 	/**
-	 * getSearchList() Get models to participate in search
+	 * Get models to participate in search
 	 *
 	 * @return array
 	 */
-	public function getSearchList()
+	public function getList()
 	{
-		return $this->_searchList;
+		return $this->_list;
 	}
 
 	/**
-	 * getSearchResult() Get founded results
+	 * Set tables without namespaces
+	 *
 	 * @return mixed
 	 */
-	public function getSearchResult()
+	public function setTables(array $table)
 	{
-		return $this->_results;
+		return $this->_tables[key($table)]	=	array_values($table)[0];
 	}
 
 	/**
@@ -112,15 +113,18 @@ class Searcher extends Model {
 		if(is_null($this->_query))
 			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__, 1);
 
-		if(!is_array($this->_searchList))
-			throw new Exceptions\InvalidTypeException($this->_searchList, __METHOD__, 'array', 2);
+		if(!is_array($this->_list))
+			throw new Exceptions\InvalidTypeException($this->_list, __METHOD__, 'array', 2);
+
+		if(empty($this->_list))
+			throw new \Exception('Search list does not configured', 4);
 
 		// setup query if it true
 		if(!is_null($query)) $this->setQuery($query);
 
 		// validate fields by exist in those tables
 
-		foreach($this->_searchList as $table => $fields) {
+		foreach($this->_list as $table => $fields) {
 
 			// load model metaData
 			$model 		=  	$this->_modelsManager->load($table, $this);
@@ -128,12 +132,25 @@ class Searcher extends Model {
 
 			// check fields of table
 			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))))
-				throw new Exceptions\FieldDoesNotExistException($table, $not, $metaData->getAttributes($model), 3);
+				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model), 3);
 
-			$dataTypes = (array)$metaData->getDataTypes($model);
-				
+			// setup clear used tables
+			$this->setTables([$model->getSource() => $table]);
+			$columnDefines = $this->getReadConnection()->describeColumns($model->getSource());
+
+			// checking columns
+			foreach($columnDefines as $n => $column)
+			{
+				if(in_array($column->getName(), $fields))
+				{
+					$col = new Validator($column);
+					if($col->isValid() === false)
+						throw new Exceptions\ColumnTypeException($col->getName(), $col->getType());
+				}
+			}
 		}
 
+		//@todo under develop
 		return $dataTypes;
 	}
 }
