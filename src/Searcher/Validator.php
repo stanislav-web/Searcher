@@ -39,13 +39,7 @@ class Validator {
 		 * Define current column type
 		 * @var int
 		 */
-	 	$_type		=	0,
-
-		/**
-		 * Define current column name
-		 * @var string
-		 */
-	 	$_name		=	'';
+	 	$_type		=	0;
 
 	/**
 	 * Initialize field
@@ -99,6 +93,7 @@ class Validator {
 	{
 		if($this->_type === Column::TYPE_VARCHAR)
 			return true;
+		return false;
 	}
 
 	/**
@@ -110,6 +105,7 @@ class Validator {
 	{
 		if($this->_type === Column::TYPE_CHAR)
 			return true;
+		return false;
 	}
 
 	/**
@@ -121,6 +117,7 @@ class Validator {
 	{
 		if($this->_type === Column::TYPE_TEXT)
 			return true;
+		return false;
 	}
 
 	/**
@@ -132,6 +129,7 @@ class Validator {
 	{
 		if($this->_type === Column::TYPE_DATE)
 			return true;
+		return false;
 	}
 
 	/**
@@ -141,7 +139,8 @@ class Validator {
 	 */
 	public function isDatetime()
 	{
-		if($$this->_type === Column::TYPE_DATETIME)
+		if($this->_type === Column::TYPE_DATETIME)
 			return true;
+		return false;
 	}
 }

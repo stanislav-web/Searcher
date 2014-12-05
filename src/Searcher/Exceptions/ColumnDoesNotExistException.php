@@ -18,11 +18,10 @@ class ColumnDoesNotExistException extends \LogicException
 	 * @param string $object
 	 * @param array $param
 	 * @param array $supported
-	 * @param int $code
 	 * @return \LogicException
 	 */
-	public function __construct($object, array $param, array $supported, $code = 0) {
-		return parent::__construct('Column `'.implode('`, `', $param).'` not supported in '.$object.'. Only `'.implode('`, `', $supported).'` >> '.$this->getLine(), $code);
+	public function __construct($object, array $param, array $supported) {
+		return parent::__construct('Column `'.implode('`, `', $param).'` not supported in '.$object.'. Only `'.implode('`, `', $supported).'`. Line '.$this->getLine());
 	}
 
 	/**

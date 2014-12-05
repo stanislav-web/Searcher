@@ -18,11 +18,10 @@ class InvalidTypeException extends \RuntimeException
 	 * @param mixed $object
 	 * @param string $method
 	 * @param string $expected
-	 * @param int $code
 	 * @return \RuntimeException
 	 */
-	public function __construct($object, $method, $expected, $code = 0) {
-        return parent::__construct('Wrong Type: '.gettype($object).' in '.$method.'. Expected '.$expected.' >> '.$this->getLine(), $code);
+	public function __construct($object, $method, $expected) {
+        return parent::__construct('Wrong Type: '.gettype($object).' in '.$method.'. Expected '.$expected.'. Line: '.$this->getLine());
     }
 
 	/**
