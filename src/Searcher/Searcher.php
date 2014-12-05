@@ -22,7 +22,7 @@ class Searcher extends Model {
 		 * Available search criteria
 		 * @var array
 		 */
-		$_list	=	false,
+		$_list	=	[],
 
 		/**
 		 * Query value for DB
@@ -46,7 +46,7 @@ class Searcher extends Model {
 	 * setList(array $models) Set models to participate in search
 	 *
 	 * @param array $models
-	 * @return Searcher
+	 * @return bool
 	 */
 	public function setList(array $models)
 	{
