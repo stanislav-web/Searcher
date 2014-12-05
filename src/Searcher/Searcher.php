@@ -48,8 +48,7 @@ class Searcher extends Model {
 	 * @param array $models
 	 * @return Searcher
 	 */
-	public function setList(array $models)
-	{
+	public function setList(array $models) {
 		$this->_list	=	$models;
 		return $this;
 	}
@@ -60,8 +59,7 @@ class Searcher extends Model {
 	 * @param string $query
 	 * @return Searcher
 	 */
-	public function setQuery($query)
-	{
+	public function setQuery($query) {
 		if($this->_strict	=== false)
 			$this->_query = [':query:' => '%'.$query.'%'];
 		else
@@ -76,8 +74,7 @@ class Searcher extends Model {
 	 * @param boolean $type
 	 * @return Searcher
 	 */
-	public function useStrict($flag)
-	{
+	public function useStrict($flag) {
 		$this->_strict	=	$flag;
 		return $this;
 	}
@@ -87,8 +84,7 @@ class Searcher extends Model {
 	 *
 	 * @return array
 	 */
-	public function getList()
-	{
+	public function getList() {
 		return $this->_list;
 	}
 
@@ -97,8 +93,7 @@ class Searcher extends Model {
 	 *
 	 * @return mixed
 	 */
-	public function setTables(array $table)
-	{
+	public function setTables(array $table) {
 		return $this->_tables[key($table)]	=	array_values($table)[0];
 	}
 
@@ -108,8 +103,8 @@ class Searcher extends Model {
 	 * @param null $query
 	 * @return boolean
 	 */
-	public function run($query = null)
-	{
+	public function run($query = null) {
+
 		if(is_null($this->_query) === true)
 			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__);
 
@@ -124,10 +119,11 @@ class Searcher extends Model {
 
 		// validate fields by exist in those tables
 
-		foreach($this->_list as $table => $fields) {
-
+		foreach($this->_list as $table => $fields)
+		{
 			// load model metaData
 			$model 		=  	$this->_modelsManager->load($table, $this);
+
 			$metaData 	= 	$model->getModelsMetaData();
 
 			// check fields of table
@@ -146,11 +142,14 @@ class Searcher extends Model {
 					$col = new Validator($column);
 					if($col->isValid() === false)
 						throw new Exceptions\ColumnTypeException($col->getName(), $col->getType());
+
+					// validator must return fresh connection to Database
+					// then i must to reincapsulate basic Db raw query to my conditions
 				}
 			}
 		}
 
-		//@todo under develop
+		//@TODO under develop
 		return true;
 	}
 }
