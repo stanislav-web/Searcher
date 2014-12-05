@@ -62,7 +62,7 @@ class Searcher extends Model {
 	 */
 	public function setQuery($query)
 	{
-		if(false === $this->_strict)
+		if($this->_strict	=== false)
 			$this->_query = [':query:' => '%'.$query.'%'];
 		else
 			$this->_query = [':query:' => $query];
@@ -120,7 +120,7 @@ class Searcher extends Model {
 			throw new \Exception('Search list does not configured', 4);
 
 		// setup query if it true
-		if(!is_null($query) === true) $this->setQuery($query);
+		if(is_null($query) === false) $this->setQuery($query);
 
 		// validate fields by exist in those tables
 
