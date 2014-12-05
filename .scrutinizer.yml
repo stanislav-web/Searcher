@@ -15,6 +15,10 @@ tools:
     php_sim: true
     php_pdepend: true
     php_analyzer: true
+    php_code_sniffer: true
+    php_changetracking: true
+    php_cs_fixer: true
+    sensiolabs_security_checker: true
 
 checks:
     php:
@@ -60,3 +64,5 @@ checks:
         catch_class_exists: true
         avoid_unnecessary_concatenation: true
         argument_type_checks: true
+        no_debug_code: true
+        avoid_todo_comments: true
