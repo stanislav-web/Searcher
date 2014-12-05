@@ -110,17 +110,17 @@ class Searcher extends Model {
 	 */
 	public function run($query = null)
 	{
-		if(is_null($this->_query))
+		if(is_null($this->_query) === true)
 			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__, 1);
 
-		if(!is_array($this->_list))
+		if(is_array($this->_list) === false)
 			throw new Exceptions\InvalidTypeException($this->_list, __METHOD__, 'array', 2);
 
-		if(empty($this->_list))
+		if(empty($this->_list) === true)
 			throw new \Exception('Search list does not configured', 4);
 
 		// setup query if it true
-		if(!is_null($query)) $this->setQuery($query);
+		if(!is_null($query) === true) $this->setQuery($query);
 
 		// validate fields by exist in those tables
 
@@ -131,7 +131,7 @@ class Searcher extends Model {
 			$metaData 	= 	$model->getModelsMetaData();
 
 			// check fields of table
-			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))))
+			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))) === true)
 				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model), 3);
 
 			// setup clear used tables
@@ -141,7 +141,7 @@ class Searcher extends Model {
 			// checking columns
 			foreach($columnDefines as $n => $column)
 			{
-				if(in_array($column->getName(), $fields))
+				if(in_array($column->getName(), $fields) === true)
 				{
 					$col = new Validator($column);
 					if($col->isValid() === false)
@@ -151,6 +151,6 @@ class Searcher extends Model {
 		}
 
 		//@todo under develop
-		return $dataTypes;
+		return true;
 	}
 }
