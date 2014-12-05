@@ -46,7 +46,7 @@ class Searcher extends Model {
 	 * setList(array $models) Set models to participate in search
 	 *
 	 * @param array $models
-	 * @return bool
+	 * @return Searcher
 	 */
 	public function setList(array $models)
 	{
@@ -106,7 +106,7 @@ class Searcher extends Model {
 	 * Search procedure started
 	 *
 	 * @param null $query
-	 * @return array
+	 * @return boolean
 	 */
 	public function run($query = null)
 	{
@@ -131,7 +131,7 @@ class Searcher extends Model {
 			$metaData 	= 	$model->getModelsMetaData();
 
 			// check fields of table
-			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))) === true)
+			if(empty($not = array_diff($fields, $metaData->getAttributes($model))) === true)
 				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model));
 
 			// setup clear used tables
