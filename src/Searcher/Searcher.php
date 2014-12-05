@@ -111,13 +111,13 @@ class Searcher extends Model {
 	public function run($query = null)
 	{
 		if(is_null($this->_query) === true)
-			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__, 1);
+			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__);
 
 		if(is_array($this->_list) === false)
-			throw new Exceptions\InvalidTypeException($this->_list, __METHOD__, 'array', 2);
+			throw new Exceptions\InvalidTypeException($this->_list, __METHOD__, 'array');
 
 		if(empty($this->_list) === true)
-			throw new \Exception('Search list does not configured', 4);
+			throw new \Exception('Search list does not configured');
 
 		// setup query if it true
 		if(is_null($query) === false) $this->setQuery($query);
@@ -132,7 +132,7 @@ class Searcher extends Model {
 
 			// check fields of table
 			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))) === true)
-				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model), 3);
+				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model));
 
 			// setup clear used tables
 			$this->setTables([$model->getSource() => $table]);
