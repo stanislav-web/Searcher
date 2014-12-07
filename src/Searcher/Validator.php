@@ -2,6 +2,7 @@
 namespace Phalcon\Searcher;
 
 use Phalcon\Db\Column,
+	Phalcon\Mvc\Model\Manager,
 	Phalcon\Searcher\Exceptions;
 
 /**
@@ -30,34 +31,22 @@ class Validator {
 		$_max		=	128,
 
 		/**
+		 * Verified tables
+		 * @var array
+		 */
+		$_etables	=	[],
+
+		/**
 		 * Available columns types
 		 * @var array
 		 */
-		$_defined	=	[
+		$_column	=	[
 			'varchar',
 			'char',
 			'text',
 			'date',
 			'datetime',
-		],
-
-		/**
-		 * Column explorer
-		 * @var Column
-		 */
-	 	$_explorer,
-
-		/**
-		 * Define current column type
-		 * @var int
-		 */
-	 	$_type		=	0,
-
-		/**
-		 * Define current column name
-		 * @var string
-		 */
-	 	$_name		=	'';
+		];
 
 	/**
 	 * Verify transferred according to the rules
@@ -177,93 +166,122 @@ class Validator {
 	}
 
 	/**
-	 * Get field name
+	 * Check if field exist in table
 	 *
-	 * @return mixed
+	 * @param string $value
+	 * @throws Exceptions\InvalidLengthException
+	 * @return boolean
 	 */
-	public function getName() {
-		return $this->_explorer->getName();
-	}
+	public function isExists($value) {
 
-	/**
-	 * Get field type
-	 *
-	 * @return int
-	 */
-	public function getType() {
+		// validate fields by exist in tables
 
-		//$this->_explorer =	$explorer;
-		//$this->_type	=	$this->_explorer->getType();
+		foreach($value as $table => $fields) {
 
-		return $this->_type;
-	}
+			// load model metaData
+			$model 		=  	(new Manager())->load($table, new $table);
 
-	/**
-	 * Check field's type by defined criteria
-	 *
-	 * @return bool
-	 */
-	public function isValid() {
-		foreach($this->_defined as $i => $type)
-		{
-			if($this->{'is'.ucfirst($type)}() === true)
-				return true;
+			$metaData 	= 	$model->getModelsMetaData();
+
+			// check fields of table
+
+			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))) === true)
+				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model));
+
+			// setup clear used tables
+			$this->_etables[$model->getSource()]	=	$table;
+			$columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
+
+			// checking columns & fields
+
+			foreach($columnDefines as $n => $column) {
+
+				if(in_array($column->getName(), $fields) === true) {
+					$this->validTypes($column);
+				}
+			}
 		}
-		return false;
+		return true;
+	}
+
+	/**
+	 * Check if field exist in table
+	 *
+	 * @param string $value
+	 * @throws Exceptions\InvalidLengthException
+	 * @return boolean
+	 */
+	public function validTypes(Column $column) {
+
+		foreach($this->_column as $type) {
+
+			if($this->{'is'.ucfirst($type)}($column->getType()) === false)
+				throw new Exceptions\ColumnTypeException($column->getName(), $column->getType());
+		}
+		return true;
 	}
 
 	/**
 	 * Is it varchar field ?
 	 *
+	 * @param int $type for column
 	 * @return bool
 	 */
-	public function isVarchar()
-	{
-		if($this->_type === Column::TYPE_VARCHAR)
+	public function isVarchar($type) {
+		if((int)$type === Column::TYPE_VARCHAR)
 			return true;
 	}
 
 	/**
 	 * Is it char field ?
 	 *
+	 * @param int $type for column
 	 * @return bool
 	 */
-	public function isChar()
-	{
-		if($this->_type === Column::TYPE_CHAR)
+	public function isChar($type) {
+		if((int)$type === Column::TYPE_CHAR)
 			return true;
 	}
 
 	/**
 	 * Is it text field ?
+	 * @param int $type for column
 	 *
 	 * @return bool
 	 */
-	public function isText()
-	{
-		if($this->_type === Column::TYPE_TEXT)
+	public function isText($type) {
+		if((int)$type === Column::TYPE_TEXT)
 			return true;
 	}
 
 	/**
 	 * Is it date field ?
 	 *
+	 * @param int $type for column
 	 * @return bool
 	 */
-	public function isDate()
-	{
-		if($this->_type === Column::TYPE_DATE)
+	public function isDate($type) {
+		if((int)$type === Column::TYPE_DATE)
 			return true;
 	}
 
 	/**
 	 * Is it datetime field ?
-	 *
+
+	 * @param int $type for column
 	 * @return bool
 	 */
-	public function isDatetime()
-	{
-		if($$this->_type === Column::TYPE_DATETIME)
+	public function isDatetime($type) {
+		if((int)$type === Column::TYPE_DATETIME)
 			return true;
+	}
+
+	/**
+	 * Return verified tables to main class
+	 *
+	 * @return array
+	 */
+	public function getTables() {
+		return $this->_etables;
 	}
 }

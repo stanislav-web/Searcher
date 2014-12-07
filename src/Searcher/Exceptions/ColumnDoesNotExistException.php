@@ -15,14 +15,14 @@ class ColumnDoesNotExistException extends \LogicException
 	/**
 	 * Rise error message for non existing columns
 	 *
-	 * @param string $object
+	 * @param string $string
 	 * @param array $param
 	 * @param array $supported
 	 *
 	 * @return \LogicException
 	 */
-	public function __construct($object, array $param, array $supported) {
-		return parent::__construct('Column `'.implode('`, `', $param).'` not supported in '.$object.'. Only `'.implode('`, `', $supported).'`. Line: '.$this->getLine());
+	public function __construct($string, array $param, array $supported) {
+		return parent::__construct('Column `'.implode('`, `', $param).'` not supported in '.$string.'. Only `'.implode('`, `', $supported).'`. Line: '.$this->getLine());
 	}
 
 	/**

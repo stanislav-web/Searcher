@@ -1,7 +1,6 @@
 <?php
 namespace Phalcon\Searcher;
 
-use Phalcon\Exception;
 use Phalcon\Mvc\Model,
 	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 
@@ -87,9 +86,10 @@ class Searcher extends Model {
 	 * @return Searcher
 	 */
 	public function setList(array $models) {
+
 		try {
 			// need to return << true
-			$this->_validator->verify($models,['isArray', 'isNotEmpty']);
+			$this->_validator->verify($models,['isArray', 'isNotEmpty', 'isExists']);
 			$this->_list	=	$models;
 			return $this;
 		}
@@ -150,9 +150,17 @@ class Searcher extends Model {
 	 *
 	 * @return array
 	 */
-	public function getList()
-	{
+	public function getList() {
 		return $this->_list;
+	}
+
+	/**
+	 * Get real table's names
+	 *
+	 * @return array
+	 */
+	public function getTables() {
+		return $this->_validator->getTables();
 	}
 
 	/**
@@ -165,41 +173,14 @@ class Searcher extends Model {
 	{
 		try {
 
+			var_dump($this->getTables());
 
-			exit('ITS OKAY');
+			//@todo prepare to query builder
+			return true;
+
 		}
 		catch(Exception $e) {
 			echo $e->getMessage();
 		}
-		// validate fields by exist in those tables
-
-		foreach($this->_list as $table => $fields) {
-
-			// load model metaData
-			$model 		=  	$this->_modelsManager->load($table, $this);
-			$metaData 	= 	$model->getModelsMetaData();
-
-			// check fields of table
-			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))) === true)
-				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model), 3);
-
-			// setup clear used tables
-			$this->setTables([$model->getSource() => $table]);
-			$columnDefines = $this->getReadConnection()->describeColumns($model->getSource());
-
-			// checking columns
-			foreach($columnDefines as $n => $column)
-			{
-				if(in_array($column->getName(), $fields) === true)
-				{
-					$col = new Validator($column);
-					if($col->isValid() === false)
-						throw new Exceptions\ColumnTypeException($col->getName(), $col->getType());
-				}
-			}
-		}
-
-		//@todo under develop
-		return true;
 	}
 }
