@@ -32,14 +32,12 @@ class Builder {
 	 * Initialize internal params
 	 * @param array $structure
 	 * @param null $query
+	 * @return null
 	 */
 	public function __construct(array $structure, $query) {
-
 
 		$this->_structure	=	$structure;
 		$this->_query		=	$query;
 
-		print_r($this->_structure); exit;
-		return true;
 	}
 }

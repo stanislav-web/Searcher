@@ -137,8 +137,6 @@ class Searcher {
 		try {
 
 			(new Builder($this->getQualified(), $this->_query));
-
-			//@todo prepare to query builder
 			return true;
 
 		}
