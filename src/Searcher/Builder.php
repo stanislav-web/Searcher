@@ -18,7 +18,7 @@ class Builder {
 	 * @param array $tables
 	 * @param null $query
 	 */
-	public function __construct(array $tables, $query = null) {
+	public function __construct(array $table, $query = null) {
 		return true;
 	}
 }

@@ -108,7 +108,7 @@ class Validator {
 	 */
 	public function isNotNull($value) {
 		if(is_null($value) === true)
-			throw new Exceptions\NullArgumentException($value);
+			throw new Exceptions\NullArgumentException();
 		return true;
 	}
 
@@ -226,7 +226,7 @@ class Validator {
 	 * Is it varchar field ?
 	 *
 	 * @param int $type for column
-	 * @return bool
+	 * @return boolean
 	 */
 	public function isVarchar($type) {
 		if((int)$type === Column::TYPE_VARCHAR)
@@ -237,7 +237,7 @@ class Validator {
 	 * Is it char field ?
 	 *
 	 * @param int $type for column
-	 * @return bool
+	 * @return boolean
 	 */
 	public function isChar($type) {
 		if((int)$type === Column::TYPE_CHAR)
@@ -248,7 +248,7 @@ class Validator {
 	 * Is it text field ?
 	 * @param int $type for column
 	 *
-	 * @return bool
+	 * @return boolean
 	 */
 	public function isText($type) {
 		if((int)$type === Column::TYPE_TEXT)
@@ -259,7 +259,7 @@ class Validator {
 	 * Is it date field ?
 	 *
 	 * @param int $type for column
-	 * @return bool
+	 * @return boolean
 	 */
 	public function isDate($type) {
 		if((int)$type === Column::TYPE_DATE)
@@ -270,7 +270,7 @@ class Validator {
 	 * Is it datetime field ?
 
 	 * @param int $type for column
-	 * @return bool
+	 * @return boolean
 	 */
 	public function isDatetime($type) {
 		if((int)$type === Column::TYPE_DATETIME)

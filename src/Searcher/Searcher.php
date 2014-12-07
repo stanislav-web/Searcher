@@ -44,7 +44,7 @@ class Searcher {
 	 * Set minimum value for the search
 	 *
 	 * @param int $min value
-	 * @return Searcher
+	 * @return Validator
 	 */
 	public function setMin($min)
 	{
@@ -56,7 +56,7 @@ class Searcher {
 	 * Set maximum value for the search
 	 *
 	 * @param int $max value
-	 * @return Searcher
+	 * @return Validator
 	 */
 	public function setMax($max)
 	{
@@ -120,7 +120,7 @@ class Searcher {
 	/**
 	 * Get qualified valid tables & fields
 	 *
-	 * @return array
+	 * @return Validator
 	 */
 	public function getQualified() {
 		return $this->_validator->getCollection();
