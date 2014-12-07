@@ -199,7 +199,7 @@ class Validator {
 				if(in_array($column->getName(), $fields) === true) {
 					$this->validTypes($column);
 					// add column to table collection
-					$this->_collection[$model->getSource()][]	=	$column->getName();
+					$this->collection[$model->getSource()][]	=	$column->getName();
 				}
 			}
 		}

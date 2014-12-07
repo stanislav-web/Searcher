@@ -15,10 +15,10 @@ use Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 class Builder {
 
 	/**
-	 * @param array $tables
+	 * @param array $structure
 	 * @param null $query
 	 */
-	public function __construct(array $table, $query = null) {
+	public function __construct(array $structure = [], $query = null) {
 		return true;
 	}
 }

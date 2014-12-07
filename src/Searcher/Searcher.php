@@ -44,7 +44,7 @@ class Searcher {
 	 * Set minimum value for the search
 	 *
 	 * @param int $min value
-	 * @return Validator
+	 * @return Searcher
 	 */
 	public function setMin($min)
 	{
@@ -56,7 +56,7 @@ class Searcher {
 	 * Set maximum value for the search
 	 *
 	 * @param int $max value
-	 * @return Validator
+	 * @return Searcher
 	 */
 	public function setMax($max)
 	{
