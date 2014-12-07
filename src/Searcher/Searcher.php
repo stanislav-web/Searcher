@@ -123,7 +123,7 @@ class Searcher {
 	 * @return Validator
 	 */
 	public function getQualified() {
-		return $this->_validator->getCollection();
+		return $this->_validator->collection;
 	}
 
 	/**

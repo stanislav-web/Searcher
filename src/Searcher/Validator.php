@@ -31,12 +31,6 @@ class Validator {
 		$_max		=	128,
 
 		/**
-		 * Verified tables & columns
-		 * @var array
-		 */
-		$_collection	=	[],
-
-		/**
 		 * Available columns types
 		 * @var array
 		 */
@@ -47,6 +41,13 @@ class Validator {
 			'date',
 			'datetime',
 		];
+
+	public
+		/**
+		 * Verified tables & columns
+		 * @var array
+		 */
+		$collection	=	[];
 
 	/**
 	 * Verify transferred according to the rules
@@ -75,7 +76,7 @@ class Validator {
 	 * Set minimum value for the search
 	 *
 	 * @param int $min value
-	 * @return Searcher
+	 * @return Validator
 	 */
 	public function setMin($min) {
 		if(is_int($min) === false)
@@ -89,7 +90,7 @@ class Validator {
 	 * Set maximum value for the search
 	 *
 	 * @param int $max value
-	 * @return Searcher
+	 * @return Validator
 	 */
 	public function setMax($max) {
 		if(is_int($max) === false)
@@ -275,15 +276,5 @@ class Validator {
 	public function isDatetime($type) {
 		if((int)$type === Column::TYPE_DATETIME)
 			return true;
-	}
-
-	/**
-	 * Return verified tables & collection
-	 * to main class
-	 *
-	 * @return array
-	 */
-	public function getCollection() {
-		return $this->_collection;
 	}
 }
