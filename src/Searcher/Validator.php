@@ -34,12 +34,12 @@ class Validator {
 		 * Available columns types
 		 * @var array
 		 */
-		$_column	=	[
-			'varchar',
-			'char',
-			'text',
-			'date',
-			'datetime',
+		$_columns	=	[
+			Column::TYPE_VARCHAR,
+			Column::TYPE_CHAR,
+			Column::TYPE_TEXT,
+			Column::TYPE_DATE,
+			Column::TYPE_DATETIME,
 		];
 
 	public
@@ -198,8 +198,11 @@ class Validator {
 
 				if(in_array($column->getName(), $fields) === true) {
 					$this->validTypes($column);
+
 					// add column to table collection
-					$this->collection[$model->getSource()][]	=	$column->getName();
+					$this->collection[$table][$model->getSource()][]	=	[
+						$column->getType() => $column->getName()
+					];
 				}
 			}
 		}
@@ -211,70 +214,13 @@ class Validator {
 	 *
 	 * @param string $value
 	 * @throws Exceptions\InvalidLengthException
-	 * @return boolean
+	 * @return boolean|null
 	 */
 	public function validTypes(Column $column) {
 
-		foreach($this->_column as $type) {
-
-			if($this->{'is'.ucfirst($type)}($column->getType()) === false)
-				throw new Exceptions\ColumnTypeException($column->getName(), $column->getType());
+		if(in_array($column->getType(), $this->_columns) === false) {
+			throw new Exceptions\ColumnTypeException($column->getName(), $column->getType());
 		}
 		return true;
-	}
-
-	/**
-	 * Is it varchar field ?
-	 *
-	 * @param int $type for column
-	 * @return boolean
-	 */
-	public function isVarchar($type) {
-		if((int)$type === Column::TYPE_VARCHAR)
-			return true;
-	}
-
-	/**
-	 * Is it char field ?
-	 *
-	 * @param int $type for column
-	 * @return boolean
-	 */
-	public function isChar($type) {
-		if((int)$type === Column::TYPE_CHAR)
-			return true;
-	}
-
-	/**
-	 * Is it text field ?
-	 * @param int $type for column
-	 *
-	 * @return boolean
-	 */
-	public function isText($type) {
-		if((int)$type === Column::TYPE_TEXT)
-			return true;
-	}
-
-	/**
-	 * Is it date field ?
-	 *
-	 * @param int $type for column
-	 * @return boolean
-	 */
-	public function isDate($type) {
-		if((int)$type === Column::TYPE_DATE)
-			return true;
-	}
-
-	/**
-	 * Is it datetime field ?
-
-	 * @param int $type for column
-	 * @return boolean
-	 */
-	public function isDatetime($type) {
-		if((int)$type === Column::TYPE_DATETIME)
-			return true;
 	}
 }

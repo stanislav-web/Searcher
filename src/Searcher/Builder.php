@@ -14,11 +14,32 @@ use Phalcon\Mvc\Model\Resultset\Simple as Resultset;
  */
 class Builder {
 
+	private
+			/**
+	 		 * Query value for DB
+			 * @var string
+			 */
+			$_query		=	null,
+
+
+			/**
+		 	 * Query value for DB
+		 	 * @var string
+		 	 */
+			 $_structure		=	[];
+
 	/**
+	 * Initialize internal params
 	 * @param array $structure
 	 * @param null $query
 	 */
-	public function __construct(array $structure = [], $query = null) {
+	public function __construct(array $structure, $query) {
+
+
+		$this->_structure	=	$structure;
+		$this->_query		=	$query;
+
+		print_r($this->_structure); exit;
 		return true;
 	}
 }

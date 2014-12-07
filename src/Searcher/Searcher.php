@@ -68,7 +68,7 @@ class Searcher {
 	 * Prepare models to participate in search
 	 *
 	 * @param array $models
-	 * @return Searcher
+	 * @return Searcher|null
 	 */
 	public function setList(array $models) {
 
@@ -86,9 +86,9 @@ class Searcher {
 	 * Use Strict mode ?
 	 *
 	 * @param boolean $flag
-	 * @return Searcher
+	 * @return Searcher|null
 	 */
-	public function setExcact($flag)
+	public function setExact($flag)
 	{
 		$this->_exact	=	$flag;
 		return $this;
