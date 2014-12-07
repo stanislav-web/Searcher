@@ -1,8 +1,8 @@
 <?php
 namespace Phalcon\Searcher;
 
+use Phalcon\Exception;
 use Phalcon\Mvc\Model,
-	Phalcon\Searcher\Exceptions,
 	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 
 /**
@@ -19,10 +19,10 @@ class Searcher extends Model {
 	private
 
 		/**
-		 * Available search criteria
-		 * @var array
+		 * Validator
+		 * @var Phalcon\Searcher\Validator
 		 */
-		$_list	=	[],
+		$_validator,
 
 		/**
 		 * Query value for DB
@@ -34,7 +34,13 @@ class Searcher extends Model {
 		 * Strict flag
 		 * @var boolean
 		 */
-		$_strict	=	false,
+		$_exact	=	false,
+
+		/**
+		 * Available search criteria
+		 * @var array
+		 */
+		$_list		=	[],
 
 		/**
 		 * Verified tables
@@ -43,43 +49,100 @@ class Searcher extends Model {
 		$_tables	=	[];
 
 	/**
-	 * setList(array $models) Set models to participate in search
-	 *
-	 * @param array $models
-	 * @return bool
+	 * Initialize classes
+	 * @return null
 	 */
-	public function setList(array $models)
+	public function initialize() {
+		$this->_validator	=	new Validator();
+	}
+
+	/**
+	 * Set minimum value for the search
+	 *
+	 * @param int $min value
+	 * @return Searcher
+	 */
+	public function setMin($min)
 	{
-		$this->_list	=	$models;
+		$this->_validator->setMin($min);
 		return $this;
 	}
 
 	/**
-	 * Set query value
+	 * Set maximum value for the search
+	 *
+	 * @param int $max value
+	 * @return Searcher
+	 */
+	public function setMax($max)
+	{
+		$this->_validator->setMax($max);
+		return $this;
+	}
+
+	/**
+	 * Prepare models to participate in search
+	 *
+	 * @param array $models
+	 * @return Searcher
+	 */
+	public function setList(array $models) {
+		try {
+			// need to return << true
+			$this->_validator->verify($models,['isArray', 'isNotEmpty']);
+			$this->_list	=	$models;
+			return $this;
+		}
+		catch(Exception $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	/**
+	 * Use Strict mode ?
+	 *
+	 * @param boolean $flag
+	 * @return Searcher
+	 */
+	public function setExcact($flag)
+	{
+		$this->_exact	=	$flag;
+		return $this;
+	}
+
+	/**
+	 * Prepare query value
 	 *
 	 * @param string $query
 	 * @return Searcher
 	 */
 	public function setQuery($query)
 	{
-		if(false === $this->_strict)
-			$this->_query = [':query:' => '%'.$query.'%'];
-		else
-			$this->_query = [':query:' => $query];
+		try {
+			// need to return << true
+			$this->_validator->verify($query,['isNotNull', 'isNotFew', 'isNotMuch']);
 
-		return $this;
+			if(false === $this->_strict)
+				$this->_query = [':query:' => '%'.strlen($query).'%'];
+			else
+				$this->_query = [':query:' => $query];
+			return $this;
+		}
+		catch(Exception $e) {
+			echo $e->getMessage();
+		}
 	}
 
 	/**
-	 * Use Strict mode ?
+	 * Set tables without namespaces
 	 *
-	 * @param boolean $type
-	 * @return Searcher
+	 * @param array
+	 * @return array
 	 */
-	public function useStrict($flag)
+	public function setTables(array $table)
 	{
-		$this->_strict	=	$flag;
-		return $this;
+		return
+			$this->_tables[key($table)]	=	array_values($table)[0];
 	}
 
 	/**
@@ -93,35 +156,21 @@ class Searcher extends Model {
 	}
 
 	/**
-	 * Set tables without namespaces
-	 *
-	 * @return mixed
-	 */
-	public function setTables(array $table)
-	{
-		return $this->_tables[key($table)]	=	array_values($table)[0];
-	}
-
-	/**
 	 * Search procedure started
 	 *
 	 * @param null $query
 	 * @return array
 	 */
-	public function run($query = null)
+	public function run()
 	{
-		if(is_null($this->_query) === true)
-			throw new Exceptions\NullArgumentException(__METHOD__, __LINE__, 1);
+		try {
 
-		if(is_array($this->_list) === false)
-			throw new Exceptions\InvalidTypeException($this->_list, __METHOD__, 'array', 2);
 
-		if(empty($this->_list) === true)
-			throw new \Exception('Search list does not configured', 4);
-
-		// setup query if it true
-		if(!is_null($query) === true) $this->setQuery($query);
-
+			exit('ITS OKAY');
+		}
+		catch(Exception $e) {
+			echo $e->getMessage();
+		}
 		// validate fields by exist in those tables
 
 		foreach($this->_list as $table => $fields) {

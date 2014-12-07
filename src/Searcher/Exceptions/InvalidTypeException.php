@@ -13,16 +13,15 @@ namespace Phalcon\Searcher\Exceptions;
 class InvalidTypeException extends \RuntimeException
 {
 	/**
-	 * Rise error message
+	 * Rise error message for invalid types
 	 *
-	 * @param mixed $object
-	 * @param string $method
+	 * @param mixed $value
 	 * @param string $expected
-	 * @param int $code
+	 *
 	 * @return \RuntimeException
 	 */
-	public function __construct($object, $method, $expected, $code = 0) {
-        return parent::__construct('Wrong Type: '.gettype($object).' in '.$method.'. Expected '.$expected.' >> '.$this->getLine(), $code);
+	public function __construct($value, $expected) {
+        return parent::__construct('Wrong Type: '.gettype($value).' . Expected '.$expected.'. Line: '.$this->getLine());
     }
 
 	/**

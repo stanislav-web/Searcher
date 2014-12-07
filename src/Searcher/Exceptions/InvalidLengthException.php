@@ -2,7 +2,7 @@
 namespace Phalcon\Searcher\Exceptions;
 
 /**
- * Class NullArgumentException
+ * Class InvalidLengthException
  * @package Phalcon
  * @subpackage Phalcon\Searcher\Exceptions
  * @since PHP >=5.5.12
@@ -10,18 +10,20 @@ namespace Phalcon\Searcher\Exceptions;
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanilav WEB
  */
-class NullArgumentException extends \UnexpectedValueException
+class InvalidLengthException extends \LengthException
 {
 	/**
-	 * Rise error message for null
+	 * Rise error message for invalid length values
 	 *
 	 * @param string $string
+	 * @param string $sign
+	 * @param string $value
 	 *
-	 * @return \UnexpectedValueException
+	 * @return \LengthException
 	 */
-	public function __construct($string) {
-		return parent::__construct('Wrong value NULL. Expected NOT NULL. Line: '.$this->getLine());
-	}
+	public function __construct($string, $sign, $value) {
+        return parent::__construct('The length of "'.$string.'" is invalid! Must be '.$sign.' then '.$value.'. Line: '.$this->getLine());
+    }
 
 	/**
 	 * toString overload
@@ -32,4 +34,3 @@ class NullArgumentException extends \UnexpectedValueException
 		return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
 	}
 }
-  

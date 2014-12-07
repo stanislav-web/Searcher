@@ -13,15 +13,15 @@ namespace Phalcon\Searcher\Exceptions;
 class ColumnTypeException extends \LogicException
 {
 	/**
-	 * Rise error message
+	 * Rise error message for unavailable column types
 	 *
 	 * @param string $column
 	 * @param int $type
-	 * @param int $code
+	 *
 	 * @return \LogicException
 	 */
-	public function __construct($column, $type, $code = 0) {
-		return parent::__construct('The type {'.$type.'} of column `'.$column.'` does not supported >> '.$this->getLine(), $code);
+	public function __construct($column, $type) {
+		return parent::__construct('The type {'.$type.'} of column `'.$column.'` does not supported. Line: '.$this->getLine());
 	}
 
 	/**

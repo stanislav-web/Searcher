@@ -18,6 +18,18 @@ class Validator {
 	private
 
 		/**
+		 * The minimum value for the search
+		 * @var int
+		 */
+		$_min		=	3,
+
+		/**
+		 * The maximum value for the search
+		 * @var int
+		 */
+		$_max		=	128,
+
+		/**
 		 * Available columns types
 		 * @var array
 		 */
@@ -48,14 +60,120 @@ class Validator {
 	 	$_name		=	'';
 
 	/**
-	 * Initialize field
+	 * Verify transferred according to the rules
 	 *
-	 * @param Column $explorer
-	 * @return null
+	 * @param mixed $data
+	 * @param array $callbacks
+	 * @return mixed
 	 */
-	public function __construct(Column $explorer) {
-		$this->_explorer =	$explorer;
-		$this->_type	=	$this->_explorer->getType();
+	public function verify($data, array $callbacks) {
+
+		// Create a Closure
+		$isValid = function($data) use ($callbacks) {
+			foreach($callbacks as $callback)
+			{
+				if($this->{$callback}($data) === false)
+					return false;
+			}
+		};
+
+		// return boolean as such
+		return $isValid($data);
+	}
+
+
+	/**
+	 * Set minimum value for the search
+	 *
+	 * @param int $min value
+	 * @return Searcher
+	 */
+	public function setMin($min) {
+		if(is_int($min) === false)
+			$this->_min	=	(int)$min;
+		else
+			$this->_min	=	$min;
+		return $this;
+	}
+
+	/**
+	 * Set maximum value for the search
+	 *
+	 * @param int $max value
+	 * @return Searcher
+	 */
+	public function setMax($max) {
+		if(is_int($max) === false)
+			$this->_max	=	(int)$max;
+		else
+			$this->_max	=	$max;
+		return $this;
+	}
+
+	/**
+	 * Verify by not null
+	 *
+	 * @param string $value
+	 * @throws Exceptions\NullArgumentException
+	 * @return boolean
+	 */
+	public function isNotNull($value) {
+		if(is_null($value) === true)
+			throw new Exceptions\NullArgumentException($value);
+		return true;
+	}
+
+	/**
+	 * Verify by array type
+	 *
+	 * @param mixed $value
+	 * @throws Exceptions\InvalidTypeException
+	 * @return boolean
+	 */
+	public function isArray($value) {
+		if(is_array($value) === false)
+			throw new Exceptions\InvalidTypeException($value, 'array');
+		return true;
+	}
+
+	/**
+	 * Verify by not empty value
+	 *
+	 * @param mixed $value
+	 * @throws \Exception
+	 * @return boolean
+	 */
+	public function isNotEmpty($value) {
+		if(empty($value) === false)
+			return true;
+		else
+			throw new \Exception('Search list does not configured');
+	}
+
+	/**
+	 * Verify by min length
+	 *
+	 * @param string $value
+	 * @throws Exceptions\InvalidLengthException
+	 * @return boolean
+	 */
+	public function isNotFew($value) {
+		if(strlen(utf8_decode($value)) < $this->_min)
+			throw new Exceptions\InvalidLengthException($value, 'greater', $this->_min);
+		return true;
+	}
+
+	/**
+	 * Verify by max length
+	 *
+	 * @param string $value
+	 * @throws Exceptions\InvalidLengthException
+	 * @return boolean
+	 */
+	public function isNotMuch($value) {
+		if(strlen(utf8_decode($value)) > $this->_max)
+			throw new Exceptions\InvalidLengthException($value, 'less', $this->_max);
+		return true;
 	}
 
 	/**
@@ -73,6 +191,10 @@ class Validator {
 	 * @return int
 	 */
 	public function getType() {
+
+		//$this->_explorer =	$explorer;
+		//$this->_type	=	$this->_explorer->getType();
+
 		return $this->_type;
 	}
 
