@@ -31,10 +31,10 @@ class Validator {
 		$_max		=	128,
 
 		/**
-		 * Verified tables
+		 * Verified tables & columns
 		 * @var array
 		 */
-		$_etables	=	[],
+		$_collection	=	[],
 
 		/**
 		 * Available columns types
@@ -189,7 +189,6 @@ class Validator {
 				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model));
 
 			// setup clear used tables
-			$this->_etables[$model->getSource()]	=	$table;
 			$columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
 
 			// checking columns & fields
@@ -198,6 +197,8 @@ class Validator {
 
 				if(in_array($column->getName(), $fields) === true) {
 					$this->validTypes($column);
+					// add column to table collection
+					$this->_collection[$model->getSource()][]	=	$column->getName();
 				}
 			}
 		}
@@ -277,11 +278,12 @@ class Validator {
 	}
 
 	/**
-	 * Return verified tables to main class
+	 * Return verified tables & collection
+	 * to main class
 	 *
 	 * @return array
 	 */
-	public function getTables() {
-		return $this->_etables;
+	public function getCollection() {
+		return $this->_collection;
 	}
 }

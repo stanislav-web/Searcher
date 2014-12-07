@@ -1,9 +1,6 @@
 <?php
 namespace Phalcon\Searcher;
 
-use Phalcon\Mvc\Model,
-	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
-
 /**
  * Searcher daemon class
  * @package Phalcon
@@ -13,7 +10,7 @@ use Phalcon\Mvc\Model,
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanilav WEB
  */
-class Searcher extends Model {
+class Searcher {
 
 	private
 
@@ -33,25 +30,13 @@ class Searcher extends Model {
 		 * Strict flag
 		 * @var boolean
 		 */
-		$_exact	=	false,
-
-		/**
-		 * Available search criteria
-		 * @var array
-		 */
-		$_list		=	[],
-
-		/**
-		 * Verified tables
-		 * @var mixed
-		 */
-		$_tables	=	[];
+		$_exact	=	false;
 
 	/**
-	 * Initialize classes
+	 * Initialize class
 	 * @return null
 	 */
-	public function initialize() {
+	public function __construct() {
 		$this->_validator	=	new Validator();
 	}
 
@@ -90,7 +75,6 @@ class Searcher extends Model {
 		try {
 			// need to return << true
 			$this->_validator->verify($models,['isArray', 'isNotEmpty', 'isExists']);
-			$this->_list	=	$models;
 			return $this;
 		}
 		catch(Exception $e) {
@@ -122,7 +106,7 @@ class Searcher extends Model {
 			// need to return << true
 			$this->_validator->verify($query,['isNotNull', 'isNotFew', 'isNotMuch']);
 
-			if(false === $this->_strict)
+			if(false === $this->_exact)
 				$this->_query = [':query:' => '%'.strlen($query).'%'];
 			else
 				$this->_query = [':query:' => $query];
@@ -134,21 +118,12 @@ class Searcher extends Model {
 	}
 
 	/**
-	 * Get models to participate in search
+	 * Get qualified valid tables & fields
 	 *
 	 * @return array
 	 */
-	public function getList() {
-		return $this->_list;
-	}
-
-	/**
-	 * Get real table's names
-	 *
-	 * @return array
-	 */
-	public function getTables() {
-		return $this->_validator->getTables();
+	public function getQualified() {
+		return $this->_validator->getCollection();
 	}
 
 	/**
@@ -161,7 +136,7 @@ class Searcher extends Model {
 	{
 		try {
 
-			var_dump($this->getTables());
+			(new Builder($this->getQualified(), $this->_query));
 
 			//@todo prepare to query builder
 			return true;
