@@ -15,11 +15,9 @@ class NullArgumentException extends \UnexpectedValueException
 	/**
 	 * Rise error message for null
 	 *
-	 * @param string $string
-	 *
 	 * @return \UnexpectedValueException
 	 */
-	public function __construct($string) {
+	public function __construct() {
 		return parent::__construct('Wrong value NULL. Expected NOT NULL. Line: '.$this->getLine());
 	}
 

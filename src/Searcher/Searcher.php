@@ -134,18 +134,6 @@ class Searcher extends Model {
 	}
 
 	/**
-	 * Set tables without namespaces
-	 *
-	 * @param array
-	 * @return array
-	 */
-	public function setTables(array $table)
-	{
-		return
-			$this->_tables[key($table)]	=	array_values($table)[0];
-	}
-
-	/**
 	 * Get models to participate in search
 	 *
 	 * @return array

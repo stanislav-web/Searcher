@@ -168,11 +168,11 @@ class Validator {
 	/**
 	 * Check if field exist in table
 	 *
-	 * @param string $value
+	 * @param array $value
 	 * @throws Exceptions\InvalidLengthException
 	 * @return boolean
 	 */
-	public function isExists($value) {
+	public function isExists(array $value) {
 
 		// validate fields by exist in tables
 
@@ -185,7 +185,7 @@ class Validator {
 
 			// check fields of table
 
-			if(!empty($not = array_diff($fields, $metaData->getAttributes($model))) === true)
+			if(empty($not = array_diff($fields, $metaData->getAttributes($model))) === false)
 				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model));
 
 			// setup clear used tables
@@ -194,7 +194,7 @@ class Validator {
 
 			// checking columns & fields
 
-			foreach($columnDefines as $n => $column) {
+			foreach($columnDefines as $column) {
 
 				if(in_array($column->getName(), $fields) === true) {
 					$this->validTypes($column);
