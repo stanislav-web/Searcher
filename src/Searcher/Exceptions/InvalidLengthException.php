@@ -22,7 +22,7 @@ class InvalidLengthException extends \LengthException
 	 * @return \LengthException
 	 */
 	public function __construct($string, $sign, $value) {
-        return parent::__construct('The length of "'.$string.'" is invalid! Must be '.$sign.' then '.$value.'. Line: '.$this->getLine());
+        return parent::__construct('The length of '.$string.' is invalid! Must be '.$sign.' then '.$value.'. Line: '.$this->getLine());
     }
 
 	/**
