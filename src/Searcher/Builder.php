@@ -19,34 +19,18 @@ class Builder extends Manager {
 
 	private
 			/**
-	 		 * Query value for DB
-			 * @var string
+	 		 * Client for preparing data
+			 * @var Phalcon\Searcher\Searcher
 			 */
-			$_query		=	null,
-
-			/**
-		 	 * Query value for DB
-		 	 * @var string
-		 	 */
-			$_structure		=	[],
-
-			/**
-			 * Query builder chained params
-		 	 * @var array
-		 	 */
-			$_params			=	[];
+			$_searcher;
 
 	/**
 	 * Initialize internal params
-	 * @param array $structure
-	 * @param null $query
+	 * @param Phalcon\Searcher\Searcher $searcher
 	 * @return null
 	 */
-	public function __construct(array $structure, $query) {
-
-		$this->_structure	=	$structure;
-		$this->_query		=	$query;
-
+	public function __construct(Searcher $searcher) {
+		$this->_searcher		=	$searcher;
 	}
 
 	/**
