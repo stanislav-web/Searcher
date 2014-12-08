@@ -1,6 +1,6 @@
 <?php
 namespace Phalcon\Searcher;
-
+use Phalcon\Searcher\Exceptions;
 /**
  * Searcher daemon class
  * @package Phalcon
@@ -25,6 +25,13 @@ class Searcher {
 		 * @var string
 		 */
 		$_query		=	null,
+
+		/**
+		 * Fields getting from DB
+		 * @var array
+		 */
+		$_fields		=	[],
+
 
 		/**
 		 * Strict flag
@@ -70,7 +77,7 @@ class Searcher {
 	 * @param array $models
 	 * @return Searcher|null
 	 */
-	public function setList(array $models) {
+	public function setFields(array $models) {
 
 		try {
 			// need to return << true
@@ -112,7 +119,7 @@ class Searcher {
 				$this->_query = [':query:' => $query];
 			return $this;
 		}
-		catch(Exception $e) {
+		catch(Exceptions $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -136,11 +143,10 @@ class Searcher {
 	{
 		try {
 
-			(new Builder($this->getQualified(), $this->_query));
-			return true;
+			$builder = (new Builder($this->getQualified(), $this->_query))->loop();
 
 		}
-		catch(Exception $e) {
+		catch(Exceptions $e) {
 			echo $e->getMessage();
 		}
 	}
