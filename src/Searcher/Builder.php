@@ -54,7 +54,7 @@ class Builder extends Manager {
 	 *
 	 * @return Builder|null
 	 */
-	private function _verify()
+	private function _verifyFields()
 	{
 		try {
 			// need to return << true
@@ -75,7 +75,7 @@ class Builder extends Manager {
 	{
 		try {
 			// need to return << true
-			$this->_verify();
+			$this->_verifyFields();
 
 			foreach($this->_structure as $model => $attributes)
 			{

@@ -27,13 +27,6 @@ class Searcher {
 		$_query		=	null,
 
 		/**
-		 * Fields getting from DB
-		 * @var array
-		 */
-		$_fields		=	[],
-
-
-		/**
 		 * Strict flag
 		 * @var boolean
 		 */
