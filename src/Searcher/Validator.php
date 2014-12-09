@@ -118,12 +118,12 @@ class Validator {
 	 * Verify by array type
 	 *
 	 * @param mixed $value
-	 * @throws Exceptions\InvalidTypeException
+	 * @throws Exceptions\DataTypeException
 	 * @return boolean
 	 */
 	public function isArray($value) {
 		if(is_array($value) === false)
-			throw new Exceptions\InvalidTypeException($value, 'array');
+			throw new Exceptions\DataTypeException($value, 'array');
 		return true;
 	}
 

@@ -128,8 +128,7 @@ class Searcher {
 	 *          </code>
 	 * @return Searcher|null
 	 */
-	public function setOrder(array $order)
-	{
+	public function setOrder(array $order) {
 		$this->_order	=	$order;
 		return $this;
 	}
@@ -143,8 +142,8 @@ class Searcher {
 	 *          </code>
 	 * @return Searcher|null
 	 */
-	public function setQuery($query)
-	{
+	public function setQuery($query) {
+
 		try {
 			// need to return << true
 			$this->_validator->verify($query,['isNotNull', 'isNotFew', 'isNotMuch']);
