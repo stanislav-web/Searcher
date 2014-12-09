@@ -2,7 +2,6 @@
 namespace Phalcon\Searcher;
 
 use Phalcon\Mvc\Model\Manager,
-	Phalcon\Searcher\Exceptions,
 	Phalcon\Mvc\Model\Query\Builder as Build,
 	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 
@@ -13,31 +12,32 @@ use Phalcon\Mvc\Model\Manager,
  * @since PHP >=c
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanilav WEB
+ * @copyright Stanislav WEB
  */
 class Builder extends Manager {
 
 	private
-		/**
-		 * Prepared data to chain
-		 * @var Phalcon\Searcher\Searcher
-		 */
-		$_searcher,
 
-		/**
-		 * Query builder
-		 * @var Phalcon\Mvc\Model\Query\Builder
-		 */
-		$_builder;
+			/**
+			 * Query builder
+		 	 * @var Phalcon\Mvc\Model\Query\Builder
+		 	 */
+			$_builder,
+
+			/**
+	 		 * Client for preparing data
+			 * @var Phalcon\Searcher\Searcher
+			 */
+			$_searcher;
 
 	/**
 	 * Initialize internal params
-	 * @param Phalcon\Searcher\Searcher $searcher
+	 * @param Searcher $searcher
 	 * @return null
 	 */
 	public function __construct(Searcher $searcher) {
-		$this->_searcher	=  $searcher;
-		$this->_builder		=  new Build();
+		$this->_searcher		=	$searcher;
+		$this->_builder			=	new Build();
 	}
 
 	/**
@@ -48,24 +48,19 @@ class Builder extends Manager {
 	public function loop()
 	{
 		try {
-			// need to return << true
-			foreach($this->_searcher->getCollection() as $model => $attributes)
+
+			$collection = $this->_searcher->getCollection();
+
+			foreach($collection as $model => $attributes)
 			{
 				// set model => alias (real table name)
+				$this->_params['models'][]		=	[$model => key($attributes)];
 				$this->_builder->addFrom($model, key($attributes));
-				if(empty($attributes) === false)
-				{
-					var_dump('Params', $attributes);
-				}
 			}
-
-			var_dump('Builder', $this->_builder); exit;
-
-			//$queryBuilder = new Phalcon\Mvc\Model\Query\Builder($params);
-
 		}
-		catch(Exception $e) {
+		catch(\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
+
 }

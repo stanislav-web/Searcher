@@ -2,7 +2,7 @@
 namespace Phalcon\Searcher\Exceptions;
 
 /**
- * Class InvalidTypeException
+ * Class DataTypeException
  * @package Phalcon
  * @subpackage Phalcon\Searcher\Exceptions
  * @since PHP >=5.5.12
@@ -10,18 +10,28 @@ namespace Phalcon\Searcher\Exceptions;
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanilav WEB
  */
-class InvalidTypeException extends \RuntimeException
+class DataTypeException extends \RuntimeException
 {
+	private
+
+		/**
+		 * Getting datatype for some use
+		 * @var null|string
+		 */
+		$_dataType	=	null;
+
 	/**
-	 * Rise error message for invalid types
+	 * Rise error message for invalid data types
 	 *
 	 * @param mixed $value
 	 * @param string $expected
 	 *
 	 * @return \RuntimeException
 	 */
-	public function __construct($value, $expected) {
-        return parent::__construct('Wrong Type: '.gettype($value).' . Expected '.$expected.'. Line: '.$this->getLine());
+	public function __construct($value, $expected, $code = 0) {
+
+		$this->_dataType	=	gettype($value);
+        return parent::__construct('Wrong Type: '.$this->_dataType.' . Expected '.$expected.'. Line: '.$this->getLine(), $code);
     }
 
 	/**

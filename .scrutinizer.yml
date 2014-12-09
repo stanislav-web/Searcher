@@ -2,15 +2,6 @@ build:
     environment:
         php:
             version: 5.5.12
-        mysql: true
-        postgresql: false
-        redis: false
-        elasticsearch: false
-        rabbitmq: false
-        mongodb: false
-        neo4j: false
-        memcached: false
-        
 tools:
     php_sim: true
     php_pdepend: true
@@ -66,3 +57,35 @@ checks:
         argument_type_checks: true
         no_debug_code: true
         avoid_todo_comments: true
+        use_self_instead_of_fqcn: true
+        uppercase_constants: true
+        switch_fallthrough_commented: true
+        single_namespace_per_use: true
+        simplify_boolean_return: true
+        side_effects_or_types: true
+        return_doc_comment_if_not_inferrable: true
+        require_scope_for_properties: true
+        require_scope_for_methods: true
+        psr2_switch_declaration: true
+        psr2_class_declaration: true
+        psr2_control_structure_declaration: true
+        property_assignments: true
+        properties_in_camelcaps: true
+        php5_style_constructor: true
+        overriding_private_members: true
+        one_class_per_file: true
+        non_commented_empty_catch_block: true
+        no_unnecessary_function_call_in_for_loop: true
+        no_unnecessary_if: true
+        no_unnecessary_final_modifier: true
+        no_trait_type_hints: true
+        no_short_open_tag: true
+        no_long_variable_names:
+            maximum: '20'
+        no_goto: true
+        no_global_keyword: true
+        no_error_suppression: true
+        no_empty_statements: true
+        no_commented_out_code: true
+        deadlock_detection_in_loops: true
+        avoid_superglobals: true

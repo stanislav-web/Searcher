@@ -6,13 +6,13 @@ use Phalcon\Db\Column,
 	Phalcon\Searcher\Exceptions;
 
 /**
- * Columns validator for this module
+ * Columns validator
  * @package Phalcon
  * @subpackage Phalcon\Searcher
  * @since PHP >=c
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanilav WEB
+ * @copyright Stanislav WEB
  */
 class Validator {
 
@@ -35,6 +35,7 @@ class Validator {
 		 * @var array
 		 */
 		$_columns	=	[
+			Column::TYPE_INTEGER,
 			Column::TYPE_VARCHAR,
 			Column::TYPE_CHAR,
 			Column::TYPE_TEXT,
@@ -117,12 +118,12 @@ class Validator {
 	 * Verify by array type
 	 *
 	 * @param mixed $value
-	 * @throws Exceptions\InvalidTypeException
+	 * @throws Exceptions\DataTypeException
 	 * @return boolean
 	 */
 	public function isArray($value) {
 		if(is_array($value) === false)
-			throw new Exceptions\InvalidTypeException($value, 'array');
+			throw new Exceptions\DataTypeException($value, 'array');
 		return true;
 	}
 
@@ -130,14 +131,14 @@ class Validator {
 	 * Verify by not empty value
 	 *
 	 * @param mixed $value
-	 * @throws \Exception
+	 * @throws Exceptions\ColumnException
 	 * @return boolean
 	 */
 	public function isNotEmpty($value) {
 		if(empty($value) === false)
 			return true;
 		else
-			throw new \Exception('Search list does not configured');
+			throw new Exceptions\ColumnException(Exceptions\ColumnException::EMPTY_LIST, ['Search list has empty value']);
 	}
 
 	/**
@@ -170,7 +171,7 @@ class Validator {
 	 * Check if field exist in table
 	 *
 	 * @param array $value
-	 * @throws Exceptions\InvalidLengthException
+	 * @throws Exceptions\ColumnException
 	 * @return boolean
 	 */
 	public function isExists(array $value) {
@@ -187,7 +188,8 @@ class Validator {
 			// check fields of table
 
 			if(empty($not = array_diff($fields, $metaData->getAttributes($model))) === false)
-				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model));
+				throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_EXISTS, [
+					$not, $table, $metaData->getAttributes($model)]);
 
 			// setup clear used tables
 			$columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
@@ -213,13 +215,15 @@ class Validator {
 	 * Check if field exist in table
 	 *
 	 * @param string $value
-	 * @throws Exceptions\InvalidLengthException
+	 * @throws Exceptions\ColumnException
 	 * @return boolean|null
 	 */
 	public function validTypes(Column $column) {
 
 		if(in_array($column->getType(), $this->_columns) === false) {
-			throw new Exceptions\ColumnTypeException($column->getName(), $column->getType());
+
+			throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_SUPPORT, [
+				$column->getName(), $column->getType()]);
 		}
 		return true;
 	}

@@ -1,6 +1,7 @@
 <?php
 namespace Phalcon\Searcher;
 use Phalcon\Searcher\Exceptions;
+
 /**
  * Searcher daemon class
  * @package Phalcon
@@ -8,7 +9,7 @@ use Phalcon\Searcher\Exceptions;
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanilav WEB
+ * @copyright Stanislav WEB
  */
 class Searcher {
 
@@ -36,7 +37,7 @@ class Searcher {
 		 * Order result
 		 * @var array
 		 */
-		$_order       =  [];
+		$_order		=	[];
 
 	/**
 	 * Initialize class
@@ -72,8 +73,20 @@ class Searcher {
 
 	/**
 	 * Prepare models to participate in search
-	 *
+
 	 * @param array $models
+	 * @example <code>
+	 *          $s->setFields([
+	 *          	'Model/Table1'	=>	[
+	 *          		'title',
+	 *          		'text'
+	 *          	],
+	 *         	 	'Model/Table2'	=>	[
+	 *          		'name',
+	 *          		'mark'
+	 *          	]....
+	 *          ])
+	 *          </code>
 	 * @return Searcher|null
 	 */
 	public function setFields(array $models) {
@@ -83,7 +96,7 @@ class Searcher {
 			$this->_validator->verify($models,['isArray', 'isNotEmpty', 'isExists']);
 			return $this;
 		}
-		catch(Exception $e) {
+		catch(\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -92,10 +105,12 @@ class Searcher {
 	 * Use Strict mode ?
 	 *
 	 * @param boolean $flag
+	 * @example <code>
+	 *          $s->setExact(true) // false , as 'query' or '%query%'
+	 *          </code>
 	 * @return Searcher|null
 	 */
-	public function setExact($flag)
-	{
+	public function setExact($flag) {
 		$this->_exact	=	$flag;
 		return $this;
 	}
@@ -107,26 +122,28 @@ class Searcher {
 	 * @example <code>
 	 *          $s->setOrder(['Model/Table1' => 'id DESC'])
 	 *          $s->setOrder([
-	 *             'Model/Table1' => 'id DESC'
-	 *             'Model/Table2' => 'title ASC'
+	 *          	'Model/Table1' => 'id DESC'
+	 *          	'Model/Table2' => 'title ASC'
 	 *          ])
 	 *          </code>
 	 * @return Searcher|null
 	 */
-	public function setOrder(array $order)
-	{
-		$this->_order  =  $order;
+	public function setOrder(array $order) {
+		$this->_order	=	$order;
 		return $this;
 	}
 
 	/**
 	 * Prepare query value
-	 *
+
 	 * @param string $query
-	 * @return Searcher
+	 * @example <code>
+	 *          $s->setQuery('what i want to find')
+	 *          </code>
+	 * @return Searcher|null
 	 */
-	public function setQuery($query)
-	{
+	public function setQuery($query) {
+
 		try {
 			// need to return << true
 			$this->_validator->verify($query,['isNotNull', 'isNotFew', 'isNotMuch']);
@@ -137,7 +154,7 @@ class Searcher {
 				$this->_query = [':query:' => $query];
 			return $this;
 		}
-		catch(Exceptions $e) {
+		catch(\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -145,7 +162,7 @@ class Searcher {
 	/**
 	 * Get qualified valid tables & fields
 	 *
-	 * @return Validator
+	 * @return array
 	 */
 	public function getCollection() {
 		return $this->_validator->collection;
@@ -155,16 +172,16 @@ class Searcher {
 	 * Search procedure started
 	 *
 	 * @param null $query
-	 * @return array
+	 * @return Builder|null
 	 */
-	public function run()
+	final public function run()
 	{
 		try {
 
 			$builder = (new Builder($this))->loop();
-
+			return $builder;
 		}
-		catch(Exceptions $e) {
+		catch(\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
