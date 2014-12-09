@@ -105,13 +105,12 @@ class Validator {
 	 * Verify by not null
 	 *
 	 * @param string $value
-	 * @throws Exceptions\ColumnException
+	 * @throws Exceptions\NullArgumentException
 	 * @return boolean
 	 */
 	public function isNotNull($value) {
 		if(is_null($value) === true)
-			throw new Exceptions\ColumnException(Exceptions\ColumnException::NULL_ARGUMENT_PASSED, []);
-		;
+			throw new Exceptions\NullArgumentException();
 		return true;
 	}
 
@@ -119,12 +118,12 @@ class Validator {
 	 * Verify by array type
 	 *
 	 * @param mixed $value
-	 * @throws Exceptions\ColumnException
+	 * @throws Exceptions\InvalidTypeException
 	 * @return boolean
 	 */
 	public function isArray($value) {
 		if(is_array($value) === false)
-			throw new Exceptions\ColumnException(Exceptions\ColumnException::INVALID_DATA_TYPE, [$value, 'array']);
+			throw new Exceptions\InvalidTypeException($value, 'array');
 		return true;
 	}
 
@@ -139,20 +138,19 @@ class Validator {
 		if(empty($value) === false)
 			return true;
 		else
-			throw new Exceptions\ColumnException(Exceptions\ColumnException::EMPTY_LIST, ['Search list does not configured']);
+			throw new Exceptions\ColumnException(Exceptions\ColumnException::EMPTY_LIST, ['Search list has empty value']);
 	}
 
 	/**
 	 * Verify by min length
 	 *
 	 * @param string $value
-	 * @throws Exceptions\ColumnException
+	 * @throws Exceptions\InvalidLengthException
 	 * @return boolean
 	 */
 	public function isNotFew($value) {
 		if(strlen(utf8_decode($value)) < $this->_min)
-			throw new Exceptions\ColumnException(Exceptions\ColumnException::QUERY_INVALID_LENGTH, [
-				$value, 'greater', $this->_min]);
+			throw new Exceptions\InvalidLengthException($value, 'greater', $this->_min);
 		return true;
 	}
 
@@ -160,13 +158,12 @@ class Validator {
 	 * Verify by max length
 	 *
 	 * @param string $value
-	 * @throws Exceptions\ColumnException
+	 * @throws Exceptions\InvalidLengthException
 	 * @return boolean
 	 */
 	public function isNotMuch($value) {
 		if(strlen(utf8_decode($value)) > $this->_max)
-			throw new Exceptions\ColumnException(Exceptions\ColumnException::QUERY_INVALID_LENGTH, [
-				$value, 'less', $this->_max]);
+			throw new Exceptions\InvalidLengthException($value, 'less', $this->_max);
 		return true;
 	}
 
