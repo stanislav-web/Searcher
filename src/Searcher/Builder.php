@@ -18,52 +18,26 @@ use Phalcon\Mvc\Model\Manager,
 class Builder extends Manager {
 
 	private
-			/**
-	 		 * Query value for DB
-			 * @var string
-			 */
-			$_query		=	null,
+		/**
+		 * Prepared data to chain
+		 * @var Phalcon\Searcher\Searcher
+		 */
+		$_searcher,
 
-			/**
-		 	 * Query value for DB
-		 	 * @var string
-		 	 */
-			$_structure		=	[],
-
-			/**
-			 * Query builder chained params
-		 	 * @var array
-		 	 */
-			$_params			=	[];
+		/**
+		 * Query builder
+		 * @var Phalcon\Mvc\Model\Query\Builder
+		 */
+		$_builder;
 
 	/**
 	 * Initialize internal params
-	 * @param array $structure
-	 * @param null $query
+	 * @param Phalcon\Searcher\Searcher $searcher
 	 * @return null
 	 */
-	public function __construct(array $structure, $query) {
-
-		$this->_structure	=	$structure;
-		$this->_query		=	$query;
-
-	}
-
-	/**
-	 * Prepare build data for loop
-	 *
-	 * @return Builder|null
-	 */
-	private function _verifyFields()
-	{
-		try {
-			// need to return << true
-			(new Validator())->verify($this->_structure, ['isArray', 'isNotEmpty']);
-			return $this;
-		}
-		catch(Exception $e) {
-			echo $e->getMessage();
-		}
+	public function __construct(Searcher $searcher) {
+		$this->_searcher	=  $searcher;
+		$this->_builder		=  new Build();
 	}
 
 	/**
@@ -75,13 +49,17 @@ class Builder extends Manager {
 	{
 		try {
 			// need to return << true
-			$this->_verifyFields();
-
-			foreach($this->_structure as $model => $attributes)
+			foreach($this->_searcher->getCollection() as $model => $attributes)
 			{
 				// set model => alias (real table name)
-				$this->_params['models'][]		=	[$model => key($attributes)];
+				$this->_builder->addFrom($model, key($attributes));
+				if(empty($attributes) === false)
+				{
+					var_dump('Params', $attributes);
+				}
 			}
+
+			var_dump('Builder', $this->_builder); exit;
 
 			//$queryBuilder = new Phalcon\Mvc\Model\Query\Builder($params);
 
@@ -90,5 +68,4 @@ class Builder extends Manager {
 			echo $e->getMessage();
 		}
 	}
-
 }

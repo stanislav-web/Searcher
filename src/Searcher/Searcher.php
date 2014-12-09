@@ -30,7 +30,13 @@ class Searcher {
 		 * Strict flag
 		 * @var boolean
 		 */
-		$_exact	=	false;
+		$_exact	=	false,
+
+		/**
+		 * Order result
+		 * @var array
+		 */
+		$_order       =  [];
 
 	/**
 	 * Initialize class
@@ -95,6 +101,25 @@ class Searcher {
 	}
 
 	/**
+	 * Order results
+	 *
+	 * @param array $order
+	 * @example <code>
+	 *          $s->setOrder(['Model/Table1' => 'id DESC'])
+	 *          $s->setOrder([
+	 *             'Model/Table1' => 'id DESC'
+	 *             'Model/Table2' => 'title ASC'
+	 *          ])
+	 *          </code>
+	 * @return Searcher|null
+	 */
+	public function setOrder(array $order)
+	{
+		$this->_order  =  $order;
+		return $this;
+	}
+
+	/**
 	 * Prepare query value
 	 *
 	 * @param string $query
@@ -122,7 +147,7 @@ class Searcher {
 	 *
 	 * @return Validator
 	 */
-	public function getQualified() {
+	public function getCollection() {
 		return $this->_validator->collection;
 	}
 
@@ -136,7 +161,7 @@ class Searcher {
 	{
 		try {
 
-			$builder = (new Builder($this->getQualified(), $this->_query))->loop();
+			$builder = (new Builder($this))->loop();
 
 		}
 		catch(Exceptions $e) {
