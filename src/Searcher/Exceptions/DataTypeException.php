@@ -12,6 +12,14 @@ namespace Phalcon\Searcher\Exceptions;
  */
 class DataTypeException extends \RuntimeException
 {
+	private
+
+		/**
+		 * Getting datatype for some use
+		 * @var null|string
+		 */
+		$_dataType	=	null;
+
 	/**
 	 * Rise error message for invalid data types
 	 *
@@ -20,8 +28,10 @@ class DataTypeException extends \RuntimeException
 	 *
 	 * @return \RuntimeException
 	 */
-	public function __construct($value, $expected) {
-        return parent::__construct('Wrong Type: '.gettype($value).' . Expected '.$expected.'. Line: '.$this->getLine());
+	public function __construct($value, $expected, $code = 0) {
+
+		$this->_dataType	=	gettype($value);
+        return parent::__construct('Wrong Type: '.$this->_dataType.' . Expected '.$expected.'. Line: '.$this->getLine(), $code);
     }
 
 	/**
