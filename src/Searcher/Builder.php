@@ -59,7 +59,7 @@ class Builder extends Manager {
 				$this->_builder->addFrom($model, key($attributes));
 			}
 		}
-		catch(Exception $e) {
+		catch(\Exception $e) {
 			echo $e->getMessage();
 		}
 	}

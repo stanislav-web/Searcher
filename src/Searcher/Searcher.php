@@ -96,7 +96,7 @@ class Searcher {
 			$this->_validator->verify($models,['isArray', 'isNotEmpty', 'isExists']);
 			return $this;
 		}
-		catch(Exception $e) {
+		catch(\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -155,7 +155,7 @@ class Searcher {
 				$this->_query = [':query:' => $query];
 			return $this;
 		}
-		catch(Exceptions $e) {
+		catch(\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -182,7 +182,7 @@ class Searcher {
 			$builder = (new Builder($this))->loop();
 			return $builder;
 		}
-		catch(Exceptions $e) {
+		catch(\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
