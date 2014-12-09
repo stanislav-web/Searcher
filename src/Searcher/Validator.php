@@ -188,7 +188,8 @@ class Validator {
 			// check fields of table
 
 			if(empty($not = array_diff($fields, $metaData->getAttributes($model))) === false)
-				throw new Exceptions\ColumnDoesNotExistException($table, $not, $metaData->getAttributes($model));
+				throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_EXISTS, [
+					$not, $table, $metaData->getAttributes($model)]);
 
 			// setup clear used tables
 			$columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
@@ -220,7 +221,9 @@ class Validator {
 	public function validTypes(Column $column) {
 
 		if(in_array($column->getType(), $this->_columns) === false) {
-			throw new Exceptions\ColumnTypeException($column->getName(), $column->getType());
+
+			throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_SUPPORT, [
+				$column->getName(), $column->getType()]);
 		}
 		return true;
 	}
