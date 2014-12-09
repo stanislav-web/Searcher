@@ -33,7 +33,7 @@ class Builder extends Manager {
 
 	/**
 	 * Initialize internal params
-	 * @param Phalcon\Searcher\Searcher $searcher
+	 * @param Searcher $searcher
 	 * @return null
 	 */
 	public function __construct(Searcher $searcher) {

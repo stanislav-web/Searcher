@@ -141,7 +141,7 @@ class Searcher {
 	 * @example <code>
 	 *          $s->setQuery('what i want to find')
 	 *          </code>
-	 * @return Searcher
+	 * @return Searcher|null
 	 */
 	public function setQuery($query)
 	{
@@ -163,7 +163,7 @@ class Searcher {
 	/**
 	 * Get qualified valid tables & fields
 	 *
-	 * @return Validator
+	 * @return array
 	 */
 	public function getCollection() {
 		return $this->_validator->collection;
@@ -173,7 +173,7 @@ class Searcher {
 	 * Search procedure started
 	 *
 	 * @param null $query
-	 * @return Phalcon\Mvc\Model\Query\Builder
+	 * @return Builder|null
 	 */
 	final public function run()
 	{
