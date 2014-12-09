@@ -19,4 +19,4 @@ Unavailable
 ```php
 Unavailable
 ```
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/stanislav-web/Searcher?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
+[![MIT License](https://poser.pugx.org/stanislav-web/phalcon-searcher/license.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/stanislav-web/Searcher?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
