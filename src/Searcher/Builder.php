@@ -2,7 +2,6 @@
 namespace Phalcon\Searcher;
 
 use Phalcon\Mvc\Model\Manager,
-	Phalcon\Searcher\Exceptions,
 	Phalcon\Mvc\Model\Query\Builder as Build,
 	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 
