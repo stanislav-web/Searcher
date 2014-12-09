@@ -37,7 +37,14 @@ class Searcher {
 		 * Order result
 		 * @var array
 		 */
-		$_order		=	[];
+		$_order		=	[],
+
+
+		/**
+		 * Group result
+		 * @var array
+		 */
+		$_group		=	[];
 
 	/**
 	 * Initialize class
@@ -130,6 +137,25 @@ class Searcher {
 	 */
 	public function setOrder(array $order) {
 		$this->_order	=	$order;
+		return $this;
+	}
+
+
+	/**
+	 * Group results
+	 *
+	 * @param array $group
+	 * @example <code>
+	 *          $s->setGroup(['Model/Table1' => 'id'])
+	 *          $s->setGroup([
+	 *          	'Model/Table1' => 'id'
+	 *          	'Model/Table2' => 'title'
+	 *          ])
+	 *          </code>
+	 * @return Searcher|null
+	 */
+	public function setGroup(array $group) {
+		$this->_group	=	$group;
 		return $this;
 	}
 

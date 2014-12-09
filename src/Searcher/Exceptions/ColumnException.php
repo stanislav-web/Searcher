@@ -10,8 +10,7 @@ namespace Phalcon\Searcher\Exceptions;
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanilav WEB
  */
-class ColumnException extends \LogicException
-{
+class ColumnException extends \LogicException {
 
 	/**
 	 * Code for "not supported type for column"

@@ -11,6 +11,9 @@ tools:
     php_cs_fixer: true
     sensiolabs_security_checker: true
 
+filter:
+  excluded_paths: [tests/*]
+
 checks:
     php:
         code_rating: true
@@ -75,12 +78,8 @@ checks:
         one_class_per_file: true
         non_commented_empty_catch_block: true
         no_unnecessary_function_call_in_for_loop: true
-        no_unnecessary_if: true
         no_unnecessary_final_modifier: true
         no_trait_type_hints: true
-        no_short_open_tag: true
-        no_long_variable_names:
-            maximum: '20'
         no_goto: true
         no_global_keyword: true
         no_error_suppression: true

@@ -10,8 +10,7 @@ namespace Phalcon\Searcher\Exceptions;
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanilav WEB
  */
-class DataTypeException extends \RuntimeException
-{
+class DataTypeException extends \RuntimeException {
 	private
 
 		/**

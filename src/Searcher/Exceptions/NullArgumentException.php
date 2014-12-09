@@ -9,8 +9,7 @@ namespace Phalcon\Searcher\Exceptions;
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>* @copyright Stanilav WEB
  */
-class NullArgumentException extends \UnexpectedValueException
-{
+class NullArgumentException extends \UnexpectedValueException {
 	/**
 	 * Rise error message for null
 	 *
