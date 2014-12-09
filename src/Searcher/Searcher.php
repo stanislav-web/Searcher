@@ -1,6 +1,7 @@
 <?php
 namespace Phalcon\Searcher;
 use Phalcon\Searcher\Exceptions;
+
 /**
  * Searcher daemon class
  * @package Phalcon
@@ -8,7 +9,7 @@ use Phalcon\Searcher\Exceptions;
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanilav WEB
+ * @copyright Stanislav WEB
  */
 class Searcher {
 
@@ -72,8 +73,20 @@ class Searcher {
 
 	/**
 	 * Prepare models to participate in search
-	 *
+
 	 * @param array $models
+	 * @example <code>
+	 *          $s->setFields([
+	 *          	'Model/Table1'	=>	[
+	 *          		'title',
+	 *          		'text'
+	 *          	],
+	 *         	 	'Model/Table2'	=>	[
+	 *          		'name',
+	 *          		'mark'
+	 *          	]....
+	 *          ])
+	 *          </code>
 	 * @return Searcher|null
 	 */
 	public function setFields(array $models) {
@@ -92,19 +105,20 @@ class Searcher {
 	 * Use Strict mode ?
 	 *
 	 * @param boolean $flag
+	 * @example <code>
+	 *          $s->setExact(true) // false , as 'query' or '%query%'
+	 *          </code>
 	 * @return Searcher|null
 	 */
-	public function setExact($flag)
-	{
+	public function setExact($flag) {
 		$this->_exact	=	$flag;
 		return $this;
 	}
 
-
 	/**
 	 * Order results
 	 *
-	 * @param array $fieldPos
+	 * @param array $order
 	 * @example <code>
 	 *          $s->setOrder(['Model/Table1' => 'id DESC'])
 	 *          $s->setOrder([
@@ -114,16 +128,19 @@ class Searcher {
 	 *          </code>
 	 * @return Searcher|null
 	 */
-	public function setOrder(array $fieldPos)
+	public function setOrder(array $order)
 	{
-		$this->_order	=	$fieldPos;
+		$this->_order	=	$order;
 		return $this;
 	}
 
 	/**
 	 * Prepare query value
-	 *
+
 	 * @param string $query
+	 * @example <code>
+	 *          $s->setQuery('what i want to find')
+	 *          </code>
 	 * @return Searcher
 	 */
 	public function setQuery($query)
@@ -148,7 +165,7 @@ class Searcher {
 	 *
 	 * @return Validator
 	 */
-	public function getQualified() {
+	public function getCollection() {
 		return $this->_validator->collection;
 	}
 
@@ -156,14 +173,14 @@ class Searcher {
 	 * Search procedure started
 	 *
 	 * @param null $query
-	 * @return array
+	 * @return Phalcon\Mvc\Model\Query\Builder
 	 */
-	public function run()
+	final public function run()
 	{
 		try {
 
 			$builder = (new Builder($this))->loop();
-
+			return $builder;
 		}
 		catch(Exceptions $e) {
 			echo $e->getMessage();

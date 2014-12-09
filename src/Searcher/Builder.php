@@ -13,11 +13,18 @@ use Phalcon\Mvc\Model\Manager,
  * @since PHP >=c
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanilav WEB
+ * @copyright Stanislav WEB
  */
 class Builder extends Manager {
 
 	private
+
+			/**
+			 * Query builder
+		 	 * @var Phalcon\Mvc\Model\Query\Builder
+		 	 */
+			$_builder,
+
 			/**
 	 		 * Client for preparing data
 			 * @var Phalcon\Searcher\Searcher
@@ -31,23 +38,7 @@ class Builder extends Manager {
 	 */
 	public function __construct(Searcher $searcher) {
 		$this->_searcher		=	$searcher;
-	}
-
-	/**
-	 * Prepare build data for loop
-	 *
-	 * @return Builder|null
-	 */
-	private function _verifyFields()
-	{
-		try {
-			// need to return << true
-			(new Validator())->verify($this->_structure, ['isArray', 'isNotEmpty']);
-			return $this;
-		}
-		catch(Exception $e) {
-			echo $e->getMessage();
-		}
+		$this->_builder			=	new Build();
 	}
 
 	/**
@@ -58,17 +49,15 @@ class Builder extends Manager {
 	public function loop()
 	{
 		try {
-			// need to return << true
-			$this->_verifyFields();
 
-			foreach($this->_structure as $model => $attributes)
+			$collection = $this->_searcher->getCollection();
+
+			foreach($collection as $model => $attributes)
 			{
 				// set model => alias (real table name)
 				$this->_params['models'][]		=	[$model => key($attributes)];
+				$this->_builder->addFrom($model, key($attributes));
 			}
-
-			//$queryBuilder = new Phalcon\Mvc\Model\Query\Builder($params);
-
 		}
 		catch(Exception $e) {
 			echo $e->getMessage();

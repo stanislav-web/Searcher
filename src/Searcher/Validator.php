@@ -6,13 +6,13 @@ use Phalcon\Db\Column,
 	Phalcon\Searcher\Exceptions;
 
 /**
- * Columns validator for this module
+ * Columns validator
  * @package Phalcon
  * @subpackage Phalcon\Searcher
  * @since PHP >=c
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanilav WEB
+ * @copyright Stanislav WEB
  */
 class Validator {
 
@@ -35,6 +35,7 @@ class Validator {
 		 * @var array
 		 */
 		$_columns	=	[
+			Column::TYPE_INTEGER,
 			Column::TYPE_VARCHAR,
 			Column::TYPE_CHAR,
 			Column::TYPE_TEXT,
