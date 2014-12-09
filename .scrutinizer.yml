@@ -70,7 +70,6 @@ checks:
         psr2_class_declaration: true
         psr2_control_structure_declaration: true
         property_assignments: true
-        properties_in_camelcaps: true
         php5_style_constructor: true
         overriding_private_members: true
         one_class_per_file: true
@@ -89,3 +88,4 @@ checks:
         no_commented_out_code: true
         deadlock_detection_in_loops: true
         avoid_superglobals: true
+        classes_in_camel_caps: true

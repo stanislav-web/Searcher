@@ -1,9 +1,9 @@
 <?php
 namespace Phalcon\Searcher;
 
-use Phalcon\Db\Column,
-	Phalcon\Mvc\Model\Manager,
-	Phalcon\Searcher\Exceptions;
+use Phalcon\Db\Column;
+use	Phalcon\Mvc\Model\Manager;
+use	Phalcon\Searcher\Exceptions;
 
 /**
  * Columns validator

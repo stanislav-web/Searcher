@@ -16,9 +16,12 @@
     	"require" : {
         	"php" : ">=5.5.12"
     	},
-	"autoload": {
-		"psr-4": {
-			"Phalcon\\Searcher\\": "src/Searcher/"
+		"require-dev": {
+			"codeclimate/php-test-reporter": "dev-master"
+		},
+		"autoload": {
+			"psr-4": {
+				"Phalcon\\Searcher\\": "src/Searcher/"
 		}
 	}
 }

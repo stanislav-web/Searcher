@@ -1,9 +1,9 @@
 <?php
 namespace Phalcon\Searcher;
 
-use Phalcon\Mvc\Model\Manager,
-	Phalcon\Mvc\Model\Query\Builder as Build,
-	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
+use Phalcon\Mvc\Model\Manager;
+use	Phalcon\Mvc\Model\Query\Builder as Build;
+use	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 
 /**
  * Query builder class
