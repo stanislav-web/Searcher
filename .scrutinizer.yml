@@ -16,3 +16,73 @@ tools:
     php_cpd: true
     php_loc: true
     php_mess_detector: true
+
+checks:
+    php:
+        too_many_arguments: true
+        require_scope_for_properties: true
+        require_scope_for_methods: true
+        duplication: true
+        sql_injection_vulnerabilities: true
+        security_vulnerabilities: true
+        no_eval: true
+        overriding_private_members: true
+        switch_fallthrough_commented: true
+        non_commented_empty_catch_block: true
+        avoid_usage_of_logical_operators: true
+        no_goto: true
+        param_doc_comment_if_not_inferrable: true
+        parameter_doc_comments: true
+        return_doc_comment_if_not_inferrable: true
+        return_doc_comments: true
+        more_specific_types_in_doc_comments: true
+        fix_doc_comments: true
+        verify_property_names: true
+        verify_argument_usable_as_reference: true
+        verify_access_scope_valid: true
+        variable_existence: true
+        use_statement_alias_conflict: true
+        symfony_request_injection: true
+        require_php_tag_first: true
+        precedence_mistakes: true
+        precedence_in_conditions: true
+        parameter_non_unique: true
+        no_property_on_interface: true
+        no_non_implemented_abstract_methods: true
+        missing_arguments: true
+        method_calls_on_non_object: true
+        foreach_usable_as_reference: true
+        instanceof_class_exists: true
+        encourage_shallow_comparison: true
+        foreach_traversable: true
+        closure_use_not_conflicting: true
+        closure_use_modifiable: true
+        catch_class_exists: true
+        avoid_entity_manager_injection: true
+        avoid_corrupting_byteorder_marks: true
+        avoid_conflicting_incrementers: true
+        assignment_of_null_return: true
+        argument_type_checks: true
+        prefer_sapi_constant: true
+        no_unnecessary_function_call_in_for_loop: true
+        avoid_unnecessary_concatenation: true
+        deprecated_code_usage: true
+        side_effects_or_types: true
+        php5_style_constructor: true
+        no_short_open_tag: true
+        no_mixed_inline_html: true
+        no_global_keyword: true
+        no_exit: true
+        avoid_superglobals: true
+        avoid_duplicate_types: true
+        no_debug_code: true
+        code_rating: true
+        fix_use_statements:
+            remove_unused: true
+            preserve_multiple: false
+            preserve_blanklines: false
+            order_alphabetically: false
+        fix_php_opening_tag: true
+        fix_linefeed: true
+        fix_identation_4spaces: true
+        remove_extra_empty_lines: true

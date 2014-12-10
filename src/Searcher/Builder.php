@@ -1,7 +1,6 @@
 <?php
 namespace Phalcon\Searcher;
 
-use Phalcon\Mvc\Model\Manager;
 use	Phalcon\Mvc\Model\Query\Builder as Build;
 use	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 
@@ -14,7 +13,7 @@ use	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
-class Builder extends Manager {
+class Builder {
 
 	private
 
@@ -124,7 +123,7 @@ class Builder extends Manager {
 				$this->setGroup();
 			return null;
 		}
-		catch(Phalcon\Exception $e) {
+		catch(\Phalcon\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
