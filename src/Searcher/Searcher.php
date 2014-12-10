@@ -114,7 +114,7 @@ class Searcher {
 
 		try {
 			// need to return << true
-			$this->_validator->verify($models,[
+			$this->_validator->verify($models, [
 				'isArray', 'isNotEmpty', 'isExists'
 			], 'where');
 
@@ -143,7 +143,7 @@ class Searcher {
 
 		try {
 			// need to return << true
-			$this->_order	=	$this->_validator->verify($order,[
+			$this->_validator->verify($order, [
 				'isArray', 'isNotEmpty', 'isOrdered'
 			], 'order');
 			return $this;
@@ -171,7 +171,7 @@ class Searcher {
 
 		try {
 			// need to return << true
-			$this->_group	=	$this->_validator->verify($group,[
+			$this->_validator->verify($group, [
 				'isArray', 'isNotEmpty', 'isExists'
 			], 'group');
 
