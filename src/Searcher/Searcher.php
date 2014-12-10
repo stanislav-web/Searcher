@@ -13,25 +13,23 @@ use Exception;
  */
 class Searcher {
 
-	private
+	/**
+	 * Validator
+	 * @var Phalcon\Searcher\Validator
+	 */
+	private	$_validator;
 
-		/**
-		 * Validator
-		 * @var Phalcon\Searcher\Validator
-		 */
-		$_validator,
+	/**
+	 * Query value for DB
+	 * @var string
+	 */
+	private	$_query =	null;
 
-		/**
-		 * Query value for DB
-		 * @var string
-		 */
-		$_query		=	null,
-
-		/**
-		 * Strict flag
-		 * @var boolean
-		 */
-		$_exact	=	false;
+	/**
+	 * Strict flag
+	 * @var boolean
+	 */
+	private	$_exact =	false;
 
 	/**
 	 * Initialize class

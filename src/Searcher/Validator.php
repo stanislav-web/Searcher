@@ -16,56 +16,53 @@ use	Phalcon\Searcher\Exceptions;
  */
 class Validator {
 
-	private
+	/**
+	 * The minimum value for the search
+	 * @var int
+	 */
+	private	$_min		=	3;
 
-		/**
-		 * The minimum value for the search
-		 * @var int
-		 */
-		$_min		=	3,
+	/**
+	 * The maximum value for the search
+	 * @var int
+	 */
+	private	$_max		=	128;
 
-		/**
-		 * The maximum value for the search
-		 * @var int
-		 */
-		$_max		=	128,
+	/**
+	 * Available columns types
+	 * @var array
+	 */
+	private $_columns	=	[
+				Column::TYPE_INTEGER,
+				Column::TYPE_VARCHAR,
+				Column::TYPE_CHAR,
+				Column::TYPE_TEXT,
+				Column::TYPE_DATE,
+				Column::TYPE_DATETIME,
+			];
 
-		/**
-		 * Available columns types
-		 * @var array
-		 */
-		$_columns	=	[
-			Column::TYPE_INTEGER,
-			Column::TYPE_VARCHAR,
-			Column::TYPE_CHAR,
-			Column::TYPE_TEXT,
-			Column::TYPE_DATE,
-			Column::TYPE_DATETIME,
-		],
+	/**
+	 * Available sort types
+	 * @var array
+	 */
+	private $_sort	=	[
+				'asc',
+				'desc',
+				'ascending',
+				'descending',
+			];
 
-		/**
-		 * Available sort types
-		 * @var array
-		 */
-		$_sort	=	[
-			'asc',
-			'desc',
-			'ascending',
-			'descending',
-		],
+	/**
+	 * Cast of validate
+	 * @var string
+	 */
+	private $_cast	=	'';
 
-		/**
-		 * Cast of validate
-		 * @var string
-		 */
-		$_cast	=	'';
-
-	public
-		/**
-		 * Verified tables & columns
-		 * @var array
-		 */
-		$fields	=	[];
+	/**
+	 * Verified tables & columns
+	 * @var array
+	 */
+	public $fields	=	[];
 
 	/**
 	 * Verify transferred according to the rules

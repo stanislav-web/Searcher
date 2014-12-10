@@ -16,25 +16,23 @@ use Exception;
  */
 class Builder {
 
-	private
+	/**
+	 * Query builder
+	 * @var Phalcon\Mvc\Model\Query\Builder
+	 */
+	private	$_builder;
 
-			/**
-			 * Query builder
-		 	 * @var Phalcon\Mvc\Model\Query\Builder
-		 	 */
-			$_builder,
+	/**
+	 * Client for preparing data
+	 * @var Phalcon\Searcher\Searcher
+	 */
+	private	$_searcher;
 
-			/**
-	 		 * Client for preparing data
-			 * @var Phalcon\Searcher\Searcher
-			 */
-			$_searcher,
-
-			/**
-			 * Valid searcher data
-		 	 * @var array
-		 	 */
-			$_data	=	[];
+	/**
+	 * Valid searcher data
+	 * @var array
+	 */
+	private	$_data	=	[];
 
 	/**
 	 * Initialize internal params
