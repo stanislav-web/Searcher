@@ -11,9 +11,6 @@ tools:
     php_cs_fixer: true
     sensiolabs_security_checker: true
 
-filter:
-  excluded_paths: [tests/*]
-
 checks:
     php:
         code_rating: true
