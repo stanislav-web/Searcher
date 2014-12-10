@@ -1,27 +1,33 @@
 # Required to run your project under the correct environment.
+# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
 
-# Versions of PHP you want your project run with.
+# list any PHP version you want to test against
 php:
+  # using major version aliases
+
+  # aliased to 5.2.17
+  - 5.2
+  # aliased to 5.3.29
+  - 5.3
+  # aliased to a recent 5.4.x version
+  - 5.4
+  # aliased to a recent 5.5.x version
   - 5.5
+  # aliased to a recent 5.6.x version
   - 5.6
-  - hhvm
 
-# Commands to be run before your environment runs.
+# optionally specify a list of environments, for example to test different RDBMS
+env:
+  - DB=mysql
+
+# execute any number of scripts before the test run, custom env's are available as variables
 before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
+  - mysql -e "create database IF NOT EXISTS rearcher;" -uroot;
 
-# Commands you want to run that will verify your build.
-#script: phpunit
-
-# allow_failures: Allow this build to fail under the specified environments.
-# fast_finish: If your build fails do not continue trying to build, just stop.
-matrix:
-  allow_failures:
-    - php: 5.6
-    - php: hhvm
-  fast_finish: true
+# omitting "script:" will default to phpunit
+# use the $DB env variable to determine the phpunit.xml to use
+script: phpunit --configuration phpunit_$DB.xml --coverage-text
 
 # Customize when the notification emails are sent.
 notifications:
