@@ -1,6 +1,6 @@
 <?php
 namespace Phalcon\Searcher;
-use Phalcon\Searcher\Exceptions;
+use Phalcon\Searcher\Exceptions as Exception;
 
 /**
  * Searcher daemon class
@@ -95,6 +95,7 @@ class Searcher {
 	 *          	]....
 	 *          ])
 	 *          </code>
+	 * @throws Exception
 	 * @return Searcher|null
 	 */
 	public function setFields(array $models) {
@@ -107,7 +108,7 @@ class Searcher {
 
 			return $this;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -123,7 +124,7 @@ class Searcher {
 	 *          	'Model/Table2' => ['title ASC']
 	 *          ])
 	 *          </code>
-	 * @throws \Phalcon\Exception
+	 * @throws Exception
 	 * @return Searcher|null
 	 */
 	public function setOrder(array $order) {
@@ -135,7 +136,7 @@ class Searcher {
 			], 'order');
 			return $this;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -151,7 +152,7 @@ class Searcher {
 	 *          	'Model/Table2' => ['id', 'description']
 	 *          ])
 	 *          </code>
-	 * @throws \Phalcon\Exception
+	 * @throws Exception
 	 * @return Searcher|null
 	 */
 	public function setGroup(array $group) {
@@ -164,7 +165,7 @@ class Searcher {
 
 			return $this;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -176,7 +177,7 @@ class Searcher {
 	 * @example <code>
 	 *          $s->setQuery('what i want to find')
 	 *          </code>
-	 * @throws \Phalcon\Exception
+	 * @throws Exception
 	 * @return Searcher|null
 	 */
 	public function setQuery($query) {
@@ -191,14 +192,13 @@ class Searcher {
 				$this->_query = [':query:' => $query];
 			return $this;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exception $e) {
 			echo $e->getMessage();
 		}
 	}
 
 	/**
 	 * Get qualified valid tables & fields
-	 * @throws \Phalcon\Exception
 	 * @return array
 	 */
 	public function getFields() {
@@ -209,8 +209,6 @@ class Searcher {
 	 * Search procedure started
 	 *
 	 * @param null $query
-
-
 	 * @return Builder|null
 	 */
 	final public function run()
@@ -220,7 +218,7 @@ class Searcher {
 			$builder = (new Builder($this))->loop();
 			return $builder;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exception $e) {
 			echo $e->getMessage();
 		}
 	}

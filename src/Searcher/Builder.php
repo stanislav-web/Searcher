@@ -3,6 +3,7 @@ namespace Phalcon\Searcher;
 
 use	Phalcon\Mvc\Model\Query\Builder as Build;
 use	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
+use Phalcon\Searcher\Exceptions as Exception;
 
 /**
  * Query builder class
@@ -123,7 +124,7 @@ class Builder {
 				$this->setGroup();
 			return null;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exception $e) {
 			echo $e->getMessage();
 		}
 	}
