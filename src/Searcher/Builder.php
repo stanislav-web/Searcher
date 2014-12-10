@@ -3,7 +3,7 @@ namespace Phalcon\Searcher;
 
 use	Phalcon\Mvc\Model\Query\Builder as Build;
 use	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
-use Phalcon\Searcher\Exceptions as Exception;
+use Exception;
 
 /**
  * Query builder class
@@ -105,8 +105,8 @@ class Builder {
 	}
 
 	/**
-	 * Build looper
-	 *
+	 * Build query chain
+	 * @throws Exception
 	 * @return Builder|null
 	 */
 	public function loop()
