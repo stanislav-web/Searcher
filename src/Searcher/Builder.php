@@ -124,7 +124,7 @@ class Builder extends Manager {
 				$this->setGroup();
 			return null;
 		}
-		catch(\Exception $e) {
+		catch(Phalcon\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
