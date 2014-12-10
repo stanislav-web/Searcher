@@ -49,14 +49,15 @@ class Builder extends Manager {
 	{
 		try {
 
-			$collection = $this->_searcher->getCollection();
+			$collection = $this->_searcher->getFields();
 
 			foreach($collection as $model => $attributes)
 			{
 				// set model => alias (real table name)
-				$this->_params['models'][]		=	[$model => key($attributes)];
 				$this->_builder->addFrom($model, key($attributes));
 			}
+			$this->_builder->orderBy(array('1', 'Robots.name'));
+			print_r($this->_searcher->getFields());
 		}
 		catch(\Exception $e) {
 			echo $e->getMessage();

@@ -50,11 +50,12 @@ class ColumnException extends \LogicException {
 	public function __construct($value, array $params) {
 
 		switch($value) {
-			case self::COLUMN_DOES_NOT_SUPPORT:	// set message for not existing column
+			case self::COLUMN_DOES_NOT_SUPPORT:	// set message for not supported column type
+
 				$this->_throws	=	'The type {'.$params[0].'} of column `'.$params[1].'` does not supported. Line: '.$this->getLine();
 			break;
 
-			case self::COLUMN_DOES_NOT_EXISTS:	// set message for not supported column
+			case self::COLUMN_DOES_NOT_EXISTS:	// set message for not existing column
 				$this->_throws	=	'Column `'.implode('`, `', $params[0]).'` not exists in '.$params[1].'. Only `'.implode('`, `', $params[2]).'`. Line: '.$this->getLine();
 			break;
 

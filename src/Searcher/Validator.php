@@ -41,26 +41,37 @@ class Validator {
 			Column::TYPE_TEXT,
 			Column::TYPE_DATE,
 			Column::TYPE_DATETIME,
-		];
+		],
+
+		/**
+		 * Cast of validate
+		 * @var string
+		 */
+		$_cast	=	'';
 
 	public
 		/**
 		 * Verified tables & columns
 		 * @var array
 		 */
-		$collection	=	[];
+		$fields	=	[];
 
 	/**
 	 * Verify transferred according to the rules
 	 *
 	 * @param mixed $data
 	 * @param array $callbacks
+	 * @param string $cast
 	 * @return mixed
 	 */
-	public function verify($data, array $callbacks) {
+	public function verify($data, array $callbacks, $cast = '') {
 
 		// Create a Closure
-		$isValid = function($data) use ($callbacks) {
+		$isValid = function($data) use ($callbacks, $cast) {
+
+			if(empty($cast) === false)
+				$this->_cast	=	$cast;
+
 			foreach($callbacks as $callback)
 			{
 				if($this->{$callback}($data) === false)
@@ -202,12 +213,25 @@ class Validator {
 					$this->validTypes($column);
 
 					// add column to table collection
-					$this->collection[$table][$model->getSource()][]	=	[
+					$this->fields[$this->_cast][$table][$model->getSource()][]	=	[
 						$column->getType() => $column->getName()
 					];
 				}
 			}
 		}
+		return true;
+	}
+
+
+	/**
+	 * Check if field exist in table
+	 *
+	 * @param array $value
+	 * @throws Exceptions\ColumnException
+	 * @return boolean
+	 */
+	public function isOrdered(array $value) {
+
 		return true;
 	}
 

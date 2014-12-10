@@ -34,14 +34,14 @@ class Searcher {
 		$_exact	=	false,
 
 		/**
-		 * Order result
+		 * Order rules
 		 * @var array
 		 */
 		$_order		=	[],
 
 
 		/**
-		 * Group result
+		 * Group rules
 		 * @var array
 		 */
 		$_group		=	[];
@@ -79,6 +79,20 @@ class Searcher {
 	}
 
 	/**
+	 * Use Strict mode ?
+	 *
+	 * @param boolean $flag
+	 * @example <code>
+	 *          $s->setExact(true) // false , as 'query' or '%query%'
+	 *          </code>
+	 * @return Searcher|null
+	 */
+	public function setExact($flag) {
+		$this->_exact	=	$flag;
+		return $this;
+	}
+
+	/**
 	 * Prepare models to participate in search
 
 	 * @param array $models
@@ -100,26 +114,15 @@ class Searcher {
 
 		try {
 			// need to return << true
-			$this->_validator->verify($models,['isArray', 'isNotEmpty', 'isExists']);
+			$this->_validator->verify($models,[
+				'isArray', 'isNotEmpty', 'isExists'
+			], 'where');
+
 			return $this;
 		}
-		catch(\Exception $e) {
+		catch(\Phalcon\Exception $e) {
 			echo $e->getMessage();
 		}
-	}
-
-	/**
-	 * Use Strict mode ?
-	 *
-	 * @param boolean $flag
-	 * @example <code>
-	 *          $s->setExact(true) // false , as 'query' or '%query%'
-	 *          </code>
-	 * @return Searcher|null
-	 */
-	public function setExact($flag) {
-		$this->_exact	=	$flag;
-		return $this;
 	}
 
 	/**
@@ -127,36 +130,56 @@ class Searcher {
 	 *
 	 * @param array $order
 	 * @example <code>
-	 *          $s->setOrder(['Model/Table1' => 'id DESC'])
+	 *          $s->setOrder(['Model/Table1' => ['id DESC']])
 	 *          $s->setOrder([
-	 *          	'Model/Table1' => 'id DESC'
-	 *          	'Model/Table2' => 'title ASC'
+	 *          	'Model/Table1' => ['id DESC']
+	 *          	'Model/Table2' => ['title ASC']
 	 *          ])
 	 *          </code>
+	 * @throws \Phalcon\Exception
 	 * @return Searcher|null
 	 */
 	public function setOrder(array $order) {
-		$this->_order	=	$order;
-		return $this;
-	}
 
+		try {
+			// need to return << true
+			$this->_order	=	$this->_validator->verify($order,[
+				'isArray', 'isNotEmpty', 'isOrdered'
+			], 'order');
+			return $this;
+		}
+		catch(\Phalcon\Exception $e) {
+			echo $e->getMessage();
+		}
+	}
 
 	/**
 	 * Group results
 	 *
 	 * @param array $group
 	 * @example <code>
-	 *          $s->setGroup(['Model/Table1' => 'id'])
+	 *          $s->setGroup(['Model/Table1' => ['id']])
 	 *          $s->setGroup([
-	 *          	'Model/Table1' => 'id'
-	 *          	'Model/Table2' => 'title'
+	 *          	'Model/Table1' => ['id', 'title']
+	 *          	'Model/Table2' => ['id', 'description']
 	 *          ])
 	 *          </code>
+	 * @throws \Phalcon\Exception
 	 * @return Searcher|null
 	 */
 	public function setGroup(array $group) {
-		$this->_group	=	$group;
-		return $this;
+
+		try {
+			// need to return << true
+			$this->_group	=	$this->_validator->verify($group,[
+				'isArray', 'isNotEmpty', 'isExists'
+			], 'group');
+
+			return $this;
+		}
+		catch(\Phalcon\Exception $e) {
+			echo $e->getMessage();
+		}
 	}
 
 	/**
@@ -166,6 +189,7 @@ class Searcher {
 	 * @example <code>
 	 *          $s->setQuery('what i want to find')
 	 *          </code>
+	 * @throws \Phalcon\Exception
 	 * @return Searcher|null
 	 */
 	public function setQuery($query) {
@@ -180,24 +204,26 @@ class Searcher {
 				$this->_query = [':query:' => $query];
 			return $this;
 		}
-		catch(\Exception $e) {
+		catch(\Phalcon\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
 
 	/**
 	 * Get qualified valid tables & fields
-	 *
+	 * @throws \Phalcon\Exception
 	 * @return array
 	 */
-	public function getCollection() {
-		return $this->_validator->collection;
+	public function getFields() {
+		return $this->_validator->fields;
 	}
 
 	/**
 	 * Search procedure started
 	 *
 	 * @param null $query
+
+
 	 * @return Builder|null
 	 */
 	final public function run()
