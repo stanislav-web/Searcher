@@ -36,13 +36,13 @@ class ColumnException extends \LogicException {
 	 */
 	const EMPTY_LIST					=	3;
 
-	public
+	private
 
 		/**
 		 * Throws message
 		 * @var string
 		 */
-		$_throws	=	'';
+		$throws	=	'';
 
 	/**
 	 * Rise error message for columns
@@ -58,22 +58,22 @@ class ColumnException extends \LogicException {
 		switch($value) {
 
 			case self::COLUMN_DOES_NOT_SUPPORT:	// set message for not supported column type
-				$this->_throws	=	'The type {'.$params[0].'} of column `'.$params[1].'` does not supported. Line: '.$this->getLine();
+				$this->throws	=	'The type {'.$params[0].'} of column `'.$params[1].'` does not supported. Line: '.$this->getLine();
 			break;
 
 			case self::COLUMN_DOES_NOT_EXISTS:	// set message for not existing column
-				$this->_throws	=	'Column `'.implode('`, `', $params[0]).'` not exists in '.$params[1].'. Only `'.implode('`, `', $params[2]).'`. Line: '.$this->getLine();
+				$this->throws	=	'Column `'.implode('`, `', $params[0]).'` not exists in '.$params[1].'. Only `'.implode('`, `', $params[2]).'`. Line: '.$this->getLine();
 			break;
 
 			case self::ORDER_TYPES_DOES_NOT_EXISTS:	// set message for not supported order type
-				$this->_throws	=	'The type(s) {'.implode(',', $params[0]).'} does not supported in order clause. Line: '.$this->getLine();
+				$this->throws	=	'The type(s) {'.implode(',', $params[0]).'} does not supported in order clause. Line: '.$this->getLine();
 			break;
 
 			case self::EMPTY_LIST:	// set message for empty search list
-				$this->_throws	=	$params[0].'. Line: '.$this->getLine();
+				$this->throws	=	$params[0].'. Line: '.$this->getLine();
 			break;
 		}
-		return parent::__construct($this->_throws);
+		return parent::__construct($this->throws);
 	}
 
 	/**
