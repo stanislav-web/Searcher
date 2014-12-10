@@ -1,3 +1,5 @@
+inherit: true
+
 build:
     environment:
         php:
@@ -10,78 +12,7 @@ tools:
     php_changetracking: true
     php_cs_fixer: true
     sensiolabs_security_checker: true
-
-checks:
-    php:
-        code_rating: true
-        duplication: true
-        variable_existence: true
-        useless_calls: true
-        use_statement_alias_conflict: true
-        unused_variables: true
-        unused_properties: true
-        unused_parameters: true
-        unused_methods: true
-        unreachable_code: true
-        sql_injection_vulnerabilities: true
-        security_vulnerabilities: true
-        precedence_mistakes: true
-        precedence_in_conditions: true
-        parameter_non_unique: true
-        no_property_on_interface: true
-        no_non_implemented_abstract_methods: true
-        deprecated_code_usage: true
-        closure_use_not_conflicting: true
-        closure_use_modifiable: true
-        avoid_useless_overridden_methods: true
-        avoid_conflicting_incrementers: true
-        assignment_of_null_return: true
-        verify_access_scope_valid: true
-        verify_property_names: true
-        verify_argument_usable_as_reference: true
-        too_many_arguments: true
-        symfony_request_injection: true
-        return_doc_comments: true
-        require_php_tag_first: true
-        parameter_doc_comments: true
-        no_eval: true
-        no_duplicate_arguments: true
-        missing_arguments: true
-        method_calls_on_non_object: true
-        instanceof_class_exists: true
-        foreach_usable_as_reference: true
-        foreach_traversable: true
-        encourage_shallow_comparison: true
-        catch_class_exists: true
-        avoid_unnecessary_concatenation: true
-        argument_type_checks: true
-        no_debug_code: true
-        avoid_todo_comments: true
-        use_self_instead_of_fqcn: true
-        uppercase_constants: true
-        switch_fallthrough_commented: true
-        single_namespace_per_use: true
-        simplify_boolean_return: true
-        side_effects_or_types: true
-        return_doc_comment_if_not_inferrable: true
-        require_scope_for_properties: true
-        require_scope_for_methods: true
-        psr2_switch_declaration: true
-        psr2_class_declaration: true
-        psr2_control_structure_declaration: true
-        property_assignments: true
-        php5_style_constructor: true
-        overriding_private_members: true
-        one_class_per_file: true
-        non_commented_empty_catch_block: true
-        no_unnecessary_function_call_in_for_loop: true
-        no_unnecessary_final_modifier: true
-        no_trait_type_hints: true
-        no_goto: true
-        no_global_keyword: true
-        no_error_suppression: true
-        no_empty_statements: true
-        no_commented_out_code: true
-        deadlock_detection_in_loops: true
-        avoid_superglobals: true
-        classes_in_camel_caps: true
+    php_code_coverage: true
+    php_cpd: true
+    php_loc: true
+    php_mess_detector: true
