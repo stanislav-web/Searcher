@@ -28,7 +28,13 @@ class Builder extends Manager {
 	 		 * Client for preparing data
 			 * @var Phalcon\Searcher\Searcher
 			 */
-			$_searcher;
+			$_searcher,
+
+			/**
+			 * Valid searcher data
+		 	 * @var array
+		 	 */
+			$_data	=	[];
 
 	/**
 	 * Initialize internal params
@@ -41,6 +47,64 @@ class Builder extends Manager {
 	}
 
 	/**
+	 * Setup tables to Builder
+	 * @return null
+	 */
+	public function setTables()
+	{
+		foreach($this->_data['tables'] as $alias => $model) {
+
+			// set model => alias (real table name)
+			$this->_builder->addFrom($model, $alias);
+
+		}
+		return null;
+	}
+
+	/**
+	 * Setup orders positions to Builder
+	 * @return null
+	 */
+	public function setOrder()
+	{
+		// set order position if exist
+		$order	=	[];
+		foreach($this->_data['order'] as $alias => $params) {
+
+			if(empty($params) === false) {
+				foreach($params as 	$field => $sort)
+					$order[]	=	$alias.'.'.$field.' '.$sort;
+			}
+
+		}
+		$this->_builder->orderBy($order);
+		return null;
+	}
+
+	/**
+	 * Setup group positions to builder
+	 * @return null
+	 */
+	public function setGroup()
+	{
+		// set order position if exist
+
+		$gruop	=	[];
+		foreach($this->_data['group'] as $alias => $params) {
+
+			if(empty($params) === false) {
+				foreach($params as 	$field)
+				{
+					$gruop[]	=	$alias.'.'.current($field);
+				}
+			}
+
+		}
+		$this->_builder->groupBy($gruop);
+		return null;
+	}
+
+	/**
 	 * Build looper
 	 *
 	 * @return Builder|null
@@ -49,15 +113,16 @@ class Builder extends Manager {
 	{
 		try {
 
-			$collection = $this->_searcher->getFields();
+			// get valid result
+			$this->_data = $this->_searcher->getFields();
 
-			foreach($collection as $model => $attributes)
-			{
-				// set model => alias (real table name)
-				$this->_builder->addFrom($model, key($attributes));
-			}
-			$this->_builder->orderBy(array('1', 'Robots.name'));
-			print_r($this->_searcher->getFields());
+			if(empty($this->_data['tables']) === false)
+				$this->setTables();
+			if(empty($this->_data['order']) === false)
+				$this->setOrder();
+			if(empty($this->_data['group']) === false)
+				$this->setGroup();
+			return null;
 		}
 		catch(\Exception $e) {
 			echo $e->getMessage();

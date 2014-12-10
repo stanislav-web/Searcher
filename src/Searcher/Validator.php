@@ -205,6 +205,9 @@ class Validator {
 			// setup clear used tables
 			$columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
 
+			// add using tables with model alias
+			$this->fields['tables'][$model->getSource()]		=	$table;
+
 			// checking columns & fields
 
 			foreach($columnDefines as $column) {
@@ -213,7 +216,7 @@ class Validator {
 					$this->validTypes($column);
 
 					// add column to table collection
-					$this->fields[$this->_cast][$table][$model->getSource()][]	=	[
+					$this->fields[$this->_cast][$model->getSource()][]	=	[
 						$column->getType() => $column->getName()
 					];
 				}
@@ -224,19 +227,36 @@ class Validator {
 
 
 	/**
-	 * Check if field exist in table
+	 * Check ordered fields
 	 *
-	 * @param array $value
+	 * @param array $ordered
 	 * @throws Exceptions\ColumnException
 	 * @return boolean
 	 */
-	public function isOrdered(array $value) {
+	public function isOrdered(array $ordered) {
 
+		// validate fields by exist in tables
+
+		foreach($ordered as $table => $orders) {
+
+			// load model metaData
+			$model 		=  	(new Manager())->load($table, new $table);
+
+			$metaData 	= 	$model->getModelsMetaData();
+
+			// check fields of table
+
+			if(empty($not = array_diff(array_keys($orders), $metaData->getAttributes($model))) === false)
+				throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_EXISTS, [
+					$not, $table, $metaData->getAttributes($model)]);
+
+			$this->fields[$this->_cast][$model->getSource()]	=	$orders;
+		}
 		return true;
 	}
 
 	/**
-	 * Check if field exist in table
+	 * Check if field type support in table
 	 *
 	 * @param string $value
 	 * @throws Exceptions\ColumnException
