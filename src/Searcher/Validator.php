@@ -260,7 +260,7 @@ class Validator {
 
 			$sort = array_map('strtolower', $sort);
 
-			if(empty($diff = array_diff($sort, $this->_sort)))
+			if(empty($diff = array_diff($sort, $this->_sort)) === false)
 				throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [
 					$not, $table, $metaData->getAttributes($model)]);
 
