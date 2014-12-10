@@ -120,7 +120,7 @@ class Searcher {
 
 			return $this;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exceptions $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -148,7 +148,7 @@ class Searcher {
 			], 'order');
 			return $this;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exceptions $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -177,7 +177,7 @@ class Searcher {
 
 			return $this;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exceptions $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -204,7 +204,7 @@ class Searcher {
 				$this->_query = [':query:' => $query];
 			return $this;
 		}
-		catch(\Phalcon\Exception $e) {
+		catch(Exceptions $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -233,7 +233,7 @@ class Searcher {
 			$builder = (new Builder($this))->loop();
 			return $builder;
 		}
-		catch(\Exception $e) {
+		catch(Exceptions $e) {
 			echo $e->getMessage();
 		}
 	}
