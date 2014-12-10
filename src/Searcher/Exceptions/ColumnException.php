@@ -46,8 +46,7 @@ class ColumnException extends \LogicException {
 	 * Rise error message for columns
 	 *
 	 * @param int $value
-	 * @param array $param
-	 * @param array $supported
+	 * @param array $params
 	 *
 	 * @return \LogicException
 	 */
