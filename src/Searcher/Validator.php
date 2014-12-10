@@ -44,6 +44,17 @@ class Validator {
 		],
 
 		/**
+		 * Available sort types
+		 * @var array
+		 */
+		$_sort	=	[
+			'asc',
+			'desc',
+			'ascending',
+			'descending',
+		],
+
+		/**
 		 * Cast of validate
 		 * @var string
 		 */
@@ -116,7 +127,6 @@ class Validator {
 	 * Verify by not null
 	 *
 	 * @param string $value
-	 * @throws Exceptions\NullArgumentException
 	 * @return boolean
 	 */
 	public function isNotNull($value) {
@@ -142,7 +152,6 @@ class Validator {
 	 * Verify by not empty value
 	 *
 	 * @param mixed $value
-	 * @throws Exceptions\ColumnException
 	 * @return boolean
 	 */
 	public function isNotEmpty($value) {
@@ -156,7 +165,6 @@ class Validator {
 	 * Verify by min length
 	 *
 	 * @param string $value
-	 * @throws Exceptions\InvalidLengthException
 	 * @return boolean
 	 */
 	public function isNotFew($value) {
@@ -182,7 +190,6 @@ class Validator {
 	 * Check if field exist in table
 	 *
 	 * @param array $value
-	 * @throws Exceptions\ColumnException
 	 * @return boolean
 	 */
 	public function isExists(array $value) {
@@ -230,14 +237,13 @@ class Validator {
 	 * Check ordered fields
 	 *
 	 * @param array $ordered
-	 * @throws Exceptions\ColumnException
 	 * @return boolean
 	 */
 	public function isOrdered(array $ordered) {
 
 		// validate fields by exist in tables
 
-		foreach($ordered as $table => $orders) {
+		foreach($ordered as $table => $sort) {
 
 			// load model metaData
 			$model 		=  	(new Manager())->load($table, new $table);
@@ -246,11 +252,19 @@ class Validator {
 
 			// check fields of table
 
-			if(empty($not = array_diff(array_keys($orders), $metaData->getAttributes($model))) === false)
+			if(empty($not = array_diff(array_keys($sort), $metaData->getAttributes($model))) === false)
 				throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_EXISTS, [
 					$not, $table, $metaData->getAttributes($model)]);
 
-			$this->fields[$this->_cast][$model->getSource()]	=	$orders;
+			// check sort clause
+
+			$sort = array_map('strtolower', $sort);
+
+			if(empty($diff = array_diff($sort, $this->_sort)))
+				throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [
+					$not, $table, $metaData->getAttributes($model)]);
+
+			$this->fields[$this->_cast][$model->getSource()]	=	$sort;
 		}
 		return true;
 	}
@@ -259,7 +273,6 @@ class Validator {
 	 * Check if field type support in table
 	 *
 	 * @param string $value
-	 * @throws Exceptions\ColumnException
 	 * @return boolean
 	 */
 	public function validTypes(Column $column) {

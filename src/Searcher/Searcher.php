@@ -1,6 +1,6 @@
 <?php
 namespace Phalcon\Searcher;
-use Phalcon\Searcher\Exceptions as Exception;
+use Exception;
 
 /**
  * Searcher daemon class
@@ -118,10 +118,10 @@ class Searcher {
 	 *
 	 * @param array $order
 	 * @example <code>
-	 *          $s->setOrder(['Model/Table1' => ['id DESC']])
+	 *          $s->setOrder(['Model/Table1' => ['id' => 'DESC']])
 	 *          $s->setOrder([
-	 *          	'Model/Table1' => ['id DESC']
-	 *          	'Model/Table2' => ['title ASC']
+	 *          	'Model/Table1' => ['id' => 'DESC']
+	 *          	'Model/Table2' => ['title' =>  'ASC']
 	 *          ])
 	 *          </code>
 	 * @throws Exception
@@ -208,7 +208,7 @@ class Searcher {
 	/**
 	 * Search procedure started
 	 *
-	 * @param null $query
+	 * @throws Exception
 	 * @return Builder|null
 	 */
 	final public function run()
