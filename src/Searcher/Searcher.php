@@ -72,7 +72,7 @@ class Searcher {
 	 * @example <code>
 	 *          $s->setExact(true) // false , as 'query' or '%query%'
 	 *          </code>
-	 * @return Searcher|null
+	 * @return Searcher
 	 */
 	public function setExact($flag) {
 		$this->_exact	=	$flag;

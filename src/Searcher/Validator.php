@@ -260,7 +260,7 @@ class Validator {
 	 *
 	 * @param string $value
 	 * @throws Exceptions\ColumnException
-	 * @return boolean|null
+	 * @return boolean
 	 */
 	public function validTypes(Column $column) {
 
