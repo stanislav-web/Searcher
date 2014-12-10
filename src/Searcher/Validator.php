@@ -2,8 +2,8 @@
 namespace Phalcon\Searcher;
 
 use Phalcon\Db\Column;
-use	Phalcon\Mvc\Model\Manager;
-use	Phalcon\Searcher\Exceptions;
+use Phalcon\Mvc\Model\Manager;
+use Phalcon\Searcher\Exceptions;
 
 /**
  * Columns validator
@@ -268,7 +268,6 @@ class Validator {
 	/**
 	 * Check if field type support in table
 	 *
-	 * @param string $value
 	 * @return boolean
 	 */
 	public function validTypes(Column $column) {

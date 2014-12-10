@@ -12,25 +12,25 @@ namespace Phalcon\Searcher\Exceptions;
  */
 class InvalidLengthException extends \LengthException
 {
-	/**
-	 * Rise error message for invalid length values
-	 *
-	 * @param string $string
-	 * @param string $sign
-	 * @param string $value
-	 *
-	 * @return \LengthException
-	 */
-	public function __construct($string, $sign, $value) {
+    /**
+     * Rise error message for invalid length values
+     *
+     * @param string $string
+     * @param string $sign
+     * @param string $value
+     *
+     * @return \LengthException
+     */
+    public function __construct($string, $sign, $value) {
         return parent::__construct('The length of '.$string.' is invalid! Must be '.$sign.' then '.$value.'. Line: '.$this->getLine());
     }
 
-	/**
-	 * toString overload
-	 *
-	 * @return string
-	 */
-	public function __toString() {
-		return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
-	}
+    /**
+     * toString overload
+     *
+     * @return string
+     */
+    public function __toString() {
+        return __CLASS__ . ": [{$this->code}]: {$this->message}\n";
+    }
 }
