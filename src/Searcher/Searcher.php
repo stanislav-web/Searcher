@@ -1,6 +1,6 @@
 <?php
 namespace Phalcon\Searcher;
-use Phalcon\Exception;
+use \Phalcon\Exception;
 
 /**
  * Searcher daemon class

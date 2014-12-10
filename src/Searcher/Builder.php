@@ -3,7 +3,7 @@ namespace Phalcon\Searcher;
 
 use	Phalcon\Mvc\Model\Query\Builder as Build;
 use	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
-use Phalcon\Exception;
+use \Phalcon\Exception;
 
 /**
  * Query builder class
