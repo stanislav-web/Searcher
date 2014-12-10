@@ -36,7 +36,7 @@ class ColumnException extends \LogicException {
 	 */
 	const EMPTY_LIST					=	3;
 
-	private
+	public
 
 		/**
 		 * Throws message
