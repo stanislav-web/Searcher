@@ -18,16 +18,16 @@ php:
   - 5.6
 
 # optionally specify a list of environments, for example to test different RDBMS
-env:
-  - DB=mysql
+#env:
+  #- DB=mysql
 
 # execute any number of scripts before the test run, custom env's are available as variables
-before_script:
-  - mysql -e "create database IF NOT EXISTS rearcher;" -uroot;
+#before_script:
+  #- mysql -e "create database IF NOT EXISTS rearcher;" -uroot;
 
 # omitting "script:" will default to phpunit
 # use the $DB env variable to determine the phpunit.xml to use
-script: phpunit --configuration phpunit_$DB.xml --coverage-text
+#script: phpunit --configuration phpunit_$DB.xml --coverage-text
 
 # Customize when the notification emails are sent.
 notifications:

@@ -3,7 +3,7 @@ namespace Phalcon\Searcher;
 
 use	Phalcon\Mvc\Model\Query\Builder as Build;
 use	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
-use Exception;
+use Phalcon\Exception;
 
 /**
  * Query builder class
@@ -96,9 +96,35 @@ class Builder {
 					$gruop[]	=	$alias.'.'.current($field);
 				}
 			}
-
 		}
 		$this->_builder->groupBy($gruop);
+		return null;
+	}
+
+	/**
+	 * Setup limit (offset)
+	 * @return null
+	 */
+	public function setThreshold()
+	{
+		if(is_array($this->_data['threshold']) === false)
+			$this->_data['threshold']	=	['limit' => $this->_data['threshold']];
+		else
+		{
+			if(count($this->_data['threshold']) > 1)
+				$this->_data['threshold']	=	[
+					'limit'		=> $this->_data['threshold'][1],
+					'offset'	=> $this->_data['threshold'][0],
+				];
+			else
+				$this->_data['threshold']	=	[
+					'limit'		=> $this->_data['threshold'][0]
+				];
+
+		}
+
+		$this->_builder->limit(implode(',', $this->_data['threshold']));
+
 		return null;
 	}
 
@@ -120,6 +146,10 @@ class Builder {
 				$this->setOrder();
 			if(empty($this->_data['group']) === false)
 				$this->setGroup();
+
+			if(empty($this->_data['threshold']) === false)
+				$this->setThreshold();
+
 			return null;
 		}
 		catch(Exception $e) {

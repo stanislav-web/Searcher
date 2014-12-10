@@ -72,7 +72,10 @@ class Validator {
 	 * @param string $cast
 	 * @return mixed
 	 */
-	public function verify($data, array $callbacks, $cast = '') {
+	public function verify($data, array $callbacks = [], $cast = '') {
+
+		if(empty($callbacks) === true)
+			return $this->fields[$cast]	=	$data;
 
 		// Create a Closure
 		$isValid = function($data) use ($callbacks, $cast) {
@@ -256,6 +259,9 @@ class Validator {
 			// check sort clause
 
 			$sort = array_map('strtolower', $sort);
+
+			if(empty($diff = array_diff(array_values($sort), $this->_sort)) === false)
+				throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [$diff]);
 
 			if(empty($diff = array_diff($sort, $this->_sort)) === false)
 				throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [$diff]);

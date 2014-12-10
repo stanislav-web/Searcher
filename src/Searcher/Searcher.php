@@ -1,6 +1,6 @@
 <?php
 namespace Phalcon\Searcher;
-use Exception;
+use Phalcon\Exception;
 
 /**
  * Searcher daemon class
@@ -132,6 +132,37 @@ class Searcher {
 			$this->_validator->verify($order, [
 				'isArray', 'isNotEmpty', 'isOrdered'
 			], 'order');
+			return $this;
+		}
+		catch(Exception $e) {
+			echo $e->getMessage();
+		}
+	}
+
+
+	/**
+	 * Setup offset, limit threshold
+	 *
+	 * @param mixed $threshold
+	 * @example <code>
+	 *          $s->setThreshold(100)		//	limit
+	 *          $s->setThreshold([0,100])	//	offset, limit
+	 *          </code>
+	 * @throws Exception
+	 * @return Searcher|null
+	 */
+	public function setThreshold($threshold) {
+
+		try {
+
+			// need to return << true
+			if(is_array($threshold) === true)
+				$threshold = array_map('intval', array_splice($threshold, 0, 2));
+			else
+				$threshold	=	intval($threshold);
+
+			$this->_validator->verify($threshold, [], 'threshold');
+
 			return $this;
 		}
 		catch(Exception $e) {
