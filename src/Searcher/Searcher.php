@@ -31,20 +31,7 @@ class Searcher {
 		 * Strict flag
 		 * @var boolean
 		 */
-		$_exact	=	false,
-
-		/**
-		 * Order rules
-		 * @var array
-		 */
-		$_order		=	[],
-
-
-		/**
-		 * Group rules
-		 * @var array
-		 */
-		$_group		=	[];
+		$_exact	=	false;
 
 	/**
 	 * Initialize class
