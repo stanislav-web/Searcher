@@ -15,7 +15,7 @@ build:
 
 filter:
     paths: [src/*]
-    excluded_paths: [phpunit/*]
+    excluded_paths: [phpunit/*, build/*]
 
 tools:
     php_sim: true
@@ -28,7 +28,7 @@ tools:
     php_code_coverage: true
     php_loc:
             enabled: true
-            excluded_dirs: [phpunit]
+            excluded_dirs: [phpunit, build]
     php_mess_detector: true
 
 checks:

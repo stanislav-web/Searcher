@@ -16,7 +16,11 @@ install:
  - composer --prefer-dist install
 
 # omitting "script:" will default to phpunit
-script: phpunit --coverage-clover=coverage.clover
+before_script:
+    - COMPOSER_ROOT_VERSION=dev-master composer install --dev --prefer-source
+
+script: vendor/bin/phpunit --configuration ./build/travis-ci.xml
+
 
 after_script:
   - wget https://scrutinizer-ci.com/ocular.phar
