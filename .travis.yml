@@ -15,13 +15,12 @@ php:
 install:
  - composer --prefer-dist install
 
-# execute any number of scripts before the test run, custom env's are available as variables
-
-
 # omitting "script:" will default to phpunit
-script:
- - vendor/bin/phpcs --standard=PSR2 --report=emacs --extensions=php --warning-severity=0 src/
+script: phpunit --coverage-clover=coverage.clover
 
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 # Customize when the notification emails are sent.
 notifications:

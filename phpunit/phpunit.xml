@@ -1,0 +1,40 @@
+<phpunit    backupGlobals="true"
+            backupStaticAttributes="true"
+            bootstrap="Bootstrap.php"
+            cacheTokens="true"
+            colors="true"
+            convertErrorsToExceptions="true"
+            convertNoticesToExceptions="true"
+            convertWarningsToExceptions="true"
+            forceCoversAnnotation="false"
+            mapTestClassNameToCoveredClassName="false"
+            printerClass="PHPUnit_TextUI_ResultPrinter"
+            processIsolation="false"
+            stopOnError="false"
+            stopOnFailure="false"
+            stopOnIncomplete="false"
+            stopOnSkipped="false"
+            testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+            strict="true"
+            verbose="true">
+
+            <testsuites>
+                <testsuite name="Phalcon Searcher by Stanislav WEB">
+
+                    <!-- Basic -->
+                    <file>phpunit/src/Searcher/SearcherTest.php</file>
+                    <file>phpunit/src/Searcher/BuilderTest.php</file>
+                    <file>phpunit/src/Searcher/ValidatorTest.php</file>
+                    <!-- /Basic -->
+
+                    <!-- Exceptions -->
+                    <file>phpunit/src/Searcher/Exceptions/ColumnExceptionTest.php</file>
+                    <file>phpunit/src/Searcher/Exceptions/DataTypeExceptionTest.php</file>
+                    <file>phpunit/src/Searcher/Exceptions/InvalidLengthExceptionTest.php</file>
+                    <file>phpunit/src/Searcher/Exceptions/NullArgumentExceptionTest.php</file>
+                    <!-- /Exceptions -->
+
+                </testsuite>
+
+            </testsuites>
+</phpunit>

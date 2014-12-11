@@ -4,7 +4,16 @@ build:
 
     environment:
         php:
-            version: 5.5.12
+            version: 5.5.12 # Common versions: 5.4.28, 5.5.12, or hhvm
+            ini:
+                'date.timezone': 'Europe/Kyiv'
+filter:
+    paths: [src/*]
+    excluded_paths: [phpunit/*]
+
+before_commands:
+    - 'composer install --dev --prefer-source'
+
 tools:
     php_sim: true
     php_pdepend: true
@@ -14,7 +23,9 @@ tools:
     php_cs_fixer: true
     sensiolabs_security_checker: true
     php_code_coverage: true
-    php_loc: true
+    php_loc:
+            enabled: true
+            excluded_dirs: [phpunit]
     php_mess_detector: true
 
 checks:

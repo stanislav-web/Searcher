@@ -1,6 +1,6 @@
 <?php
 namespace Phalcon\Searcher;
-use \Phalcon\Exception;
+use Phalcon\Exception;
 
 /**
  * Searcher daemon class
@@ -148,7 +148,7 @@ class Searcher {
 	 *          $s->setThreshold(100)		//	limit
 	 *          $s->setThreshold([0,100])	//	offset, limit
 	 *          </code>
-	 * @throws Exception
+	 * @throws Phalcon\Exception
 	 * @return Searcher|null
 	 */
 	public function setThreshold($threshold) {
@@ -181,7 +181,7 @@ class Searcher {
 	 *          	'Model/Table2' => ['id', 'description']
 	 *          ])
 	 *          </code>
-	 * @throws Exception
+	 * @throws Phalcon\Exception
 	 * @return Searcher|null
 	 */
 	public function setGroup(array $group) {
@@ -206,7 +206,7 @@ class Searcher {
 	 * @example <code>
 	 *          $s->setQuery('what i want to find')
 	 *          </code>
-	 * @throws Exception
+	 * @throws Phalcon\Exception
 	 * @return Searcher|null
 	 */
 	public function setQuery($query) {
@@ -237,7 +237,7 @@ class Searcher {
 	/**
 	 * Search procedure started
 	 *
-	 * @throws Exception
+	 * @throws Phalcon\Exception
 	 * @return Builder|null
 	 */
 	final public function run()
