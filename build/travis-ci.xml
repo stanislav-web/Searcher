@@ -4,7 +4,7 @@
          colors="true">
     <testsuites>
         <testsuite name="Phalcon_Searcher">
-            <directory suffix="Test.php">../phpunit/src</directory>
+            <directory>../phpunit/src</directory>
         </testsuite>
     </testsuites>
 

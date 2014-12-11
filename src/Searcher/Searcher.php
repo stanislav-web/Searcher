@@ -1,6 +1,5 @@
 <?php
 namespace Phalcon\Searcher;
-use Phalcon\Exception;
 
 /**
  * Searcher daemon class
@@ -106,7 +105,7 @@ class Searcher {
 
 			return $this;
 		}
-		catch(Exception $e) {
+		catch(\Phalcon\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -134,11 +133,10 @@ class Searcher {
 			], 'order');
 			return $this;
 		}
-		catch(Exception $e) {
+		catch(\Phalcon\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
-
 
 	/**
 	 * Setup offset, limit threshold
@@ -165,7 +163,7 @@ class Searcher {
 
 			return $this;
 		}
-		catch(Exception $e) {
+		catch(\Phalcon\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -194,7 +192,7 @@ class Searcher {
 
 			return $this;
 		}
-		catch(Exception $e) {
+		catch(\Phalcon\Exception $e) {
 			echo $e->getMessage();
 		}
 	}
@@ -216,12 +214,12 @@ class Searcher {
 			$this->_validator->verify($query,['isNotNull', 'isNotFew', 'isNotMuch']);
 
 			if(false === $this->exact)
-				$this->query = ['query' => '%'.strlen($query).'%'];
+				$this->query = ['query' => '%'.$query.'%'];
 			else
 				$this->query = ['query' => $query];
 			return $this;
 		}
-		catch(Exception $e) {
+		catch(\Phalcon\Exception $e) {
 			echo $e->getMessage();
 		}
 	}

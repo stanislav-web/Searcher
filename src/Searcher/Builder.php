@@ -91,7 +91,7 @@ class Builder {
 	{
 		// set order position if exist
 
-		$gruop	=	[];
+		$group	=	[];
 		foreach($this->_data['group'] as $alias => $params) {
 
 			$params = array_flip($params);
@@ -100,12 +100,12 @@ class Builder {
 
 				foreach($params as 	$field)
 				{
-					$gruop[]	=	$alias.'.'.$field;
+					$group[]	=	$alias.'.'.$field;
 				}
 
 			}
 		}
-		$this->_builder->groupBy($gruop);
+		$this->_builder->groupBy($group);
 		return null;
 	}
 
@@ -159,7 +159,7 @@ class Builder {
 	}
 
 	/**
-	 * Where condition costomizer
+	 * Where condition customizer
 	 *
 	 * @param string $table
 	 * @param string $field
