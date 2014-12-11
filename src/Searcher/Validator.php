@@ -129,7 +129,7 @@ class Validator {
 	 * @param string $value
 	 * @return boolean
 	 */
-	private function isNotNull($value) {
+	protected function isNotNull($value) {
 		if(is_null($value) === true)
 			throw new Exceptions\NullArgumentException();
 		return true;
@@ -142,7 +142,7 @@ class Validator {
 	 * @throws Exceptions\DataTypeException
 	 * @return boolean
 	 */
-	private function isArray($value) {
+	protected function isArray($value) {
 		if(is_array($value) === false)
 			throw new Exceptions\DataTypeException($value, 'array');
 		return true;
@@ -154,7 +154,7 @@ class Validator {
 	 * @param mixed $value
 	 * @return boolean
 	 */
-	private function isNotEmpty($value) {
+	protected function isNotEmpty($value) {
 		if(empty($value) === false)
 			return true;
 		else
@@ -167,7 +167,7 @@ class Validator {
 	 * @param string $value
 	 * @return boolean
 	 */
-	private function isNotFew($value) {
+	protected function isNotFew($value) {
 		if(strlen(utf8_decode($value)) < $this->_min)
 			throw new Exceptions\InvalidLengthException($value, 'greater', $this->_min);
 		return true;
@@ -180,7 +180,7 @@ class Validator {
 	 * @throws Exceptions\InvalidLengthException
 	 * @return boolean
 	 */
-	private function isNotMuch($value) {
+	protected function isNotMuch($value) {
 		if(strlen(utf8_decode($value)) > $this->_max)
 			throw new Exceptions\InvalidLengthException($value, 'less', $this->_max);
 		return true;
@@ -192,7 +192,7 @@ class Validator {
 	 * @param array $value
 	 * @return boolean
 	 */
-	private function isExists(array $value) {
+	protected function isExists(array $value) {
 
 		// validate fields by exist in tables
 
@@ -236,7 +236,7 @@ class Validator {
 	 * @param array $ordered
 	 * @return boolean
 	 */
-	private function isOrdered(array $ordered) {
+	protected function isOrdered(array $ordered) {
 
 		// validate fields by exist in tables
 
@@ -274,7 +274,7 @@ class Validator {
 	 * @param string $value
 	 * @return boolean
 	 */
-	private function validTypes(Column $column) {
+	protected function validTypes(Column $column) {
 
 		if(in_array($column->getType(), $this->_columns) === false) {
 

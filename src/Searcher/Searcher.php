@@ -13,7 +13,6 @@ use \Phalcon\Exception;
  */
 class Searcher {
 
-
 	/**
 	 * Query value for DB
 	 * @var string
