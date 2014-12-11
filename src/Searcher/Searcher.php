@@ -13,17 +13,19 @@ use \Phalcon\Exception;
  */
 class Searcher {
 
+
+	/**
+	 * Query value for DB
+	 * @var string
+	 */
+	public	$query =	null;
+
 	/**
 	 * Validator
 	 * @var Phalcon\Searcher\Validator
 	 */
 	private	$_validator;
 
-	/**
-	 * Query value for DB
-	 * @var string
-	 */
-	private	$_query =	null;
 
 	/**
 	 * Strict flag
@@ -216,9 +218,9 @@ class Searcher {
 			$this->_validator->verify($query,['isNotNull', 'isNotFew', 'isNotMuch']);
 
 			if(false === $this->_exact)
-				$this->_query = [':query:' => '%'.strlen($query).'%'];
+				$this->query = ['query' => '%'.strlen($query).'%'];
 			else
-				$this->_query = [':query:' => $query];
+				$this->query = ['query' => $query];
 			return $this;
 		}
 		catch(Exception $e) {
@@ -232,6 +234,14 @@ class Searcher {
 	 */
 	public function getFields() {
 		return $this->_validator->fields;
+	}
+
+	/**
+	 * Get query type
+	 * @return boolean
+	 */
+	public function getExact() {
+		return $this->_exact;
 	}
 
 	/**

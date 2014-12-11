@@ -1,6 +1,7 @@
 <?php
 namespace Phalcon\Searcher;
 
+use Phalcon\Db\Column;
 use	Phalcon\Mvc\Model\Query\Builder as Build;
 use	Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 use \Phalcon\Exception;
@@ -36,6 +37,7 @@ class Builder {
 
 	/**
 	 * Initialize internal params
+	 *
 	 * @param Searcher $searcher
 	 * @return null
 	 */
@@ -46,6 +48,7 @@ class Builder {
 
 	/**
 	 * Setup tables to Builder
+	 *
 	 * @return null
 	 */
 	public function setTables()
@@ -61,6 +64,7 @@ class Builder {
 
 	/**
 	 * Setup orders positions to Builder
+	 *
 	 * @return null
 	 */
 	public function setOrder()
@@ -81,6 +85,7 @@ class Builder {
 
 	/**
 	 * Setup group positions to builder
+	 *
 	 * @return null
 	 */
 	public function setGroup()
@@ -90,11 +95,15 @@ class Builder {
 		$gruop	=	[];
 		foreach($this->_data['group'] as $alias => $params) {
 
+			$params = array_flip($params);
+
 			if(empty($params) === false) {
+
 				foreach($params as 	$field)
 				{
-					$gruop[]	=	$alias.'.'.current($field);
+					$gruop[]	=	$alias.'.'.$field;
 				}
+
 			}
 		}
 		$this->_builder->groupBy($gruop);
@@ -103,6 +112,7 @@ class Builder {
 
 	/**
 	 * Setup limit (offset)
+	 *
 	 * @return null
 	 */
 	public function setThreshold()
@@ -120,7 +130,6 @@ class Builder {
 				$this->_data['threshold']	=	[
 					'limit'		=> $this->_data['threshold'][0]
 				];
-
 		}
 
 		$this->_builder->limit(implode(',', $this->_data['threshold']));
@@ -129,7 +138,59 @@ class Builder {
 	}
 
 	/**
+	 * Setup where filter
+	 *
+	 * @return null
+	 */
+	public function setWhere()
+	{
+		// checking of Exact flag
+		$exact = $this->_searcher->getExact();
+		$i = 0;
+		foreach($this->_data['where'] as $alias => $fields) {
+
+			foreach($fields as $field => $type)
+			{
+				// call expression handler
+				$this->expressionRun($alias, $field, $type, $i);
+				++$i;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Where condition costomizer
+	 *
+	 * @param string $table
+	 * @param string $field
+	 * @param int $type	type of column
+	 * @param int $i 	counter
+	 * @return null
+	 */
+	public function expressionRun($table, $field, $type, $i)
+	{
+		if($type === Column::TYPE_TEXT) // match search
+		{
+			if($i > 0)
+				$this->_builder->orWhere("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->_searcher->query);
+			else
+				$this->_builder->where("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->_searcher->query);
+
+		}
+		else // simple where search
+		{
+			if($i > 0)
+				$this->_builder->orWhere($table.".".$field." LIKE ':query:'", $this->_searcher->query);
+			else
+				$this->_builder->where($table.".".$field." LIKE ':query:'", $this->_searcher->query);
+		}
+		return null;
+	}
+
+	/**
 	 * Build query chain
+	 *
 	 * @throws Exception
 	 * @return Builder|null
 	 */
@@ -140,17 +201,29 @@ class Builder {
 			// get valid result
 			$this->_data = $this->_searcher->getFields();
 
+			// prepare tables
 			if(empty($this->_data['tables']) === false)
 				$this->setTables();
+
+			// prepare where filter
+			if(empty($this->_data['where']) === false)
+				$this->setWhere();
+
+			// prepare order
 			if(empty($this->_data['order']) === false)
 				$this->setOrder();
+
+			// prepare group
 			if(empty($this->_data['group']) === false)
 				$this->setGroup();
 
+			// prepare threshold
 			if(empty($this->_data['threshold']) === false)
 				$this->setThreshold();
 
-			return null;
+			$res = $this->_builder->getQuery()->execute();
+
+			return $res;
 		}
 		catch(Exception $e) {
 			echo $e->getMessage();

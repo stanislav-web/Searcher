@@ -223,9 +223,7 @@ class Validator {
 					$this->validTypes($column);
 
 					// add column to table collection
-					$this->fields[$this->_cast][$model->getSource()][]	=	[
-						$column->getType() => $column->getName()
-					];
+					$this->fields[$this->_cast][$model->getSource()][$column->getName()]	= $column->getType();
 				}
 			}
 		}
