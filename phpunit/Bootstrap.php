@@ -68,4 +68,4 @@ class Bootstrap {
 spl_autoload_register(array('Phalcon\Searcher\Test\Bootstrap', 'loadClass'));
 // Register the directory to your include files
 
-Bootstrap::registerDirectory('Searcher/phpunit/src/Searcher/');
+Bootstrap::registerDirectory('src');

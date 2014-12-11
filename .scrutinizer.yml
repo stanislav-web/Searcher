@@ -11,9 +11,10 @@ filter:
     paths: [src/*]
     excluded_paths: [phpunit/*]
 
-before_commands:
-    - 'composer install --dev --prefer-source'
-
+tests:
+        override:
+            -
+                command: phpunit --coverage-clover=coverage.clover
 tools:
     php_sim: true
     php_pdepend: true
