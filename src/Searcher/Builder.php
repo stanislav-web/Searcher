@@ -146,7 +146,7 @@ class Builder {
 	{
 		// checking of Exact flag
 		//$exact = $this->_searcher->exact;
-
+		$index = 0;
 		foreach($this->_data['where'] as $alias => $fields) {
 
 			foreach($fields as $field => $type)

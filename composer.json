@@ -2,7 +2,9 @@
 	"name": "stanislav-web/phalcon-searcher",
 	"description": "Phalcon Database Searcher",
 	"type": "library",
-    	"keywords" : ["phalocn", "phalcon search"],
+	"status": "maintained",
+
+	"keywords" : ["phalocn", "phalcon search"],
     	"homepage" : "https://github.com/stanislav-web/Searcher",
     	"license" : "MIT",
     	"authors" : [
