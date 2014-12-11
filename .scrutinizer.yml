@@ -1,5 +1,8 @@
 inherit: true
 
+before_commands:
+    - "composer install --no-dev --prefer-source"
+
 build:
 
     environment:
@@ -7,11 +10,7 @@ build:
             version: 5.5.12 # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'Europe/Kyiv'
-
-before_commands:
-    - "composer install --no-dev --prefer-source"
-
-tests:
+    tests:
         override:
             -
                 command: 'phpunit --configuration ./build/travis-ci.xml'
