@@ -1,6 +1,11 @@
 inherit: true
 
 build:
+  dependencies:
+        before:
+            - apt-get update
+            - apt-get install git-core gcc autoconf make
+            - apt-get install php5-dev php5-mysq
     environment:
         php:
             version: 5.5.12

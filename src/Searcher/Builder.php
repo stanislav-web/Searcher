@@ -145,15 +145,15 @@ class Builder {
 	public function setWhere()
 	{
 		// checking of Exact flag
-		$exact = $this->_searcher->getExact();
-		$i = 0;
+		//$exact = $this->_searcher->exact;
+
 		foreach($this->_data['where'] as $alias => $fields) {
 
 			foreach($fields as $field => $type)
 			{
 				// call expression handler
-				$this->expressionRun($alias, $field, $type, $i);
-				++$i;
+				$this->expressionRun($alias, $field, $type, $index);
+				++$index;
 			}
 		}
 		return null;
@@ -168,11 +168,11 @@ class Builder {
 	 * @param int $i 	counter
 	 * @return null
 	 */
-	public function expressionRun($table, $field, $type, $i)
+	public function expressionRun($table, $field, $type, $index)
 	{
 		if($type === Column::TYPE_TEXT) // match search
 		{
-			if($i > 0)
+			if($index > 0)
 				$this->_builder->orWhere("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->_searcher->query);
 			else
 				$this->_builder->where("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->_searcher->query);
@@ -180,7 +180,7 @@ class Builder {
 		}
 		else // simple where search
 		{
-			if($i > 0)
+			if($index > 0)
 				$this->_builder->orWhere($table.".".$field." LIKE ':query:'", $this->_searcher->query);
 			else
 				$this->_builder->where($table.".".$field." LIKE ':query:'", $this->_searcher->query);

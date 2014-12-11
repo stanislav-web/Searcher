@@ -21,17 +21,16 @@ class Searcher {
 	public	$query =	null;
 
 	/**
+	 * Strict flag
+	 * @var boolean
+	 */
+	public	$exact =	false;
+
+	/**
 	 * Validator
 	 * @var Phalcon\Searcher\Validator
 	 */
 	private	$_validator;
-
-
-	/**
-	 * Strict flag
-	 * @var boolean
-	 */
-	private	$_exact =	false;
 
 	/**
 	 * Initialize class
@@ -75,13 +74,13 @@ class Searcher {
 	 * @return Searcher
 	 */
 	public function setExact($flag) {
-		$this->_exact	=	$flag;
+		$this->exact	=	$flag;
 		return $this;
 	}
 
 	/**
 	 * Prepare models to participate in search
-
+	 *
 	 * @param array $models
 	 * @example <code>
 	 *          $s->setFields([
@@ -217,7 +216,7 @@ class Searcher {
 			// need to return << true
 			$this->_validator->verify($query,['isNotNull', 'isNotFew', 'isNotMuch']);
 
-			if(false === $this->_exact)
+			if(false === $this->exact)
 				$this->query = ['query' => '%'.strlen($query).'%'];
 			else
 				$this->query = ['query' => $query];
@@ -234,14 +233,6 @@ class Searcher {
 	 */
 	public function getFields() {
 		return $this->_validator->fields;
-	}
-
-	/**
-	 * Get query type
-	 * @return boolean
-	 */
-	public function getExact() {
-		return $this->_exact;
 	}
 
 	/**

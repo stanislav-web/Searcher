@@ -22,12 +22,18 @@ php:
   #- DB=mysql
 
 # execute any number of scripts before the test run, custom env's are available as variables
-#before_script:
-  #- mysql -e "create database IF NOT EXISTS rearcher;" -uroot;
+before_script:
+  - git clone -q https://github.com/phalcon/cphalcon.git
+  - (cd cphalcon/ext; export CFLAGS="-g3 -O1 -std=gnu90 -Wall -Werror -Wno-error=uninitialized"; phpize && ./configure --silent --enable-phalcon && make --silent -j4 > /dev/null && sudo make --silent install && phpenv config-add ../unit-tests/ci/phalcon.ini)
+  - wget http://getcomposer.org/composer.phar
+  - php composer.phar self-update
+  - php composer.phar install
+  - php -i | grep phalcon
 
 # omitting "script:" will default to phpunit
-# use the $DB env variable to determine the phpunit.xml to use
-#script: phpunit --configuration phpunit_$DB.xml --coverage-text
+script:
+  - vendor/bin/codecept build
+  - vendor/bin/codecept run
 
 # Customize when the notification emails are sent.
 notifications:
