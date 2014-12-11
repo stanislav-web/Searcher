@@ -21,11 +21,6 @@ before_script:
 
 script: vendor/bin/phpunit --configuration ./build/travis-ci.xml
 
-
-after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-
 # Customize when the notification emails are sent.
 notifications:
     on_success: never

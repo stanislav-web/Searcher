@@ -8,11 +8,6 @@ build:
             ini:
                 'date.timezone': 'Europe/Kyiv'
 
-    tests:
-            override:
-                -
-                    command: phpunit --coverage-clover=coverage.clover
-
 filter:
     paths: [src/*]
     excluded_paths: [phpunit/*, build/*]
