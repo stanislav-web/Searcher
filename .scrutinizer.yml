@@ -7,14 +7,16 @@ build:
             version: 5.5.12 # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'Europe/Kyiv'
+
+    tests:
+            override:
+                -
+                    command: phpunit --coverage-clover=coverage.clover
+
 filter:
     paths: [src/*]
     excluded_paths: [phpunit/*]
 
-tests:
-        override:
-            -
-                command: phpunit --coverage-clover=coverage.clover
 tools:
     php_sim: true
     php_pdepend: true
