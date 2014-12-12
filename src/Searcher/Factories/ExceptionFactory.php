@@ -32,7 +32,7 @@ class ExceptionFactory extends \Exception {
 		};
 
 		// return exception message
-		return parent::__construct($onError($params), $code = 0);
+		return parent::__construct($onError($params));
 	}
 }
   

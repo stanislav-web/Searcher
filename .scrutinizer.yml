@@ -24,7 +24,7 @@ tools:
     php_changetracking: true
     php_cs_fixer: true
     sensiolabs_security_checker: true
-    php_code_coverage: true
+    php_code_coverage: false
     php_loc:
             enabled: true
             excluded_dirs: [phpunit, build]
