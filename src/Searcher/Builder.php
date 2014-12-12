@@ -19,7 +19,7 @@ class Builder {
 	 * Query builder
 	 * @var Phalcon\Mvc\Model\Query\Builder
 	 */
-	private	$_builder;
+	private	$builder;
 
 	/**
 	 * Client for preparing data
@@ -36,12 +36,12 @@ class Builder {
 	/**
 	 * Initialize internal params
 	 *
-	 * @param Searcher $searcher
+	 * @param Phalcon\Searcher\Searcher $searcher
 	 * @return null
 	 */
 	public function __construct(Searcher $searcher) {
 		$this->searcher		=	$searcher;
-		$this->_builder			=	new Build();
+		$this->builder			=	new Build();
 	}
 
 	/**
@@ -54,7 +54,7 @@ class Builder {
 		foreach($this->_data['tables'] as $alias => $model) {
 
 			// set model => alias (real table name)
-			$this->_builder->addFrom($model, $alias);
+			$this->builder->addFrom($model, $alias);
 
 		}
 		return null;
@@ -77,7 +77,7 @@ class Builder {
 			}
 
 		}
-		$this->_builder->orderBy($order);
+		$this->builder->orderBy($order);
 		return null;
 	}
 
@@ -104,7 +104,7 @@ class Builder {
 
 			}
 		}
-		$this->_builder->groupBy($group);
+		$this->builder->groupBy($group);
 		return null;
 	}
 
@@ -130,7 +130,7 @@ class Builder {
 				];
 		}
 
-		$this->_builder->limit(implode(',', $this->_data['threshold']));
+		$this->builder->limit(implode(',', $this->_data['threshold']));
 
 		return null;
 	}
@@ -171,17 +171,17 @@ class Builder {
 		if($type === Column::TYPE_TEXT) // match search
 		{
 			if($index > 0)
-				$this->_builder->orWhere("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->searcher->query);
+				$this->builder->orWhere("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->searcher->query);
 			else
-				$this->_builder->where("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->searcher->query);
+				$this->builder->where("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->searcher->query);
 
 		}
 		else // simple where search
 		{
 			if($index > 0)
-				$this->_builder->orWhere($table.".".$field." LIKE ':query:'", $this->searcher->query);
+				$this->builder->orWhere($table.".".$field." LIKE ':query:'", $this->searcher->query);
 			else
-				$this->_builder->where($table.".".$field." LIKE ':query:'", $this->searcher->query);
+				$this->builder->where($table.".".$field." LIKE ':query:'", $this->searcher->query);
 		}
 		return null;
 	}
@@ -219,7 +219,7 @@ class Builder {
 			if(empty($this->_data['threshold']) === false)
 				$this->setThreshold();
 
-			$res = $this->_builder->getQuery()->execute();
+			$res = $this->builder->getQuery()->execute();
 
 			return $res;
 		}
