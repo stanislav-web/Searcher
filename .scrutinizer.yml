@@ -3,10 +3,10 @@ inherit: true
 build:
 
     environment:
-        php:
-            version: 5.5 # Common versions: 5.4.28, 5.5.12, or hhvm
+        php: '5.5.12' # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'UTC'
+        elasticsearch: false
 
     dependencies:
         before:
@@ -14,13 +14,26 @@ build:
             - composer self-update
             - composer install --prefer-dist -o
 
+    # Run after dependencies
+    project_setup:
+        before:
+           - mysql -e "CREATE DATABASE phalcon_searcher"
+
+        override: []
+        after: []
+
     tests:
+        before:
+                - 'bundle exec rspec'
+                - 'phpunit'
+
         override:
                 -
                     command: vendor/bin/phpunit --configuration ./build/travis-ci.xml --coverage-clover=coverage.clover
                     coverage:
                         file: coverage.clover
                         format: php-clover
+
 filter:
     paths: [src/*]
     excluded_paths: [build/*, phpunit/*]
