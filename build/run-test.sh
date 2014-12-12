@@ -2,13 +2,14 @@
 COVERAGE=""
 METRICS="../phpunit/metrics.xml"
 
+
 if [ "$1" == "--coverage" ]
 then
   COVERAGE="--coverage-clover $METRICS"
   shift
 fi
 
-phpunit/phpunit.phar --bootstrap phpunit/phpunit.xml phpunit/src $COVERAGE $@
+php phpunit.phar --bootstrap ../phpunit/phpunit.xml ../phpunit/src $COVERAGE $@
 
 # exit with PHPUnit's return code
 if [ $? -ne 0 ]
