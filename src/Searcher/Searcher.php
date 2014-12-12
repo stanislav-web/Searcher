@@ -94,7 +94,7 @@ class Searcher {
 	 *          ])
 	 *          </code>
 	 * @throws ExceptionFactory {$error}
-	 * @return Searcher|null
+	 * @return Searcher
 	 */
 	public function setFields(array $models) {
 
@@ -118,7 +118,7 @@ class Searcher {
 	 *          ])
 	 *          </code>
 	 * @throws ExceptionFactory {$error}
-	 * @return Searcher|null
+	 * @return Searcher
 	 */
 	public function setOrder(array $order) {
 
@@ -138,7 +138,7 @@ class Searcher {
 	 *          $s->setThreshold([0,100])	//	offset, limit
 	 *          </code>
 	 * @throws ExceptionFactory {$error}
-	 * @return Searcher|null
+	 * @return Searcher
 	 */
 	public function setThreshold($threshold) {
 
@@ -165,7 +165,7 @@ class Searcher {
 	 *          ])
 	 *          </code>
 	 * @throws ExceptionFactory {$error}
-	 * @return Searcher|null
+	 * @return Searcher
 	 */
 	public function setGroup(array $group) {
 
@@ -185,7 +185,7 @@ class Searcher {
 	 *          $s->setQuery('what i want to find')
 	 *          </code>
 	 * @throws ExceptionFactory {$error}
-	 * @return Searcher|null
+	 * @return Searcher
 	 */
 	public function setQuery($query) {
 
