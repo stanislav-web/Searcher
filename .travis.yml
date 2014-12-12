@@ -13,15 +13,21 @@ php:
   # aliased to a recent 5.6.x version
   - 5.6
 
-# optionally specify a list of environments, for example to test different RDBMS
-install:
- - composer --prefer-dist install
-
 # omitting "script:" will default to phpunit
 before_script:
-    - COMPOSER_ROOT_VERSION=dev-master composer install --dev --prefer-source
+  - ./build/install.sh
+  - composer self-update
+  - composer install --prefer-dist -o
 
-script: vendor/bin/phpunit --configuration ./build/travis-ci.xml
+script:
+  - vendor/bin/phpunit --coverage-clover=coverage.clover
+  - php build/scrutinizer/ocular.phar code-coverage:upload --format=php-clover coverage.clover
+
+# omitting "script:" will default to phpunit
+#before_script:
+#    - COMPOSER_ROOT_VERSION=dev-master composer install --dev --prefer-source
+
+#script: vendor/bin/phpunit --configuration ./build/travis-ci.xml
 
 # Customize when the notification emails are sent.
 notifications:
