@@ -17,7 +17,6 @@ class ExceptionFactory extends \Exception {
 	 *
 	 * @param string $key error key
 	 * @param array $params message params
-	 * @param array $line error line
 	 * @return null
 	 */
 	public function __construct($key, array $params) {

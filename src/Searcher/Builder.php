@@ -3,7 +3,7 @@ namespace Phalcon\Searcher;
 
 use Phalcon\Db\Column;
 use Phalcon\Searcher\Factories\ExceptionFactory;
-use	Phalcon\Mvc\Model\Query\Builder as Build;
+use Phalcon\Mvc\Model\Query\Builder as Build;
 
 /**
  * Query builder class
@@ -162,8 +162,8 @@ class Builder {
 	 *
 	 * @param string $table
 	 * @param string $field
-	 * @param int $type	type of column
-	 * @param int $i 	counter
+	 * @param integer $type	type of column
+	 * @param integer $index 	counter
 	 * @return null
 	 */
 	public function expressionRun($table, $field, $type, $index)
