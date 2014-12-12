@@ -7,6 +7,13 @@ build:
             version: 5.5.12 # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'UTC'
+    tests:
+        override:
+                -
+                    command: vendor/bin/phpunit --configuration ./build/travis-ci.xml --coverage-clover=coverage.clover
+                    coverage:
+                        file: coverage.clover
+                        format: php-clover
 filter:
     paths: [src/*]
     excluded_paths: [build/*, phpunit/*]
