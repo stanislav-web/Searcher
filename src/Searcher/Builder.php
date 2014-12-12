@@ -25,7 +25,7 @@ class Builder {
 	 * Client for preparing data
 	 * @var Phalcon\Searcher\Searcher
 	 */
-	private	$_searcher;
+	private	$searcher;
 
 	/**
 	 * Valid searcher data
@@ -40,7 +40,7 @@ class Builder {
 	 * @return null
 	 */
 	public function __construct(Searcher $searcher) {
-		$this->_searcher		=	$searcher;
+		$this->searcher		=	$searcher;
 		$this->_builder			=	new Build();
 	}
 
@@ -143,7 +143,7 @@ class Builder {
 	public function setWhere()
 	{
 		// checking of Exact flag
-		//$exact = $this->_searcher->exact;
+		//$exact = $this->searcher->exact;
 		$index = 0;
 		foreach($this->_data['where'] as $alias => $fields) {
 
@@ -171,17 +171,17 @@ class Builder {
 		if($type === Column::TYPE_TEXT) // match search
 		{
 			if($index > 0)
-				$this->_builder->orWhere("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->_searcher->query);
+				$this->_builder->orWhere("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->searcher->query);
 			else
-				$this->_builder->where("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->_searcher->query);
+				$this->_builder->where("MATCH(".$table.".".$field.") AGAINST (':query:')", $this->searcher->query);
 
 		}
 		else // simple where search
 		{
 			if($index > 0)
-				$this->_builder->orWhere($table.".".$field." LIKE ':query:'", $this->_searcher->query);
+				$this->_builder->orWhere($table.".".$field." LIKE ':query:'", $this->searcher->query);
 			else
-				$this->_builder->where($table.".".$field." LIKE ':query:'", $this->_searcher->query);
+				$this->_builder->where($table.".".$field." LIKE ':query:'", $this->searcher->query);
 		}
 		return null;
 	}
@@ -197,7 +197,7 @@ class Builder {
 		try {
 
 			// get valid result
-			$this->_data = $this->_searcher->getFields();
+			$this->_data = $this->searcher->getFields();
 
 			// prepare tables
 			if(empty($this->_data['tables']) === false)
