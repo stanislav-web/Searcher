@@ -8,7 +8,7 @@ then
   shift
 fi
 
-phpunit --bootstrap ../phpunit/phpunit.xml ../phpunit/src $COVERAGE $@
+phpunit --bootstrap phpunit/phpunit.xml phpunit/src $COVERAGE $@
 
 # exit with PHPUnit's return code
 if [ $? -ne 0 ]

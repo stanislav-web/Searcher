@@ -10,7 +10,7 @@ build:
 
     tests:
             override:
-                - build ./run-tests.sh
+                - sh build/run-test.sh
 
 filter:
     paths: [src/*]
