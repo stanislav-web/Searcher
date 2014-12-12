@@ -3,9 +3,11 @@ inherit: true
 build:
 
     environment:
-        php: '5.5.12' # Common versions: 5.4.28, 5.5.12, or hhvm
+        php:
+            version: "5.5.12" # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'UTC'
+                'extension': '=phalcon.so'
         elasticsearch: false
 
     dependencies:
