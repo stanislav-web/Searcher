@@ -14,7 +14,6 @@ build:
         before:
             - mysql -uroot -e 'CREATE DATABASE phalcon'
             - git clone -q --depth=1 https://github.com/phalcon/cphalcon.git -b master
-            - composer self-update
             - composer install --prefer-dist -o
 
     tests:
