@@ -30,6 +30,6 @@
         "psr-4": { "Phalcon\\Searcher\\": "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "Phalcon\\Searcher\\Tests": "phpunit/src" }
+        "psr-4": { "Phalcon\\Searcher\\Tests\\": "phpunit/src" }
     }
 }
