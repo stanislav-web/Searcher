@@ -18,14 +18,12 @@ build:
             - cd cphalcon/ext; export CFLAGS="-g3 -O1 -fno-delete-null-pointer-checks -Wall"; phpize && ./configure --enable-phalcon && make -j4 && sudo make install && sed -i '$ a \\n[Phalcon]\nextension=phalcon.so\n'  /home/scrutinizer/.phpenv/versions/5.5.12/etc/php.ini
     tests:
         before:
-                - 'phpunit'
+                - 'phpunit --configuration ./build/travis-ci.xml --coverage-clover=coverage.clover'
 
         override:
-                -
-                    command: vendor/bin/phpunit --configuration ./build/travis-ci.xml --coverage-clover=coverage.clover
-                    coverage:
-                        file: coverage.clover
-                        format: php-clover
+              coverage:
+                  file: coverage.clover
+                  format: php-clover
 
 filter:
     paths: [src/*]
