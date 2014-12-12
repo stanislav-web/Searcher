@@ -3,12 +3,11 @@ namespace Phalcon\Searcher;
 
 use Phalcon\Db\Column;
 use	Phalcon\Mvc\Model\Manager;
-use	Phalcon\Searcher\Exceptions;
+use	Phalcon\Searcher\Factories\ExceptionFactory;
 
 /**
  * Columns validator
- * @package Phalcon
- * @subpackage Phalcon\Searcher
+ * @package Phalcon\Searcher
  * @since PHP >=c
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -250,18 +249,18 @@ class Validator {
 			// check fields of table
 
 			if(empty($not = array_diff(array_keys($sort), $metaData->getAttributes($model))) === false)
-				throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_EXISTS, [
-					$not, $table, $metaData->getAttributes($model)]);
+				throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $metaData->getAttributes($model)]);
 
 			// check sort clause
 
 			$sort = array_map('strtolower', $sort);
 
 			if(empty($diff = array_diff(array_values($sort), $this->_sort)) === false)
-				throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [$diff]);
+				 throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
 
 			if(empty($diff = array_diff($sort, $this->_sort)) === false)
-				throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [$diff]);
+				throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
+				//throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [$diff]);
 
 			$this->fields[$this->_cast][$model->getSource()]	=	$sort;
 		}

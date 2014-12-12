@@ -2,13 +2,12 @@
 namespace Phalcon\Searcher;
 
 use Phalcon\Db\Column;
+use Phalcon\Searcher\Factories\ExceptionFactory;
 use	Phalcon\Mvc\Model\Query\Builder as Build;
-use Phalcon\Exception;
 
 /**
  * Query builder class
- * @package Phalcon
- * @subpackage Phalcon\Searcher
+ * @package Phalcon\Searcher
  * @since PHP >=c
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -190,7 +189,7 @@ class Builder {
 	/**
 	 * Build query chain
 	 *
-	 * @throws Exception
+	 * @throws ExceptionFactory {$error}
 	 * @return Builder|null
 	 */
 	public function loop()
@@ -224,9 +223,8 @@ class Builder {
 
 			return $res;
 		}
-		catch(Exception $e) {
+		catch(ExceptionFactory $e) {
 			echo $e->getMessage();
 		}
 	}
-
 }

@@ -1,10 +1,11 @@
 <?php
 namespace Phalcon\Searcher;
 
+use Phalcon\Searcher\Factories\ExceptionFactory;
+
 /**
  * Searcher daemon class
- * @package Phalcon
- * @subpackage Phalcon\Searcher
+ * @package Phalcon\Searcher
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -92,22 +93,17 @@ class Searcher {
 	 *          	]....
 	 *          ])
 	 *          </code>
-	 * @throws Exception
+	 * @throws ExceptionFactory {$error}
 	 * @return Searcher|null
 	 */
 	public function setFields(array $models) {
 
-		try {
-			// need to return << true
-			$this->_validator->verify($models, [
-				'isArray', 'isNotEmpty', 'isExists'
-			], 'where');
+		// need to return << true
+		$this->_validator->verify($models, [
+			'isArray', 'isNotEmpty', 'isExists'
+		], 'where');
 
-			return $this;
-		}
-		catch(\Phalcon\Exception $e) {
-			echo $e->getMessage();
-		}
+		return $this;
 	}
 
 	/**
@@ -121,21 +117,16 @@ class Searcher {
 	 *          	'Model/Table2' => ['title' =>  'ASC']
 	 *          ])
 	 *          </code>
-	 * @throws Exception
+	 * @throws ExceptionFactory {$error}
 	 * @return Searcher|null
 	 */
 	public function setOrder(array $order) {
 
-		try {
-			// need to return << true
-			$this->_validator->verify($order, [
-				'isArray', 'isNotEmpty', 'isOrdered'
-			], 'order');
-			return $this;
-		}
-		catch(\Phalcon\Exception $e) {
-			echo $e->getMessage();
-		}
+		// need to return << true
+		$this->_validator->verify($order, [
+			'isArray', 'isNotEmpty', 'isOrdered'
+		], 'order');
+		return $this;
 	}
 
 	/**
@@ -146,26 +137,20 @@ class Searcher {
 	 *          $s->setThreshold(100)		//	limit
 	 *          $s->setThreshold([0,100])	//	offset, limit
 	 *          </code>
-	 * @throws Phalcon\Exception
+	 * @throws ExceptionFactory {$error}
 	 * @return Searcher|null
 	 */
 	public function setThreshold($threshold) {
 
-		try {
+		// need to return << true
+		if(is_array($threshold) === true)
+			$threshold = array_map('intval', array_splice($threshold, 0, 2));
+		else
+			$threshold	=	intval($threshold);
 
-			// need to return << true
-			if(is_array($threshold) === true)
-				$threshold = array_map('intval', array_splice($threshold, 0, 2));
-			else
-				$threshold	=	intval($threshold);
+		$this->_validator->verify($threshold, [], 'threshold');
 
-			$this->_validator->verify($threshold, [], 'threshold');
-
-			return $this;
-		}
-		catch(\Phalcon\Exception $e) {
-			echo $e->getMessage();
-		}
+		return $this;
 	}
 
 	/**
@@ -179,22 +164,17 @@ class Searcher {
 	 *          	'Model/Table2' => ['id', 'description']
 	 *          ])
 	 *          </code>
-	 * @throws Phalcon\Exception
+	 * @throws ExceptionFactory {$error}
 	 * @return Searcher|null
 	 */
 	public function setGroup(array $group) {
 
-		try {
-			// need to return << true
-			$this->_validator->verify($group, [
-				'isArray', 'isNotEmpty', 'isExists'
-			], 'group');
+		// need to return << true
+		$this->_validator->verify($group, [
+			'isArray', 'isNotEmpty', 'isExists'
+		], 'group');
 
-			return $this;
-		}
-		catch(\Phalcon\Exception $e) {
-			echo $e->getMessage();
-		}
+		return $this;
 	}
 
 	/**
@@ -204,24 +184,19 @@ class Searcher {
 	 * @example <code>
 	 *          $s->setQuery('what i want to find')
 	 *          </code>
-	 * @throws Phalcon\Exception
+	 * @throws ExceptionFactory {$error}
 	 * @return Searcher|null
 	 */
 	public function setQuery($query) {
 
-		try {
-			// need to return << true
-			$this->_validator->verify($query,['isNotNull', 'isNotFew', 'isNotMuch']);
+		// need to return << true
+		$this->_validator->verify($query,['isNotNull', 'isNotFew', 'isNotMuch']);
 
-			if(false === $this->exact)
-				$this->query = ['query' => '%'.$query.'%'];
-			else
-				$this->query = ['query' => $query];
-			return $this;
-		}
-		catch(\Phalcon\Exception $e) {
-			echo $e->getMessage();
-		}
+		if(false === $this->exact)
+			$this->query = ['query' => '%'.$query.'%'];
+		else
+			$this->query = ['query' => $query];
+		return $this;
 	}
 
 	/**
@@ -235,18 +210,19 @@ class Searcher {
 	/**
 	 * Search procedure started
 	 *
-	 * @throws Phalcon\Exception
+	 * @throws ExceptionFactory {$error}
 	 * @return Builder|null
 	 */
-	final public function run()
-	{
+	final public function run() {
+
 		try {
 
 			$builder = (new Builder($this))->loop();
 			return $builder;
 		}
-		catch(Exception $e) {
+		catch(ExceptionFactory $e) {
 			echo $e->getMessage();
 		}
+
 	}
 }

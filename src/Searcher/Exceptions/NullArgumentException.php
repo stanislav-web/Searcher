@@ -7,7 +7,8 @@ namespace Phalcon\Searcher\Exceptions;
  * @subpackage Phalcon\Searcher\Exceptions
  * @since PHP >=5.5.12
  * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>* @copyright Stanilav WEB
+ * @author Stanislav WEB | Lugansk <stanisov@gmail.com>*
+ * @copyright Stanislav WEB
  */
 class NullArgumentException extends \UnexpectedValueException {
 	/**
