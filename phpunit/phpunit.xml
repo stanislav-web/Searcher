@@ -1,3 +1,4 @@
+<!-- Setup test files and directories -->
 <phpunit    backupGlobals="true"
             backupStaticAttributes="true"
             bootstrap="Bootstrap.php"
@@ -7,7 +8,7 @@
             convertNoticesToExceptions="true"
             convertWarningsToExceptions="true"
             forceCoversAnnotation="false"
-            mapTestClassNameToCoveredClassName="false"
+            mapTestClassNameToCoveredClassName="true"
             printerClass="PHPUnit_TextUI_ResultPrinter"
             processIsolation="false"
             stopOnError="false"
@@ -18,23 +19,16 @@
             strict="true"
             verbose="true">
 
-            <testsuites>
-                <testsuite name="Phalcon Searcher by Stanislav WEB">
+    <testsuites>
+        <testsuite name="Phalcon Searcher by Stanislav WEB">
 
-                    <!-- Basic -->
-                    <file>phpunit/src/Searcher/SearcherTest.php</file>
-                    <file>phpunit/src/Searcher/BuilderTest.php</file>
-                    <file>phpunit/src/Searcher/ValidatorTest.php</file>
-                    <!-- /Basic -->
+            <!-- Basic -->
+            <file>src/Searcher/SearcherTest.php</file>
+            <file>src/Searcher/ValidatorTest.php</file>
+            <file>src/Searcher/BuilderTest.php</file>
+            <!-- /Basic -->
 
-                    <!-- Exceptions -->
-                    <file>phpunit/src/Searcher/Exceptions/ColumnExceptionTest.php</file>
-                    <file>phpunit/src/Searcher/Exceptions/DataTypeExceptionTest.php</file>
-                    <file>phpunit/src/Searcher/Exceptions/InvalidLengthExceptionTest.php</file>
-                    <file>phpunit/src/Searcher/Exceptions/NullArgumentExceptionTest.php</file>
-                    <!-- /Exceptions -->
-
-                </testsuite>
-
-            </testsuites>
+        </testsuite>
+    </testsuites>
 </phpunit>
+<!-- Setup test files and directories -->

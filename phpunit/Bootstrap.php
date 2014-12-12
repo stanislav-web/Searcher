@@ -2,7 +2,7 @@
 namespace Phalcon\Searcher\Test;
 
 /**
- * Class Bootstrap
+ * Class Bootstrap For original classes
  * @package Phalcon
  * @subpackage Phalcon\Searcher\Test
  * @since PHP >=5.5.12
@@ -10,6 +10,7 @@ namespace Phalcon\Searcher\Test;
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanilav WEB
  */
+
 class Bootstrap {
 
 	static private $classNames = array();
@@ -59,7 +60,10 @@ class Bootstrap {
 	 */
 	public static function loadClass($className)
 	{
+
 		if(isset(Bootstrap::$classNames[$className])) {
+			print Bootstrap::$classNames[$className]."\n";
+
 			require_once(Bootstrap::$classNames[$className]);
 		}
 	}
@@ -68,4 +72,6 @@ class Bootstrap {
 spl_autoload_register(array('Phalcon\Searcher\Test\Bootstrap', 'loadClass'));
 // Register the directory to your include files
 
-Bootstrap::registerDirectory('src');
+chdir(dirname(__FILE__) . '../src/Searcher');
+
+Bootstrap::registerDirectory(getcwd());

@@ -31,7 +31,7 @@ class Validator {
 	 * Available columns types
 	 * @var array
 	 */
-	private $_columns	=	[
+	public $columns	=	[
 				Column::TYPE_INTEGER,
 				Column::TYPE_VARCHAR,
 				Column::TYPE_CHAR,
@@ -275,7 +275,7 @@ class Validator {
 	 */
 	protected function validTypes(Column $column) {
 
-		if(in_array($column->getType(), $this->_columns) === false) {
+		if(in_array($column->getType(), $this->columns) === false) {
 
 			throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_SUPPORT, [
 				$column->getName(), $column->getType()]);

@@ -1,5 +1,6 @@
 <?php
 namespace Phalcon\Searcher\Test;
+use \Validator;
 
 /**
  * Class ValidatorTest
@@ -12,5 +13,26 @@ namespace Phalcon\Searcher\Test;
  */
 class ValidatorTest extends \PHPUnit_Framework_TestCase {
 
+	/**
+	 * Validator class object
+	 * @var \Phalcon\Searcher\Validator
+	 */
+	private $validator;
+
+	/**
+	 * Initialize testing object
+	 * @uses \Phalcon\Searcher\Validator
+	 */
+	public function setUp() {
+		$this->validator = new Validator();
+	}
+
+	/**
+	 * Kill testing object
+	 * @uses \Phalcon\Searcher\Validator
+	 */
+	public function tearDown() {
+		$this->validator = null;
+	}
 }
  

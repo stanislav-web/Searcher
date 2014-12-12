@@ -1,6 +1,8 @@
 <?php
 namespace Phalcon\Searcher\Test;
 
+use \Phalcon\Searcher\Searcher;
+
 /**
  * Class SearcherTest
  * @package Phalcon
@@ -12,5 +14,26 @@ namespace Phalcon\Searcher\Test;
  */
 class SearcherTest extends \PHPUnit_Framework_TestCase {
 
+	/**
+	 * Validator class object
+	 * @var \Phalcon\Searcher\Searcher
+	 */
+	private $searcher;
+
+	/**
+	 * Initialize testing object
+	 * @uses \Phalcon\Searcher\Searcher
+	 */
+	public function setUp() {
+		$this->searcher = new Searcher();
+	}
+
+	/**
+	 * Kill testing object
+	 * @uses \Phalcon\Searcher\Searcher
+	 */
+	public function tearDown() {
+		$this->searcher = null;
+	}
 }
  
