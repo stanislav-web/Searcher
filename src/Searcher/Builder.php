@@ -37,6 +37,7 @@ class Builder {
 	 * Initialize internal params
 	 *
 	 * @param Phalcon\Searcher\Searcher $searcher
+	 * @uses Phalcon\Mvc\Model\Query\Builder
 	 * @return null
 	 */
 	public function __construct(Searcher $searcher) {

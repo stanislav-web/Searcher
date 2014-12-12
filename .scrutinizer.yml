@@ -7,6 +7,10 @@ build:
             version: 5.5.12 # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'UTC'
+
+    dependencies:
+        before:
+            - sh ./build/install.sh
     tests:
         override:
                 -
