@@ -15,7 +15,7 @@ php:
 
 # omitting "script:" will default to phpunit
 before_script:
-  - ./build/install.sh
+  - sh ./build/install.sh
   - composer self-update
   - composer install --prefer-dist -o
 
