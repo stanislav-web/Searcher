@@ -7,22 +7,16 @@ build:
             version: "5.5.12" # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'UTC'
-                'extension': '=phalcon.so'
+                'extension=phalcon.so' : ''
         elasticsearch: false
+        redis: false
 
     dependencies:
         before:
             - sh ./build/install.sh
             - composer self-update
             - composer install --prefer-dist -o
-
-    # Run after dependencies
-    project_setup:
-        before:
-           - mysql -e "CREATE DATABASE phalcon_searcher"
-
-        override: []
-        after: []
+            - mysql -uroot -e 'CREATE DATABASE phalcon_searcher'
 
     tests:
         before:
