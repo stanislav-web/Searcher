@@ -21,7 +21,7 @@ before_script:
 
 script:
   - vendor/bin/phpunit --coverage-clover=coverage.clover
-  - php build/scrutinizer/ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - php build/ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 # omitting "script:" will default to phpunit
 #before_script:
