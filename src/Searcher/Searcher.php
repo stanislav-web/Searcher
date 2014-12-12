@@ -33,6 +33,7 @@ class Searcher {
 
 	/**
 	 * Initialize class
+	 * @uses Phalcon\Searcher\Validator
 	 * @return null
 	 */
 	public function __construct() {
@@ -129,29 +130,6 @@ class Searcher {
 		return $this;
 	}
 
-	/**
-	 * Setup offset, limit threshold
-	 *
-	 * @param mixed $threshold
-	 * @example <code>
-	 *          $s->setThreshold(100)		//	limit
-	 *          $s->setThreshold([0,100])	//	offset, limit
-	 *          </code>
-	 * @throws ExceptionFactory {$error}
-	 * @return Searcher
-	 */
-	public function setThreshold($threshold) {
-
-		// need to return << true
-		if(is_array($threshold) === true)
-			$threshold = array_map('intval', array_splice($threshold, 0, 2));
-		else
-			$threshold	=	intval($threshold);
-
-		$this->_validator->verify($threshold, [], 'threshold');
-
-		return $this;
-	}
 
 	/**
 	 * Group results

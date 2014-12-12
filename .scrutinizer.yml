@@ -4,13 +4,16 @@ build:
 
     environment:
         php:
-            version: 5.5.12 # Common versions: 5.4.28, 5.5.12, or hhvm
+            version: 5.5 # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'UTC'
 
     dependencies:
         before:
             - sh ./build/install.sh
+            - composer self-update
+            - composer install --prefer-dist -o
+
     tests:
         override:
                 -
