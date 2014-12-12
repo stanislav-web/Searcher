@@ -19,12 +19,6 @@ build:
     tests:
         before:
                 - 'phpunit --configuration ./build/travis-ci.xml --coverage-clover=coverage.clover'
-
-        override:
-              coverage:
-                  file: coverage.clover
-                  format: php-clover
-
 filter:
     paths: [src/*]
     excluded_paths: [build/*, phpunit/*]
