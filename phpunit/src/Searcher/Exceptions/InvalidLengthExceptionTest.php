@@ -3,7 +3,7 @@ namespace Phalcon\Searcher\Exceptions\Test;
 
 /**
  * Class InvalidLengthExceptionTest
- * @package Phalcon
+ * @package Test
  * @subpackage Phalcon\Searcher\Exceptions\Test
  * @since PHP >=5.5.12
  * @version 1.0

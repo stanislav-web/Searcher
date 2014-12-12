@@ -48,7 +48,7 @@ class Column {
 				$this->_message = $params[1].". File: ".$filename." Line: ".$line;
 			}];
 
-		$this->{current($params)}($params, $filename, $line);
+		$this->$invoke[current($params)]($params, $filename, $line);
 
 		return $this;
 	}

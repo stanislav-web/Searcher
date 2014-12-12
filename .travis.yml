@@ -6,7 +6,7 @@ language: php
 php:
   # using major version aliases
 
-  # aliased to a recent 5.5.x version
+  # aliased to a recent 5.4.x version
   - 5.4
   # aliased to a recent 5.5.x version
   - 5.5
@@ -18,16 +18,11 @@ before_script:
   - sh ./build/install.sh
   - composer self-update
   - composer install --prefer-dist -o
+  - COMPOSER_ROOT_VERSION=dev-master composer install --dev --prefer-source
 
-script:
-  - vendor/bin/phpunit --coverage-clover=coverage.clover
-  - php build/ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
-# omitting "script:" will default to phpunit
-#before_script:
-#    - COMPOSER_ROOT_VERSION=dev-master composer install --dev --prefer-source
+script: vendor/bin/phpunit --configuration ./build/travis-ci.xml --coverage-clover=coverage.clover
 
-#script: vendor/bin/phpunit --configuration ./build/travis-ci.xml
 
 # Customize when the notification emails are sent.
 notifications:

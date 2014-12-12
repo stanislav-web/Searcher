@@ -1,8 +1,19 @@
+inherit: true
+
+build:
+
+    environment:
+        php:
+            version: 5.5.12 # Common versions: 5.4.28, 5.5.12, or hhvm
+            ini:
+                'date.timezone': 'UTC'
+filter:
+    paths: [src/*]
+    excluded_paths: [build/*, phpunit/*]
+
 tools:
     php_sim: true
     php_pdepend: true
     php_analyzer: true
-    external_code_coverage: true
-
-filter:
-    excluded_paths: [build/*, phpunit/*]
+    sensiolabs_security_checker: true
+    php_code_coverage: true
