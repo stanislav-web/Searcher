@@ -13,34 +13,13 @@ namespace Phalcon\Searcher\Exceptions;
 class Column {
 
 	/**
-	 * Rise error types
-	 * @var array $params
-	 */
-	public $params	=	[
-		'COLUMN_DOES_NOT_SUPPORT'		=>	1,
-		'COLUMN_DOES_NOT_EXISTS'		=>	2,
-		'ORDER_TYPES_DOES_NOT_EXISTS'	=>	3,
-		'EMPTY_LIST'					=>	4,
-	];
-
-	/**
 	 * Message string
 	 * @var string
 	 */
 	private $_message					=	'';
 
 	/**
-	 * Setup message output
-	 *
-	 * @param string $message
-	 * @return null
-	 */
-	public function setMessage($message) {
-		$this->_message	=	$message;
-	}
-
-	/**
-	 * Rise error message for ColumnException
+	 * Rise error message for Column Exceptions
 	 *
 	 * @param array $params message params
 	 * @param int $line error line
@@ -49,25 +28,27 @@ class Column {
 	 */
 	public function rise(array $params, $line, $filename) {
 
-		switch(current($params)) {
+		$invoke = [
+			COLUMN_DOES_NOT_SUPPORT 	=> function($params, $filename, $line) {
+				// set message for not supported column type
+				$this->_message = "The type {".$params[1]."} of column `".$params[2]."` does not supported. File: ".$filename." Line: ".$line;
+			},
+			COLUMN_DOES_NOT_EXISTS 		=> function($params, $filename, $line) {
+				// set message for not existing column
+				$this->_message = "Column `".implode("`, `", $params[1])."` not exists in ".$params[2].". Only `".implode("`, `", $params[3])."`. File: ".$filename." Line: ".$line;
 
-			case 'COLUMN_DOES_NOT_SUPPORT':	// set message for not supported column type
-				$this->setMessage("The type {".$params[1]."} of column `".$params[2]."` does not supported. File: ".$filename." Line: ".$line);
-			break;
+			},
+			ORDER_TYPES_DOES_NOT_EXISTS => function($params, $filename, $line) {
+				// set message for not supported order type
+				$this->_message = "The order type(s) {".implode(",", $params[1])."} does not supported in order clause. File: ".$filename." Line: ".$line;
 
-			case 'COLUMN_DOES_NOT_EXISTS':	// set message for not existing column
-				$this->setMessage("Column `".implode("`, `", $params[1])."` not exists in ".$params[2].". Only `".implode("`, `", $params[3])."`. File: ".$filename." Line: ".$line);
-			break;
+			},
+			EMPTY_LIST 					=> function($params, $filename, $line) {
+				// set message for empty search list
+				$this->_message = $params[1].". File: ".$filename." Line: ".$line;
+			}];
 
-			case 'ORDER_TYPES_DOES_NOT_EXISTS':	// set message for not supported order type
-
-				$this->setMessage("The order type(s) {".implode(",", $params[1])."} does not supported in order clause. File: ".$filename." Line: ".$line);
-			break;
-
-			case 'EMPTY_LIST':	// set message for empty search list
-				$this->setMessage($params[1].". File: ".$filename." Line: ".$line);
-			break;
-		}
+		$this->{current($params)}($params, $filename, $line);
 
 		return $this;
 	}
