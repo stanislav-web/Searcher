@@ -7,7 +7,6 @@ build:
             version: "5.5.12" # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'UTC'
-                'extension=phalcon.so' : ''
         elasticsearch: false
         redis: false
 
@@ -15,7 +14,7 @@ build:
         before:
             - mysql -uroot -e 'CREATE DATABASE phalcon_searcher'
             - git clone -q --depth=1 https://github.com/phalcon/cphalcon.git -b master
-            - cd cphalcon/ext; export CFLAGS="-g3 -O1 -fno-delete-null-pointer-checks -Wall"; phpize && ./configure --enable-phalcon && make -j4 && sudo make install
+            - cd cphalcon/ext; export CFLAGS="-g3 -O1 -fno-delete-null-pointer-checks -Wall"; phpize && ./configure --enable-phalcon && make -j4 && sudo make install && .phpenv/versions/5.5.12/etc/php.ini config-add ../unit-tests/ci/phalcon.ini
             - composer self-update
             - composer install --prefer-dist -o
 
