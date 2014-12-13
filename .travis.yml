@@ -16,6 +16,7 @@ php:
 # omitting "script:" will default to phpunit
 before_script:
   - composer self-update
+  - artisan dump-autoload
   - composer install --dev --no-interaction
   - sh ./build/install.sh
 
