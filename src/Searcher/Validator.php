@@ -44,7 +44,7 @@ class Validator {
 	 * Available sort types
 	 * @var array
 	 */
-	private $_sort	=	[
+	public $sort	=	[
 				'asc',
 				'desc',
 				'ascending',
@@ -255,10 +255,10 @@ class Validator {
 
 			$sort = array_map('strtolower', $sort);
 
-			if(empty($diff = array_diff(array_values($sort), $this->_sort)) === false)
+			if(empty($diff = array_diff(array_values($sort), $this->sort)) === false)
 				 throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
 
-			if(empty($diff = array_diff($sort, $this->_sort)) === false)
+			if(empty($diff = array_diff($sort, $this->sort)) === false)
 				throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
 				//throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [$diff]);
 

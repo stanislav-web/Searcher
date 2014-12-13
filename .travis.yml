@@ -16,9 +16,10 @@ before_script:
   - phpenv rehash
   - composer install --dev --no-interaction -o
   - sh ./build/install.sh
+  - php -m | grep -i Phalcon
 
 script:
-  - phpunit --configuration ./phpunit/phpunit.xml --coverage-clover=clover.xml
+  - phpunit --configuration ./phpunit/phpunit.xml --testdox
 
 after_script:
   - php vendor/bin/coveralls -v
