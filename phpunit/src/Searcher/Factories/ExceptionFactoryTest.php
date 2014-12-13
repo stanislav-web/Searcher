@@ -19,7 +19,6 @@ class ExceptionFactoryTest extends \PHPUnit_Framework_TestCase {
 	 */
 	private $exceptionFactory;
 
-
 	/**
 	 * Kill testing object
 	 * @uses \Phalcon\Searcher\Factories\ExceptionFactory

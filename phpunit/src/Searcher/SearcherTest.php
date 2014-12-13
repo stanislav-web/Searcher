@@ -10,7 +10,6 @@ use \Phalcon\Searcher\Searcher;
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanilav WEB
  */
 class SearcherTest extends \PHPUnit_Framework_TestCase {
 
@@ -34,6 +33,17 @@ class SearcherTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function tearDown() {
 		$this->searcher = null;
+	}
+
+	/**
+	 * @covers \Phalcon\Searcher\Searcher::getFields
+	 * @expectedException     \Phalcon\Searcher\Factories\ExceptionFactory
+	 * @group Searcher
+	 */
+	public function testFailure()
+	{
+		// check assigned columns isn't empty
+		$this->assertEmpty($this->searcher->getFields());
 	}
 }
  

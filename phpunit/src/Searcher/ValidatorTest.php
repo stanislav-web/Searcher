@@ -1,6 +1,8 @@
 <?php
 namespace Phalcon\Searcher\Test;
-use Phalcon\Searcher\Validator;
+
+use \Phalcon\Searcher\Validator;
+use \Phalcon\Searcher\Factories\ExceptionFactory;
 
 /**
  * Class ValidatorTest
@@ -9,7 +11,8 @@ use Phalcon\Searcher\Validator;
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanilav WEB
+ *
+ * @backupGlobals disabled
  */
 class ValidatorTest extends \PHPUnit_Framework_TestCase {
 
@@ -35,8 +38,17 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase {
 		$this->validator = null;
 	}
 
+	/**
+	 * @covers \Phalcon\Searcher\Validator::columns
+	 * @expectedException     \Phalcon\Searcher\Factories\ExceptionFactory
+	 * @group Validator
+	 */
 	public function testFailure()
 	{
+		// check assigned columns isn't empty
+		$this->assertEmpty($this->validator->columns);
+
+		// check assigned columns type
 		$this->assertContainsOnly('int', $this->validator->columns);
 	}
 }

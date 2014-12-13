@@ -4,10 +4,17 @@
 
 Extension is used to group search for project models.. Currently under development and testing to search for a MySQL databases
 
+## System requirements & guide
+- PHP 5.5
+- PSR-0 Compatible
+- PSR-4 Compatible
+
 ## Manual include
 
 ```php
-Unavailable
+php composer.phar install --dev --no-interaction -o
+
+php build/phpunit.phar --configuration ./phpunit/phpunit.xml --coverage-clover=../../phpunit/coverage.xml
 ```
 ## Usage
 

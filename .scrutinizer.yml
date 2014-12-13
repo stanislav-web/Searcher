@@ -21,7 +21,7 @@ build:
                 - 'phpunit --configuration ./phpunit/phpunit.xml --coverage-clover=coverage.clover'
 filter:
     paths: [src/*]
-    excluded_paths: [build/*, phpunit/*]
+    excluded_paths: [build/*, phpunit/*, vendor/*]
 
 tools:
     php_sim: true

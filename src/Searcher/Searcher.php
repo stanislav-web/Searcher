@@ -27,7 +27,7 @@ class Searcher {
 
 	/**
 	 * Validator
-	 * @var Phalcon\Searcher\Validator
+	 * @var \Phalcon\Searcher\Validator
 	 */
 	private	$_validator;
 

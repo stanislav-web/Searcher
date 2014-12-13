@@ -17,13 +17,13 @@ class Builder {
 
 	/**
 	 * Query builder
-	 * @var Phalcon\Mvc\Model\Query\Builder
+	 * @var \Phalcon\Mvc\Model\Query\Builder
 	 */
 	private	$builder;
 
 	/**
 	 * Client for preparing data
-	 * @var Phalcon\Searcher\Searcher
+	 * @var \Phalcon\Searcher\Searcher
 	 */
 	private	$searcher;
 
@@ -36,8 +36,8 @@ class Builder {
 	/**
 	 * Initialize internal params
 	 *
-	 * @param Phalcon\Searcher\Searcher $searcher
-	 * @uses Phalcon\Mvc\Model\Query\Builder
+	 * @param \Phalcon\Searcher\Searcher $searcher
+	 * @uses \Phalcon\Mvc\Model\Query\Builder
 	 * @return null
 	 */
 	public function __construct(Searcher $searcher) {

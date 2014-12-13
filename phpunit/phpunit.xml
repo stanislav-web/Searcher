@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Setup test files and directories -->
 <phpunit    backupGlobals="true"
             backupStaticAttributes="true"
-            bootstrap="Bootstrap.php"
+            bootstrap="../vendor/autoload.php"
             cacheTokens="true"
             colors="true"
             convertErrorsToExceptions="true"
@@ -23,12 +24,25 @@
         <testsuite name="Phalcon Searcher by Stanislav WEB">
 
             <!-- Basic -->
-            <file>src/Searcher/SearcherTest.php</file>
             <file>src/Searcher/ValidatorTest.php</file>
-            <file>src/Searcher/BuilderTest.php</file>
+            <file>src/Searcher/SearcherTest.php</file>
             <!-- /Basic -->
 
         </testsuite>
     </testsuites>
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/Searcher/</directory>
+        </whitelist>
+        <blacklist>
+            <directory suffix=".php">/vendor</directory>
+        </blacklist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="coverage" charset="UTF-8" yui="true" highlight="true"/>
+        <log type="coverage-clover" target="coverage.xml"/>
+    </logging>
 </phpunit>
 <!-- Setup test files and directories -->
