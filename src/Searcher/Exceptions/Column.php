@@ -28,6 +28,7 @@ class Column {
 	 */
 	public function rise(array $params, $line, $filename) {
 
+
 		$invoke = [
 			COLUMN_DOES_NOT_SUPPORT 	=> function($params, $filename, $line) {
 				// set message for not supported column type
@@ -48,7 +49,7 @@ class Column {
 				$this->_message = $params[1].". File: ".$filename." Line: ".$line;
 			}];
 
-		$this->$invoke[current($params)]($params, $filename, $line);
+		$invoke[current($params)]($params, $filename, $line);
 
 		return $this;
 	}
