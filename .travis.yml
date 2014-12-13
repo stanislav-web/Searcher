@@ -21,8 +21,7 @@ before_script:
   - sh ./build/install.sh
 
 script:
-  - mkdir -p build/logs
-  - vendor/bin/phpunit --configuration ./phpunit/phpunit.xml --coverage-clover build/logs/clover.xml
+  - phpunit --configuration ./phpunit/phpunit.xml --coverage-clover=clover.xml
 
 after_script:
   - php vendor/bin/coveralls -v
