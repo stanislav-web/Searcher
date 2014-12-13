@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1418433663">
-  <project timestamp="1418433663">
+<coverage generated="1418435513">
+  <project timestamp="1418435513">
     <package name="Phalcon\Searcher">
       <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Searcher.php">
         <class name="Searcher" namespace="Phalcon\Searcher" fullPackage="Phalcon" package="Phalcon">

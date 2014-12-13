@@ -21,15 +21,21 @@
          "role": "Developer"
     }],
     "require" : {
-         "php" : ">=5.3",
-        "phpunit/phpunit": "~4.6@dev"
+         "php" : ">=5.3"
     },
     "require-dev": {
+         "phpunit/phpunit": "4.5.*"
     },
     "autoload": {
-	    "classmap": [
-		    "/src/Searcher",
-		    "/phpunit/src/Searcher"
-	    ]
+	    "psr-4": {
+		    "Phalcon\\Searcher\\": "src/Searcher"
+	    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+	        "Phalcon\\Searcher\\Tests\\": "phpunit/src/Searcher"
+        }
     }
+
+
 }
