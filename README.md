@@ -12,7 +12,8 @@ Extension is used to group search for project models.. Currently under developme
 ## Manual include
 
 ```php
-php composer.phar install --dev --no-interaction
+php composer.phar install --dev --no-interaction -o
+
 php build/phpunit.phar --configuration ./phpunit/phpunit.xml --coverage-clover=../../phpunit/coverage.xml
 ```
 ## Usage

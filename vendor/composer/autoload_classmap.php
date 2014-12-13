@@ -6,6 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
+    'Doctrine\\Instantiator\\Exception\\InvalidArgumentException' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php',
+    'Doctrine\\Instantiator\\Exception\\UnexpectedValueException' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php',
+    'Doctrine\\Instantiator\\Instantiator' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php',
+    'Doctrine\\Instantiator\\InstantiatorInterface' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/InstantiatorInterface.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Factory.php',
@@ -418,5 +423,15 @@ return array(
     'SebastianBergmann\\GlobalState\\RuntimeException' => $vendorDir . '/sebastian/global-state/src/RuntimeException.php',
     'SebastianBergmann\\GlobalState\\Snapshot' => $vendorDir . '/sebastian/global-state/src/Snapshot.php',
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
+    'Symfony\\Component\\Yaml\\Dumper' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Dumper.php',
+    'Symfony\\Component\\Yaml\\Escaper' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Escaper.php',
+    'Symfony\\Component\\Yaml\\Exception\\DumpException' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Exception/DumpException.php',
+    'Symfony\\Component\\Yaml\\Exception\\ExceptionInterface' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Exception/ExceptionInterface.php',
+    'Symfony\\Component\\Yaml\\Exception\\ParseException' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Exception/ParseException.php',
+    'Symfony\\Component\\Yaml\\Exception\\RuntimeException' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Exception/RuntimeException.php',
+    'Symfony\\Component\\Yaml\\Inline' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Inline.php',
+    'Symfony\\Component\\Yaml\\Parser' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Parser.php',
+    'Symfony\\Component\\Yaml\\Unescaper' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Unescaper.php',
+    'Symfony\\Component\\Yaml\\Yaml' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Yaml.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/Text/Template.php',
 );
