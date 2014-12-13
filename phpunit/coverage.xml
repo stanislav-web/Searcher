@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1418441055">
-  <project timestamp="1418441055">
+<coverage generated="1418442059">
+  <project timestamp="1418442059">
     <package name="Phalcon\Searcher\Test">
       <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/phpunit/src/Searcher/BuilderTest.php">
         <class name="BuilderTest" namespace="Phalcon\Searcher\Test" fullPackage="Phalcon.Phalcon" package="Phalcon" subpackage="Phalcon">
