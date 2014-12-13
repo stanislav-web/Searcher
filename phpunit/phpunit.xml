@@ -1,7 +1,7 @@
 <!-- Setup test files and directories -->
 <phpunit    backupGlobals="true"
             backupStaticAttributes="true"
-            bootstrap="Bootstrap.php"
+            bootstrap="bootstrap.php"
             cacheTokens="true"
             colors="true"
             convertErrorsToExceptions="true"
@@ -23,12 +23,16 @@
         <testsuite name="Phalcon Searcher by Stanislav WEB">
 
             <!-- Basic -->
-            <file>src/Searcher/SearcherTest.php</file>
             <file>src/Searcher/ValidatorTest.php</file>
-            <file>src/Searcher/BuilderTest.php</file>
+            <file>src/Searcher/SearcherTest.php</file>
             <!-- /Basic -->
 
         </testsuite>
     </testsuites>
+
+    <logging>
+        <log type="coverage-html" target="coverage" charset="UTF-8" yui="true" highlight="true"/>
+        <log type="coverage-clover" target="coverage.xml"/>
+    </logging>
 </phpunit>
 <!-- Setup test files and directories -->

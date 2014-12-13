@@ -35,5 +35,16 @@ class SearcherTest extends \PHPUnit_Framework_TestCase {
 	public function tearDown() {
 		$this->searcher = null;
 	}
+
+	public function testFailure()
+	{
+
+		// assertEmpty(mixed $actual[, string $message = ''])
+		$this->assertEmpty($this->searcher->getFields());
+
+		// reports an error if $haystack does not contain only variables of type $type
+		$this->assertContainsOnly('int', $this->searcher->getFields());
+
+	}
 }
  

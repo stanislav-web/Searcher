@@ -1,6 +1,7 @@
 <?php
 namespace Phalcon\Searcher\Test;
-use \Validator;
+use Phalcon\Searcher\Validator;
+use \Phalcon\Db\Column as Column;
 
 /**
  * Class ValidatorTest
@@ -33,6 +34,15 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function tearDown() {
 		$this->validator = null;
+	}
+
+	public function testFailure()
+	{
+		$i = []; foreach($this->validator->columns as $index)
+			$i[]    =   $index;
+
+		// check assigned columns type
+		$this->assertContainsOnly('int', $i);
 	}
 }
  
