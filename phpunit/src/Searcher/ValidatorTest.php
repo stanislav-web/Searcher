@@ -39,7 +39,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @covers \Phalcon\Searcher\Validator::columns
+	 * @covers Phalcon\Searcher\Validator::columns
 	 * @expectedException     \Phalcon\Searcher\Factories\ExceptionFactory
 	 * @group Validator
 	 */
