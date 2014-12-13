@@ -27,10 +27,6 @@
 	    "phpunit/phpunit": "4.*"
     },
 
-	"autoload": {
-		"classmap": ["src/"]
-	},
-
 	"autoload-dev": {
 		"psr-4": {
 			"Phalcon\\Searcher\\Tests\\": "phpunit/src"
