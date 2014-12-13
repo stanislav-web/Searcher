@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Setup test files and directories -->
 <phpunit    backupGlobals="true"
             backupStaticAttributes="true"
-            bootstrap="bootstrap.php"
+            bootstrap="../vendor/autoload.php"
             cacheTokens="true"
             colors="true"
             convertErrorsToExceptions="true"
@@ -29,6 +30,12 @@
 
         </testsuite>
     </testsuites>
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/Searcher/</directory>
+        </whitelist>
+    </filter>
 
     <logging>
         <log type="coverage-html" target="coverage" charset="UTF-8" yui="true" highlight="true"/>

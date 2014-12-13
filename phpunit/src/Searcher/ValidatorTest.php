@@ -1,8 +1,7 @@
 <?php
 namespace Phalcon\Searcher\Test;
-use Phalcon\Searcher\Validator;
-use \Phalcon\Db\Column as Column;
 
+use \Phalcon\Searcher\Validator;
 /**
  * Class ValidatorTest
  * @package Phalcon
@@ -38,7 +37,8 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase {
 
 	public function testFailure()
 	{
-		$i = []; foreach($this->validator->columns as $index)
+		$i = [];
+		foreach($this->validator->columns as $index)
 			$i[]    =   $index;
 
 		// check assigned columns type
