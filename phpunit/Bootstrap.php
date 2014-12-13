@@ -1,77 +1,23 @@
 <?php
-namespace Phalcon\Searcher\Test;
+use Phalcon\DI;
+use Phalcon\DI\FactoryDefault;
 
-/**
- * Class Bootstrap For original classes
- * @package Phalcon
- * @subpackage Phalcon\Searcher\Test
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanilav WEB
- */
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+define('ROOT_PATH', __DIR__."../src/Searcher");
 
-class Bootstrap {
+set_include_path(ROOT_PATH . PATH_SEPARATOR . get_include_path());
 
-	static private $classNames = array();
+// Используем автозагрузчик приложений для автозагрузки классов.
+// Автозагрузка зависимостей, найденных в composer.
+$loader = new Phalcon\Loader();
 
-	/**
-	 * Store the filename (sans extension) & full path of all ".php" files found
-	 *
-	 * @param $dirName
-	 * @access static
-	 * @return null
-	 */
-	public static function registerDirectory($dirName)
-	{
-		$di = new \DirectoryIterator($dirName);
-		foreach($di as $file) {
+$loader->registerDirs(array(
+	ROOT_PATH
+));
 
-			if($file->isDir() && !$file->isLink() && !$file->isDot()) {
-				// recurse into directories other than a few special ones
-				self::registerDirectory($file->getPathname());
-			} elseif (substr($file->getFilename(), -4) === '.php') {
-				// save the class name / path of a .php file found
-				$className = substr($file->getFilename(), 0, -4);
-				Bootstrap::registerClass($className, $file->getPathname());
-			}
-		}
-	}
+$loader->register();
 
-	/**
-	 * Register classes
-	 *
-	 * @param $className
-	 * @param $fileName
-	 * @access static
-	 * @return null
-	 */
-	public static function registerClass($className, $fileName)
-	{
-		Bootstrap::$classNames[$className] = $fileName;
-	}
-
-	/**
-	 * Load classes
-	 *
-	 * @param $className
-	 * @access static
-	 * @return null
-	 */
-	public static function loadClass($className)
-	{
-
-		if(isset(Bootstrap::$classNames[$className])) {
-			print Bootstrap::$classNames[$className]."\n";
-
-			require_once(Bootstrap::$classNames[$className]);
-		}
-	}
-}
-
-spl_autoload_register(array('Phalcon\Searcher\Test\Bootstrap', 'loadClass'));
-// Register the directory to your include files
-
-chdir(dirname(__FILE__) . '../src/Searcher');
-
-Bootstrap::registerDirectory(getcwd());
+$di = new FactoryDefault();
+DI::reset();
+DI::setDefault($di);
