@@ -1,9 +1,9 @@
 <?php
 namespace Phalcon\Searcher;
 
-use Phalcon\Db\Column;
 use Phalcon\Searcher\Factories\ExceptionFactory;
-use Phalcon\Mvc\Model\Query\Builder as Build;
+use \Phalcon\Db\Column;
+use \Phalcon\Mvc\Model\Query\Builder as Build;
 
 /**
  * Query builder class

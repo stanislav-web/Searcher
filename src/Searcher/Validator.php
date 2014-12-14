@@ -1,8 +1,8 @@
 <?php
 namespace Phalcon\Searcher;
 
-use Phalcon\Db\Column;
-use	Phalcon\Mvc\Model\Manager;
+use \Phalcon\Db\Column;
+use	\Phalcon\Mvc\Model\Manager;
 use	Phalcon\Searcher\Factories\ExceptionFactory;
 
 /**
@@ -32,13 +32,13 @@ class Validator {
 	 * @var array
 	 */
 	public $columns	=	[
-				Column::TYPE_INTEGER,
-				Column::TYPE_VARCHAR,
-				Column::TYPE_CHAR,
-				Column::TYPE_TEXT,
-				Column::TYPE_DATE,
-				Column::TYPE_DATETIME,
-			];
+		Column::TYPE_INTEGER,
+		Column::TYPE_VARCHAR,
+		Column::TYPE_CHAR,
+		Column::TYPE_TEXT,
+		Column::TYPE_DATE,
+		Column::TYPE_DATETIME,
+	];
 
 	/**
 	 * Available sort types
@@ -93,7 +93,6 @@ class Validator {
 		return $isValid($data);
 	}
 
-
 	/**
 	 * Set minimum value for the search
 	 *
@@ -129,8 +128,8 @@ class Validator {
 	 * @return boolean
 	 */
 	protected function isNotNull($value) {
-		if(is_null($value) === true)
-			throw new Exceptions\NullArgumentException();
+		if(is_null($value) === true || empty($value) === true)
+			throw new ExceptionFactory('DataType', [$value, 'string']);
 		return true;
 	}
 
@@ -138,12 +137,12 @@ class Validator {
 	 * Verify by array type
 	 *
 	 * @param mixed $value
-	 * @throws Exceptions\DataTypeException
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isArray($value) {
 		if(is_array($value) === false)
-			throw new Exceptions\DataTypeException($value, 'array');
+			throw new ExceptionFactory('DataType', [$value, 'array']);
 		return true;
 	}
 
@@ -151,24 +150,27 @@ class Validator {
 	 * Verify by not empty value
 	 *
 	 * @param mixed $value
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isNotEmpty($value) {
 		if(empty($value) === false)
 			return true;
 		else
-			throw new Exceptions\ColumnException(Exceptions\ColumnException::EMPTY_LIST, ['Search list has empty value']);
+			throw new ExceptionFactory('Column', ['EMPTY_LIST', 'Search list will not contain empty value']);
 	}
 
 	/**
 	 * Verify by min length
 	 *
 	 * @param string $value
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isNotFew($value) {
 		if(strlen(utf8_decode($value)) < $this->_min)
-			throw new Exceptions\InvalidLengthException($value, 'greater', $this->_min);
+			throw new ExceptionFactory('InvalidLength', [$value, 'greater', $this->_min]);
+
 		return true;
 	}
 
@@ -176,12 +178,13 @@ class Validator {
 	 * Verify by max length
 	 *
 	 * @param string $value
-	 * @throws Exceptions\InvalidLengthException
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isNotMuch($value) {
 		if(strlen(utf8_decode($value)) > $this->_max)
-			throw new Exceptions\InvalidLengthException($value, 'less', $this->_max);
+			throw new ExceptionFactory('InvalidLength', [$value, 'less', $this->_max]);
+
 		return true;
 	}
 
@@ -189,6 +192,7 @@ class Validator {
 	 * Check if field exist in table
 	 *
 	 * @param array $value
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isExists(array $value) {
@@ -205,8 +209,7 @@ class Validator {
 			// check fields of table
 
 			if(empty($not = array_diff($fields, $metaData->getAttributes($model))) === false)
-				throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_EXISTS, [
-					$not, $table, $metaData->getAttributes($model)]);
+				throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $metaData->getAttributes($model)]);
 
 			// setup clear used tables
 			$columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
@@ -233,6 +236,7 @@ class Validator {
 	 * Check ordered fields
 	 *
 	 * @param array $ordered
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isOrdered(array $ordered) {
@@ -260,7 +264,6 @@ class Validator {
 
 			if(empty($diff = array_diff($sort, $this->sort)) === false)
 				throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
-				//throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [$diff]);
 
 			$this->fields[$this->_cast][$model->getSource()]	=	$sort;
 		}
@@ -271,14 +274,13 @@ class Validator {
 	 * Check if field type support in table
 	 *
 	 * @param string $value
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function validTypes(Column $column) {
 
 		if(in_array($column->getType(), $this->columns) === false) {
-
-			throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_SUPPORT, [
-				$column->getName(), $column->getType()]);
+			throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_SUPPORT',  $column->getType(), $column->getName()]);
 		}
 		return true;
 	}
