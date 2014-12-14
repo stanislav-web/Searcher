@@ -131,7 +131,7 @@ class Builder {
 				];
 		}
 
-		$this->builder->limit(implode(',', $this->_data['threshold']));
+		$this->builder->limit(implode(',', array_reverse($this->_data['threshold'])));
 
 		return null;
 	}
@@ -222,6 +222,18 @@ class Builder {
 
 			$res = $this->builder->getQuery()->execute();
 
+			var_dump($this->builder->getPhql());
+
+			var_dump('Valid', $res->valid());
+			var_dump('toArray',$res->toArray());
+			var_dump('serialize',$res->serialize());
+			var_dump('key',$res->key());
+			var_dump('count',$res->count());
+			var_dump('getType', $res->getType());
+			var_dump('hydrate mode', $res->getHydrateMode());
+			var_dump('Messages',$res->getMessages());
+
+			exit;
 			return $res;
 		}
 		catch(ExceptionFactory $e) {
