@@ -1,20 +1,8 @@
 #!/bin/sh
-COVERAGE=""
 METRICS="../phpunit/log/coverage.xml"
-
-if [ "$1" == "--coverage" ]
-then
-  COVERAGE="--coverage-clover $METRICS"
-  shift
-fi
+COVERAGE="--coverage-clover $METRICS"
 
 phpunit $COVERAGE $@
-
-# exit with PHPUnit's return code
-if [ $? -ne 0 ]
-then
-  exit $?
-fi
 
 if [ "$COVERAGE" != "" ]
 then
