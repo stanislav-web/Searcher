@@ -201,9 +201,9 @@ class Searcher
         $this->validator->verify($query, ['isNotNull', 'isNotFew', 'isNotMuch']);
 
         if (false === $this->exact)
-            $this->query = ['query' => '%' . $query . '%'];
+            $this->query = [':query:' => '%' . $query . '%'];
         else
-            $this->query = ['query' => $query];
+            $this->query = [':query:' => $query];
         return $this;
     }
 

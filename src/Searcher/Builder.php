@@ -228,21 +228,21 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
             $res = $this->builder->getQuery()->execute();
 
-            //var_dump($res);
-            //var_dump($this->builder->getPhql());
+            var_dump($res);
+            var_dump($this->builder->getPhql());
 
-            //var_dump('Bind params', $this->builder->getQuery()->getBindParams());
-            //var_dump('Bind params types', $this->builder->getQuery()->getBindTypes());
-            //var_dump('Valid', $res->valid());
-            //var_dump('toArray',$res->toArray());
-            //var_dump('serialize',$res->serialize());
-            //var_dump('key',$res->key());
-            //var_dump('count',$res->count());
-            //var_dump('getType', $res->getType());
-            //var_dump('hydrate mode', $res->getHydrateMode());
-            //var_dump('Messages',$res->getMessages());
+            var_dump('Bind params', $this->builder->getQuery()->getBindParams());
+            var_dump('Bind params types', $this->builder->getQuery()->getBindTypes());
+            var_dump('Valid', $res->valid());
+            var_dump('toArray',$res->toArray());
+            var_dump('serialize',$res->serialize());
+            var_dump('key',$res->key());
+            var_dump('count',$res->count());
+            var_dump('getType', $res->getType());
+            var_dump('hydrate mode', $res->getHydrateMode());
+            var_dump('Messages',$res->getMessages());
 
-            //exit;
+            exit;
             return $res;
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
