@@ -71,7 +71,7 @@ class Searcher
      *
      * @param boolean $flag
      * @example <code>
-     *          $s->setExact(true) // false , as 'query' or '%query%'
+     *          $s->setExact(true) // false
      *          </code>
      * @return Searcher
      */

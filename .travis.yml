@@ -19,4 +19,4 @@ before_script:
   - php -m | grep -i Phalcon
 
 script:
-  - vendor/bin/phpunit --coverage-clover=coverage.clover
+  - phpunit --coverage-clover=coverage.clover
