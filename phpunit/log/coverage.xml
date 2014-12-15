@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1418676670">
-  <project timestamp="1418676670">
+<coverage generated="1418681973">
+  <project timestamp="1418681973">
     <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php">
       <metrics loc="30" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php">
+      <metrics loc="21" ncloc="7" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="Phalcon\Searcher">
       <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Builder.php">
         <class name="Builder" namespace="Phalcon\Searcher" fullPackage="Phalcon" package="Phalcon">
-          <metrics methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="81" coveredstatements="0" elements="91" coveredelements="0"/>
+          <metrics methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="73" coveredstatements="0" elements="83" coveredelements="0"/>
         </class>
         <line num="49" type="method" name="__construct" crap="2" count="0"/>
         <line num="51" type="stmt" count="0"/>
@@ -23,84 +26,76 @@
         <line num="83" type="stmt" count="0"/>
         <line num="85" type="stmt" count="0"/>
         <line num="86" type="stmt" count="0"/>
-        <line num="94" type="method" name="setOrder" crap="20" count="0"/>
-        <line num="97" type="stmt" count="0"/>
+        <line num="95" type="method" name="setOrder" crap="30" count="0"/>
         <line num="98" type="stmt" count="0"/>
-        <line num="100" type="stmt" count="0"/>
+        <line num="99" type="stmt" count="0"/>
         <line num="101" type="stmt" count="0"/>
         <line num="102" type="stmt" count="0"/>
-        <line num="103" type="stmt" count="0"/>
         <line num="105" type="stmt" count="0"/>
         <line num="106" type="stmt" count="0"/>
         <line num="107" type="stmt" count="0"/>
-        <line num="115" type="method" name="setGroup" crap="20" count="0"/>
-        <line num="119" type="stmt" count="0"/>
-        <line num="120" type="stmt" count="0"/>
-        <line num="122" type="stmt" count="0"/>
+        <line num="108" type="stmt" count="0"/>
+        <line num="110" type="stmt" count="0"/>
+        <line num="111" type="stmt" count="0"/>
+        <line num="112" type="stmt" count="0"/>
+        <line num="120" type="method" name="setGroup" crap="20" count="0"/>
         <line num="124" type="stmt" count="0"/>
         <line num="126" type="stmt" count="0"/>
-        <line num="127" type="stmt" count="0"/>
         <line num="128" type="stmt" count="0"/>
-        <line num="129" type="stmt" count="0"/>
         <line num="130" type="stmt" count="0"/>
-        <line num="131" type="stmt" count="0"/>
-        <line num="139" type="method" name="setThreshold" crap="12" count="0"/>
-        <line num="141" type="stmt" count="0"/>
-        <line num="142" type="stmt" count="0"/>
-        <line num="144" type="stmt" count="0"/>
-        <line num="145" type="stmt" count="0"/>
-        <line num="146" type="stmt" count="0"/>
+        <line num="132" type="stmt" count="0"/>
+        <line num="133" type="stmt" count="0"/>
+        <line num="134" type="stmt" count="0"/>
+        <line num="135" type="stmt" count="0"/>
+        <line num="136" type="stmt" count="0"/>
+        <line num="137" type="stmt" count="0"/>
+        <line num="145" type="method" name="setThreshold" crap="12" count="0"/>
         <line num="147" type="stmt" count="0"/>
         <line num="148" type="stmt" count="0"/>
         <line num="150" type="stmt" count="0"/>
         <line num="151" type="stmt" count="0"/>
         <line num="152" type="stmt" count="0"/>
-        <line num="155" type="stmt" count="0"/>
+        <line num="153" type="stmt" count="0"/>
+        <line num="154" type="stmt" count="0"/>
+        <line num="156" type="stmt" count="0"/>
         <line num="157" type="stmt" count="0"/>
-        <line num="165" type="method" name="setWhere" crap="12" count="0"/>
-        <line num="168" type="stmt" count="0"/>
-        <line num="169" type="stmt" count="0"/>
-        <line num="171" type="stmt" count="0"/>
-        <line num="173" type="stmt" count="0"/>
+        <line num="158" type="stmt" count="0"/>
+        <line num="161" type="stmt" count="0"/>
+        <line num="163" type="stmt" count="0"/>
+        <line num="171" type="method" name="setWhere" crap="12" count="0"/>
         <line num="174" type="stmt" count="0"/>
         <line num="175" type="stmt" count="0"/>
-        <line num="176" type="stmt" count="0"/>
         <line num="177" type="stmt" count="0"/>
-        <line num="189" type="method" name="expressionRun" crap="20" count="0"/>
-        <line num="191" type="stmt" count="0"/>
-        <line num="192" type="stmt" count="0"/>
-        <line num="193" type="stmt" count="0"/>
-        <line num="194" type="stmt" count="0"/>
-        <line num="196" type="stmt" count="0"/>
+        <line num="179" type="stmt" count="0"/>
+        <line num="180" type="stmt" count="0"/>
+        <line num="181" type="stmt" count="0"/>
+        <line num="182" type="stmt" count="0"/>
+        <line num="183" type="stmt" count="0"/>
+        <line num="195" type="method" name="expressionRun" crap="20" count="0"/>
+        <line num="197" type="stmt" count="0"/>
         <line num="198" type="stmt" count="0"/>
+        <line num="199" type="stmt" count="0"/>
+        <line num="200" type="stmt" count="0"/>
         <line num="202" type="stmt" count="0"/>
-        <line num="203" type="stmt" count="0"/>
-        <line num="205" type="stmt" count="0"/>
+        <line num="204" type="stmt" count="0"/>
+        <line num="206" type="stmt" count="0"/>
         <line num="207" type="stmt" count="0"/>
-        <line num="216" type="method" name="loop" crap="20" count="0"/>
-        <line num="221" type="stmt" count="0"/>
-        <line num="223" type="stmt" count="0"/>
+        <line num="209" type="stmt" count="0"/>
+        <line num="211" type="stmt" count="0"/>
+        <line num="220" type="method" name="loop" crap="30" count="0"/>
         <line num="225" type="stmt" count="0"/>
-        <line num="226" type="stmt" count="0"/>
         <line num="227" type="stmt" count="0"/>
         <line num="229" type="stmt" count="0"/>
+        <line num="230" type="stmt" count="0"/>
         <line num="231" type="stmt" count="0"/>
-        <line num="232" type="stmt" count="0"/>
-        <line num="234" type="stmt" count="0"/>
+        <line num="233" type="stmt" count="0"/>
         <line num="235" type="stmt" count="0"/>
         <line num="236" type="stmt" count="0"/>
-        <line num="237" type="stmt" count="0"/>
         <line num="238" type="stmt" count="0"/>
         <line num="239" type="stmt" count="0"/>
         <line num="240" type="stmt" count="0"/>
-        <line num="241" type="stmt" count="0"/>
         <line num="242" type="stmt" count="0"/>
-        <line num="243" type="stmt" count="0"/>
-        <line num="244" type="stmt" count="0"/>
-        <line num="246" type="stmt" count="0"/>
-        <line num="247" type="stmt" count="0"/>
-        <line num="249" type="stmt" count="0"/>
-        <metrics loc="249" ncloc="152" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="81" coveredstatements="0" elements="91" coveredelements="0"/>
+        <metrics loc="242" ncloc="144" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="73" coveredstatements="0" elements="83" coveredelements="0"/>
       </file>
       <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Searcher.php">
         <class name="Searcher" namespace="Phalcon\Searcher" fullPackage="Phalcon" package="Phalcon">
@@ -124,36 +119,36 @@
         <line num="109" type="stmt" count="0"/>
         <line num="111" type="stmt" count="0"/>
         <line num="128" type="method" name="setOrder" crap="2" count="0"/>
+        <line num="131" type="stmt" count="0"/>
         <line num="132" type="stmt" count="0"/>
         <line num="133" type="stmt" count="0"/>
         <line num="134" type="stmt" count="0"/>
-        <line num="135" type="stmt" count="0"/>
-        <line num="153" type="method" name="setGroup" crap="2" count="0"/>
+        <line num="152" type="method" name="setGroup" crap="2" count="0"/>
+        <line num="156" type="stmt" count="0"/>
         <line num="157" type="stmt" count="0"/>
         <line num="158" type="stmt" count="0"/>
-        <line num="159" type="stmt" count="0"/>
-        <line num="161" type="stmt" count="0"/>
-        <line num="176" type="method" name="setThreshold" crap="6" count="0"/>
+        <line num="160" type="stmt" count="0"/>
+        <line num="175" type="method" name="setThreshold" crap="6" count="0"/>
+        <line num="179" type="stmt" count="0"/>
         <line num="180" type="stmt" count="0"/>
-        <line num="181" type="stmt" count="0"/>
+        <line num="182" type="stmt" count="0"/>
         <line num="183" type="stmt" count="0"/>
         <line num="184" type="stmt" count="0"/>
-        <line num="185" type="stmt" count="0"/>
-        <line num="197" type="method" name="setQuery" crap="6" count="0"/>
+        <line num="196" type="method" name="setQuery" crap="6" count="0"/>
+        <line num="199" type="stmt" count="0"/>
         <line num="201" type="stmt" count="0"/>
-        <line num="203" type="stmt" count="0"/>
+        <line num="202" type="stmt" count="0"/>
         <line num="204" type="stmt" count="0"/>
-        <line num="206" type="stmt" count="0"/>
-        <line num="207" type="stmt" count="0"/>
-        <line num="214" type="method" name="getFields" crap="2" count="0"/>
-        <line num="216" type="stmt" count="0"/>
-        <line num="225" type="method" name="run" crap="6" count="0"/>
+        <line num="205" type="stmt" count="0"/>
+        <line num="212" type="method" name="getFields" crap="2" count="0"/>
+        <line num="214" type="stmt" count="0"/>
+        <line num="223" type="method" name="run" crap="6" count="0"/>
+        <line num="228" type="stmt" count="0"/>
+        <line num="229" type="stmt" count="0"/>
         <line num="230" type="stmt" count="0"/>
         <line num="231" type="stmt" count="0"/>
-        <line num="232" type="stmt" count="0"/>
-        <line num="233" type="stmt" count="0"/>
-        <line num="236" type="stmt" count="0"/>
-        <metrics loc="237" ncloc="104" classes="1" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="0" elements="47" coveredelements="0"/>
+        <line num="234" type="stmt" count="0"/>
+        <metrics loc="235" ncloc="102" classes="1" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="0" elements="47" coveredelements="0"/>
       </file>
       <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Validator.php">
         <class name="Validator" namespace="Phalcon\Searcher" fullPackage="Phalcon" package="Phalcon">
@@ -320,6 +315,32 @@
         <metrics loc="39" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="5" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="9" loc="1113" ncloc="575" classes="8" methods="45" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="217" coveredstatements="8" elements="262" coveredelements="10"/>
+    <package name="Phalcon\Searcher\Hydrators">
+      <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/ArrayHydrator.php">
+        <class name="ArrayHydrator" namespace="Phalcon\Searcher\Hydrators" fullPackage="Phalcon" package="Phalcon">
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        </class>
+        <line num="16" type="method" name="extract" crap="2" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <metrics loc="19" ncloc="10" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </file>
+      <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/JsonHydrator.php">
+        <class name="JsonHydrator" namespace="Phalcon\Searcher\Hydrators" fullPackage="Phalcon" package="Phalcon">
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        </class>
+        <line num="16" type="method" name="extract" crap="2" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <metrics loc="19" ncloc="10" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </file>
+      <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/YamlHydrator.php">
+        <class name="YamlHydrator" namespace="Phalcon\Searcher\Hydrators" fullPackage="Phalcon" package="Phalcon">
+          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+        </class>
+        <line num="16" type="method" name="extract" crap="2" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <metrics loc="19" ncloc="10" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </file>
+    </package>
+    <metrics files="13" loc="1182" ncloc="602" classes="11" methods="48" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="212" coveredstatements="8" elements="260" coveredelements="10"/>
   </project>
 </coverage>

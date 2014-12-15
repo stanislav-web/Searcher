@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions</title>
+  <title>Dashboard for /var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/nv.d3.css" rel="stylesheet">
@@ -19,7 +19,7 @@
      <div class="col-md-12">
       <ol class="breadcrumb">
         <li><a href="../index.html">/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher</a></li>
-        <li><a href="index.html">Exceptions</a></li>
+        <li><a href="index.html">Hydrators</a></li>
         <li class="active">(Dashboard)</li>
 
       </ol>
@@ -59,10 +59,9 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="Model.php.html#15">Model</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="InvalidLength.php.html#15">InvalidLength</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="DataType.php.html#15">DataType</a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Column.php.html#15">Column</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="YamlHydrator.php.html#14">YamlHydrator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JsonHydrator.php.html#14">JsonHydrator</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArrayHydrator.php.html#14">ArrayHydrator</a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -116,16 +115,9 @@
         </tr>
        </thead>
        <tbody>
-       <tr><td><a href="InvalidLength.php.html#45"><abbr title="InvalidLength::getMessage">getMessage</a></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Model.php.html#38"><abbr title="Model::rise">rise</a></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Model.php.html#42"><abbr title="Model::anonymous function">anonymous function</a></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Model.php.html#58"><abbr title="Model::getMessage">getMessage</a></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="InvalidLength.php.html#32"><abbr title="InvalidLength::rise">rise</a></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="DataType.php.html#52"><abbr title="DataType::getMessage">getMessage</a></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Column.php.html#56"><abbr title="Column::anonymous function">anonymous function</a></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Column.php.html#71"><abbr title="Column::getMessage">getMessage</a></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="DataType.php.html#38"><abbr title="DataType::rise">rise</a></a></td><td class="text-right">0%</td></tr>
-       <tr><td><a href="Column.php.html#38"><abbr title="Column::rise">rise</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="YamlHydrator.php.html#16"><abbr title="YamlHydrator::extract">extract</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="JsonHydrator.php.html#16"><abbr title="JsonHydrator::extract">extract</a></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArrayHydrator.php.html#16"><abbr title="ArrayHydrator::extract">extract</a></a></td><td class="text-right">0%</td></tr>
 
        </tbody>
       </table>
@@ -172,7 +164,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([4,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
+      .datum(getCoverageDistributionData([3,0,0,0,0,0,0,0,0,0,0,0], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -190,7 +182,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([10,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
+      .datum(getCoverageDistributionData([3,0,0,0,0,0,0,0,0,0,0,0], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -241,7 +233,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[0,3,"<a href=\"Column.php.html#15\">Column<\/a>"],[0,2,"<a href=\"DataType.php.html#15\">DataType<\/a>"],[0,2,"<a href=\"InvalidLength.php.html#15\">InvalidLength<\/a>"],[0,3,"<a href=\"Model.php.html#15\">Model<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[0,1,"<a href=\"ArrayHydrator.php.html#14\">ArrayHydrator<\/a>"],[0,1,"<a href=\"JsonHydrator.php.html#14\">JsonHydrator<\/a>"],[0,1,"<a href=\"YamlHydrator.php.html#14\">YamlHydrator<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -266,7 +258,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[0,1,"<a href=\"Column.php.html#38\">Column::rise<\/a>"],[0,1,"<a href=\"Column.php.html#56\">Column::anonymous function<\/a>"],[0,1,"<a href=\"Column.php.html#71\">Column::getMessage<\/a>"],[0,1,"<a href=\"DataType.php.html#38\">DataType::rise<\/a>"],[0,1,"<a href=\"DataType.php.html#52\">DataType::getMessage<\/a>"],[0,1,"<a href=\"InvalidLength.php.html#32\">InvalidLength::rise<\/a>"],[0,1,"<a href=\"InvalidLength.php.html#45\">InvalidLength::getMessage<\/a>"],[0,1,"<a href=\"Model.php.html#38\">Model::rise<\/a>"],[0,1,"<a href=\"Model.php.html#42\">Model::anonymous function<\/a>"],[0,1,"<a href=\"Model.php.html#58\">Model::getMessage<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[0,1,"<a href=\"ArrayHydrator.php.html#16\">ArrayHydrator::extract<\/a>"],[0,1,"<a href=\"JsonHydrator.php.html#16\">JsonHydrator::extract<\/a>"],[0,1,"<a href=\"YamlHydrator.php.html#16\">YamlHydrator::extract<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);

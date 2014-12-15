@@ -34,7 +34,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
         $this->validator = new Validator();
         $this->reflection = new \ReflectionClass('\Phalcon\Searcher\Validator');
     }
@@ -101,6 +100,8 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     public function testColumns()
     {
+        $this->expectOutputString(''); // tell PHPUnit to expect '' as output
+
         // check assigned columns isn't empty
         $this->assertNotEmpty($this->validator->columns,
             "[-] The `columns` can not be empty"

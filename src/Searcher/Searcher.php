@@ -127,7 +127,6 @@ class Searcher
      */
     public function setOrder(array $order)
     {
-
         // need to return << true
         $this->validator->verify($order, [
             'isArray', 'isNotEmpty', 'isOrdered'
@@ -196,14 +195,13 @@ class Searcher
      */
     public function setQuery($query = null)
     {
-
         // need to return << true
         $this->validator->verify($query, ['isNotNull', 'isNotFew', 'isNotMuch']);
 
         if (false === $this->exact)
-            $this->query = [':query' => '%' . $query . '%'];
+            $this->query = ['query' => '%' . $query . '%'];
         else
-            $this->query = [':query' => $query];
+            $this->query = ['query' => $query];
         return $this;
     }
 

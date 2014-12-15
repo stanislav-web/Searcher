@@ -18,8 +18,10 @@ build:
     tests:
         override:
             -
-                command: 'phpunit --configuration phpunit.xml.dist'
-
+                command: 'phpunit --configuration phpunit.xml.dist --coverage-clover=coverage0'
+                coverage:
+                    file: coverage0,
+                    format: php-clover
 filter:
     paths: [src/*]
     excluded_paths: [build/*, phpunit/*, vendor/*]

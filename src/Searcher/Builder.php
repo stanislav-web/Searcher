@@ -89,19 +89,24 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     /**
      * Setup orders positions to Builder
      *
+     * @param boolean $asArray
      * @return null
      */
-    public function setOrder()
+    public function setOrder($asArray = false)
     {
         // set order position if exist
         $order = [];
         foreach ($this->data['order'] as $alias => $params) {
 
-            if (empty($params) === false) {
-                foreach ($params as $field => $sort)
-                    $order[] = $alias . '.' . $field . ' ' . $sort;
+            if(true === $asArray)
+                $this->builder->orderBy(array_flip($order));
+            else
+            {
+                if (empty($params) === false) {
+                    foreach ($params as $field => $sort)
+                        $order[] = $alias . '.' . $field . ' ' . $sort;
+                }
             }
-
         }
         $this->builder->orderBy($order);
         return null;
@@ -117,6 +122,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         // set group position if exist
 
         $group = [];
+
         foreach ($this->data['group'] as $table => $params) {
 
             $params = array_flip($params);
@@ -191,18 +197,16 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         if ($type === Column::TYPE_TEXT) // match search
         {
             if ($index > 0)
-                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (':query')", $this->searcher->query);
+                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->searcher->query);
             else
-                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (':query')", $this->searcher->query);
+                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->searcher->query);
 
-        }
-        else
-        {
+        } else {
             // simple where search
             if ($index > 0)
-                $this->builder->orWhere($table . "." . $field . " LIKE ':query'", $this->searcher->query);
+                $this->builder->orWhere($table . "." . $field . " LIKE :query:", $this->searcher->query);
             else
-                $this->builder->where($table . "." . $field . " LIKE ':query'", $this->searcher->query);
+                $this->builder->where($table . "." . $field . " LIKE :query:", $this->searcher->query);
         }
         return null;
     }
@@ -228,21 +232,10 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
             $res = $this->builder->getQuery()->execute();
 
-            var_dump($res);
-            var_dump($this->builder->getPhql());
-
-            var_dump('Bind params', $this->builder->getQuery()->getBindParams());
-            var_dump('Bind params types', $this->builder->getQuery()->getBindTypes());
-            var_dump('Valid', $res->valid());
-            var_dump('toArray',$res->toArray());
-            var_dump('serialize',$res->serialize());
-            var_dump('key',$res->key());
-            var_dump('count',$res->count());
-            var_dump('getType', $res->getType());
-            var_dump('hydrate mode', $res->getHydrateMode());
-            var_dump('Messages',$res->getMessages());
-            exit;
-            return $res;
+            if ($res->valid()) {
+                return $res;
+            }
+            return null;
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
         }
