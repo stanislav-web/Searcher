@@ -79,9 +79,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         return $prop;
     }
 
-    /**
-     * @group Validator properties
-     */
     public function testProperties()
     {
         // check Validator's properties
@@ -103,9 +100,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    /**
-     * @group Validator properties
-     */
     public function testColumns()
     {
         // check assigned columns isn't empty
@@ -124,9 +118,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @group Validator properties
-     */
     public function testSort()
     {
         // check assigned sort isn't empty
@@ -151,9 +142,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @group Validator methods
-     */
     public function testLimits()
     {
         // check method setMin

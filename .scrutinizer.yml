@@ -14,6 +14,15 @@ build:
             - git clone -q --depth=1 https://github.com/phalcon/cphalcon.git -b master
             - cd cphalcon/ext; export CFLAGS="-g3 -O1 -fno-delete-null-pointer-checks -Wall"; phpize && ./configure --enable-phalcon && make -j4 && sudo make install && sed -i '$ a \\n[Phalcon]\nextension=phalcon.so\n'  /home/scrutinizer/.phpenv/versions/5.5.12/etc/php.ini
             - php -m | grep -i Phalcon
+
+    tests:
+        override:
+            -
+              command: 'phpunit --coverage-clover=phpunit/log/coverage.xml'
+              coverage:
+                  file: 'phpunit/log/coverage.xml'
+                  format: 'coverage-clover'
+
 filter:
     paths: [src/*]
     excluded_paths: [build/*, phpunit/*, vendor/*]

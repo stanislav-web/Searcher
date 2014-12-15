@@ -8,7 +8,7 @@ then
   shift
 fi
 
-php phpunit.phar $COVERAGE $@
+phpunit $COVERAGE $@
 
 # exit with PHPUnit's return code
 if [ $? -ne 0 ]
