@@ -2,6 +2,7 @@
 namespace Phalcon\Searcher;
 
 use Phalcon\Searcher\Factories\ExceptionFactory;
+use Phalcon\Searcher\Hydrators;
 
 /**
  * Searcher daemon class
@@ -217,16 +218,21 @@ class Searcher
     /**
      * Search procedure started
      *
+     * @param null $hydratorset
+     * @param null $callback
      * @throws ExceptionFactory {$error}
      * @return Builder|null
      */
-    final public function run()
+
+    final public function run($hydratorset = null, $callback = null)
     {
 
         try {
 
-            $builder = (new Builder($this))->loop();
-            return $builder;
+            $result = (new Builder($this))->loop($hydratorset, $callback);
+
+            return $result;
+
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
         }

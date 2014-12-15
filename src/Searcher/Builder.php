@@ -1,6 +1,7 @@
 <?php
 namespace Phalcon\Searcher;
 
+use Phalcon\Searcher\Aware\HydratorInterface;
 use Phalcon\Searcher\Factories\ExceptionFactory;
 use \Phalcon\Db\Column;
 use \Phalcon\DI as Di;
@@ -98,10 +99,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         $order = [];
         foreach ($this->data['order'] as $alias => $params) {
 
-            if(true === $asArray)
+            if (true === $asArray)
                 $this->builder->orderBy(array_flip($order));
-            else
-            {
+            else {
                 if (empty($params) === false) {
                     foreach ($params as $field => $sort)
                         $order[] = $alias . '.' . $field . ' ' . $sort;
@@ -217,7 +217,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      * @throws ExceptionFactory {$error}
      * @return Builder|null
      */
-    public function loop()
+    public function loop($hydratorset = null, $callback = null)
     {
         try {
 
@@ -232,12 +232,27 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
             $res = $this->builder->getQuery()->execute();
 
-            if ($res->valid()) {
+            if ($res->valid() === true) {
+                if ($hydratorset !== null)
+                {
+                    $call  = "Phalcon\\Searcher\\Hydrators\\".ucfirst($hydratorset)."Hydrator";
+                    $res = $this->setResult(new $call($res, $callback));
+                }
                 return $res;
             }
             return null;
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
         }
+    }
+
+    /**
+     * Result set
+     * @param \Phalcon\Searcher\Aware\HydratorInterface $hydrator
+     * @return array
+     */
+    private function setResult(HydratorInterface $hydrator)
+    {
+        return $hydrator->extract();
     }
 }

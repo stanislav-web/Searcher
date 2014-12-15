@@ -4,7 +4,7 @@ namespace Phalcon\Searcher\Hydrators;
 use Phalcon\Searcher\Aware\HydratorInterface;
 
 /**
- * Hydrate result array from Query builder
+ * Hydrate result as serialized data from Query builder
  * @package Phalcon\Searcher
  * @package Phalcon\Searcher\Hydrators
  * @since PHP >=5.5.12
@@ -12,14 +12,14 @@ use Phalcon\Searcher\Aware\HydratorInterface;
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
-class ArrayHydrator implements HydratorInterface
+class SerializeHydrator implements HydratorInterface
 {
 
     /**
      * Result data
-     * @var array $result
+     * @var string $result
      */
-    private $result = [];
+    private $result = '';
 
     /**
      * @param \Phalcon\Mvc\Model\Resultset\Simple $res
@@ -33,12 +33,13 @@ class ArrayHydrator implements HydratorInterface
             $this->result = $callback($res);
     }
 
+
     /**
      * Extract result data
      * @return array
      */
     public function extract()
     {
-        return $this->result->toArray();
+        return $this->result->serialize();
     }
 } 
