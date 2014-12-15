@@ -20,7 +20,7 @@
     <!-- Setup testsuites -->
     <testsuites>
         <testsuite name="Basic">
-            <directory suffix="Test.php">phpunit/src/Searcher</directory>
+            <directory suffix="Test.php">phpunit/src*</directory>
         </testsuite>
     </testsuites>
     <!-- /Setup testsuites -->

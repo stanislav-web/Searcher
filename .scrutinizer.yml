@@ -57,3 +57,29 @@ tools:
         command: php-cs-fixer
         config:
             level: all
+
+checks:
+    php:
+        verify_property_names: true
+        verify_argument_usable_as_reference: true
+        verify_access_scope_valid: true
+        variable_existence: true
+        use_statement_alias_conflict: true
+        symfony_request_injection: true
+        sql_injection_vulnerabilities: true
+        security_vulnerabilities: true
+        require_php_tag_first: true
+        precedence_in_conditions: true
+        precedence_mistakes: true
+        parameter_non_unique: true
+        no_eval: true
+        no_non_implemented_abstract_methods: true
+        no_duplicate_arguments: true
+        missing_arguments: true
+        instanceof_class_exists: true
+        foreach_traversable: true
+        closure_use_not_conflicting: true
+        closure_use_modifiable: true
+        catch_class_exists: true
+        argument_type_checks: true
+        assignment_of_null_return: true

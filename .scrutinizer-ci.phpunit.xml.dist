@@ -16,7 +16,7 @@
             syntaxCheck="true">
     <testsuites>
         <testsuite name="Basic">
-            <directory>./phpunit/src/Searcher</directory>
+            <directory>./phpunit/src/*</directory>
         </testsuite>
     </testsuites>
 </phpunit>
