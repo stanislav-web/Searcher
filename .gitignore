@@ -47,4 +47,3 @@ crashlytics-build.properties
 composer.lock
 vendor
 composer.phar
-phpunit/log
