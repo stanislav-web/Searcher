@@ -2,6 +2,7 @@
 namespace Phalcon\Searcher\Test;
 
 use \Phalcon\Searcher\Validator;
+use \Phalcon\Searcher\Searcher;
 
 /**
  * Class ValidatorTest
@@ -48,16 +49,38 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->validator = null;
     }
 
-    protected function getMethod($name)
+    /**
+     * Call protected/private method of a class.
+     *
+     * @param object &$object    Instantiated object that we will run method on.
+     * @param string $methodName Method name to call
+     * @param array  $parameters Array of parameters to pass into method.
+     * @example <code>
+     *              $this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
+     *          </code>
+     * @return mixed Method return.
+     */
+    protected function invokeMethod(&$object, $methodName, array $parameters = array())
     {
-
-        $method = $this->reflection->getMethod($name);
+        $method = $this->reflection->getMethod($methodName);
         $method->setAccessible(true);
-        return $method;
+        return $method->invokeArgs($object, $parameters);
     }
 
     /**
-     * @group Validator
+     * Setup accessible any private (protected) property
+     * @param $name
+     * @return \ReflectionMethod
+     */
+    protected function getProperty($name)
+    {
+        $prop = $this->reflection->getProperty($name);
+        $prop->setAccessible(true);
+        return $prop;
+    }
+
+    /**
+     * @group Validator properties
      */
     public function testProperties()
     {
@@ -66,6 +89,18 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
             $this->assertClassHasAttribute($prop, $this->reflection->getName(),
                 "[-] The `$prop` property must be in " . $this->reflection->getName()
             );
+
+        //check default properties
+
+        $this->assertAttributeEquals('3', '_min', $this->validator,
+            "[-] The `_min` property must have 3 as default in " . $this->reflection->getName());
+        $this->assertAttributeEquals('128', '_max', $this->validator,
+            "[-] The `_max` property must have 128 as default in " . $this->reflection->getName());
+        $this->assertAttributeEquals('', '_cast', $this->validator,
+            "[-] The `_cast` property must have '' as default in " . $this->reflection->getName());
+        $this->assertAttributeEquals(array(), 'fields', $this->validator,
+            "[-] The `fields` property must have empty array as default in " . $this->reflection->getName());
+
     }
 
     /**
@@ -116,23 +151,18 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function testSetMin()
+    /**
+     * @group Validator methods
+     */
+    public function testLimits()
     {
-
-        // check method
+        // check method setMin
         $this->assertTrue(
             method_exists($this->validator, 'setMin'),
             '[-] Class Validator have method setMin()'
         );
-    }
 
-    /**
-     * @group Validator methods
-     */
-    public function testSetMax()
-    {
-
-        // check method exists
+        // check method exists setMax
         $this->assertTrue(
             method_exists($this->validator, 'setMax'),
             '[-] Class Validator must have method setMax()'

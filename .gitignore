@@ -47,6 +47,4 @@ crashlytics-build.properties
 composer.lock
 vendor
 composer.phar
-phpunit/log
-.scrutinizer.yml
-phpunit/RunListener.php
+phpunit/*
