@@ -20,3 +20,6 @@ before_script:
 
 script:
   - phpunit --coverage-clover=coverage.clover
+
+after_script:
+  - sh ./build/coverage.sh
