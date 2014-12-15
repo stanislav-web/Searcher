@@ -1,14 +1,14 @@
 <?php
 namespace Phalcon\Searcher;
 
-use Phalcon\Db\Column;
-use	Phalcon\Mvc\Model\Manager;
+use \Phalcon\Db\Column;
+use	\Phalcon\Mvc\Model\Manager;
 use	Phalcon\Searcher\Factories\ExceptionFactory;
 
 /**
  * Columns validator
  * @package Phalcon\Searcher
- * @since PHP >=c
+ * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
@@ -32,13 +32,13 @@ class Validator {
 	 * @var array
 	 */
 	public $columns	=	[
-				Column::TYPE_INTEGER,
-				Column::TYPE_VARCHAR,
-				Column::TYPE_CHAR,
-				Column::TYPE_TEXT,
-				Column::TYPE_DATE,
-				Column::TYPE_DATETIME,
-			];
+		Column::TYPE_INTEGER,
+		Column::TYPE_VARCHAR,
+		Column::TYPE_CHAR,
+		Column::TYPE_TEXT,
+		Column::TYPE_DATE,
+		Column::TYPE_DATETIME,
+	];
 
 	/**
 	 * Available sort types
@@ -93,7 +93,6 @@ class Validator {
 		return $isValid($data);
 	}
 
-
 	/**
 	 * Set minimum value for the search
 	 *
@@ -129,8 +128,8 @@ class Validator {
 	 * @return boolean
 	 */
 	protected function isNotNull($value) {
-		if(is_null($value) === true)
-			throw new Exceptions\NullArgumentException();
+		if(is_null($value) === true || empty($value) === true)
+			throw new ExceptionFactory('DataType', [$value, 'string']);
 		return true;
 	}
 
@@ -138,12 +137,12 @@ class Validator {
 	 * Verify by array type
 	 *
 	 * @param mixed $value
-	 * @throws Exceptions\DataTypeException
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isArray($value) {
 		if(is_array($value) === false)
-			throw new Exceptions\DataTypeException($value, 'array');
+			throw new ExceptionFactory('DataType', [$value, 'array']);
 		return true;
 	}
 
@@ -151,24 +150,27 @@ class Validator {
 	 * Verify by not empty value
 	 *
 	 * @param mixed $value
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isNotEmpty($value) {
 		if(empty($value) === false)
 			return true;
 		else
-			throw new Exceptions\ColumnException(Exceptions\ColumnException::EMPTY_LIST, ['Search list has empty value']);
+			throw new ExceptionFactory('Column', ['EMPTY_LIST', 'Search list will not contain empty value']);
 	}
 
 	/**
 	 * Verify by min length
 	 *
 	 * @param string $value
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isNotFew($value) {
 		if(strlen(utf8_decode($value)) < $this->_min)
-			throw new Exceptions\InvalidLengthException($value, 'greater', $this->_min);
+			throw new ExceptionFactory('InvalidLength', [$value, 'greater', $this->_min]);
+
 		return true;
 	}
 
@@ -176,12 +178,27 @@ class Validator {
 	 * Verify by max length
 	 *
 	 * @param string $value
-	 * @throws Exceptions\InvalidLengthException
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isNotMuch($value) {
 		if(strlen(utf8_decode($value)) > $this->_max)
-			throw new Exceptions\InvalidLengthException($value, 'less', $this->_max);
+			throw new ExceptionFactory('InvalidLength', [$value, 'less', $this->_max]);
+
+		return true;
+	}
+
+	/**
+	 * Check if is model
+	 *
+	 * @param string $value
+	 * @throws ExceptionFactory
+	 * @return boolean
+	 */
+	protected function isModel($value) {
+
+		if(class_exists($value) === false)
+			throw new ExceptionFactory('Model', ['MODEL_DOES_NOT_EXISTS', $value]);
 		return true;
 	}
 
@@ -189,6 +206,7 @@ class Validator {
 	 * Check if field exist in table
 	 *
 	 * @param array $value
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isExists(array $value) {
@@ -198,31 +216,34 @@ class Validator {
 		foreach($value as $table => $fields) {
 
 			// load model metaData
-			$model 		=  	(new Manager())->load($table, new $table);
 
-			$metaData 	= 	$model->getModelsMetaData();
+			if($this->isModel($table) === true)
+			{
+				$model 		=  	(new Manager())->load($table, new $table);
 
-			// check fields of table
+				$metaData 	= 	$model->getModelsMetaData();
 
-			if(empty($not = array_diff($fields, $metaData->getAttributes($model))) === false)
-				throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_EXISTS, [
-					$not, $table, $metaData->getAttributes($model)]);
+				// check fields of table
 
-			// setup clear used tables
-			$columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
+				if(empty($not = array_diff($fields, $metaData->getAttributes($model))) === false)
+					throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $metaData->getAttributes($model)]);
 
-			// add using tables with model alias
-			$this->fields['tables'][$model->getSource()]		=	$table;
+				// setup clear used tables
+				$columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
 
-			// checking columns & fields
+				// add using tables with model alias
+				$this->fields['tables'][$model->getSource()]		=	$table;
 
-			foreach($columnDefines as $column) {
+				// checking columns & fields
 
-				if(in_array($column->getName(), $fields) === true) {
-					$this->validTypes($column);
+				foreach($columnDefines as $column) {
 
-					// add column to table collection
-					$this->fields[$this->_cast][$model->getSource()][$column->getName()]	= $column->getType();
+					if(in_array($column->getName(), $fields) === true) {
+						$this->validTypes($column);
+
+						// add column to table collection
+						$this->fields[$this->_cast][$model->getSource()][$column->getName()]	= $column->getType();
+					}
 				}
 			}
 		}
@@ -233,6 +254,7 @@ class Validator {
 	 * Check ordered fields
 	 *
 	 * @param array $ordered
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function isOrdered(array $ordered) {
@@ -242,27 +264,30 @@ class Validator {
 		foreach($ordered as $table => $sort) {
 
 			// load model metaData
-			$model 		=  	(new Manager())->load($table, new $table);
 
-			$metaData 	= 	$model->getModelsMetaData();
+			if($this->isModel($table) === true)
+			{
+				$model 		=  	(new Manager())->load($table, new $table);
 
-			// check fields of table
+				$metaData 	= 	$model->getModelsMetaData();
 
-			if(empty($not = array_diff(array_keys($sort), $metaData->getAttributes($model))) === false)
-				throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $metaData->getAttributes($model)]);
+				// check fields of table
 
-			// check sort clause
+				if(empty($not = array_diff(array_keys($sort), $metaData->getAttributes($model))) === false)
+					throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $metaData->getAttributes($model)]);
 
-			$sort = array_map('strtolower', $sort);
+				// check sort clause
 
-			if(empty($diff = array_diff(array_values($sort), $this->sort)) === false)
-				 throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
+				$sort = array_map('strtolower', $sort);
 
-			if(empty($diff = array_diff($sort, $this->sort)) === false)
-				throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
-				//throw new Exceptions\ColumnException(Exceptions\ColumnException::ORDER_TYPES_DOES_NOT_EXISTS, [$diff]);
+				if(empty($diff = array_diff(array_values($sort), $this->sort)) === false)
+					throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
 
-			$this->fields[$this->_cast][$model->getSource()]	=	$sort;
+				if(empty($diff = array_diff($sort, $this->sort)) === false)
+					throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
+
+				$this->fields[$this->_cast][$model->getSource()]	=	$sort;
+			}
 		}
 		return true;
 	}
@@ -271,14 +296,13 @@ class Validator {
 	 * Check if field type support in table
 	 *
 	 * @param string $value
+	 * @throws ExceptionFactory
 	 * @return boolean
 	 */
 	protected function validTypes(Column $column) {
 
 		if(in_array($column->getType(), $this->columns) === false) {
-
-			throw new Exceptions\ColumnException(Exceptions\ColumnException::COLUMN_DOES_NOT_SUPPORT, [
-				$column->getName(), $column->getType()]);
+			throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_SUPPORT',  $column->getType(), $column->getName()]);
 		}
 		return true;
 	}

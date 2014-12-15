@@ -45,10 +45,17 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase {
 		$this->validator = null;
 	}
 
+	protected function getMethod($name) {
+
+		$method = $this->reflection->getMethod($name);
+		$method->setAccessible(true);
+		return $method;
+	}
+
 	/**
 	 * @group Validator
 	 */
-	public function testValidatorProperties()
+	public function testProperties()
 	{
 		// check Validator's properties
 		foreach(['columns','_min', '_max', 'sort', '_cast', 'fields'] as $prop)
@@ -58,9 +65,9 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @group Validator
+	 * @group Validator properties
 	 */
-	public function testValidatorColumns()
+	public function testColumns()
 	{
 		// check assigned columns isn't empty
 		$this->assertNotEmpty($this->validator->columns,
@@ -79,9 +86,9 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
-	 * @group Validator
+	 * @group Validator properties
 	 */
-	public function testValidatorSort()
+	public function testSort()
 	{
 		// check assigned sort isn't empty
 		$this->assertNotEmpty($this->validator->sort,
@@ -100,9 +107,30 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase {
 			);
 		}
 
-		// check count of sort types alowed to parse
+		// check count of sort types allowed to parse
 		$this->assertCount(4, $this->validator->sort,
 			"[-] The `sort` property counted must be equals to 4"
+		);
+	}
+
+	public function testSetMin() {
+
+		// check method
+		$this->assertTrue(
+			method_exists($this->validator, 'setMin'),
+			'[-] Class Validator have method setMin()'
+		);
+	}
+
+	/**
+	 * @group Validator methods
+	 */
+	public function testSetMax() {
+
+		// check method exists
+		$this->assertTrue(
+			method_exists($this->validator, 'setMax'),
+			'[-] Class Validator must have method setMax()'
 		);
 	}
 }
