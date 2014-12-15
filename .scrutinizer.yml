@@ -16,10 +16,12 @@ build:
             - php -m | grep -i Phalcon
 
     tests:
-        inference:
+        override:
             -
                 command: 'phpunit --configuration phpunit.xml.dist --coverage-clover=./phpunit/log/coverage.php'
-                coverage: { file: ./phpunit/log/coverage.php, format: php-clover }
+                coverage:
+                    file: ./phpunit/log/coverage.php,
+                    format: php-clover
 filter:
     paths: [src/*]
     excluded_paths: [build/*, phpunit/*, vendor/*]
@@ -63,6 +65,8 @@ tools:
 
 checks:
     php:
+        code_rating: true
+        duplication: true
         verify_property_names: true
         verify_argument_usable_as_reference: true
         verify_access_scope_valid: true
