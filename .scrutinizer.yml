@@ -18,10 +18,10 @@ build:
     tests:
         override:
             -
-              command: 'phpunit --coverage-clover=phpunit/log/coverage.xml'
+              command: 'phpunit --coverage-clover=phpunit/log/coverage.php'
               coverage:
-                  file: 'phpunit/log/coverage.xml'
-                  format: 'rb-cc'
+                  file: 'phpunit/log/coverage.php'
+                  format: 'php-clover'
 
 filter:
     paths: [src/*]
@@ -46,7 +46,9 @@ tools:
             - php
 
     sensiolabs_security_checker: true
-    php_code_coverage: true
+    php_code_coverage:
+            enabled: true
+            test_command: vendor/bin/phpunit --configuration phpunit.xml.dist
     php_code_sniffer:
         enabled: true
         config:
