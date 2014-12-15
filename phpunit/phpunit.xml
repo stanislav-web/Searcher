@@ -32,9 +32,6 @@
         <whitelist addUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src/Searcher/</directory>
         </whitelist>
-        <blacklist>
-            <directory suffix=".php">/vendor</directory>
-        </blacklist>
     </filter>
 
     <listeners>
