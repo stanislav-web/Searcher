@@ -5,7 +5,7 @@ build:
             version: "5.5.12" # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'UTC'
-        elasticsearch: false
+        #elasticsearch: false
 
     dependencies:
         before:
