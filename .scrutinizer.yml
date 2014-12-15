@@ -21,7 +21,7 @@ build:
               command: 'phpunit --coverage-clover=phpunit/log/coverage.xml'
               coverage:
                   file: 'phpunit/log/coverage.xml'
-                  format: 'coverage-clover'
+                  format: 'rb-cc'
 
 filter:
     paths: [src/*]
@@ -63,4 +63,4 @@ tools:
             - php
         command: php-cs-fixer
         config:
-            level: psr2
+            level: all
