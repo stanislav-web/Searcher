@@ -3,17 +3,19 @@ namespace Phalcon\Searcher;
 
 use Phalcon\Searcher\Factories\ExceptionFactory;
 use \Phalcon\Db\Column;
-use \Phalcon\Mvc\Model\Query\Builder as Build;
+use \Phalcon\DI as Di;
 
 /**
  * Query builder class
  * @package Phalcon\Searcher
- * @since PHP >=c
+ * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
-class Builder {
+class Builder implements \Phalcon\DI\InjectionAwareInterface {
+
+	protected $_di;
 
 	/**
 	 * Query builder
@@ -42,7 +44,17 @@ class Builder {
 	 */
 	public function __construct(Searcher $searcher) {
 		$this->searcher		=	$searcher;
-		$this->builder			=	new Build();
+		$this->builder			 = Di::getDefault()->get('modelsManager')->createBuilder();
+	}
+
+	public function setDi($di)
+	{
+		$this->_di = $di;
+	}
+
+	public function getDi()
+	{
+		return $this->_di;
 	}
 
 	/**
@@ -144,7 +156,6 @@ class Builder {
 	public function setWhere()
 	{
 		// checking of Exact flag
-		//$exact = $this->searcher->exact;
 		$index = 0;
 		foreach($this->_data['where'] as $alias => $fields) {
 
@@ -200,30 +211,20 @@ class Builder {
 			// get valid result
 			$this->_data = $this->searcher->getFields();
 
-			// prepare tables
-			if(empty($this->_data['tables']) === false)
-				$this->setTables();
-
-			// prepare where filter
-			if(empty($this->_data['where']) === false)
-				$this->setWhere();
-
-			// prepare order
-			if(empty($this->_data['order']) === false)
-				$this->setOrder();
-
-			// prepare group
-			if(empty($this->_data['group']) === false)
-				$this->setGroup();
-
-			// prepare threshold
-			if(empty($this->_data['threshold']) === false)
-				$this->setThreshold();
+			foreach($this->_data as $key => $values) {
+				// prepare tables
+				if(empty($values) === false)
+					$this->{'set'.ucfirst($key)}();
+			}
 
 			$res = $this->builder->getQuery()->execute();
 
+
+			var_dump($res);
 			var_dump($this->builder->getPhql());
 
+			var_dump('Bind params', $this->builder->getQuery()->getBindParams());
+			var_dump('Bind params types', $this->builder->getQuery()->getBindTypes());
 			var_dump('Valid', $res->valid());
 			var_dump('toArray',$res->toArray());
 			var_dump('serialize',$res->serialize());

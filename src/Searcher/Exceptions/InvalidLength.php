@@ -5,7 +5,7 @@ use Phalcon\Searcher\Aware\ExceptionInterface;
 
 /**
  * Class InvalidLength
- * @package Phalcon
+ * @package Phalcon Searcher
  * @subpackage Phalcon\Searcher\Exceptions
  * @since PHP >=5.5.12
  * @version 1.0

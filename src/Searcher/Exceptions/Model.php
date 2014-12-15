@@ -4,7 +4,7 @@ namespace Phalcon\Searcher\Exceptions;
 use Phalcon\Searcher\Aware\ExceptionInterface;
 
 /**
- * Class DataType
+ * Class Model
  * @package Phalcon Searcher
  * @subpackage Phalcon\Searcher\Exceptions
  * @since PHP >=5.5.12
@@ -12,13 +12,13 @@ use Phalcon\Searcher\Aware\ExceptionInterface;
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
-class DataType implements ExceptionInterface {
+class Model implements ExceptionInterface {
 
 	/**
-	 * Getting data type for some use
-	 * @var null|string
+	 * Invoke array
+	 * @var string
 	 */
-	private $dataType	=	null;
+	private $_invoke					=	[];
 
 	/**
 	 * Message string
@@ -36,8 +36,14 @@ class DataType implements ExceptionInterface {
 	 */
 	public function rise(array $params, $line, $filename) {
 
-		$this->dataType	=	gettype($params[0]);
-		$this->_message	=	"Wrong Type: ".$this->dataType." . Expected ".$params[1].". File: ".$filename." Line: ".$line;
+		$this->_invoke = [
+			'MODEL_DOES_NOT_EXISTS' 		=> function($params, $filename, $line) {
+				// set message for not existing column
+				$this->_message = "Model `".$params[1]."` not exists. File: ".$filename." Line: ".$line;
+
+			}];
+
+		$this->_invoke[current($params)]($params, $filename, $line);
 
 		return $this;
 	}
@@ -51,3 +57,4 @@ class DataType implements ExceptionInterface {
 		return $this->_message;
 	}
 }
+  
