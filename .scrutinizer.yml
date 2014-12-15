@@ -18,9 +18,9 @@ build:
     tests:
         override:
             -
-                command: 'phpunit --configuration phpunit.xml.dist --coverage-clover=./phpunit/log/coverage.php'
+                command: 'phpunit --configuration phpunit.xml.dist --coverage-clover=/phpunit/log/coverage.php'
                 coverage:
-                    file: ./phpunit/log/coverage.php,
+                    file: /phpunit/log/coverage.php,
                     format: php-clover
 filter:
     paths: [src/*]
