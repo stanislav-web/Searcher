@@ -5,7 +5,7 @@
 Extension is used to group search for project models.. Currently under development and testing to search for a MySQL databases
 
 ## Compatible
-- PSR-0, PSR-4 Standards
+- PSR-0, PSR-1, PSR-2, PSR-4 Standards
 
 ## System requirements
 - PHP 5.5.x
