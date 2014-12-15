@@ -101,20 +101,17 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface {
 	 */
 	public function setGroup()
 	{
-		// set order position if exist
+		// set group position if exist
 
 		$group	=	[];
-		foreach($this->_data['group'] as $alias => $params) {
+		foreach($this->_data['group'] as $table => $params) {
 
 			$params = array_flip($params);
 
 			if(empty($params) === false) {
 
 				foreach($params as 	$field)
-				{
-					$group[]	=	$alias.'.'.$field;
-				}
-
+					$group[]	=	$table.'.'.$field;
 			}
 		}
 		$this->builder->groupBy($group);

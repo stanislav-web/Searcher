@@ -48,3 +48,4 @@ composer.lock
 vendor
 composer.phar
 phpunit/log
+.scrutinizer.yml

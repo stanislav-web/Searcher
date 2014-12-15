@@ -6,7 +6,6 @@ build:
             ini:
                 'date.timezone': 'UTC'
         elasticsearch: false
-        redis: false
 
     dependencies:
         before:
@@ -24,10 +23,9 @@ tools:
     php_pdepend:
         enabled: true
         command: pdepend
-        configuration_file: ~
-         suffixes:
+        suffixes:
             - php
-         excluded_dirs:
+        excluded_dirs:
             - vendor
             - phpunit
 

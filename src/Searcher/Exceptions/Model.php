@@ -16,7 +16,7 @@ class Model implements ExceptionInterface {
 
 	/**
 	 * Invoke array
-	 * @var string
+	 * @var array
 	 */
 	private $_invoke					=	[];
 
