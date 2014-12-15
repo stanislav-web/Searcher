@@ -20,6 +20,3 @@ before_script:
 
 script:
   - phpunit --configuration ./phpunit/phpunit.xml --testdox
-
-after_script:
-  - php vendor/bin/coveralls -v

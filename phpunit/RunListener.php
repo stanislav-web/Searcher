@@ -168,8 +168,8 @@ class RunListener implements PHPUnit_Framework_TestListener
 	 */
 	public function startTestSuite(PHPUnit_Framework_TestSuite $suite) {
 
-		$this->write(
-			sprintf("\nTestSuite '%s' started", $suite->getName()), self::BLACK
+		$this->writeTitle(
+			sprintf("\nTestSuite '%s' started\n", $suite->getName()), self::BROWN
 		);
 	}
 
@@ -181,8 +181,8 @@ class RunListener implements PHPUnit_Framework_TestListener
 	 */
 	public function endTestSuite(PHPUnit_Framework_TestSuite $suite) {
 
-		$this->write(
-			sprintf("\nTestSuite '%s' ended", $suite->getName()), self::BLACK
+		$this->writeTitle(
+			sprintf("\nTestSuite '%s' ended\n", $suite->getName()), self::BROWN
 		);
 	}
 

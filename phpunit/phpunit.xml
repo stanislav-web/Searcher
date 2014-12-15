@@ -24,11 +24,7 @@
 
     <testsuites>
         <testsuite name="Phalcon Searcher by Stanislav WEB">
-
-            <!-- Basic -->
-            <file>src/Searcher/ValidatorTest.php</file>
-            <!-- /Basic -->
-
+            <directory>src/Searcher/</directory>
         </testsuite>
     </testsuites>
 
