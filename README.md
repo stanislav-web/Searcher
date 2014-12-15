@@ -17,8 +17,9 @@ First update your dependencies through composer. Add to your composer.json:
     "stanislav-web/phalcon-searcher": "dev-master",
 }
 ```
-Then run update dependency
+Then run update dependency and autoload 
 ```php
+php composer.phar update
 php composer.phar install
 ```
 ## Usage

@@ -21,14 +21,14 @@
     <!-- Setup testsuites -->
     <testsuites>
         <testsuite name="Basic">
-            <directory>./phpunit/src/Searcher</directory>
+            <directory>./phpunit</directory>
         </testsuite>
     </testsuites>
     <!-- /Setup testsuites -->
 
-    <listeners>
+   <!--<listeners>
         <listener file="./phpunit/RunListener.php" class="RunListener" />
-    </listeners>
+    </listeners>-->
 
     <filter>
         <blacklist>
@@ -37,7 +37,7 @@
             <file>./phpunit/RunListener.php</file>
         </blacklist>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./src/Searcher</directory>
+            <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
 
@@ -46,7 +46,7 @@
              yui="true" highlight="true"
              lowUpperBound="50" highLowerBound="80" />
         <log type="coverage-clover" target="./phpunit/log/coverage.xml"/>
-        <log type="coverage-php" target="./coverage0"/>
+        <log type="coverage-php" target="./phpunit/log/coverage.php"/>
         <log type="coverage-text" target="php://stdout" />
     </logging>
 

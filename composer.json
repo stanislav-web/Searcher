@@ -26,13 +26,21 @@
     },
 
 	"autoload": {
-		"classmap": ["src/"]
+		"classmap": ["src/"],
+        "psr-4": {
+            "Phalcon\\Searcher\\": "src/Searcher"
+        }
 	},
 
 	"autoload-dev": {
 		"psr-4": {
-            "Phalcon\\Searcher\\Tests\\": "phpunit/src",
-            "Phalcon\\Searcher\\": "src"
+            "Phalcon\\Searcher\\Tests\\": "phpunit/src/Searcher"
 		}
-	}
+	},
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0*"
+        }
+    }
 }
