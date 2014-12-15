@@ -191,18 +191,18 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         if ($type === Column::TYPE_TEXT) // match search
         {
             if ($index > 0)
-                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (':query:')", $this->searcher->query);
+                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (':query')", $this->searcher->query);
             else
-                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (':query:')", $this->searcher->query);
+                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (':query')", $this->searcher->query);
 
         }
         else
         {
             // simple where search
             if ($index > 0)
-                $this->builder->orWhere($table . "." . $field . " LIKE ':query:'", $this->searcher->query);
+                $this->builder->orWhere($table . "." . $field . " LIKE ':query'", $this->searcher->query);
             else
-                $this->builder->where($table . "." . $field . " LIKE ':query:'", $this->searcher->query);
+                $this->builder->where($table . "." . $field . " LIKE ':query'", $this->searcher->query);
         }
         return null;
     }
@@ -241,7 +241,6 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
             var_dump('getType', $res->getType());
             var_dump('hydrate mode', $res->getHydrateMode());
             var_dump('Messages',$res->getMessages());
-
             exit;
             return $res;
         } catch (ExceptionFactory $e) {

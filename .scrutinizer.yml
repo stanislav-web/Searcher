@@ -20,7 +20,7 @@ build:
             -
                 command: 'phpunit --configuration phpunit.xml.dist --coverage-clover=./phpunit/log/coverage.php'
                 coverage:
-                    file: coverage.php,
+                    file: ./phpunit/log/coverage.php,
                     format: php-clover
 filter:
     paths: [src/*]

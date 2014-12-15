@@ -141,6 +141,10 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /**
+     * @covers \Phalcon\Searcher\Validator::setMin
+     * @covers \Phalcon\Searcher\Validator::setMax
+     */
     public function testLimits()
     {
         // check method setMin
@@ -153,6 +157,16 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(
             method_exists($this->validator, 'setMax'),
             '[-] Class Validator must have method setMax()'
+        );
+
+        // check return of setMin
+        $this->assertSame($this->validator, $this->invokeMethod($this->validator, 'setMin', [3]),
+            "[-] setMin method should return object Validator"
+        );
+
+        // check return of setMax
+        $this->assertSame($this->validator, $this->invokeMethod($this->validator, 'setMax', [128]),
+            "[-] setMax method should return object Validator"
         );
     }
 }
