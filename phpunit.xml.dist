@@ -14,7 +14,7 @@
             stopOnIncomplete="false"
             stopOnSkipped="false"
             mapTestClassNameToCoveredClassName="false"
-            varbose="true"
+            verbose="true"
             syntaxCheck="false">
 
     <!-- Setup testsuites -->

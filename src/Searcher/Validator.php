@@ -20,13 +20,13 @@ class Validator
      * The minimum value for the search
      * @var int
      */
-    private $_min = 3;
+    private $min = 3;
 
     /**
      * The maximum value for the search
      * @var int
      */
-    private $_max = 128;
+    private $max = 128;
 
     /**
      * Available columns types
@@ -56,7 +56,7 @@ class Validator
      * Cast of validate
      * @var string
      */
-    private $_cast = '';
+    private $cast = '';
 
     /**
      * Verified tables & columns
@@ -82,7 +82,7 @@ class Validator
         $isValid = function ($data) use ($callbacks, $cast) {
 
             if (empty($cast) === false)
-                $this->_cast = $cast;
+                $this->cast = $cast;
 
             foreach ($callbacks as $callback) {
                 if ($this->{$callback}($data) === false)
@@ -103,9 +103,9 @@ class Validator
     public function setMin($min)
     {
         if (is_int($min) === false)
-            $this->_min = (int)$min;
+            $this->min = (int)$min;
         else
-            $this->_min = $min;
+            $this->min = $min;
         return $this;
     }
 
@@ -118,9 +118,9 @@ class Validator
     public function setMax($max)
     {
         if (is_int($max) === false)
-            $this->_max = (int)$max;
+            $this->max = (int)$max;
         else
-            $this->_max = $max;
+            $this->max = $max;
         return $this;
     }
 
@@ -175,8 +175,8 @@ class Validator
      */
     protected function isNotFew($value)
     {
-        if (strlen(utf8_decode($value)) < $this->_min)
-            throw new ExceptionFactory('InvalidLength', [$value, 'greater', $this->_min]);
+        if (strlen(utf8_decode($value)) < $this->min)
+            throw new ExceptionFactory('InvalidLength', [$value, 'greater', $this->min]);
 
         return true;
     }
@@ -190,8 +190,8 @@ class Validator
      */
     protected function isNotMuch($value)
     {
-        if (strlen(utf8_decode($value)) > $this->_max)
-            throw new ExceptionFactory('InvalidLength', [$value, 'less', $this->_max]);
+        if (strlen(utf8_decode($value)) > $this->max)
+            throw new ExceptionFactory('InvalidLength', [$value, 'less', $this->max]);
 
         return true;
     }
@@ -251,7 +251,7 @@ class Validator
                         $this->validTypes($column);
 
                         // add column to table collection
-                        $this->fields[$this->_cast][$model->getSource()][$column->getName()] = $column->getType();
+                        $this->fields[$this->cast][$model->getSource()][$column->getName()] = $column->getType();
                     }
                 }
             }
@@ -295,7 +295,7 @@ class Validator
                 if (empty($diff = array_diff($sort, $this->sort)) === false)
                     throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
 
-                $this->fields[$this->_cast][$model->getSource()] = $sort;
+                $this->fields[$this->cast][$model->getSource()] = $sort;
             }
         }
         return true;

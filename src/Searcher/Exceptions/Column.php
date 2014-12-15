@@ -19,13 +19,13 @@ class Column implements ExceptionInterface
      * Invoke array
      * @var array
      */
-    private $_invoke = [];
+    private $invoke = [];
 
     /**
      * Message string
      * @var string
      */
-    private $_message = '';
+    private $message = '';
 
     /**
      * Rise error message for Column Exceptions
@@ -38,27 +38,27 @@ class Column implements ExceptionInterface
     public function rise(array $params, $line, $filename)
     {
 
-        $this->_invoke = [
+        $this->invoke = [
             'COLUMN_DOES_NOT_SUPPORT' => function ($params, $filename, $line) {
                 // set message for not supported column type
-                $this->_message = "The type {" . $params[1] . "} of column `" . $params[2] . "` does not supported. File: " . $filename . " Line: " . $line;
+                $this->message = "The type {" . $params[1] . "} of column `" . $params[2] . "` does not supported. File: " . $filename . " Line: " . $line;
             },
             'COLUMN_DOES_NOT_EXISTS' => function ($params, $filename, $line) {
                 // set message for not existing column
-                $this->_message = "Column `" . implode("`, `", $params[1]) . "` not exists in " . $params[2] . ". Only `" . implode("`, `", $params[3]) . "`. File: " . $filename . " Line: " . $line;
+                $this->message = "Column `" . implode("`, `", $params[1]) . "` not exists in " . $params[2] . ". Only `" . implode("`, `", $params[3]) . "`. File: " . $filename . " Line: " . $line;
 
             },
             'ORDER_TYPES_DOES_NOT_EXISTS' => function ($params, $filename, $line) {
                 // set message for not supported order type
-                $this->_message = "The order type(s) {" . implode(",", $params[1]) . "} does not supported in order clause. File: " . $filename . " Line: " . $line;
+                $this->message = "The order type(s) {" . implode(",", $params[1]) . "} does not supported in order clause. File: " . $filename . " Line: " . $line;
 
             },
             'EMPTY_LIST' => function ($params, $filename, $line) {
                 // set message for empty search list
-                $this->_message = $params[1] . ". File: " . $filename . " Line: " . $line;
+                $this->message = $params[1] . ". File: " . $filename . " Line: " . $line;
             }];
 
-        $this->_invoke[current($params)]($params, $filename, $line);
+        $this->invoke[current($params)]($params, $filename, $line);
 
         return $this;
     }
@@ -70,7 +70,7 @@ class Column implements ExceptionInterface
      */
     public function getMessage()
     {
-        return $this->_message;
+        return $this->message;
     }
 }
   

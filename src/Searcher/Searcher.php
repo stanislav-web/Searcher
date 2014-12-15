@@ -30,7 +30,7 @@ class Searcher
      * Validator
      * @var \Phalcon\Searcher\Validator
      */
-    private $_validator;
+    private $validator;
 
     /**
      * Initialize class
@@ -39,7 +39,7 @@ class Searcher
      */
     public function __construct()
     {
-        $this->_validator = new Validator();
+        $this->validator = new Validator();
     }
 
     /**
@@ -50,7 +50,7 @@ class Searcher
      */
     public function setMin($min)
     {
-        $this->_validator->setMin($min);
+        $this->validator->setMin($min);
         return $this;
     }
 
@@ -62,7 +62,7 @@ class Searcher
      */
     public function setMax($max)
     {
-        $this->_validator->setMax($max);
+        $this->validator->setMax($max);
         return $this;
     }
 
@@ -104,7 +104,7 @@ class Searcher
     {
 
         // need to return << true
-        $this->_validator->verify($models, [
+        $this->validator->verify($models, [
             'isArray', 'isNotEmpty', 'isExists'
         ], 'where');
 
@@ -129,7 +129,7 @@ class Searcher
     {
 
         // need to return << true
-        $this->_validator->verify($order, [
+        $this->validator->verify($order, [
             'isArray', 'isNotEmpty', 'isOrdered'
         ], 'order');
         return $this;
@@ -154,7 +154,7 @@ class Searcher
     {
 
         // need to return << true
-        $this->_validator->verify($group, [
+        $this->validator->verify($group, [
             'isArray', 'isNotEmpty', 'isExists'
         ], 'group');
 
@@ -181,7 +181,7 @@ class Searcher
             $threshold = array_map('intval', array_splice($threshold, 0, 2));
         else
             $threshold = intval($threshold);
-        $this->_validator->verify($threshold, [], 'threshold');
+        $this->validator->verify($threshold, [], 'threshold');
         return $this;
     }
 
@@ -198,7 +198,7 @@ class Searcher
     {
 
         // need to return << true
-        $this->_validator->verify($query, ['isNotNull', 'isNotFew', 'isNotMuch']);
+        $this->validator->verify($query, ['isNotNull', 'isNotFew', 'isNotMuch']);
 
         if (false === $this->exact)
             $this->query = ['query' => '%' . $query . '%'];
@@ -213,7 +213,7 @@ class Searcher
      */
     public function getFields()
     {
-        return $this->_validator->fields;
+        return $this->validator->fields;
     }
 
     /**

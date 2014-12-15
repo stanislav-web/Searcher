@@ -19,7 +19,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      * Dependency Injector
      * @var Di|\Phalcon\DiInterface $di
      */
-    protected $_di;
+    protected $di;
 
     /**
      * Query builder
@@ -37,7 +37,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      * Valid searcher data
      * @var array
      */
-    private $_data = [];
+    private $data = [];
 
     /**
      * Initialize internal params
@@ -58,7 +58,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      */
     public function setDi($di)
     {
-        $this->_di = $di;
+        $this->di = $di;
     }
 
     /**
@@ -67,7 +67,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      */
     public function getDi()
     {
-        return $this->_di;
+        return $this->di;
     }
 
     /**
@@ -77,7 +77,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      */
     public function setTables()
     {
-        foreach ($this->_data['tables'] as $alias => $model) {
+        foreach ($this->data['tables'] as $alias => $model) {
 
             // set model => alias (real table name)
             $this->builder->addFrom($model, $alias);
@@ -95,7 +95,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     {
         // set order position if exist
         $order = [];
-        foreach ($this->_data['order'] as $alias => $params) {
+        foreach ($this->data['order'] as $alias => $params) {
 
             if (empty($params) === false) {
                 foreach ($params as $field => $sort)
@@ -117,7 +117,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         // set group position if exist
 
         $group = [];
-        foreach ($this->_data['group'] as $table => $params) {
+        foreach ($this->data['group'] as $table => $params) {
 
             $params = array_flip($params);
 
@@ -138,21 +138,21 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      */
     public function setThreshold()
     {
-        if (is_array($this->_data['threshold']) === false)
-            $this->_data['threshold'] = ['limit' => $this->_data['threshold']];
+        if (is_array($this->data['threshold']) === false)
+            $this->data['threshold'] = ['limit' => $this->data['threshold']];
         else {
-            if (count($this->_data['threshold']) > 1)
-                $this->_data['threshold'] = [
-                    'limit' => $this->_data['threshold'][1],
-                    'offset' => $this->_data['threshold'][0],
+            if (count($this->data['threshold']) > 1)
+                $this->data['threshold'] = [
+                    'limit' => $this->data['threshold'][1],
+                    'offset' => $this->data['threshold'][0],
                 ];
             else
-                $this->_data['threshold'] = [
-                    'limit' => $this->_data['threshold'][0]
+                $this->data['threshold'] = [
+                    'limit' => $this->data['threshold'][0]
                 ];
         }
 
-        $this->builder->limit(implode(',', array_reverse($this->_data['threshold'])));
+        $this->builder->limit(implode(',', array_reverse($this->data['threshold'])));
 
         return null;
     }
@@ -166,7 +166,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     {
         // checking of Exact flag
         $index = 0;
-        foreach ($this->_data['where'] as $alias => $fields) {
+        foreach ($this->data['where'] as $alias => $fields) {
 
             foreach ($fields as $field => $type) {
                 // call expression handler
@@ -195,8 +195,10 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
             else
                 $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (':query:')", $this->searcher->query);
 
-        } else // simple where search
+        }
+        else
         {
+            // simple where search
             if ($index > 0)
                 $this->builder->orWhere($table . "." . $field . " LIKE ':query:'", $this->searcher->query);
             else
@@ -216,9 +218,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         try {
 
             // get valid result
-            $this->_data = $this->searcher->getFields();
+            $this->data = $this->searcher->getFields();
 
-            foreach ($this->_data as $key => $values) {
+            foreach ($this->data as $key => $values) {
                 // start build interface
                 if (empty($values) === false)
                     $this->{'set' . ucfirst($key)}();

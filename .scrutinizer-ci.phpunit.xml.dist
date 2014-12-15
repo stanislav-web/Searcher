@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit    backupGlobals="false"
+            backupStaticAttributes="false"
+            bootstrap="vendor/autoload.php"
+            cacheTokens="false"
+            colors="true"
+            convertErrorsToExceptions="true"
+            convertNoticesToExceptions="true"
+            convertWarningsToExceptions="true"
+            processIsolation="false"
+            stopOnError="false"
+            stopOnFailure="false"
+            stopOnIncomplete="false"
+            stopOnSkipped="false"
+            verbose="true"
+            syntaxCheck="true">
+    <testsuites>
+        <testsuite name="Basic">
+            <directory>./phpunit/src/Searcher</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

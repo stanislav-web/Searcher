@@ -25,7 +25,7 @@ class DataType implements ExceptionInterface
      * Message string
      * @var string
      */
-    private $_message = '';
+    private $message = '';
 
     /**
      * Rise error message for Column Exceptions
@@ -39,7 +39,7 @@ class DataType implements ExceptionInterface
     {
 
         $this->dataType = gettype($params[0]);
-        $this->_message = "Wrong Type: " . $this->dataType . " . Expected " . $params[1] . ". File: " . $filename . " Line: " . $line;
+        $this->message = "Wrong Type: " . $this->dataType . " . Expected " . $params[1] . ". File: " . $filename . " Line: " . $line;
 
         return $this;
     }
@@ -51,6 +51,6 @@ class DataType implements ExceptionInterface
      */
     public function getMessage()
     {
-        return $this->_message;
+        return $this->message;
     }
 }

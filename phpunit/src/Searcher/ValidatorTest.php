@@ -82,19 +82,19 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     public function testProperties()
     {
         // check Validator's properties
-        foreach (['columns', '_min', '_max', 'sort', '_cast', 'fields'] as $prop)
+        foreach (['columns', 'min', 'max', 'sort', 'cast', 'fields'] as $prop)
             $this->assertClassHasAttribute($prop, $this->reflection->getName(),
                 "[-] The `$prop` property must be in " . $this->reflection->getName()
             );
 
         //check default properties
 
-        $this->assertAttributeEquals('3', '_min', $this->validator,
+        $this->assertAttributeEquals('3', 'min', $this->validator,
             "[-] The `_min` property must have 3 as default in " . $this->reflection->getName());
-        $this->assertAttributeEquals('128', '_max', $this->validator,
+        $this->assertAttributeEquals('128', 'max', $this->validator,
             "[-] The `_max` property must have 128 as default in " . $this->reflection->getName());
-        $this->assertAttributeEquals('', '_cast', $this->validator,
-            "[-] The `_cast` property must have '' as default in " . $this->reflection->getName());
+        $this->assertAttributeEquals('', 'cast', $this->validator,
+            "[-] The `cast` property must have '' as default in " . $this->reflection->getName());
         $this->assertAttributeEquals(array(), 'fields', $this->validator,
             "[-] The `fields` property must have empty array as default in " . $this->reflection->getName());
 

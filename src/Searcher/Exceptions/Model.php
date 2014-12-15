@@ -19,13 +19,13 @@ class Model implements ExceptionInterface
      * Invoke array
      * @var array
      */
-    private $_invoke = [];
+    private $invoke = [];
 
     /**
      * Message string
      * @var string
      */
-    private $_message = '';
+    private $message = '';
 
     /**
      * Rise error message for Column Exceptions
@@ -38,14 +38,14 @@ class Model implements ExceptionInterface
     public function rise(array $params, $line, $filename)
     {
 
-        $this->_invoke = [
+        $this->invoke = [
             'MODEL_DOES_NOT_EXISTS' => function ($params, $filename, $line) {
                 // set message for not existing column
-                $this->_message = "Model `" . $params[1] . "` not exists. File: " . $filename . " Line: " . $line;
+                $this->message = "Model `" . $params[1] . "` not exists. File: " . $filename . " Line: " . $line;
 
             }];
 
-        $this->_invoke[current($params)]($params, $filename, $line);
+        $this->invoke[current($params)]($params, $filename, $line);
 
         return $this;
     }
@@ -57,7 +57,7 @@ class Model implements ExceptionInterface
      */
     public function getMessage()
     {
-        return $this->_message;
+        return $this->message;
     }
 }
   

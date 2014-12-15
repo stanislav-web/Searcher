@@ -19,7 +19,7 @@ class InvalidLength implements ExceptionInterface
      * Message string
      * @var string
      */
-    private $_message = '';
+    private $message = '';
 
     /**
      * Rise error message for Column Exceptions
@@ -32,7 +32,7 @@ class InvalidLength implements ExceptionInterface
     public function rise(array $params, $line, $filename)
     {
 
-        $this->_message = "The length of \"" . $params[0] . "\" is invalid! Must be " . $params[1] . " then " . $params[2] . ". File: " . $filename . " Line: " . $line;
+        $this->message = "The length of \"" . $params[0] . "\" is invalid! Must be " . $params[1] . " then " . $params[2] . ". File: " . $filename . " Line: " . $line;
 
         return $this;
     }
@@ -44,6 +44,6 @@ class InvalidLength implements ExceptionInterface
      */
     public function getMessage()
     {
-        return $this->_message;
+        return $this->message;
     }
 }
