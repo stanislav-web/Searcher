@@ -31,7 +31,8 @@
 
 	"autoload-dev": {
 		"psr-4": {
-			"Phalcon\\Searcher\\Tests\\": "phpunit/src"
+            "Phalcon\\Searcher\\Tests\\": "phpunit/src",
+            "Phalcon\\Searcher\\": "src"
 		}
 	}
 }

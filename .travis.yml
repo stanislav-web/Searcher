@@ -15,11 +15,11 @@ before_script:
   - composer self-update
   - phpenv rehash
   - composer install --dev --no-interaction -o
-  - sh ./build/install.sh
+  - sh ./build/phalcon.sh
   - php -m | grep -i Phalcon
 
 script:
-  - phpunit --configuration ./phpunit/phpunit.xml --testdox
+  - phpunit --coverage-clover=coverage.clover
 
-after_script:
-  - php vendor/bin/coveralls -v
+#after_script:
+#  - sh ./build/coverage.sh
