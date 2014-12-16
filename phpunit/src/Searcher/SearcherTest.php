@@ -140,6 +140,35 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($this->searcher->setExact(true), $this->searcher,
             "[-] The `setExact` will return self and passed boolean param in " . $this->reflection->getName());
     }
+
+    /**
+     * @covers \Phalcon\Searcher\Searcher::setMin
+     * @covers \Phalcon\Searcher\Searcher::setMax
+     */
+    public function testLimits()
+    {
+        // check method setMin
+        $this->assertTrue(
+            method_exists($this->searcher, 'setMin'),
+            '[-] Class Searcher must have method setMin()'
+        );
+
+        // check method exists setMax
+        $this->assertTrue(
+            method_exists($this->searcher, 'setMax'),
+            '[-] Class Validator must have method setMax()'
+        );
+
+        // check return of setMin
+        $this->assertSame($this->searcher, $this->invokeMethod($this->searcher, 'setMin', [3]),
+            "[-] setMin method should return object Validator"
+        );
+
+        // check return of setMax
+        $this->assertSame($this->searcher, $this->invokeMethod($this->searcher, 'setMax', [128]),
+            "[-] setMax method should return object Validator"
+        );
+    }
 }
 
 

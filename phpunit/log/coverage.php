@@ -252,16 +252,20 @@ $coverage->setData(array (
     ),
     54 => 
     array (
+      0 => 'Phalcon\\Searcher\\Test\\SearcherTest::testLimits',
     ),
     55 => 
     array (
+      0 => 'Phalcon\\Searcher\\Test\\SearcherTest::testLimits',
     ),
     56 => NULL,
     66 => 
     array (
+      0 => 'Phalcon\\Searcher\\Test\\SearcherTest::testLimits',
     ),
     67 => 
     array (
+      0 => 'Phalcon\\Searcher\\Test\\SearcherTest::testLimits',
     ),
     68 => NULL,
     81 => 
@@ -744,10 +748,19 @@ $coverage->setData(array (
     34 => 
     array (
     ),
-    42 => 
+    43 => 
     array (
     ),
-    43 => NULL,
+    44 => 
+    array (
+    ),
+    45 => 
+    array (
+    ),
+    47 => 
+    array (
+    ),
+    48 => NULL,
   ),
   '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
   array (
@@ -773,9 +786,6 @@ $coverage->setData(array (
     65 => 
     array (
     ),
-    73 => 
-    array (
-    ),
     74 => 
     array (
     ),
@@ -783,6 +793,9 @@ $coverage->setData(array (
     array (
     ),
     76 => 
+    array (
+    ),
+    77 => 
     array (
     ),
   ),
@@ -800,16 +813,17 @@ $coverage->setData(array (
     34 => 
     array (
     ),
-    43 => 
+    44 => 
     array (
     ),
-    44 => NULL,
+    45 => NULL,
   ),
 ));
 $coverage->setTests(array (
   'Phalcon\\Searcher\\Test\\SearcherTest::testProperties' => 0,
   'Phalcon\\Searcher\\Test\\SearcherTest::testConstructor' => 0,
   'Phalcon\\Searcher\\Test\\SearcherTest::testExact' => 0,
+  'Phalcon\\Searcher\\Test\\SearcherTest::testLimits' => 0,
   'Phalcon\\Phpunit\\Searcher\\ValidatorTest::testLimits' => 0,
   'UNCOVERED_FILES_FROM_WHITELIST' => NULL,
 ));

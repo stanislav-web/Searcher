@@ -151,7 +151,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         // check method setMin
         $this->assertTrue(
             method_exists($this->validator, 'setMin'),
-            '[-] Class Validator have method setMin()'
+            '[-] Class Validator must have method setMin()'
         );
 
         // check method exists setMax
