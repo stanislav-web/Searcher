@@ -2,7 +2,7 @@
 <!-- Setup test files and directories -->
 <phpunit    backupGlobals="false"
             backupStaticAttributes="false"
-            bootstrap="vendor/autoload.php"
+            bootstrap="vendor/composer/autoload.php"
             cacheTokens="false"
             colors="true"
             convertErrorsToExceptions="true"
@@ -26,9 +26,9 @@
     </testsuites>
     <!-- /Setup testsuites -->
 
-   <!--<listeners>
+   <listeners>
         <listener file="./phpunit/RunListener.php" class="RunListener" />
-    </listeners>-->
+    </listeners>
 
     <filter>
         <blacklist>

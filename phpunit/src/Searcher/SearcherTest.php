@@ -168,6 +168,19 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
             "[-] setMax method should return object Validator"
         );
     }
+
+
+    /**
+     * @covers Searcher\Searcher::run
+     */
+    public function testRun()
+    {
+        // check modifier of run
+        $modifiers = (new \ReflectionMethod('\Searcher\Searcher', 'run'))->getModifiers();
+        $this->assertEquals(['final', 'public'], \Reflection::getModifierNames($modifiers),
+            "[-] run method must be as final public"
+        );
+    }
 }
 
 
