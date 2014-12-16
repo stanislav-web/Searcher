@@ -4,6 +4,20 @@
 
 Extension is used to group search for project models Currently under TTD
 
+## Description
+This is the search service is designed to search multiple SQL tables. Convenient to use autocomplete, search documents, search the whole site.
+
+## Change Log 
+
+#### [v 1.0-beta] 2014-12-16
+    - support MySQL
+    - support column type such as INT, VARCHAR, CHAR, TEXT, DATE, DATETIME
+    - fulltext search
+    - support all main expressions (where, order, group, limit, offset)
+    - multi table search
+    - compatible with \Phalcon\Paginator
+    - view results as json, serialized, array or \Phalcon\Mvc\Model\Resultset\Simple
+
 ## Compatible
 - PSR-0, PSR-1, PSR-2, PSR-4 Standards
 
@@ -28,11 +42,11 @@ Or manual require in your loader service
 <?php 
     $loader->registerNamespaces([
         'Searcher\Searcher' => 'path to src'
-    ]);
+    ]
 ```
 You can create an injectable service
 ```php
-<?php 
+<?php
 
     $this->di['searcher'] = function() {
         return new \Searcher\Searcher();
@@ -151,7 +165,7 @@ You can create an injectable service
     ])
     ->setQuery('FerRari');
     
-    $result = $searcher->run('json'); // available, array, serialize, json, Resultset as default
+    $result = $searcher->run('json'); // available array, serialize, json, Resultset as default
     
     // OR
     
