@@ -83,7 +83,7 @@ class Searcher
     }
 
     /**
-     * Prepare models to participate in search
+     * Prepare models and fields to participate in search
      *
      * @param array $models
      * @example <code>
@@ -117,10 +117,10 @@ class Searcher
      *
      * @param array $order
      * @example <code>
-     *          $s->setOrder(['Model/Table1' => ['id' => 'DESC']])
+     *          $s->setOrder(['Model/Auto' => ['id' => 'DESC']])
      *          $s->setOrder([
-     *            'Model/Table1' => ['id' => 'DESC']
-     *            'Model/Table2' => ['title' =>  'ASC']
+     *            'Model/Auto' => ['id' => 'DESC']
+     *            'Model/Distributor' => ['description' =>  'ASC']
      *          ])
      *          </code>
      * @throws ExceptionFactory {$error}
@@ -141,10 +141,10 @@ class Searcher
      *
      * @param array $group
      * @example <code>
-     *          $s->setGroup(['Model/Table1' => ['id']])
+     *          $s->setGroup(['Model/Auto' => ['id']])
      *          $s->setGroup([
-     *            'Model/Table1' => ['id', 'title']
-     *            'Model/Table2' => ['id', 'description']
+     *            'Model/Auto' => ['id', 'mark']
+     *            'Model/Distributor' => ['id', 'description']
      *          ])
      *          </code>
      * @throws ExceptionFactory {$error}

@@ -24,11 +24,129 @@ php composer.phar update
 php composer.phar install
 ```
 ## Usage
+
+#### Simple usage
+
 ```php
 <?php 
-    use  
+    use \Searcher\Searcher;
+     
+    // create object instance
+    $searcher = new Searcher();
+    
+    // Prepare models and fields to participate in search
+    $searcher->setFields([
+        'Model/Auto'    =>    [
+            'mark',
+            'model'
+        ],
+        'Model/Distributor'    =>    [
+            'name',
+            'description'
+        ]
+    ])
+    ->setQuery('FerRari');
+    
+    $result = $searcher->run();
+```
+
+#### Filters
+
+```php
+<?php 
+    use \Searcher\Searcher;
+     
+    // create object instance
+    $searcher = new Searcher();
+    
+    // Prepare models and fields to participate in search
+    $searcher->setFields([
+        'Model/Auto'    =>    [
+            'mark',
+            'model'
+        ],
+        'Model/Distributor'    =>    [
+            'name',
+            'description'
+        ]
+    ])
+    ->setExact(true) // strict mode search 
+    ->setOrder(['Model/Auto' => ['id' => 'DESC']])  //  ORDER BY Model/Auto.id DESC
+    ->setGroup(['Model/Auto' => ['id']])            //  GROUP BY Model/Auto.id
+    ->setThreshold(100)                             //  LIMIT 100
+    ->setQuery('FerRari');
+    
+    $result = $searcher->run();
+    
+```
+
+```php
+<?php 
+    use \Searcher\Searcher;
+     
+    // create object instance
+    $searcher = new Searcher();
+    
+    // Prepare models and fields to participate in search
+    $searcher->setFields([
+        'Model/Auto'    =>    [
+            'mark',
+            'model'
+        ],
+        'Model/Distributor'    =>    [
+            'name',
+            'description'
+        ]
+    ])
+    ->setExact(true) // strict mode search 
+    ->setOrder([
+                    'Model/Auto' => ['id' => 'DESC']
+                    'Model/Distributor' => ['description' =>  'ASC']
+              ])                                                //  ORDER BY Model/Auto.id DESC, Model/Distributor.description ASC
+    ->setGroup([
+                'Model/Auto' => ['id', 'mark']
+                'Model/Distributor' => ['id', 'description']
+              ])                                                //  GROUP BY Model/Auto.id, Model/Auto.mark, Model/Distributor.id, Model/Distributor.description 
+    
+    ->setQuery('FerRari');
+    
+    $result = $searcher->run();
+    
+```
+
+#### Result modifiers and callbacks
+```php
+<?php 
+    use \Searcher\Searcher;
+     
+    // create object instance
+    $searcher = new Searcher();
+    
+    // Prepare models and fields to participate in search
+    $searcher->setFields([
+        'Model/Auto'    =>    [
+            'mark',
+            'model'
+        ],
+        'Model/Distributor'    =>    [
+            'name',
+            'description'
+        ]
+    ])
+    ->setQuery('FerRari');
+    
+    $result = $searcher->run('json'); // available, array, serialize, json, Resultset as default
+    
+    // OR
+    
+    $result = $searcher->run('array', function($res) {
+        
+         return $res;
+             
+    }); // available, array, serialize, json, Resultset as default
 
 ```
+
 ## Unit Test
 Also available in /phpunit directory. Run command to start
 ```python
