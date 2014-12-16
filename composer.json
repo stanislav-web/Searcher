@@ -26,15 +26,10 @@
     },
 
 	"autoload": {
-        "psr-4": {
-            "Test\\Searcher\\": "phpunit/src/Searcher"
-        }
-	},
-
-	"autoload-dev": {
 		"psr-4": {
-            "Searcher\\": "src/Searcher"
-		}
+			"Searcher\\": "src/Searcher"
+		},
+		"classmap": ["phpunit/src/Searcher"]
 	},
 
     "extra": {
