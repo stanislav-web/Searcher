@@ -34,7 +34,7 @@ php build/phpunit.phar --configuration phpunit.xml.dist
 ```
 Read logs from phpunit/log
 
-##[Change Log](https://github.com/stanislav-web/Searcher/CHANGELOG.md "Change Log")
+##[Change Log](https://github.com/stanislav-web/Searcher/blob/master/CHANGELOG.md "Change Log")
 
 ## Live Demo
 ```

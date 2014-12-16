@@ -33,7 +33,7 @@ class Model implements ExceptionInterface
      * @param array $params message params
      * @param int $line error line
      * @param string $filename file error
-     * @return Column
+     * @return \Phalcon\Searcher\Exceptions\Model
      */
     public function rise(array $params, $line, $filename)
     {

@@ -19,6 +19,7 @@ interface ExceptionInterface
      * @param array $params message params
      * @param int $line error line
      * @param string $filename file error
+     * @return void
      */
     public function rise(array $params, $line, $filename);
 
