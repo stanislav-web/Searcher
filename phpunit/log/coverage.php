@@ -1,12 +1,6 @@
 <?php
 $coverage = new PHP_CodeCoverage;
 $coverage->setData(array (
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php' => 
-  array (
-  ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php' => 
-  array (
-  ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Searcher.php' => 
   array (
     43 => 
@@ -373,6 +367,12 @@ $coverage->setData(array (
     array (
     ),
     318 => NULL,
+  ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php' => 
+  array (
+  ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php' => 
+  array (
   ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Builder.php' => 
   array (
@@ -823,7 +823,6 @@ $coverage->setData(array (
   ),
 ));
 $coverage->setTests(array (
-  'Test\\Searcher\\Aware\\InterfacesTest::testInstance' => 0,
   'Test\\Searcher\\SearcherTest::testProperties' => 0,
   'Test\\Searcher\\SearcherTest::testConstructor' => 0,
   'Test\\Searcher\\SearcherTest::testExact' => 0,
