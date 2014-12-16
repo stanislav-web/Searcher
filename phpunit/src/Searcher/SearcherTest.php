@@ -1,7 +1,7 @@
 <?php
 namespace Test\Searcher;
 
-use Searcher\Searcher;
+use \Searcher\Searcher;
 
 /**
  * Class SearcherTest

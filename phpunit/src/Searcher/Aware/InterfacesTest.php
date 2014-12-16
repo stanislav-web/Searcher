@@ -1,10 +1,8 @@
 <?php
 namespace Test\Searcher\Aware;
 
-use Searcher\Searcher;
-use Searcher\Searcher\Aware;
-use Searcher\Builder;
-use Searcher\Searcher\Hydrators;
+use \Searcher\Searcher\Aware;
+use \Searcher\Searcher\Hydrators;
 
 /**
  * Class InterfacesTest
@@ -46,29 +44,29 @@ class InterfacesTest extends \PHPUnit_Framework_TestCase
      */
     public function testInstance()
     {
-        $this->mock = $this->getMock('Searcher\Searcher\Aware\ExceptionInterface');
+        $this->mock = $this->getMock('\Searcher\Searcher\Aware\ExceptionInterface');
 
         // check interface's compatible
         $this->assertTrue($this->mock instanceof Aware\ExceptionInterface,
             '[-] Interface ExceptionInterface is not instantiable'
         );
 
-        $this->mock = $this->getMock('Searcher\Searcher\Aware\HydratorInterface');
+        $this->mock = $this->getMock('\Searcher\Searcher\Aware\HydratorInterface');
         $this->assertTrue($this->mock instanceof Aware\HydratorInterface,
             '[-] Interface HydratorInterface is not instantiable'
         );
 
         // check interface's instance to their objects
 
-        $this->assertInstanceOf('Searcher\Searcher\Aware\HydratorInterface', new Hydrators\JsonHydrator(new \Phalcon\Mvc\Model\Resultset\Simple([], null, [])),
+        $this->assertInstanceOf('\Searcher\Searcher\Aware\HydratorInterface', new Hydrators\JsonHydrator(new \Phalcon\Mvc\Model\Resultset\Simple([], null, [])),
             '[-] Class JsonHydrator() is not instantiable of interface HydratorInterface'
         );
 
-        $this->assertInstanceOf('Searcher\Searcher\Aware\HydratorInterface', new Hydrators\ArrayHydrator(new \Phalcon\Mvc\Model\Resultset\Simple([], null, [])),
+        $this->assertInstanceOf('\Searcher\Searcher\Aware\HydratorInterface', new Hydrators\ArrayHydrator(new \Phalcon\Mvc\Model\Resultset\Simple([], null, [])),
             '[-] Class ArrayHydrator() is not instantiable of interface HydratorInterface'
         );
 
-        $this->assertInstanceOf('Searcher\Searcher\Aware\HydratorInterface', new Hydrators\SerializeHydrator(new \Phalcon\Mvc\Model\Resultset\Simple([], null, [])),
+        $this->assertInstanceOf('\Searcher\Searcher\Aware\HydratorInterface', new Hydrators\SerializeHydrator(new \Phalcon\Mvc\Model\Resultset\Simple([], null, [])),
             '[-] Class SerializeHydrator() is not instantiable of interface HydratorInterface'
         );
     }

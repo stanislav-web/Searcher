@@ -1,7 +1,7 @@
 <?php
 namespace Test\Searcher;
 
-use Searcher\Validator;
+use \Searcher\Validator;
 
 /**
  * Class ValidatorTest
@@ -34,7 +34,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->validator = new Validator();
-        $this->reflection = new \ReflectionClass('Searcher\Validator');
+        $this->reflection = new \ReflectionClass('\Searcher\Validator');
     }
 
     /**
