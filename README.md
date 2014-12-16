@@ -131,7 +131,7 @@ You can create an injectable service
     ])
     ->setExact(true) // strict mode search 
     ->setOrder([
-                    \Models\/Auto' => ['id' => 'DESC']
+                    '\Models\/Auto' => ['id' => 'DESC']
                     '\Models\Distributor' => ['description' =>  'ASC']
               ])                                                //  ORDER BY Model/Auto.id DESC, Model/Distributor.description ASC
     ->setGroup([
