@@ -42,7 +42,7 @@ class JsonHydrator implements HydratorInterface, \Phalcon\DI\InjectionAwareInter
 
     /**
      * Result data
-     * @var mixed $result
+     * @var \Phalcon\Mvc\Model\Resultset\Simple $result
      */
     private $result;
 

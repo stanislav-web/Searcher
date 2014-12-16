@@ -17,7 +17,7 @@ class ArrayHydrator implements HydratorInterface
 
     /**
      * Result data
-     * @var mixed $result
+     * @var \Phalcon\Mvc\Model\Resultset\Simple $result
      */
     private $result;
 
