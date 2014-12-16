@@ -11,7 +11,7 @@ Extension is used to group search for project models Currently under TTD
 - PHP 5.5.x >
 - MySQL
 
-## Manual include
+## Install
 First update your dependencies through composer. Add to your composer.json:
 ```php
 "require": {
@@ -22,6 +22,21 @@ Then run to update dependency and autoloader
 ```python
 php composer.phar update
 php composer.phar install
+```
+Or manual require in your loader service
+```php
+<?php 
+    $loader->registerNamespaces([
+        'Searcher\Searcher' => 'path to src'
+    ]);
+```
+You can create an injectable service
+```php
+<?php 
+
+    $this->di['searcher'] = function() {
+        return new \Searcher\Searcher();
+    };
 ```
 ## Usage
 
@@ -108,6 +123,7 @@ php composer.phar install
                 'Model/Distributor' => ['id', 'description']
               ])                                                //  GROUP BY Model/Auto.id, Model/Auto.mark, Model/Distributor.id, Model/Distributor.description 
     
+    ->setThreshold([0,100])                                     //    OFFSET 0, LIMIT 100
     ->setQuery('FerRari');
     
     $result = $searcher->run();
@@ -150,15 +166,19 @@ php composer.phar install
 ## Unit Test
 Also available in /phpunit directory. Run command to start
 ```php
-php build/phpunit.phar --configuration phpunit.xml.dist
+php build/phpunit.phar --configuration phpunit.xml.dist --coverage-text
+
+or run ./build/coverage.sh
+ 
 ```
+
 Read logs from phpunit/log
 
 ##[Change Log](https://github.com/stanislav-web/Searcher/blob/master/CHANGELOG.md "Change Log")
 
 ##[Issues](https://github.com/stanislav-web/Searcher/issues "Issues")
 
-## Live Demo
+## Screen
 ```
 Unavailable
 ```

@@ -4,8 +4,6 @@ COVERAGE="--coverage-clover $METRICS"
 
 phpunit $COVERAGE $@
 
-if [ "$COVERAGE" != "" ]
-then
   echo "====================== Code Coverage Summary ====================="
   FILTER_LINES="/<class/ { print \$2 } /<metrics method/ { print \$4,\$5 }"
   JOIN_LINES="\$!N;s/\n/ /"
@@ -23,4 +21,3 @@ then
     echo "$CLASS $COVERAGE" | awk '{printf "%-60s %.2f%\n", $1, $2}'
   done) | sort -nr --key=2
   rm "$METRICS"
-fi
