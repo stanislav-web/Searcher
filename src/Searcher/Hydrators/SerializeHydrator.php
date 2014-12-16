@@ -22,25 +22,32 @@ class SerializeHydrator implements HydratorInterface
     private $result;
 
     /**
+     * Initialize result handler for serialized data
+     *
      * @param \Phalcon\Mvc\Model\Resultset\Simple $res
-     * @param callback|null $callback function to data
      */
-    public function __construct(\Phalcon\Mvc\Model\Resultset\Simple $res, $callback = null)
+    public function __construct(\Phalcon\Mvc\Model\Resultset\Simple $res)
     {
-        if (null === $callback)
-            $this->result = $res;
-        else
-            $this->result = call_user_func($callback($res));
+        $this->result = $res;
     }
 
-
     /**
-     * Extract result data
+     * Extract result data to serialize string
+     *
      * @param callback|null $call function
      * @return array
      */
-    public function extract(callable $call = null)
+    public function extract(callable $callback = null)
     {
-        return $this->result->serialize();
+
+        if ($callback === null)
+            $result = $this->result->serialize();
+        else
+            $result = $callback($this->result->serialize());
+
+        return $result;
+
     }
+
+
 } 

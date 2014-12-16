@@ -1,5 +1,6 @@
 <?php
 namespace Test\Searcher\Aware;
+
 use Searcher\Searcher;
 use Searcher\Searcher\Aware;
 use Searcher\Builder;
@@ -12,7 +13,8 @@ use Searcher\Searcher\Hydrators;
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
  */
-class InterfacesTest  extends \PHPUnit_Framework_TestCase {
+class InterfacesTest extends \PHPUnit_Framework_TestCase
+{
 
     /**
      * Mock object sniffer
@@ -44,14 +46,14 @@ class InterfacesTest  extends \PHPUnit_Framework_TestCase {
      */
     public function testInstance()
     {
-        $this->mock     =   $this->getMock('Searcher\Searcher\Aware\ExceptionInterface');
+        $this->mock = $this->getMock('Searcher\Searcher\Aware\ExceptionInterface');
 
         // check interface's compatible
         $this->assertTrue($this->mock instanceof Aware\ExceptionInterface,
             '[-] Interface ExceptionInterface is not instantiable'
         );
 
-        $this->mock     =   $this->getMock('Searcher\Searcher\Aware\HydratorInterface');
+        $this->mock = $this->getMock('Searcher\Searcher\Aware\HydratorInterface');
         $this->assertTrue($this->mock instanceof Aware\HydratorInterface,
             '[-] Interface HydratorInterface is not instantiable'
         );

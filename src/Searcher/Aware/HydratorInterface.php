@@ -15,16 +15,15 @@ interface HydratorInterface
 
     /**
      * Initialize
-     * @param callback|null $callback function to data
      * @param \Phalcon\Mvc\Model\Resultset\Simple $res
      * @return void
      */
-    public function __construct(\Phalcon\Mvc\Model\Resultset\Simple $res, $callback = null);
+    public function __construct(\Phalcon\Mvc\Model\Resultset\Simple $res);
 
     /**
      * Extract values from an object
-     * @param
+     * @param callback|null $callback function to data
      * @return array
      */
-    public function extract(callable $call = null);
+    public function extract(callable $callback = null);
 }

@@ -2,7 +2,7 @@
 <!-- Setup test files and directories -->
 <phpunit    backupGlobals="false"
             backupStaticAttributes="false"
-            bootstrap="vendor/composer/autoload.php"
+            bootstrap="../../../vendor/autoload.php"
             cacheTokens="false"
             colors="true"
             convertErrorsToExceptions="true"

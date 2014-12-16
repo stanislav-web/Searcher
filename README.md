@@ -90,16 +90,18 @@ You can create an injectable service
     
     // Prepare models and fields to participate in search
     $searcher->setFields([
-        'Model/Auto'    =>    [
+        '\Models\Auto'    =>    [
             'mark',
             'model'
         ],
-        'Model/Distributor'    =>    [
+        '\Models\Distributor'    =>    [
             'name',
             'description'
         ]
     ])
-    ->setExact(true) // strict mode search 
+    ->setMin(3)                                     //  minimum char to query
+    ->setMax(15)                                    //  maximum char to query
+    ->setExact(true)                                //  strict mode search 
     ->setOrder(['Model/Auto' => ['id' => 'DESC']])  //  ORDER BY Model/Auto.id DESC
     ->setGroup(['Model/Auto' => ['id']])            //  GROUP BY Model/Auto.id
     ->setThreshold(100)                             //  LIMIT 100
@@ -118,23 +120,23 @@ You can create an injectable service
     
     // Prepare models and fields to participate in search
     $searcher->setFields([
-        'Model/Auto'    =>    [
+        '\Models\Auto'    =>    [
             'mark',
             'model'
         ],
-        'Model/Distributor'    =>    [
+        '\Models\Distributor'    =>    [
             'name',
             'description'
         ]
     ])
     ->setExact(true) // strict mode search 
     ->setOrder([
-                    'Model/Auto' => ['id' => 'DESC']
-                    'Model/Distributor' => ['description' =>  'ASC']
+                    \Models\/Auto' => ['id' => 'DESC']
+                    '\Models\Distributor' => ['description' =>  'ASC']
               ])                                                //  ORDER BY Model/Auto.id DESC, Model/Distributor.description ASC
     ->setGroup([
-                'Model/Auto' => ['id', 'mark']
-                'Model/Distributor' => ['id', 'description']
+                '\Models\/Auto' => ['id', 'mark']
+                '\Models\Distributor' => ['id', 'description']
               ])                                                //  GROUP BY Model/Auto.id, Model/Auto.mark, Model/Distributor.id, Model/Distributor.description 
     
     ->setThreshold([0,100])                                     //    OFFSET 0, LIMIT 100
@@ -154,11 +156,11 @@ You can create an injectable service
     
     // Prepare models and fields to participate in search
     $searcher->setFields([
-        'Model/Auto'    =>    [
+        '\Models\Auto'    =>    [
             'mark',
             'model'
         ],
-        'Model/Distributor'    =>    [
+        '\Models\Distributor'    =>    [
             'name',
             'description'
         ]
@@ -169,9 +171,13 @@ You can create an injectable service
     
     // OR
     
-    $result = $searcher->run('array', function($res) {
+    /**
+     * @param $result 
+     */
+    $result = $searcher->run('array', function($result) {
         
-         return $res;
+        //... any modifiers 
+        return $result;
              
     }); // available, array, serialize, json, Resultset as default
 

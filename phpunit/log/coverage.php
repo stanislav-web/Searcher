@@ -3,38 +3,10 @@ $coverage = new PHP_CodeCoverage;
 $coverage->setData(array (
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/SerializeHydrator.php' => 
   array (
-    30 => 
-    array (
-    ),
     31 => 
     array (
     ),
-    33 => 
-    array (
-    ),
-    34 => 
-    array (
-    ),
-    44 => 
-    array (
-    ),
-    45 => NULL,
-  ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php' => 
-  array (
-  ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
-  array (
-    30 => 
-    array (
-    ),
-    31 => 
-    array (
-    ),
-    33 => 
-    array (
-    ),
-    34 => 
+    32 => 
     array (
     ),
     43 => 
@@ -43,13 +15,38 @@ $coverage->setData(array (
     44 => 
     array (
     ),
-    45 => 
+    46 => 
     array (
     ),
-    47 => 
+    48 => 
     array (
     ),
-    48 => NULL,
+    50 => NULL,
+  ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php' => 
+  array (
+  ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
+  array (
+    31 => 
+    array (
+    ),
+    32 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    46 => 
+    array (
+    ),
+    48 => 
+    array (
+    ),
+    50 => NULL,
   ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
   array (
@@ -63,19 +60,13 @@ $coverage->setData(array (
     array (
     ),
     41 => NULL,
-    61 => 
-    array (
-    ),
     62 => 
     array (
     ),
-    64 => 
+    63 => 
     array (
     ),
-    65 => 
-    array (
-    ),
-    74 => 
+    73 => 
     array (
     ),
     75 => 
@@ -84,7 +75,19 @@ $coverage->setData(array (
     76 => 
     array (
     ),
-    77 => 
+    78 => 
+    array (
+    ),
+    79 => 
+    array (
+    ),
+    80 => 
+    array (
+    ),
+    82 => 
+    array (
+    ),
+    84 => 
     array (
     ),
   ),
@@ -625,19 +628,16 @@ $coverage->setData(array (
     198 => 
     array (
     ),
-    199 => 
-    array (
-    ),
     200 => 
     array (
     ),
     202 => 
     array (
     ),
-    204 => 
+    203 => 
     array (
     ),
-    206 => 
+    205 => 
     array (
     ),
     207 => 
@@ -646,35 +646,32 @@ $coverage->setData(array (
     209 => 
     array (
     ),
-    211 => 
+    210 => 
     array (
     ),
-    212 => NULL,
-    225 => 
+    212 => 
     array (
     ),
-    227 => 
+    214 => 
     array (
     ),
-    229 => 
+    215 => NULL,
+    228 => 
     array (
     ),
     230 => 
     array (
     ),
-    231 => 
+    232 => 
     array (
     ),
     233 => 
     array (
     ),
-    235 => 
+    234 => 
     array (
     ),
     236 => 
-    array (
-    ),
-    237 => 
     array (
     ),
     238 => 
@@ -689,23 +686,29 @@ $coverage->setData(array (
     241 => 
     array (
     ),
-    242 => NULL,
+    242 => 
+    array (
+    ),
     243 => 
     array (
     ),
-    244 => 
+    244 => NULL,
+    245 => 
     array (
     ),
-    245 => 
+    246 => 
     array (
     ),
     247 => 
     array (
     ),
-    256 => 
+    249 => 
     array (
     ),
-    257 => NULL,
+    259 => 
+    array (
+    ),
+    260 => NULL,
   ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Column.php' => 
   array (

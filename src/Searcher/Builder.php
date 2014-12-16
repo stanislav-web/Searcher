@@ -196,6 +196,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     {
         if ($type === Column::TYPE_TEXT) // match search
         {
+            // unset mask
+            $this->searcher->query = trim($this->searcher->query, '%');
+
             if ($index > 0)
                 $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->searcher->query);
             else
@@ -233,10 +236,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
             $res = $this->builder->getQuery()->execute();
 
             if ($res->valid() === true) {
-                if ($hydratorset !== null)
-                {
-                    $call  = "Searcher\\Searcher\\Hydrators\\".ucfirst($hydratorset)."Hydrator";
-                    $res = $this->setResult(new $call($res, $callback));
+                if ($hydratorset !== null) {
+                    $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
+                    $res = $this->setResult(new $call($res), $callback);
                 }
                 return $res;
             }
@@ -249,10 +251,11 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     /**
      * Result set
      * @param \Searcher\Searcher\Aware\HydratorInterface $hydrator
+     * @param callback|null $callback function to data
      * @return array
      */
-    private function setResult(HydratorInterface $hydrator)
+    private function setResult(HydratorInterface $hydrator, $callback = null)
     {
-        return $hydrator->extract();
+        return $hydrator->extract($callback);
     }
 }

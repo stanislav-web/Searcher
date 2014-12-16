@@ -22,28 +22,30 @@ class ArrayHydrator implements HydratorInterface
     private $result;
 
     /**
+     * Initialize result handler for array
+     *
      * @param \Phalcon\Mvc\Model\Resultset\Simple $res
-     * @param callback|null $callback function to data
      */
-    public function __construct(\Phalcon\Mvc\Model\Resultset\Simple $res, $callback = null)
+    public function __construct(\Phalcon\Mvc\Model\Resultset\Simple $res)
     {
-        if (null === $callback)
-            $this->result = $res;
-        else
-            $this->result = call_user_func($callback($res));
+        $this->result = $res;
     }
 
     /**
-     * Extract result data
-     * @param callback|null $call function
+     * Extract result data to array
+     *
+     * @param callback|null $callback function to data
      * @return mixed
      */
-    public function extract(callable $call = null)
+    public function extract(callable $callback = null)
     {
-        $result = $this->result->toArray();
-        if(null === $call)
-            return $result;
+
+        if ($callback === null)
+            $result = $this->result->toArray();
         else
-            return call_user_func($call, $result);
+            $result = $callback($this->result->toArray());
+
+        return $result;
+
     }
 } 
