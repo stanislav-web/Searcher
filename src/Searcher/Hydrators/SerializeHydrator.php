@@ -17,9 +17,9 @@ class SerializeHydrator implements HydratorInterface
 
     /**
      * Result data
-     * @var string $result
+     * @var mixed $result
      */
-    private $result = '';
+    private $result;
 
     /**
      * @param \Phalcon\Mvc\Model\Resultset\Simple $res
