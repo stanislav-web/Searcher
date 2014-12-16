@@ -58,5 +58,16 @@ class InterfacesTest extends \PHPUnit_Framework_TestCase
 
         // check interface's instance to their objects
 
+        $this->assertInstanceOf('\Searcher\Searcher\Aware\HydratorInterface', new Hydrators\JsonHydrator(new \Phalcon\Mvc\Model\Resultset\Simple([], null, [])),
+            '[-] Class JsonHydrator() is not instantiable of interface HydratorInterface'
+        );
+
+        $this->assertInstanceOf('\Searcher\Searcher\Aware\HydratorInterface', new Hydrators\ArrayHydrator(new \Phalcon\Mvc\Model\Resultset\Simple([], null, [])),
+            '[-] Class ArrayHydrator() is not instantiable of interface HydratorInterface'
+        );
+
+        $this->assertInstanceOf('\Searcher\Searcher\Aware\HydratorInterface', new Hydrators\SerializeHydrator(new \Phalcon\Mvc\Model\Resultset\Simple([], null, [])),
+            '[-] Class SerializeHydrator() is not instantiable of interface HydratorInterface'
+        );
     }
 } 

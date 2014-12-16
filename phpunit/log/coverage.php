@@ -823,7 +823,7 @@ $coverage->setData(array (
   ),
 ));
 $coverage->setTests(array (
-  'Test\\Searcher\\Aware\\InterfacesTest::testInstance' => 3,
+  'Test\\Searcher\\Aware\\InterfacesTest::testInstance' => 0,
   'Test\\Searcher\\SearcherTest::testProperties' => 0,
   'Test\\Searcher\\SearcherTest::testConstructor' => 0,
   'Test\\Searcher\\SearcherTest::testExact' => 0,
