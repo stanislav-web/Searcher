@@ -23,8 +23,8 @@ interface HydratorInterface
 
     /**
      * Extract values from an object
-     *
+     * @param
      * @return array
      */
-    public function extract();
+    public function extract(callable $call = null);
 }

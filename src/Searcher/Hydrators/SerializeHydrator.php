@@ -30,15 +30,16 @@ class SerializeHydrator implements HydratorInterface
         if (null === $callback)
             $this->result = $res;
         else
-            $this->result = $callback($res);
+            $this->result = call_user_func($callback($res));
     }
 
 
     /**
      * Extract result data
+     * @param callback|null $call function
      * @return array
      */
-    public function extract()
+    public function extract(callable $call = null)
     {
         return $this->result->serialize();
     }

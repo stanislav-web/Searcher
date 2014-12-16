@@ -61,14 +61,15 @@ class JsonHydrator implements HydratorInterface, \Phalcon\DI\InjectionAwareInter
         if (null === $callback)
             $this->result = $res;
         else
-            $this->result = $callback($res);
+            $this->result = call_user_func($callback($res));
     }
 
     /**
      * Extract to json
+     * @param callback|null $call function
      * @return array|void
      */
-    public function extract()
+    public function extract(callable $call = null)
     {
         $this->response = Di::getDefault()->get('response');
         $this->response->setContent(json_encode($this->result->toArray()));

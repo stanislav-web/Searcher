@@ -30,15 +30,20 @@ class ArrayHydrator implements HydratorInterface
         if (null === $callback)
             $this->result = $res;
         else
-            $this->result = $callback($res);
+            $this->result = call_user_func($callback($res));
     }
 
     /**
      * Extract result data
-     * @return array
+     * @param callback|null $call function
+     * @return mixed
      */
-    public function extract()
+    public function extract(callable $call = null)
     {
-        return $this->result->toArray();
+        $result = $this->result->toArray();
+        if(null === $call)
+            return $result;
+        else
+            return call_user_func($call, $result);
     }
 } 
