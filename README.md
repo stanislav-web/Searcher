@@ -160,4 +160,8 @@ Read logs from phpunit/log
 ```
 Unavailable
 ```
+
+##[Issues](https://github.com/stanislav-web/Searcher/issues "Issues")
+
 [![Project Status](http://stillmaintained.com/stanislav-web/Searcher.svg)](http://stillmaintained.com/stanislav-web/Searcher) [![Latest Stable Version](https://poser.pugx.org/stanislav-web/phalcon-searcher/v/stable.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher) [![MIT License](https://poser.pugx.org/stanislav-web/phalcon-searcher/license.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/stanislav-web/Searcher?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
+
