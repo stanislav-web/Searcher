@@ -149,7 +149,7 @@ php composer.phar install
 
 ## Unit Test
 Also available in /phpunit directory. Run command to start
-```python
+```php
 php build/phpunit.phar --configuration phpunit.xml.dist
 ```
 Read logs from phpunit/log

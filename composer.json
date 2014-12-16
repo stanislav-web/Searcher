@@ -25,6 +25,10 @@
          "php" : ">=5.3"
     },
 
+    "require-dev": {
+        "codeclimate/php-test-reporter": "dev-master"
+    },
+
 	"autoload": {
 		"classmap": ["src/"],
         "psr-4": {
