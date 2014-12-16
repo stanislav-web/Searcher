@@ -19,4 +19,7 @@ return array(
     'Searcher\\Searcher\\Hydrators\\JsonHydrator' => $baseDir . '/src/Searcher/Hydrators/JsonHydrator.php',
     'Searcher\\Searcher\\Hydrators\\SerializeHydrator' => $baseDir . '/src/Searcher/Hydrators/SerializeHydrator.php',
     'Searcher\\Validator' => $baseDir . '/src/Searcher/Validator.php',
+    'Test\\Searcher\\Aware\\InterfacesTest' => $baseDir . '/phpunit/src/Searcher/Aware/InterfacesTest.php',
+    'Test\\Searcher\\SearcherTest' => $baseDir . '/phpunit/src/Searcher/SearcherTest.php',
+    'Test\\Searcher\\ValidatorTest' => $baseDir . '/phpunit/src/Searcher/ValidatorTest.php',
 );

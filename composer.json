@@ -32,6 +32,12 @@
 		"classmap": ["phpunit/src/Searcher"]
 	},
 
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\Searcher\\": "phpunit/src/Searcher"
+        }
+    },
+
     "extra": {
         "branch-alias": {
             "dev-master": "1.x-dev"
