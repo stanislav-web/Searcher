@@ -1,95 +1,8 @@
 <?php
 $coverage = new PHP_CodeCoverage;
 $coverage->setData(array (
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/SerializeHydrator.php' => 
-  array (
-    31 => 
-    array (
-    ),
-    32 => 
-    array (
-    ),
-    43 => 
-    array (
-    ),
-    44 => 
-    array (
-    ),
-    46 => 
-    array (
-    ),
-    48 => 
-    array (
-    ),
-    50 => NULL,
-  ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php' => 
   array (
-  ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
-  array (
-    31 => 
-    array (
-    ),
-    32 => 
-    array (
-    ),
-    43 => 
-    array (
-    ),
-    44 => 
-    array (
-    ),
-    46 => 
-    array (
-    ),
-    48 => 
-    array (
-    ),
-    50 => NULL,
-  ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
-  array (
-    31 => 
-    array (
-    ),
-    32 => 
-    array (
-    ),
-    40 => 
-    array (
-    ),
-    41 => NULL,
-    62 => 
-    array (
-    ),
-    63 => 
-    array (
-    ),
-    73 => 
-    array (
-    ),
-    75 => 
-    array (
-    ),
-    76 => 
-    array (
-    ),
-    78 => 
-    array (
-    ),
-    79 => 
-    array (
-    ),
-    80 => 
-    array (
-    ),
-    82 => 
-    array (
-    ),
-    84 => 
-    array (
-    ),
   ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php' => 
   array (
@@ -821,9 +734,96 @@ $coverage->setData(array (
     ),
     38 => NULL,
   ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
+  array (
+    31 => 
+    array (
+    ),
+    32 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    46 => 
+    array (
+    ),
+    48 => 
+    array (
+    ),
+    50 => NULL,
+  ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
+  array (
+    31 => 
+    array (
+    ),
+    32 => 
+    array (
+    ),
+    40 => 
+    array (
+    ),
+    41 => NULL,
+    62 => 
+    array (
+    ),
+    63 => 
+    array (
+    ),
+    73 => 
+    array (
+    ),
+    75 => 
+    array (
+    ),
+    76 => 
+    array (
+    ),
+    78 => 
+    array (
+    ),
+    79 => 
+    array (
+    ),
+    80 => 
+    array (
+    ),
+    82 => 
+    array (
+    ),
+    84 => 
+    array (
+    ),
+  ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/SerializeHydrator.php' => 
+  array (
+    31 => 
+    array (
+    ),
+    32 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    46 => 
+    array (
+    ),
+    48 => 
+    array (
+    ),
+    50 => NULL,
+  ),
 ));
 $coverage->setTests(array (
-  'Test\\Searcher\\Aware\\InterfacesTest::testInstance' => 0,
+  'Test\\Searcher\\Aware\\InterfacesTest::testInstance' => 3,
   'Test\\Searcher\\SearcherTest::testProperties' => 0,
   'Test\\Searcher\\SearcherTest::testConstructor' => 0,
   'Test\\Searcher\\SearcherTest::testExact' => 0,
