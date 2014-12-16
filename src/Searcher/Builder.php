@@ -90,7 +90,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     /**
      * Setup orders positions to Builder
      *
-     * @param boolean $asArray
+     * @param boolean $asArray order from an array
      * @return null
      */
     public function setOrder($asArray = false)
