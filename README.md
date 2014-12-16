@@ -37,6 +37,8 @@ Then run to update dependency and autoloader
 php composer.phar update
 php composer.phar install
 ```
+_(Do not forget to include the composer autoloader)_
+
 Or manual require in your loader service
 ```php
 <?php 
