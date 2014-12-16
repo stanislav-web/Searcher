@@ -181,9 +181,6 @@ You can create an injectable service
 Also available in /phpunit directory. Run command to start
 ```php
 php build/phpunit.phar --configuration phpunit.xml.dist --coverage-text
-
-or run ./build/coverage.sh
- 
 ```
 
 Read logs from phpunit/log

@@ -1,7 +1,57 @@
 <?php
 $coverage = new PHP_CodeCoverage;
 $coverage->setData(array (
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/SerializeHydrator.php' => 
+  array (
+    30 => 
+    array (
+    ),
+    31 => 
+    array (
+    ),
+    33 => 
+    array (
+    ),
+    34 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    45 => NULL,
+  ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php' => 
+  array (
+  ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
+  array (
+    30 => 
+    array (
+    ),
+    31 => 
+    array (
+    ),
+    33 => 
+    array (
+    ),
+    34 => 
+    array (
+    ),
+    43 => 
+    array (
+    ),
+    44 => 
+    array (
+    ),
+    45 => 
+    array (
+    ),
+    47 => 
+    array (
+    ),
+    48 => NULL,
+  ),
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
   array (
     31 => 
     array (
@@ -38,60 +88,140 @@ $coverage->setData(array (
     array (
     ),
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/HydratorInterface.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php' => 
   array (
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Searcher.php' => 
   array (
-    30 => 
-    array (
-    ),
-    31 => 
-    array (
-    ),
-    33 => 
-    array (
-    ),
-    34 => 
-    array (
-    ),
     43 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testProperties',
+      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
     ),
     44 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testProperties',
+      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
     ),
-    45 => 
+    54 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    55 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    56 => NULL,
+    66 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    67 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    68 => NULL,
+    81 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testExact',
+    ),
+    82 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testExact',
+    ),
+    83 => NULL,
+    108 => 
     array (
     ),
-    47 => 
+    109 => 
     array (
     ),
-    48 => NULL,
+    110 => 
+    array (
+    ),
+    112 => 
+    array (
+    ),
+    113 => NULL,
+    132 => 
+    array (
+    ),
+    133 => 
+    array (
+    ),
+    134 => 
+    array (
+    ),
+    135 => 
+    array (
+    ),
+    136 => NULL,
+    157 => 
+    array (
+    ),
+    158 => 
+    array (
+    ),
+    159 => 
+    array (
+    ),
+    161 => 
+    array (
+    ),
+    162 => NULL,
+    180 => 
+    array (
+    ),
+    181 => 
+    array (
+    ),
+    183 => 
+    array (
+    ),
+    184 => 
+    array (
+    ),
+    185 => 
+    array (
+    ),
+    186 => NULL,
+    200 => 
+    array (
+    ),
+    202 => 
+    array (
+    ),
+    203 => 
+    array (
+    ),
+    205 => 
+    array (
+    ),
+    206 => 
+    array (
+    ),
+    207 => NULL,
+    215 => 
+    array (
+    ),
+    216 => NULL,
+    232 => 
+    array (
+    ),
+    234 => 
+    array (
+    ),
+    236 => 
+    array (
+    ),
+    237 => 
+    array (
+    ),
+    240 => 
+    array (
+    ),
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/SerializeHydrator.php' => 
-  array (
-    30 => 
-    array (
-    ),
-    31 => 
-    array (
-    ),
-    33 => 
-    array (
-    ),
-    34 => 
-    array (
-    ),
-    44 => 
-    array (
-    ),
-    45 => NULL,
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/ExceptionInterface.php' => 
-  array (
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Validator.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Validator.php' => 
   array (
     78 => 
     array (
@@ -328,137 +458,7 @@ $coverage->setData(array (
     ),
     318 => NULL,
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Searcher.php' => 
-  array (
-    43 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testProperties',
-      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
-    ),
-    44 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testProperties',
-      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
-    ),
-    54 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    55 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    56 => NULL,
-    66 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    67 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    68 => NULL,
-    81 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testExact',
-    ),
-    82 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testExact',
-    ),
-    83 => NULL,
-    108 => 
-    array (
-    ),
-    109 => 
-    array (
-    ),
-    110 => 
-    array (
-    ),
-    112 => 
-    array (
-    ),
-    113 => NULL,
-    132 => 
-    array (
-    ),
-    133 => 
-    array (
-    ),
-    134 => 
-    array (
-    ),
-    135 => 
-    array (
-    ),
-    136 => NULL,
-    157 => 
-    array (
-    ),
-    158 => 
-    array (
-    ),
-    159 => 
-    array (
-    ),
-    161 => 
-    array (
-    ),
-    162 => NULL,
-    180 => 
-    array (
-    ),
-    181 => 
-    array (
-    ),
-    183 => 
-    array (
-    ),
-    184 => 
-    array (
-    ),
-    185 => 
-    array (
-    ),
-    186 => NULL,
-    200 => 
-    array (
-    ),
-    202 => 
-    array (
-    ),
-    203 => 
-    array (
-    ),
-    205 => 
-    array (
-    ),
-    206 => 
-    array (
-    ),
-    207 => NULL,
-    215 => 
-    array (
-    ),
-    216 => NULL,
-    232 => 
-    array (
-    ),
-    234 => 
-    array (
-    ),
-    236 => 
-    array (
-    ),
-    237 => 
-    array (
-    ),
-    240 => 
-    array (
-    ),
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Builder.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Builder.php' => 
   array (
     52 => 
     array (
@@ -707,7 +707,7 @@ $coverage->setData(array (
     ),
     257 => NULL,
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Column.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Column.php' => 
   array (
     41 => 
     array (
@@ -748,7 +748,7 @@ $coverage->setData(array (
     ),
     74 => NULL,
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/DataType.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/DataType.php' => 
   array (
     41 => 
     array (
@@ -765,7 +765,7 @@ $coverage->setData(array (
     ),
     55 => NULL,
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/InvalidLength.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/InvalidLength.php' => 
   array (
     35 => 
     array (
@@ -779,7 +779,7 @@ $coverage->setData(array (
     ),
     48 => NULL,
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Model.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Model.php' => 
   array (
     41 => 
     array (
@@ -802,7 +802,7 @@ $coverage->setData(array (
     ),
     61 => NULL,
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Factories/ExceptionFactory.php' => 
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Factories/ExceptionFactory.php' => 
   array (
     31 => 
     array (
@@ -832,22 +832,22 @@ $coverage->setTests(array (
 
 $filter = $coverage->filter();
 $filter->setBlacklistedFiles(array (
-  '/private/var/folders/mj/djg9_yfd1r50n2b9_cn1mpbh0000gn/T/ide-phpunit.php' => true,
+  '/tmp/ide-phpunit.php' => true,
 ));
 $filter->setWhitelistedFiles(array (
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/ExceptionInterface.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/HydratorInterface.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Builder.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Column.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/DataType.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/InvalidLength.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Model.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Factories/ExceptionFactory.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/ArrayHydrator.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/JsonHydrator.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/SerializeHydrator.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Searcher.php' => true,
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Validator.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Builder.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Column.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/DataType.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/InvalidLength.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Model.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Factories/ExceptionFactory.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/ArrayHydrator.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/JsonHydrator.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/SerializeHydrator.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Searcher.php' => true,
+  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Validator.php' => true,
 ));
 
 return $coverage;
