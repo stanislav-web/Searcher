@@ -17,6 +17,7 @@ This is the search service is designed to search multiple SQL tables. Convenient
     - multi table search
     - compatible with \Phalcon\Paginator
     - view results as json, serialized, array or \Phalcon\Mvc\Model\Resultset\Simple
+    - support callbacks to pretty modifying result
 
 ## Compatible
 - PSR-0, PSR-1, PSR-2, PSR-4 Standards
@@ -41,15 +42,12 @@ _(Do not forget to include the composer autoloader)_
 
 Or manual require in your loader service
 ```php
-<?php 
     $loader->registerNamespaces([
         'Searcher\Searcher' => 'path to src'
-    ]
+    ]);
 ```
 You can create an injectable service
 ```php
-<?php
-
     $this->di['searcher'] = function() {
         return new \Searcher\Searcher();
     };
