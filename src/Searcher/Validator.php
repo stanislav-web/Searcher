@@ -1,13 +1,13 @@
 <?php
-namespace Phalcon\Searcher;
+namespace Searcher;
 
 use \Phalcon\Db\Column;
 use \Phalcon\Mvc\Model\Manager;
-use Phalcon\Searcher\Factories\ExceptionFactory;
+use Searcher\Searcher\Factories\ExceptionFactory;
 
 /**
  * Columns validator
- * @package Phalcon\Searcher
+ * @package Searcher
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>

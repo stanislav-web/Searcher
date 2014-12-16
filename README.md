@@ -24,8 +24,10 @@ php composer.phar update
 php composer.phar install
 ```
 ## Usage
-```
-Unavailable
+```php
+<?php 
+    use  
+
 ```
 ## Unit Test
 Also available in /phpunit directory. Run command to start

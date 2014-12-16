@@ -1,10 +1,10 @@
 <?php
-namespace Phalcon\Searcher\Aware;
+namespace Searcher\Searcher\Aware;
 
 /**
  * ExceptionInterface. Implementing rules necessary functionality for user's exceptions
- * @package Phalcon Searcher
- * @subpackage Phalcon\Searcher\Aware
+ * @package Searcher
+ * @subpackage Sweb\Searcher\Aware
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>

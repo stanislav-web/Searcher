@@ -1,14 +1,14 @@
 <?php
-namespace Phalcon\Searcher;
+namespace Searcher;
 
-use Phalcon\Searcher\Aware\HydratorInterface;
-use Phalcon\Searcher\Factories\ExceptionFactory;
+use Searcher\Searcher\Aware\HydratorInterface;
+use Searcher\Searcher\Factories\ExceptionFactory;
 use \Phalcon\Db\Column;
 use \Phalcon\DI as Di;
 
 /**
  * Query builder class
- * @package Phalcon\Searcher
+ * @package Searcher
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -30,7 +30,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
     /**
      * Client for preparing data
-     * @var \Phalcon\Searcher\Searcher
+     * @var Searcher
      */
     private $searcher;
 
@@ -43,7 +43,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     /**
      * Initialize internal params
      *
-     * @param \Phalcon\Searcher\Searcher $searcher
+     * @param Searcher $searcher
      * @uses \Phalcon\Mvc\Model\Query\Builder
      * @return null
      */
@@ -235,7 +235,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
             if ($res->valid() === true) {
                 if ($hydratorset !== null)
                 {
-                    $call  = "Phalcon\\Searcher\\Hydrators\\".ucfirst($hydratorset)."Hydrator";
+                    $call  = "Searcher\\Searcher\\Hydrators\\".ucfirst($hydratorset)."Hydrator";
                     $res = $this->setResult(new $call($res, $callback));
                 }
                 return $res;
@@ -248,7 +248,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
     /**
      * Result set
-     * @param \Phalcon\Searcher\Aware\HydratorInterface $hydrator
+     * @param \Searcher\Searcher\Aware\HydratorInterface $hydrator
      * @return array
      */
     private function setResult(HydratorInterface $hydrator)

@@ -1,12 +1,11 @@
 <?php
-namespace Phalcon\Phpunit\Searcher;
+namespace Test\Searcher;
 
-use \Phalcon\Searcher\Validator;
+use Searcher\Validator;
 
 /**
  * Class ValidatorTest
- * @package Phalcon
- * @subpackage Phalcon\Searcher\Test
+ * @package Test\Searcher
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -17,7 +16,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Validator class object
-     * @var \Phalcon\Searcher\Validator
+     * @var Validator
      */
     private $validator;
 
@@ -29,18 +28,18 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Initialize testing object
-     * @uses \Phalcon\Searcher\Validator
+     * @uses Validator
      * @uses \ReflectionClass
      */
     public function setUp()
     {
         $this->validator = new Validator();
-        $this->reflection = new \ReflectionClass('\Phalcon\Searcher\Validator');
+        $this->reflection = new \ReflectionClass('Searcher\Validator');
     }
 
     /**
      * Kill testing object
-     * @uses \Phalcon\Searcher\Validator
+     * @uses Validator
      */
     public function tearDown()
     {
@@ -100,8 +99,6 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     public function testColumns()
     {
-        $this->expectOutputString(''); // tell PHPUnit to expect '' as output
-
         // check assigned columns isn't empty
         $this->assertNotEmpty($this->validator->columns,
             "[-] The `columns` can not be empty"
@@ -143,8 +140,8 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Phalcon\Searcher\Validator::setMin
-     * @covers \Phalcon\Searcher\Validator::setMax
+     * @covers Searcher\Validator::setMin
+     * @covers Searcher\Validator::setMax
      */
     public function testLimits()
     {

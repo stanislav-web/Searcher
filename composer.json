@@ -28,13 +28,13 @@
 	"autoload": {
 		"classmap": ["src/"],
         "psr-4": {
-            "Phalcon\\Searcher\\": "src/Searcher"
+            "Test\\Searcher\\": "src/Searcher"
         }
 	},
 
 	"autoload-dev": {
 		"psr-4": {
-            "Phalcon\\Searcher\\Tests\\": "phpunit/src/Searcher"
+            "Searcher\\Searcher\\Tests\\": "phpunit/src/Searcher"
 		}
 	},
 

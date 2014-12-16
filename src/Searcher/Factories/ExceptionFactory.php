@@ -1,10 +1,10 @@
 <?php
-namespace Phalcon\Searcher\Factories;
+namespace Searcher\Searcher\Factories;
 
 /**
  * Class ExceptionFactory
- * @package Phalcon\Searcher
- * @subpackage Phalcon\Searcher\Factories
+ * @package Searcher
+ * @subpackage Searcher\Searcher\Factories
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -28,7 +28,7 @@ class ExceptionFactory extends \Exception
 
         $onError = function ($params) use ($key) {
 
-            $error = "Phalcon\\Searcher\\Exceptions\\" . ucfirst($key);
+            $error = "Searcher\\Searcher\\Exceptions\\" . ucfirst($key);
             return (new $error())->rise($params, $this->getLine(), $this->getFile())->getMessage();
 
         };

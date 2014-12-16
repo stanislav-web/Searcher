@@ -1,11 +1,10 @@
 <?php
-namespace Phalcon\Searcher\Test;
+namespace Test\Searcher;
 
-use \Phalcon\Searcher\Searcher;
+use Searcher\Searcher;
 /**
  * Class SearcherTest
- * @package Phalcon
- * @subpackage Phalcon\Searcher\Test
+ * @package Test\Searcher
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -16,7 +15,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Searcher class object
-     * @var \Phalcon\Searcher\Searcher
+     * @var Searcher
      */
     private $searcher;
 
@@ -28,19 +27,19 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Initialize testing object
-     * @uses \Phalcon\Searcher\Searcher
+     * @uses Searcher
      * @uses \ReflectionClass
      */
     public function setUp()
     {
 
         $this->searcher = new Searcher();
-        $this->reflection = new \ReflectionClass('\Phalcon\Searcher\Searcher');
+        $this->reflection = new \ReflectionClass('Searcher\Searcher');
     }
 
     /**
      * Kill testing object
-     * @uses \Phalcon\Searcher\Searcher
+     * @uses Searcher
      */
     public function tearDown()
     {
@@ -91,12 +90,12 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
             "[-] The `query` property must have array() as default in " . $this->reflection->getName());
         $this->assertAttributeEquals(false, 'exact', $this->searcher,
             "[-] The `exact` property must have false as default in " . $this->reflection->getName());
-        $this->assertAttributeEquals(new \Phalcon\Searcher\Validator(), 'validator', $this->searcher,
+        $this->assertAttributeEquals(new \Searcher\Validator(), 'validator', $this->searcher,
             "[-] The `_validator` property must don't have default value in " . $this->reflection->getName());
     }
 
     /**
-     * @covers \Phalcon\Searcher\Searcher::__construct()
+     * @covers Searcher\Searcher::__construct()
      * @group Searcher properties
      */
     public function testConstructor()
@@ -109,7 +108,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
         // set expectations for constructor calls
         $mock->expects($this->any())->method('validator')
             ->with(
-                $this->equalTo(new \Phalcon\Searcher\Validator())
+                $this->equalTo(new \Searcher\Validator())
             );
 
         // now call the constructor
@@ -118,7 +117,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Phalcon\Searcher\Searcher::setExact
+     * @covers Searcher\Searcher::setExact
      */
     public function testExact()
     {
@@ -142,8 +141,8 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers \Phalcon\Searcher\Searcher::setMin
-     * @covers \Phalcon\Searcher\Searcher::setMax
+     * @covers Searcher\Searcher::setMin
+     * @covers Searcher\Searcher::setMax
      */
     public function testLimits()
     {

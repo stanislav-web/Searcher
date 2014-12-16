@@ -1,12 +1,12 @@
 <?php
-namespace Phalcon\Searcher\Exceptions;
+namespace Searcher\Searcher\Exceptions;
 
-use Phalcon\Searcher\Aware\ExceptionInterface;
+use Searcher\Searcher\Aware\ExceptionInterface;
 
 /**
  * Class DataType
- * @package Phalcon Searcher
- * @subpackage Phalcon\Searcher\Exceptions
+ * @package Searcher
+ * @subpackage Searcher\Searcher\Exceptions
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -33,7 +33,7 @@ class DataType implements ExceptionInterface
      * @param array $params message params
      * @param int $line error line
      * @param string $filename file error
-     * @return \Phalcon\Searcher\Exceptions\DataType
+     * @return \Searcher\Searcher\Exceptions\DataType
      */
     public function rise(array $params, $line, $filename)
     {

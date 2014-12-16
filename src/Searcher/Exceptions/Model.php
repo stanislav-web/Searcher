@@ -1,12 +1,12 @@
 <?php
-namespace Phalcon\Searcher\Exceptions;
+namespace Searcher\Searcher\Exceptions;
 
-use Phalcon\Searcher\Aware\ExceptionInterface;
+use Searcher\Searcher\Aware\ExceptionInterface;
 
 /**
  * Class Model
- * @package Phalcon Searcher
- * @subpackage Phalcon\Searcher\Exceptions
+ * @package Searcher
+ * @subpackage Searcher\Searcher\Exceptions
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -28,12 +28,12 @@ class Model implements ExceptionInterface
     private $message = '';
 
     /**
-     * Rise error message for Column Exceptions
+     * Rise error message for Model Exceptions
      *
      * @param array $params message params
      * @param int $line error line
      * @param string $filename file error
-     * @return \Phalcon\Searcher\Exceptions\Model
+     * @return \Searcher\Searcher\Exceptions\Model
      */
     public function rise(array $params, $line, $filename)
     {

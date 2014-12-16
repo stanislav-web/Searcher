@@ -1,12 +1,12 @@
 <?php
-namespace Phalcon\Searcher;
+namespace Searcher;
 
-use Phalcon\Searcher\Factories\ExceptionFactory;
-use Phalcon\Searcher\Hydrators;
+use Searcher\Searcher\Factories\ExceptionFactory;
+use Searcher\Searcher\Hydrators;
 
 /**
  * Searcher daemon class
- * @package Phalcon\Searcher
+ * @package Searcher
  * @since PHP >=5.5.12
  * @version 1.0
  * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
@@ -29,13 +29,13 @@ class Searcher
 
     /**
      * Validator
-     * @var \Phalcon\Searcher\Validator
+     * @var \Searcher\Validator
      */
     private $validator;
 
     /**
      * Initialize class
-     * @uses Phalcon\Searcher\Validator
+     * @uses \Searcher\Validator
      * @return null
      */
     public function __construct()
@@ -218,16 +218,16 @@ class Searcher
     /**
      * Search procedure started
      *
-     * @param null $hydratorset
-     * @param null $callback
+     * @param null $hydratorset result mode
+     * @param null $callback post modifier
      * @throws ExceptionFactory {$error}
      * @return Builder|null
      */
-
     final public function run($hydratorset = null, $callback = null)
     {
 
         try {
+            // call to get result
 
             $result = (new Builder($this))->loop($hydratorset, $callback);
 
