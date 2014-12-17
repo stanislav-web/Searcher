@@ -5,29 +5,39 @@ $coverage->setData(array (
   array (
     47 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testProperties',
+      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
     ),
     48 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testProperties',
+      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
     ),
     58 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
     ),
     60 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
     ),
     61 => NULL,
     71 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
     ),
     73 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
     ),
     74 => NULL,
     87 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testExact',
     ),
     89 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testExact',
     ),
     90 => NULL,
     115 => 
@@ -71,21 +81,27 @@ $coverage->setData(array (
     169 => NULL,
     186 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     187 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     188 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     191 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     193 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     195 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     196 => NULL,
     211 => 
@@ -397,48 +413,69 @@ $coverage->setData(array (
   ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Builder.php' => 
   array (
-    57 => 
+    51 => 
     array (
     ),
-    58 => 
+    52 => 
     array (
     ),
-    59 => 
+    53 => 
     array (
     ),
-    68 => 
+    62 => 
+    array (
+    ),
+    65 => 
+    array (
+    ),
+    67 => 
     array (
     ),
     69 => 
     array (
     ),
-    78 => 
+    70 => NULL,
+    81 => 
     array (
     ),
-    79 => NULL,
+    82 => 
+    array (
+    ),
+    84 => 
+    array (
+    ),
+    85 => 
+    array (
+    ),
+    86 => 
+    array (
+    ),
     88 => 
+    array (
+    ),
+    89 => 
+    array (
+    ),
+    90 => 
     array (
     ),
     91 => 
     array (
     ),
-    93 => 
+    92 => 
     array (
     ),
-    95 => 
+    94 => 
     array (
     ),
-    96 => NULL,
-    107 => 
+    96 => 
     array (
     ),
-    108 => 
+    98 => 
     array (
     ),
+    99 => NULL,
     110 => 
-    array (
-    ),
-    111 => 
     array (
     ),
     112 => 
@@ -447,44 +484,53 @@ $coverage->setData(array (
     114 => 
     array (
     ),
-    115 => 
-    array (
-    ),
     116 => 
-    array (
-    ),
-    117 => 
     array (
     ),
     118 => 
     array (
     ),
+    119 => 
+    array (
+    ),
     120 => 
+    array (
+    ),
+    121 => 
     array (
     ),
     122 => 
     array (
     ),
-    124 => 
+    123 => 
     array (
     ),
-    125 => NULL,
+    125 => 
+    array (
+    ),
+    126 => NULL,
+    135 => 
+    array (
+    ),
     136 => 
     array (
     ),
-    138 => 
+    137 => 
+    array (
+    ),
+    139 => 
     array (
     ),
     140 => 
+    array (
+    ),
+    141 => 
     array (
     ),
     142 => 
     array (
     ),
     144 => 
-    array (
-    ),
-    145 => 
     array (
     ),
     146 => 
@@ -496,29 +542,17 @@ $coverage->setData(array (
     148 => 
     array (
     ),
-    149 => 
+    152 => 
     array (
     ),
-    151 => 
+    154 => 
     array (
     ),
-    152 => NULL,
-    161 => 
-    array (
-    ),
-    162 => 
-    array (
-    ),
-    163 => 
-    array (
-    ),
+    155 => NULL,
     165 => 
     array (
     ),
     166 => 
-    array (
-    ),
-    167 => 
     array (
     ),
     168 => 
@@ -527,29 +561,26 @@ $coverage->setData(array (
     170 => 
     array (
     ),
+    171 => 
+    array (
+    ),
     172 => 
     array (
     ),
     173 => 
     array (
     ),
-    174 => 
+    175 => 
     array (
     ),
-    178 => 
+    176 => NULL,
+    190 => 
     array (
     ),
-    180 => 
+    193 => 
     array (
     ),
-    181 => NULL,
-    191 => 
-    array (
-    ),
-    192 => 
-    array (
-    ),
-    194 => 
+    195 => 
     array (
     ),
     196 => 
@@ -558,35 +589,32 @@ $coverage->setData(array (
     197 => 
     array (
     ),
-    198 => 
-    array (
-    ),
     199 => 
     array (
     ),
-    201 => 
+    202 => 
     array (
     ),
-    202 => NULL,
-    216 => 
+    205 => 
     array (
     ),
-    219 => 
+    207 => 
     array (
     ),
-    221 => 
+    208 => 
     array (
     ),
-    222 => 
+    209 => 
     array (
     ),
-    223 => 
+    211 => 
     array (
     ),
-    225 => 
+    215 => 
     array (
     ),
-    228 => 
+    216 => NULL,
+    229 => 
     array (
     ),
     231 => 
@@ -601,76 +629,54 @@ $coverage->setData(array (
     235 => 
     array (
     ),
-    237 => 
+    236 => 
+    array (
+    ),
+    238 => 
+    array (
+    ),
+    240 => 
     array (
     ),
     241 => 
     array (
     ),
-    242 => NULL,
-    255 => 
+    242 => 
     array (
     ),
-    257 => 
+    243 => 
     array (
     ),
-    259 => 
+    244 => 
     array (
     ),
-    260 => 
+    246 => 
     array (
     ),
-    261 => 
+    247 => NULL,
+    249 => 
     array (
     ),
-    262 => 
+    250 => 
+    array (
+    ),
+    251 => 
+    array (
+    ),
+    253 => 
     array (
     ),
     264 => 
     array (
     ),
-    266 => 
-    array (
-    ),
-    267 => 
-    array (
-    ),
-    268 => 
-    array (
-    ),
-    269 => 
-    array (
-    ),
-    270 => 
-    array (
-    ),
-    272 => 
-    array (
-    ),
-    273 => NULL,
+    265 => NULL,
     275 => 
     array (
     ),
     276 => 
     array (
     ),
-    277 => 
-    array (
-    ),
-    279 => 
-    array (
-    ),
-    290 => 
-    array (
-    ),
-    291 => NULL,
-    301 => 
-    array (
-    ),
-    302 => 
-    array (
-    ),
-    303 => NULL,
+    277 => NULL,
   ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Column.php' => 
   array (
@@ -881,8 +887,13 @@ $coverage->setData(array (
   ),
 ));
 $coverage->setTests(array (
-  'Test\\Searcher\\SearcherTest::testConstructor' => 4,
-  'Test\\Searcher\\ValidatorTest::testProperties' => 0,
+  'Test\\Searcher\\SearcherTest::testProperties' => 0,
+  'Test\\Searcher\\SearcherTest::testConstructor' => 0,
+  'Test\\Searcher\\SearcherTest::testExact' => 0,
+  'Test\\Searcher\\SearcherTest::testLimits' => 0,
+  'Test\\Searcher\\SearcherTest::testRun' => 0,
+  'Test\\Searcher\\SearcherTest::testThreshold' => 0,
+  'Test\\Searcher\\SearcherTest::testGetFields' => 0,
   'Test\\Searcher\\ValidatorTest::testLimits' => 0,
   'Test\\Searcher\\ValidatorTest::testIsNotNull' => 0,
   'Test\\Searcher\\ValidatorTest::testIsArray' => 0,

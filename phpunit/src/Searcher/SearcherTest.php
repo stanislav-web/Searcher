@@ -5,7 +5,6 @@ use \Searcher\Searcher;
 use Searcher\Validator;
 use \Phalcon\DI as Di;
 
-
 /**
  * Class SearcherTest
  *
@@ -16,7 +15,6 @@ use \Phalcon\DI as Di;
  *
  */
 class SearcherTest extends \PHPUnit_Framework_TestCase
-    implements \Phalcon\DI\InjectionAwareInterface
 {
 
     /**
@@ -48,32 +46,8 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->di->get('modelsManager');
-
-        var_dump($this->di); exit;
-
         $this->searcher = new Searcher();
         $this->reflection = new \ReflectionClass('Searcher\Searcher');
-    }
-
-    /**
-     * Set DI container
-     *
-     * @param \Phalcon\DiInterface $di
-     */
-    public function setDi($di)
-    {
-        $this->di = $di;
-    }
-
-    /**
-     * Get DI container
-     *
-     * @return Di|\Phalcon\DiInterface
-     */
-    public function getDi()
-    {
-        return $this->di;
     }
 
     /**
