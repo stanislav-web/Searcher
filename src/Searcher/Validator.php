@@ -3,6 +3,7 @@ namespace Searcher;
 
 use \Phalcon\Db\Column;
 use \Phalcon\Mvc\Model\Manager;
+use \Phalcon\Mvc\Model\MetaData\Memory;
 use Searcher\Searcher\Factories\ExceptionFactory;
 
 /**
@@ -322,7 +323,7 @@ class Validator
      * @throws ExceptionFactory
      * @return void
      */
-    protected function validColumns(\Phalcon\Mvc\Model\MetaData\Memory $meta, array $columns, $table, $model)
+    protected function validColumns(Memory $meta, array $columns, $table, $model)
     {
         if (empty($not = array_diff($columns, $meta->getAttributes($model))) === false)
             throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $meta->getAttributes($model)]);

@@ -46,3 +46,5 @@ crashlytics.properties
 crashlytics-build.properties
 composer.lock
 composer.phar
+apigen.neon
+apigen.phar

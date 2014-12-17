@@ -15,7 +15,7 @@ build:
 
 filter:
     paths: [src/*]
-    excluded_paths: [build/*, phpunit/*, vendor/*]
+    excluded_paths: [build/*, phpunit/*, vendor/*, api/]
 
 tools:
     php_sim: true
@@ -33,7 +33,7 @@ tools:
     php_analyzer:
         enabled: true
         filter:
-            excluded_paths: [build/*, phpunit/*, vendor/*]
+            excluded_paths: [build/*, phpunit/*, vendor/*, api/*]
         extensions:
             - php
 
@@ -46,7 +46,7 @@ tools:
             - php
         command: phpcs
         filter:
-           excluded_paths: [build/*, phpunit/*, vendor/*]
+           excluded_paths: [build/*, phpunit/*, vendor/*, api/]
 
     php_cs_fixer:
         enabled: true
