@@ -51,5 +51,4 @@ class SerializeHydrator implements HydratorInterface
         return $result;
 
     }
-
 }

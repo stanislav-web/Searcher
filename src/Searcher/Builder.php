@@ -140,8 +140,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
             if (empty($params) === false) {
 
-                foreach ($params as $field)
+                foreach ($params as $field) {
                     $group[] = $table . '.' . $field;
+                }
             }
         }
         $this->builder->groupBy($group);
