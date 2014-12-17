@@ -194,15 +194,19 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      */
     public function expressionRun($table, $field, $type, $index)
     {
+
         if ($type === Column::TYPE_TEXT) // match search
         {
+
             // unset mask
-            $this->searcher->query = trim($this->searcher->query, '%');
+            $query = array_map(function ($v) {
+                    return trim($v, '%');
+                }, $this->searcher->query);
 
             if ($index > 0)
-                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->searcher->query);
+                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $query);
             else
-                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->searcher->query);
+                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $query);
 
         } else {
             // simple where search
