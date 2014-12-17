@@ -15,14 +15,8 @@ use \Phalcon\DI as Di;
  * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
-class Builder implements \Phalcon\DI\InjectionAwareInterface
+class Builder
 {
-    /**
-     * Dependency Injector
-     *
-     * @var Di|\Phalcon\DiInterface $di
-     */
-    protected $di;
 
     /**
      * Query builder
@@ -56,26 +50,6 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     {
         $this->searcher = $searcher;
         $this->builder = Di::getDefault()->get('modelsManager')->createBuilder();
-    }
-
-    /**
-     * Set DI container
-     *
-     * @param \Phalcon\DiInterface $di
-     */
-    public function setDi($di)
-    {
-        $this->di = $di;
-    }
-
-    /**
-     * Get DI container
-     *
-     * @return Di|\Phalcon\DiInterface
-     */
-    public function getDi()
-    {
-        return $this->di;
     }
 
     /**

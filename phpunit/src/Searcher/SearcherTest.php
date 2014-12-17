@@ -3,6 +3,8 @@ namespace Test\Searcher;
 
 use \Searcher\Searcher;
 use Searcher\Validator;
+use \Phalcon\DI as Di;
+
 
 /**
  * Class SearcherTest
@@ -14,6 +16,7 @@ use Searcher\Validator;
  *
  */
 class SearcherTest extends \PHPUnit_Framework_TestCase
+    implements \Phalcon\DI\InjectionAwareInterface
 {
 
     /**
@@ -31,6 +34,13 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
     private $reflection;
 
     /**
+     * Dependency Injection container
+     *
+     * @var \Phalcon\DI
+     */
+    private $di;
+
+    /**
      * Initialize testing object
      *
      * @uses Searcher
@@ -38,9 +48,32 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
+        $this->di->get('modelsManager');
+
+        var_dump($this->di); exit;
 
         $this->searcher = new Searcher();
         $this->reflection = new \ReflectionClass('Searcher\Searcher');
+    }
+
+    /**
+     * Set DI container
+     *
+     * @param \Phalcon\DiInterface $di
+     */
+    public function setDi($di)
+    {
+        $this->di = $di;
+    }
+
+    /**
+     * Get DI container
+     *
+     * @return Di|\Phalcon\DiInterface
+     */
+    public function getDi()
+    {
+        return $this->di;
     }
 
     /**
@@ -195,10 +228,15 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
      */
     public function testThreshold()
     {
-        $treshold = $this->searcher->setThreshold(123);
-
+        $intThreshold = $this->searcher->setThreshold(123);
         // check instance method
-        $this->assertInstanceOf($this->reflection->getName(), $treshold,
+        $this->assertInstanceOf($this->reflection->getName(), $intThreshold,
+            "[-] setThreshold method must be as instance of Searcher\Searcher"
+        );
+
+        $arrayThreshold = $this->searcher->setThreshold([0, 100]);
+        // check instance method
+        $this->assertInstanceOf($this->reflection->getName(), $arrayThreshold,
             "[-] setThreshold method must be as instance of Searcher\Searcher"
         );
     }
