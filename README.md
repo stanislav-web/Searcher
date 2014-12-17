@@ -195,9 +195,8 @@ Read logs from phpunit/log
 
 ##[Issues](https://github.com/stanislav-web/Searcher/issues "Issues")
 
-## Screen
-```
-Unavailable
-```
+## Screen (For what I use it?)
+![Alt text](http://dl1.joxi.net/drive/0004/0211/323795/141217/a87dd707f6.jpg "Searcher")
+
 [![Project Status](http://stillmaintained.com/stanislav-web/Searcher.svg)](http://stillmaintained.com/stanislav-web/Searcher) [![MIT License](https://poser.pugx.org/stanislav-web/phalcon-searcher/license.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/stanislav-web/Searcher?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
