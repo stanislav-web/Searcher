@@ -107,12 +107,14 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         $order = [];
         foreach ($this->data['order'] as $alias => $params) {
 
-            if (true === $asArray)
+            if (true === $asArray) {
                 $this->builder->orderBy(array_flip($order));
+            }
             else {
                 if (empty($params) === false) {
-                    foreach ($params as $field => $sort)
+                    foreach ($params as $field => $sort) {
                         $order[] = $alias . '.' . $field . ' ' . $sort;
+                    }
                 }
             }
         }
@@ -154,18 +156,21 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      */
     public function setThreshold()
     {
-        if (is_array($this->data['threshold']) === false)
+        if (is_array($this->data['threshold']) === false) {
             $this->data['threshold'] = ['limit' => $this->data['threshold']];
+        }
         else {
-            if (count($this->data['threshold']) > 1)
+            if (count($this->data['threshold']) > 1) {
                 $this->data['threshold'] = [
                     'limit' => $this->data['threshold'][1],
                     'offset' => $this->data['threshold'][0],
                 ];
-            else
+            }
+            else {
                 $this->data['threshold'] = [
                     'limit' => $this->data['threshold'][0]
                 ];
+            }
         }
 
         $this->builder->limit(implode(',', array_reverse($this->data['threshold'])));
@@ -210,17 +215,21 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
             // unset mask
 
-            if ($index > 0)
+            if ($index > 0) {
                 $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->ftFilter());
-            else
+            }
+            else {
                 $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->ftFilter());
+            }
 
         } else {
             // simple where search
-            if ($index > 0)
+            if ($index > 0) {
                 $this->builder->orWhere($table . "." . $field . " LIKE :query:", $this->searcher->query);
-            else
+            }
+            else {
                 $this->builder->where($table . "." . $field . " LIKE :query:", $this->searcher->query);
+            }
         }
 
         return null;
@@ -241,8 +250,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
             foreach ($this->data as $key => $values) {
                 // start build interface
-                if (empty($values) === false)
+                if (empty($values) === false) {
                     $this->{'set' . ucfirst($key)}();
+                }
             }
 
             $res = $this->builder->getQuery()->execute();

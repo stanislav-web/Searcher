@@ -155,7 +155,7 @@ checks:
         no_debug_code: true
         no_commented_out_code: true
         line_length:
-            max_length: '128'
+            max_length: '200'
         fix_php_opening_tag: true
         fix_linefeed: true
         fix_line_ending: true

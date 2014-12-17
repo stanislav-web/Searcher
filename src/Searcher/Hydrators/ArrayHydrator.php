@@ -42,10 +42,12 @@ class ArrayHydrator implements HydratorInterface
     public function extract(callable $callback = null)
     {
 
-        if ($callback === null)
+        if ($callback === null) {
             $result = $this->result->toArray();
-        else
+        }
+        else {
             $result = $callback($this->result->toArray());
+        }
 
         return $result;
 

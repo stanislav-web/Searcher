@@ -183,10 +183,13 @@ class Searcher
     {
 
         // need to return << true
-        if (is_array($threshold) === true)
+        if (is_array($threshold) === true) {
             $threshold = array_map('intval', array_splice($threshold, 0, 2));
-        else
+        }
+
+        else {
             $threshold = intval($threshold);
+        }
         $this->validator->verify($threshold, [], 'threshold');
 
         return $this;
@@ -207,10 +210,12 @@ class Searcher
         // need to return << true
         $this->validator->verify($query, ['isNotNull', 'isNotFew', 'isNotMuch']);
 
-        if (false === $this->exact)
+        if (false === $this->exact) {
             $this->query = ['query' => '%' . $query . '%'];
-        else
+        }
+        else {
             $this->query = ['query' => $query];
+        }
 
         return $this;
     }
