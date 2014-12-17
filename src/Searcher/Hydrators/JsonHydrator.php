@@ -71,7 +71,7 @@ class JsonHydrator implements HydratorInterface, \Phalcon\DI\InjectionAwareInter
     /**
      * Extract result data to json
      *
-     * @param callback|null $callback function to data
+     * @param  callback|null $callback function to data
      * @return mixed
      */
     public function extract(callable $callback = null)
@@ -88,4 +88,4 @@ class JsonHydrator implements HydratorInterface, \Phalcon\DI\InjectionAwareInter
         $this->response->send();
 
     }
-} 
+}

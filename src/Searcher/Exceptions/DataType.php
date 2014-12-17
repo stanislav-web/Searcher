@@ -33,9 +33,9 @@ class DataType implements ExceptionInterface
     /**
      * Rise error message for Column Exceptions
      *
-     * @param array  $params   message params
-     * @param int    $line     error line
-     * @param string $filename file error
+     * @param  array                                  $params   message params
+     * @param  int                                    $line     error line
+     * @param  string                                 $filename file error
      * @return \Searcher\Searcher\Exceptions\DataType
      */
     public function rise(array $params, $line, $filename)
