@@ -65,11 +65,11 @@ You can create an injectable service
     
     // Prepare models and fields to participate in search
     $searcher->setFields([
-        'Model/Auto'    =>    [
+        '\Models\Auto'    =>    [
             'mark',
             'model'
         ],
-        'Model/Distributor'    =>    [
+        '\Models\Distributor'    =>    [
             'name',
             'description'
         ]
@@ -99,12 +99,12 @@ You can create an injectable service
             'description'
         ]
     ])
-    ->setMin(3)                                     //  minimum char to query
-    ->setMax(15)                                    //  maximum char to query
-    ->setExact(true)                                //  strict mode search 
-    ->setOrder([\Models\Auto' => ['id' => 'DESC']])  //  ORDER BY Model/Auto.id DESC
-    ->setGroup(['\Models\Distributor' => ['id']])            //  GROUP BY Model/Auto.id
-    ->setThreshold(100)                             //  LIMIT 100
+    ->setMin(3)                                         //  minimum char to query
+    ->setMax(15)                                        //  maximum char to query
+    ->setExact(true)                                    //  strict mode search 
+    ->setOrder(['\Models\Auto' => ['id' => 'DESC']])    //  ORDER BY \Models\Auto.id DESC
+    ->setGroup(['\Models\Distributor' => ['id']])       //  GROUP BY \Models\Auto.id
+    ->setThreshold(100)                                 //  LIMIT 100
     ->setQuery('FerRari');
     
     $result = $searcher->run();
@@ -131,13 +131,13 @@ You can create an injectable service
     ])
     ->setExact(true) // strict mode search 
     ->setOrder([
-                    '\Models\/Auto' => ['id' => 'DESC']
+                    '\Models\Auto' => ['id' => 'DESC']
                     '\Models\Distributor' => ['description' =>  'ASC']
-              ])                                                //  ORDER BY Model/Auto.id DESC, Model/Distributor.description ASC
+              ])                                                //  ORDER BY \Models\Auto.id DESC, \Models\Distributor.description ASC
     ->setGroup([
-                '\Models\/Auto' => ['id', 'mark']
+                '\Models\Auto' => ['id', 'mark']
                 '\Models\Distributor' => ['id', 'description']
-              ])                                                //  GROUP BY Model/Auto.id, Model/Auto.mark, Model/Distributor.id, Model/Distributor.description 
+              ])                                                //  GROUP BY \Models\Auto.id, \Models\Auto.mark, \Models\Distributor.id, \Models\Distributor.description 
     
     ->setThreshold([0,100])                                     //    OFFSET 0, LIMIT 100
     ->setQuery('FerRari');
