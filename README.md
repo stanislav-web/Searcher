@@ -25,6 +25,7 @@ This is the search service is designed to search multiple SQL tables. Convenient
 ## System requirements
 - PHP 5.5.x >
 - MySQL
+- Phalcon extension 1.3.x
 
 ## Install
 First update your dependencies through composer. Add to your composer.json:
