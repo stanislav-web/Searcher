@@ -182,6 +182,20 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
             "[-] run method must be as final public"
         );
     }
+
+    /**
+     * @covers Searcher\Searcher::setThreshold
+     */
+    public function testThreshold()
+    {
+        $treshold = $this->searcher->setThreshold([]);
+
+
+        // check instance method
+        $this->assertInstanceOf($this->reflection->getName(), $treshold,
+            "[-] setThreshold method must be as instance of Searcher\Searcher"
+        );
+    }
 }
 
 

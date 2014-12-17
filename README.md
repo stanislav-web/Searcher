@@ -102,8 +102,8 @@ You can create an injectable service
     ->setMin(3)                                     //  minimum char to query
     ->setMax(15)                                    //  maximum char to query
     ->setExact(true)                                //  strict mode search 
-    ->setOrder(['Model/Auto' => ['id' => 'DESC']])  //  ORDER BY Model/Auto.id DESC
-    ->setGroup(['Model/Auto' => ['id']])            //  GROUP BY Model/Auto.id
+    ->setOrder([\Models\Auto' => ['id' => 'DESC']])  //  ORDER BY Model/Auto.id DESC
+    ->setGroup(['\Models\Distributor' => ['id']])            //  GROUP BY Model/Auto.id
     ->setThreshold(100)                             //  LIMIT 100
     ->setQuery('FerRari');
     

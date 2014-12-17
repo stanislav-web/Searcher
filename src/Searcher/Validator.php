@@ -233,9 +233,7 @@ class Validator
                 $metaData = $model->getModelsMetaData();
 
                 // check fields of table
-
-                if (empty($not = array_diff($fields, $metaData->getAttributes($model))) === false)
-                    throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $metaData->getAttributes($model)]);
+                $this->validColumns($metaData, $fields, $table, $model);
 
                 // setup clear used tables
                 $columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
@@ -281,9 +279,7 @@ class Validator
                 $metaData = $model->getModelsMetaData();
 
                 // check fields of table
-
-                if (empty($not = array_diff(array_keys($sort), $metaData->getAttributes($model))) === false)
-                    throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $metaData->getAttributes($model)]);
+                $this->validColumns($metaData, array_keys($sort), $table, $model);
 
                 // check sort clause
 
@@ -316,4 +312,20 @@ class Validator
         }
         return true;
     }
+
+    /**
+     * Validate table columns
+     * @param \Phalcon\Mvc\Model\MetaData\Memory $meta meta info
+     * @param array $columns
+     * @param string $table
+     * @param mixed $model selected model
+     * @throws ExceptionFactory
+     * @return void
+     */
+    protected function validColumns(\Phalcon\Mvc\Model\MetaData\Memory $meta, array $columns, $table, $model)
+    {
+        if (empty($not = array_diff($columns, $meta->getAttributes($model))) === false)
+            throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $meta->getAttributes($model)]);
+    }
+
 }

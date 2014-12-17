@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1418774052">
-  <project timestamp="1418774052">
+<coverage generated="1418777359">
+  <project timestamp="1418777359">
     <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php">
       <metrics loc="31" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -10,7 +10,7 @@
     <package name="Searcher">
       <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Builder.php">
         <class name="Builder" namespace="Searcher" fullPackage="Searcher" package="Searcher">
-          <metrics methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="0" elements="90" coveredelements="0"/>
+          <metrics methods="12" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="80" coveredstatements="0" elements="92" coveredelements="0"/>
         </class>
         <line num="50" type="method" name="__construct" crap="2" count="0"/>
         <line num="52" type="stmt" count="0"/>
@@ -72,45 +72,47 @@
         <line num="182" type="stmt" count="0"/>
         <line num="183" type="stmt" count="0"/>
         <line num="195" type="method" name="expressionRun" crap="20" count="0"/>
-        <line num="197" type="stmt" count="0"/>
         <line num="198" type="stmt" count="0"/>
-        <line num="200" type="stmt" count="0"/>
-        <line num="202" type="stmt" count="0"/>
+        <line num="199" type="stmt" count="0"/>
         <line num="203" type="stmt" count="0"/>
-        <line num="205" type="stmt" count="0"/>
-        <line num="207" type="stmt" count="0"/>
-        <line num="209" type="stmt" count="0"/>
+        <line num="204" type="stmt" count="0"/>
+        <line num="206" type="stmt" count="0"/>
+        <line num="208" type="stmt" count="0"/>
         <line num="210" type="stmt" count="0"/>
-        <line num="212" type="stmt" count="0"/>
-        <line num="214" type="stmt" count="0"/>
-        <line num="223" type="method" name="loop" crap="42" count="0"/>
-        <line num="228" type="stmt" count="0"/>
-        <line num="230" type="stmt" count="0"/>
-        <line num="232" type="stmt" count="0"/>
+        <line num="211" type="stmt" count="0"/>
+        <line num="213" type="stmt" count="0"/>
+        <line num="215" type="stmt" count="0"/>
+        <line num="224" type="method" name="loop" crap="42" count="0"/>
+        <line num="229" type="stmt" count="0"/>
+        <line num="231" type="stmt" count="0"/>
         <line num="233" type="stmt" count="0"/>
         <line num="234" type="stmt" count="0"/>
-        <line num="236" type="stmt" count="0"/>
-        <line num="238" type="stmt" count="0"/>
+        <line num="235" type="stmt" count="0"/>
+        <line num="237" type="stmt" count="0"/>
         <line num="239" type="stmt" count="0"/>
         <line num="240" type="stmt" count="0"/>
         <line num="241" type="stmt" count="0"/>
         <line num="242" type="stmt" count="0"/>
         <line num="243" type="stmt" count="0"/>
-        <line num="245" type="stmt" count="0"/>
+        <line num="244" type="stmt" count="0"/>
         <line num="246" type="stmt" count="0"/>
         <line num="247" type="stmt" count="0"/>
-        <line num="249" type="stmt" count="0"/>
-        <line num="257" type="method" name="setResult" crap="2" count="0"/>
-        <line num="259" type="stmt" count="0"/>
-        <metrics loc="260" ncloc="154" classes="1" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="0" elements="90" coveredelements="0"/>
+        <line num="248" type="stmt" count="0"/>
+        <line num="250" type="stmt" count="0"/>
+        <line num="258" type="method" name="setResult" crap="2" count="0"/>
+        <line num="260" type="stmt" count="0"/>
+        <line num="270" type="method" name="anonymous function" crap="2" count="0"/>
+        <line num="271" type="stmt" count="0"/>
+        <line num="272" type="stmt" count="0"/>
+        <metrics loc="273" ncloc="162" classes="1" methods="12" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="80" coveredstatements="0" elements="92" coveredelements="0"/>
       </file>
       <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Searcher.php">
         <class name="Searcher" namespace="Searcher" fullPackage="Searcher" package="Searcher">
-          <metrics methods="11" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="8" elements="47" coveredelements="12"/>
+          <metrics methods="11" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="12" elements="47" coveredelements="16"/>
         </class>
-        <line num="41" type="method" name="__construct" crap="1" count="2"/>
-        <line num="43" type="stmt" count="2"/>
-        <line num="44" type="stmt" count="2"/>
+        <line num="41" type="method" name="__construct" crap="1" count="3"/>
+        <line num="43" type="stmt" count="3"/>
+        <line num="44" type="stmt" count="3"/>
         <line num="52" type="method" name="setMin" crap="1" count="1"/>
         <line num="54" type="stmt" count="1"/>
         <line num="55" type="stmt" count="1"/>
@@ -135,12 +137,12 @@
         <line num="158" type="stmt" count="0"/>
         <line num="159" type="stmt" count="0"/>
         <line num="161" type="stmt" count="0"/>
-        <line num="176" type="method" name="setThreshold" crap="6" count="0"/>
-        <line num="180" type="stmt" count="0"/>
-        <line num="181" type="stmt" count="0"/>
+        <line num="176" type="method" name="setThreshold" crap="2.03" count="1"/>
+        <line num="180" type="stmt" count="1"/>
+        <line num="181" type="stmt" count="1"/>
         <line num="183" type="stmt" count="0"/>
-        <line num="184" type="stmt" count="0"/>
-        <line num="185" type="stmt" count="0"/>
+        <line num="184" type="stmt" count="1"/>
+        <line num="185" type="stmt" count="1"/>
         <line num="197" type="method" name="setQuery" crap="6" count="0"/>
         <line num="200" type="stmt" count="0"/>
         <line num="202" type="stmt" count="0"/>
@@ -155,15 +157,15 @@
         <line num="236" type="stmt" count="0"/>
         <line num="237" type="stmt" count="0"/>
         <line num="240" type="stmt" count="0"/>
-        <metrics loc="241" ncloc="104" classes="1" methods="11" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="8" elements="47" coveredelements="12"/>
+        <metrics loc="241" ncloc="104" classes="1" methods="11" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="36" coveredstatements="12" elements="47" coveredelements="16"/>
       </file>
       <file name="/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Validator.php">
         <class name="Validator" namespace="Searcher" fullPackage="Searcher" package="Searcher">
-          <metrics methods="13" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="8" elements="83" coveredelements="10"/>
+          <metrics methods="13" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="10" elements="83" coveredelements="13"/>
         </class>
-        <line num="75" type="method" name="verify" crap="30" count="0"/>
-        <line num="78" type="stmt" count="0"/>
-        <line num="79" type="stmt" count="0"/>
+        <line num="75" type="method" name="verify" crap="5" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="79" type="stmt" count="1"/>
         <line num="82" type="method" name="anonymous function" crap="20" count="0"/>
         <line num="84" type="stmt" count="0"/>
         <line num="85" type="stmt" count="0"/>
@@ -245,7 +247,7 @@
         <line num="314" type="stmt" count="0"/>
         <line num="315" type="stmt" count="0"/>
         <line num="317" type="stmt" count="0"/>
-        <metrics loc="318" ncloc="178" classes="1" methods="13" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="71" coveredstatements="8" elements="84" coveredelements="10"/>
+        <metrics loc="318" ncloc="178" classes="1" methods="13" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="71" coveredstatements="10" elements="84" coveredelements="13"/>
       </file>
     </package>
     <package name="Searcher\Searcher\Exceptions">
@@ -375,6 +377,6 @@
         <metrics loc="52" ncloc="28" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="13" loc="1343" ncloc="684" classes="11" methods="54" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="240" coveredstatements="16" elements="294" coveredelements="22"/>
+    <metrics files="13" loc="1356" ncloc="692" classes="11" methods="55" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="241" coveredstatements="22" elements="296" coveredelements="29"/>
   </project>
 </coverage>

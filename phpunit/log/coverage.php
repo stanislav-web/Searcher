@@ -7,11 +7,13 @@ $coverage->setData(array (
     array (
       0 => 'Test\\Searcher\\SearcherTest::testProperties',
       1 => 'Test\\Searcher\\SearcherTest::testConstructor',
+      2 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     44 => 
     array (
       0 => 'Test\\Searcher\\SearcherTest::testProperties',
       1 => 'Test\\Searcher\\SearcherTest::testConstructor',
+      2 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     54 => 
     array (
@@ -81,18 +83,22 @@ $coverage->setData(array (
     162 => NULL,
     180 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     181 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     183 => 
     array (
     ),
     184 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     185 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     186 => NULL,
     200 => 
@@ -135,9 +141,11 @@ $coverage->setData(array (
   array (
     78 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     79 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
     84 => 
     array (
@@ -535,47 +543,41 @@ $coverage->setData(array (
     array (
     ),
     184 => NULL,
-    197 => 
-    array (
-    ),
     198 => 
     array (
     ),
-    200 => 
-    array (
-    ),
-    202 => 
+    199 => 
     array (
     ),
     203 => 
     array (
     ),
-    205 => 
+    204 => 
     array (
     ),
-    207 => 
+    206 => 
     array (
     ),
-    209 => 
+    208 => 
     array (
     ),
     210 => 
     array (
     ),
-    212 => 
+    211 => 
     array (
     ),
-    214 => 
+    213 => 
     array (
     ),
-    215 => NULL,
-    228 => 
+    215 => 
     array (
     ),
-    230 => 
+    216 => NULL,
+    229 => 
     array (
     ),
-    232 => 
+    231 => 
     array (
     ),
     233 => 
@@ -584,10 +586,10 @@ $coverage->setData(array (
     234 => 
     array (
     ),
-    236 => 
+    235 => 
     array (
     ),
-    238 => 
+    237 => 
     array (
     ),
     239 => 
@@ -605,23 +607,33 @@ $coverage->setData(array (
     243 => 
     array (
     ),
-    244 => NULL,
-    245 => 
+    244 => 
     array (
     ),
+    245 => NULL,
     246 => 
     array (
     ),
     247 => 
     array (
     ),
-    249 => 
+    248 => 
     array (
     ),
-    259 => 
+    250 => 
     array (
     ),
-    260 => NULL,
+    260 => 
+    array (
+    ),
+    261 => NULL,
+    271 => 
+    array (
+    ),
+    272 => 
+    array (
+    ),
+    273 => NULL,
   ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Column.php' => 
   array (
@@ -828,6 +840,7 @@ $coverage->setTests(array (
   'Test\\Searcher\\SearcherTest::testExact' => 0,
   'Test\\Searcher\\SearcherTest::testLimits' => 0,
   'Test\\Searcher\\SearcherTest::testRun' => 0,
+  'Test\\Searcher\\SearcherTest::testThreshold' => 4,
   'Test\\Searcher\\ValidatorTest::testLimits' => 0,
   'UNCOVERED_FILES_FROM_WHITELIST' => NULL,
 ));
