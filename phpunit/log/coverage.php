@@ -21,73 +21,77 @@ $coverage->setData(array (
     array (
       0 => 'Test\\Searcher\\SearcherTest::testLimits',
     ),
-    61 => NULL,
-    71 => 
+    62 => 
     array (
       0 => 'Test\\Searcher\\SearcherTest::testLimits',
     ),
+    63 => NULL,
     73 => 
     array (
       0 => 'Test\\Searcher\\SearcherTest::testLimits',
     ),
-    74 => NULL,
-    87 => 
+    75 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    76 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    77 => NULL,
+    90 => 
     array (
       0 => 'Test\\Searcher\\SearcherTest::testExact',
     ),
-    89 => 
+    92 => 
     array (
       0 => 'Test\\Searcher\\SearcherTest::testExact',
     ),
-    90 => NULL,
-    115 => 
-    array (
-    ),
-    116 => 
-    array (
-    ),
-    117 => 
+    93 => NULL,
+    118 => 
     array (
     ),
     119 => 
     array (
     ),
-    120 => NULL,
-    139 => 
+    120 => 
     array (
     ),
-    140 => 
+    122 => 
     array (
     ),
-    141 => 
+    123 => NULL,
+    142 => 
     array (
     ),
     143 => 
     array (
     ),
-    144 => NULL,
-    164 => 
+    144 => 
     array (
     ),
-    165 => 
+    146 => 
     array (
     ),
-    166 => 
+    147 => NULL,
+    167 => 
     array (
     ),
     168 => 
     array (
     ),
-    169 => NULL,
-    186 => 
+    169 => 
+    array (
+    ),
+    171 => 
+    array (
+    ),
+    172 => NULL,
+    189 => 
     array (
       0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
-    187 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    188 => 
+    190 => 
     array (
       0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
@@ -95,51 +99,55 @@ $coverage->setData(array (
     array (
       0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
-    193 => 
+    194 => 
     array (
       0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
-    195 => 
+    196 => 
     array (
       0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
-    196 => NULL,
-    211 => 
+    198 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
     ),
-    213 => 
-    array (
-    ),
+    199 => NULL,
     214 => 
     array (
     ),
-    215 => 
+    216 => 
     array (
     ),
     217 => 
     array (
     ),
+    218 => 
+    array (
+    ),
     220 => 
     array (
     ),
-    221 => NULL,
-    230 => 
+    223 => 
     array (
     ),
-    231 => NULL,
-    247 => 
+    224 => NULL,
+    233 => 
     array (
     ),
-    249 => 
-    array (
-    ),
-    251 => 
+    234 => NULL,
+    250 => 
     array (
     ),
     252 => 
     array (
     ),
+    254 => 
+    array (
+    ),
     255 => 
+    array (
+    ),
+    258 => 
     array (
     ),
   ),
@@ -187,114 +195,117 @@ $coverage->setData(array (
     ),
     116 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
     ),
     117 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
     ),
     119 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testLimits',
     ),
-    122 => 
+    120 => NULL,
+    130 => 
     array (
-      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
+      0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
     ),
-    123 => NULL,
-    133 => 
+    131 => 
     array (
-      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
     ),
+    132 => NULL,
     134 => 
     array (
-    ),
-    135 => 
-    array (
-    ),
-    137 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
-    ),
-    140 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
-    ),
-    141 => NULL,
-    151 => 
-    array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
     ),
-    152 => 
-    array (
-    ),
-    153 => NULL,
-    155 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
-    ),
-    156 => NULL,
-    167 => 
+    135 => NULL,
+    146 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
     ),
-    168 => 
+    147 => 
+    array (
+    ),
+    148 => NULL,
+    150 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
+    ),
+    151 => NULL,
+    162 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
+    ),
+    163 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
+    ),
+    164 => NULL,
+    166 => 
     array (
     ),
     169 => NULL,
-    171 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
-    ),
-    172 => NULL,
-    183 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
-    ),
-    184 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
-    ),
-    185 => NULL,
-    187 => 
-    array (
-    ),
-    190 => NULL,
-    201 => 
+    180 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+    ),
+    182 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+    ),
+    183 => 
+    array (
+    ),
+    184 => NULL,
+    185 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+    ),
+    186 => 
+    array (
+    ),
+    187 => NULL,
+    189 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+    ),
+    190 => NULL,
+    202 => 
+    array (
     ),
     203 => 
     array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
     ),
-    204 => 
-    array (
-    ),
-    205 => NULL,
+    204 => NULL,
     206 => 
     array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
     ),
-    207 => 
+    207 => NULL,
+    221 => 
     array (
     ),
-    208 => NULL,
-    210 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
-    ),
-    211 => NULL,
-    223 => 
+    225 => 
     array (
     ),
-    224 => 
+    226 => 
     array (
     ),
-    225 => NULL,
-    227 => 
+    230 => 
     array (
     ),
-    228 => NULL,
+    233 => 
+    array (
+    ),
+    236 => 
+    array (
+    ),
+    240 => 
+    array (
+    ),
     242 => 
+    array (
+    ),
+    243 => 
     array (
     ),
     246 => 
@@ -303,107 +314,83 @@ $coverage->setData(array (
     247 => 
     array (
     ),
-    251 => 
+    248 => 
     array (
     ),
-    254 => 
+    249 => 
     array (
     ),
-    257 => 
+    250 => 
     array (
     ),
-    261 => 
+    252 => 
     array (
     ),
-    263 => 
-    array (
-    ),
-    264 => 
-    array (
-    ),
+    253 => NULL,
     267 => 
-    array (
-    ),
-    268 => 
-    array (
-    ),
-    269 => 
-    array (
-    ),
-    270 => 
     array (
     ),
     271 => 
     array (
     ),
-    273 => 
+    272 => 
     array (
     ),
-    274 => NULL,
-    288 => 
+    276 => 
+    array (
+    ),
+    280 => 
+    array (
+    ),
+    282 => 
+    array (
+    ),
+    283 => 
+    array (
+    ),
+    284 => NULL,
+    286 => 
+    array (
+    ),
+    287 => 
+    array (
+    ),
+    288 => NULL,
+    290 => 
+    array (
+    ),
+    291 => 
     array (
     ),
     292 => 
     array (
     ),
-    293 => 
+    294 => 
     array (
     ),
-    297 => 
+    295 => NULL,
+    306 => 
     array (
     ),
-    301 => 
-    array (
-    ),
-    303 => 
-    array (
-    ),
-    304 => 
-    array (
-    ),
-    305 => NULL,
     307 => 
     array (
     ),
-    308 => 
+    308 => NULL,
+    310 => 
     array (
     ),
-    309 => NULL,
-    311 => 
+    311 => NULL,
+    325 => 
     array (
     ),
-    312 => 
+    326 => 
     array (
     ),
-    313 => 
+    327 => NULL,
+    329 => 
     array (
     ),
-    315 => 
-    array (
-    ),
-    316 => NULL,
-    327 => 
-    array (
-    ),
-    328 => 
-    array (
-    ),
-    329 => NULL,
-    331 => 
-    array (
-    ),
-    332 => NULL,
-    346 => 
-    array (
-    ),
-    347 => 
-    array (
-    ),
-    348 => NULL,
-    350 => 
-    array (
-    ),
-    352 => NULL,
+    331 => NULL,
   ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php' => 
   array (
@@ -898,7 +885,7 @@ $coverage->setTests(array (
   'Test\\Searcher\\ValidatorTest::testIsNotNull' => 0,
   'Test\\Searcher\\ValidatorTest::testIsArray' => 0,
   'Test\\Searcher\\ValidatorTest::testIsNotEmpty' => 0,
-  'Test\\Searcher\\ValidatorTest::testIsAcceptLength' => 3,
+  'Test\\Searcher\\ValidatorTest::testIsAcceptLength' => 0,
   'UNCOVERED_FILES_FROM_WHITELIST' => NULL,
 ));
 

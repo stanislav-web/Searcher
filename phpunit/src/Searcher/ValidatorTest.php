@@ -148,31 +148,19 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Searcher\Validator::setMin
-     * @covers Searcher\Validator::setMax
+     * @covers Searcher\Validator::setLength
      */
     public function testLimits()
     {
-        // check method setMin
+        // check method setLength
         $this->assertTrue(
-            method_exists($this->validator, 'setMin'),
-            '[-] Class Validator must have method setMin()'
+            method_exists($this->validator, 'setLength'),
+            '[-] Class Validator must have method setLength()'
         );
 
-        // check method exists setMax
-        $this->assertTrue(
-            method_exists($this->validator, 'setMax'),
-            '[-] Class Validator must have method setMax()'
-        );
-
-        // check return of setMin
-        $this->assertSame($this->validator, $this->invokeMethod($this->validator, 'setMin', [3]),
-            "[-] setMin method should return object Validator"
-        );
-
-        // check return of setMax
-        $this->assertSame($this->validator, $this->invokeMethod($this->validator, 'setMax', [128]),
-            "[-] setMax method should return object Validator"
+        // check return of setLength
+        $this->assertSame($this->validator, $this->invokeMethod($this->validator, 'setLength', [array('min' => 3)]),
+            "[-] setLength method should return object Validator"
         );
     }
 
