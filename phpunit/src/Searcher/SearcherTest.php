@@ -46,6 +46,17 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
+        $this->di   =  new \Phalcon\DI();
+
+        $this->di->set('db', function() {
+            return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
+                "host"      => "localhost",
+                "username"  => "root",
+                "password"  => "root",
+                "dbname"    => "phalcon.local"
+            ));
+        });
+
         $this->searcher = new Searcher();
         $this->reflection = new \ReflectionClass('Searcher\Searcher');
     }

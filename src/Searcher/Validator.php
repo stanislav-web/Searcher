@@ -105,36 +105,15 @@ class Validator
     }
 
     /**
-     * Set minimum value for the search
+     * Set value length for the search min and max
      *
-     * @param  int       $min value
+     * @param  array       $condition value
      * @return Validator
      */
-    public function setMin($min)
+    public function setLength(array $condition)
     {
-        if (is_int($min) === false) {
-            $this->min = (int) $min;
-        }
-        else {
-            $this->min = $min;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set maximum value for the search
-     *
-     * @param  int       $max value
-     * @return Validator
-     */
-    public function setMax($max)
-    {
-        if (is_int($max) === false) {
-            $this->max = (int) $max;
-        }
-        else {
-            $this->max = $max;
+        if (is_array($condition))  {
+            $this->{key($condition)} = (int) current($condition);
         }
 
         return $this;

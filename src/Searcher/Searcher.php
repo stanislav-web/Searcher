@@ -55,7 +55,9 @@ class Searcher
      */
     public function setMin($min)
     {
-        $this->validator->setMin($min);
+        $this->validator->setLength([
+            'min'   =>  $min
+        ]);
 
         return $this;
     }
@@ -68,8 +70,9 @@ class Searcher
      */
     public function setMax($max)
     {
-        $this->validator->setMax($max);
-
+        $this->validator->setLength([
+            'max'   =>  $max
+        ]);
         return $this;
     }
 

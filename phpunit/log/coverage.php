@@ -898,7 +898,7 @@ $coverage->setTests(array (
   'Test\\Searcher\\ValidatorTest::testIsNotNull' => 0,
   'Test\\Searcher\\ValidatorTest::testIsArray' => 0,
   'Test\\Searcher\\ValidatorTest::testIsNotEmpty' => 0,
-  'Test\\Searcher\\ValidatorTest::testIsAcceptLength' => 0,
+  'Test\\Searcher\\ValidatorTest::testIsAcceptLength' => 3,
   'UNCOVERED_FILES_FROM_WHITELIST' => NULL,
 ));
 
