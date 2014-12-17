@@ -26,9 +26,9 @@ class InvalidLength implements ExceptionInterface
     /**
      * Rise error message for Length Exceptions
      *
-     * @param array  $params   message params
-     * @param int    $line     error line
-     * @param string $filename file error
+     * @param  array                                       $params   message params
+     * @param  int                                         $line     error line
+     * @param  string                                      $filename file error
      * @return \Searcher\Searcher\Exceptions\InvalidLength
      */
     public function rise(array $params, $line, $filename)

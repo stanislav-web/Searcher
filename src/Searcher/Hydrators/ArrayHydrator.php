@@ -36,7 +36,7 @@ class ArrayHydrator implements HydratorInterface
     /**
      * Extract result data to array
      *
-     * @param callback|null $callback function to data
+     * @param  callback|null $callback function to data
      * @return mixed
      */
     public function extract(callable $callback = null)
@@ -50,4 +50,4 @@ class ArrayHydrator implements HydratorInterface
         return $result;
 
     }
-} 
+}

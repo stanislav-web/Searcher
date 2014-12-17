@@ -48,7 +48,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     /**
      * Initialize internal params
      *
-     * @param Searcher $searcher
+     * @param  Searcher $searcher
      * @uses \Phalcon\Mvc\Model\Query\Builder
      * @return null
      */
@@ -91,13 +91,14 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
             $this->builder->addFrom($model, $alias);
 
         }
+
         return null;
     }
 
     /**
      * Setup orders positions to Builder
      *
-     * @param boolean $asArray order from an array
+     * @param  boolean $asArray order from an array
      * @return null
      */
     public function setOrder($asArray = false)
@@ -116,6 +117,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
             }
         }
         $this->builder->orderBy($order);
+
         return null;
     }
 
@@ -141,6 +143,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
             }
         }
         $this->builder->groupBy($group);
+
         return null;
     }
 
@@ -187,23 +190,23 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
                 ++$index;
             }
         }
+
         return null;
     }
 
     /**
      * Where condition customizer
      *
-     * @param string  $table
-     * @param string  $field
-     * @param integer $type  type of column
-     * @param integer $index counter
+     * @param  string  $table
+     * @param  string  $field
+     * @param  integer $type  type of column
+     * @param  integer $index counter
      * @return null
      */
     public function expressionRun($table, $field, $type, $index)
     {
 
-        if ($type === Column::TYPE_TEXT) // match search
-        {
+        if ($type === Column::TYPE_TEXT) { // match search
 
             // unset mask
 
@@ -219,6 +222,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
             else
                 $this->builder->where($table . "." . $field . " LIKE :query:", $this->searcher->query);
         }
+
         return null;
     }
 
@@ -248,8 +252,10 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
                     $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
                     $res = $this->setResult(new $call($res), $callback);
                 }
+
                 return $res;
             }
+
             return null;
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
@@ -259,8 +265,8 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     /**
      * Result set
      *
-     * @param \Searcher\Searcher\Aware\HydratorInterface $hydrator
-     * @param callback|null                              $callback function to data
+     * @param  \Searcher\Searcher\Aware\HydratorInterface $hydrator
+     * @param  callback|null                              $callback function to data
      * @return array
      */
     private function setResult(HydratorInterface $hydrator, $callback = null)

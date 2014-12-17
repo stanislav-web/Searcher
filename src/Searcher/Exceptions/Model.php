@@ -33,9 +33,9 @@ class Model implements ExceptionInterface
     /**
      * Rise error message for Model Exceptions
      *
-     * @param array  $params   message params
-     * @param int    $line     error line
-     * @param string $filename file error
+     * @param  array                               $params   message params
+     * @param  int                                 $line     error line
+     * @param  string                              $filename file error
      * @return \Searcher\Searcher\Exceptions\Model
      */
     public function rise(array $params, $line, $filename)
@@ -63,4 +63,3 @@ class Model implements ExceptionInterface
         return $this->message;
     }
 }
-  
