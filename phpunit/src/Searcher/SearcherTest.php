@@ -188,8 +188,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
      */
     public function testThreshold()
     {
-        $treshold = $this->searcher->setThreshold([]);
-
+        $treshold = $this->searcher->setThreshold(123);
 
         // check instance method
         $this->assertInstanceOf($this->reflection->getName(), $treshold,

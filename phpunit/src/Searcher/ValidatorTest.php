@@ -1,6 +1,8 @@
 <?php
 namespace Test\Searcher;
 
+use Searcher\Searcher;
+use Searcher\Searcher\Factories\ExceptionFactory;
 use \Searcher\Validator;
 
 /**
@@ -165,6 +167,141 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         // check return of setMax
         $this->assertSame($this->validator, $this->invokeMethod($this->validator, 'setMax', [128]),
             "[-] setMax method should return object Validator"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isNotNull
+     */
+    public function testIsNotNull()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isNotNull'),
+            '[-] Class Validator must have method isNotNull()'
+        );
+
+        $isNotNull = $this->invokeMethod($this->validator, 'isNotNull', ['data']);
+
+        $this->assertNotNull($isNotNull,
+            "[-] isNotNull method should return non empty data"
+        );
+
+        $this->assertTrue($isNotNull,
+            "[-] isNotNull method should return true if not has an exception"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isArray
+     */
+    public function testIsArray()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isArray'),
+            '[-] Class Validator must have method isArray()'
+        );
+
+        $isArray = $this->invokeMethod($this->validator, 'isArray', ['data' => ['test']]);
+
+        $this->assertTrue($isArray,
+            "[-] isArray method should return true if not has an exception"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isNotEmpty
+     */
+    public function testIsNotEmpty()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isNotEmpty'),
+            '[-] Class Validator must have method isNotEmpty()'
+        );
+
+        $isNotEmpty = $this->invokeMethod($this->validator, 'isNotEmpty', ['data' => ['']]);
+
+        $this->assertTrue($isNotEmpty,
+            "[-] isNotEmpty method should return true if not has an exception"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isNotFew
+     */
+    public function testIsNotFew()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isNotFew'),
+            '[-] Class Validator must have method isNotFew()'
+        );
+
+        // get default property value
+        $reflectionProperty = $this->reflection->getProperty('min');
+        $reflectionProperty->setAccessible(true);
+        $min = $reflectionProperty->getValue($this->validator);
+
+        // generate min string length
+        $string = substr(bin2hex(sha1(microtime())), 0, $min);
+
+        // set minimum string length
+        (new Searcher())->setMin(mb_strlen($string));
+
+        // call check isNotFew
+        $isNotFew = $this->invokeMethod($this->validator, 'isNotFew', [$string]);
+
+        // check size of min
+        $this->assertEquals($min, mb_strlen($string),
+            "[-] isNotFew compare property `min` must be equal to ".mb_strlen($string));
+
+        // check return
+        $this->assertTrue($isNotFew,
+            "[-] isNotFew method should return true while gretter than `min` property"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isNotMuch
+     */
+    public function testIsNotMuch()
+    {
+
+        $this->assertTrue(
+            method_exists($this->validator, 'isNotMuch'),
+            '[-] Class Validator must have method isNotMuch()'
+        );
+
+        // get default property value
+        $reflectionProperty = $this->reflection->getProperty('max');
+        $reflectionProperty->setAccessible(true);
+        $max = $reflectionProperty->getValue($this->validator);
+
+        // generate max string length
+        $string = substr(base64_encode(uniqid(sha1(microtime()), true).uniqid(sha1(microtime()), true)), 0, $max);
+
+        // set maximum string length
+        (new Searcher())->setMax(mb_strlen($string));
+
+        // call check isNotFew
+        $isNotFew = $this->invokeMethod($this->validator, 'isNotMuch', [$string]);
+
+        // check size of min
+        $this->assertEquals($max, mb_strlen($string),
+            "[-] isNotFew compare property `max` must be equal to ".mb_strlen($string));
+
+        // check return
+        $this->assertTrue($isNotFew,
+            "[-] isNotFew method should return true while less than `max` property"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isModel
+     */
+    public function testIsModel()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isModel'),
+            '[-] Class Validator must have method isModel()'
         );
     }
 }
