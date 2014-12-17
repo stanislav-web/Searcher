@@ -310,6 +310,7 @@ class Validator
                 $this->fields[$this->cast][$model->getSource()] = $sort;
             }
         }
+
         return true;
     }
 
