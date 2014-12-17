@@ -7,10 +7,11 @@ use \Searcher\Validator;
 
 /**
  * Class ValidatorTest
+ *
  * @package Test\Searcher
- * @since PHP >=5.5.12
+ * @since   PHP >=5.5.12
  * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ * @author  Stanislav WEB | Lugansk <stanisov@gmail.com>
  *
  */
 class ValidatorTest extends \PHPUnit_Framework_TestCase
@@ -18,18 +19,21 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Validator class object
+     *
      * @var Validator
      */
     private $validator;
 
     /**
      * ReflectionClass
+     *
      * @var \ReflectionClass
      */
     private $reflection;
 
     /**
      * Initialize testing object
+     *
      * @uses Validator
      * @uses \ReflectionClass
      */
@@ -41,6 +45,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Kill testing object
+     *
      * @uses Validator
      */
     public function tearDown()
@@ -51,12 +56,12 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     /**
      * Call protected/private method of a class.
      *
-     * @param object &$object Instantiated object that we will run method on.
+     * @param object &$object    Instantiated object that we will run method on.
      * @param string $methodName Method name to call
-     * @param array $parameters Array of parameters to pass into method.
+     * @param array  $parameters Array of parameters to pass into method.
      * @example <code>
-     *              $this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
-     *          </code>
+     *                           $this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
+     *                           </code>
      * @return mixed Method return.
      */
     protected function invokeMethod(&$object, $methodName, array $parameters = array())
@@ -68,6 +73,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Setup accessible any private (protected) property
+     *
      * @param $name
      * @return \ReflectionMethod
      */
@@ -251,7 +257,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
         // check size of min
         $this->assertEquals($min, mb_strlen($string),
-            "[-] isNotFew compare property `min` must be equal to ".mb_strlen($string));
+            "[-] isNotFew compare property `min` must be equal to " . mb_strlen($string));
 
         // check return
         $this->assertTrue($isNotFew,
@@ -276,7 +282,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $max = $reflectionProperty->getValue($this->validator);
 
         // generate max string length
-        $string = substr(base64_encode(uniqid(sha1(microtime()), true).uniqid(sha1(microtime()), true)), 0, $max);
+        $string = substr(base64_encode(uniqid(sha1(microtime()), true) . uniqid(sha1(microtime()), true)), 0, $max);
 
         // set maximum string length
         (new Searcher())->setMax(mb_strlen($string));
@@ -286,7 +292,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
         // check size of min
         $this->assertEquals($max, mb_strlen($string),
-            "[-] isNotFew compare property `max` must be equal to ".mb_strlen($string));
+            "[-] isNotFew compare property `max` must be equal to " . mb_strlen($string));
 
         // check return
         $this->assertTrue($isNotFew,

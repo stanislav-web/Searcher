@@ -5,10 +5,11 @@ use \Searcher\Searcher;
 
 /**
  * Class SearcherTest
+ *
  * @package Test\Searcher
- * @since PHP >=5.5.12
+ * @since   PHP >=5.5.12
  * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ * @author  Stanislav WEB | Lugansk <stanisov@gmail.com>
  *
  */
 class SearcherTest extends \PHPUnit_Framework_TestCase
@@ -16,18 +17,21 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Searcher class object
+     *
      * @var Searcher
      */
     private $searcher;
 
     /**
      * ReflectionClass
+     *
      * @var \ReflectionClass
      */
     private $reflection;
 
     /**
      * Initialize testing object
+     *
      * @uses Searcher
      * @uses \ReflectionClass
      */
@@ -40,6 +44,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Kill testing object
+     *
      * @uses Searcher
      */
     public function tearDown()
@@ -50,12 +55,12 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
     /**
      * Call protected/private method of a class.
      *
-     * @param object &$object Instantiated object that we will run method on.
+     * @param object &$object    Instantiated object that we will run method on.
      * @param string $methodName Method name to call
-     * @param array $parameters Array of parameters to pass into method.
+     * @param array  $parameters Array of parameters to pass into method.
      * @example <code>
-     *              $this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
-     *          </code>
+     *                           $this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
+     *                           </code>
      * @return mixed Method return.
      */
     protected function invokeMethod(&$object, $methodName, array $parameters = array())
@@ -67,6 +72,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Setup accessible any private (protected) property
+     *
      * @param $name
      * @return \ReflectionMethod
      */
@@ -97,7 +103,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers Searcher\Searcher::__construct()
-     * @group Searcher properties
+     * @group  Searcher properties
      */
     public function testConstructor()
     {

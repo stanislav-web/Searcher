@@ -6,11 +6,12 @@ use \Phalcon\DI as Di;
 
 /**
  * Hydrate result json from Query builder
- * @package Searcher
- * @package Searcher\Searcher\Hydrators
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ *
+ * @package   Searcher
+ * @package   Searcher\Searcher\Hydrators
+ * @since     PHP >=5.5.12
+ * @version   1.0
+ * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
 class JsonHydrator implements HydratorInterface, \Phalcon\DI\InjectionAwareInterface
@@ -18,12 +19,14 @@ class JsonHydrator implements HydratorInterface, \Phalcon\DI\InjectionAwareInter
 
     /**
      * Dependency Injector
+     *
      * @var Di|\Phalcon\DiInterface $di
      */
     protected $di;
 
     /**
      * Set DI container
+     *
      * @param \Phalcon\DiInterface $di
      */
     public function setDi($di)
@@ -33,6 +36,7 @@ class JsonHydrator implements HydratorInterface, \Phalcon\DI\InjectionAwareInter
 
     /**
      * Get DI container
+     *
      * @return Di|\Phalcon\DiInterface
      */
     public function getDi()
@@ -42,12 +46,14 @@ class JsonHydrator implements HydratorInterface, \Phalcon\DI\InjectionAwareInter
 
     /**
      * Result data
+     *
      * @var \Phalcon\Mvc\Model\Resultset\Simple $result
      */
     private $result;
 
     /**
      * Result data
+     *
      * @var string $result
      */
     private $response;

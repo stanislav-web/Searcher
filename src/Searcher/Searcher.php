@@ -6,10 +6,11 @@ use Searcher\Searcher\Hydrators;
 
 /**
  * Searcher daemon class
- * @package Searcher
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ *
+ * @package   Searcher
+ * @since     PHP >=5.5.12
+ * @version   1.0
+ * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
 class Searcher
@@ -17,24 +18,28 @@ class Searcher
 
     /**
      * Query value for DB
+     *
      * @var array
      */
     public $query = [];
 
     /**
      * Strict flag
+     *
      * @var boolean
      */
     public $exact = false;
 
     /**
      * Validator
+     *
      * @var \Searcher\Validator
      */
     private $validator;
 
     /**
      * Initialize class
+     *
      * @uses \Searcher\Validator
      * @return null
      */
@@ -87,17 +92,17 @@ class Searcher
      *
      * @param array $models
      * @example <code>
-     *          $s->setFields([
-     *            'Model/Table1'    =>    [
+     *                $s->setFields([
+     *                'Model/Table1'    =>    [
      *                'title',
      *                'text'
-     *            ],
+     *                ],
      *                'Model/Table2'    =>    [
      *                'name',
      *                'mark'
-     *            ]....
-     *          ])
-     *          </code>
+     *                ]....
+     *                ])
+     *                </code>
      * @throws ExceptionFactory {$error}
      * @return Searcher
      */
@@ -117,12 +122,12 @@ class Searcher
      *
      * @param array $order
      * @example <code>
-     *          $s->setOrder(['Model/Auto' => ['id' => 'DESC']])
-     *          $s->setOrder([
+     *            $s->setOrder(['Model/Auto' => ['id' => 'DESC']])
+     *            $s->setOrder([
      *            'Model/Auto' => ['id' => 'DESC']
      *            'Model/Distributor' => ['description' =>  'ASC']
-     *          ])
-     *          </code>
+     *            ])
+     *            </code>
      * @throws ExceptionFactory {$error}
      * @return Searcher
      */
@@ -141,12 +146,12 @@ class Searcher
      *
      * @param array $group
      * @example <code>
-     *          $s->setGroup(['Model/Auto' => ['id']])
-     *          $s->setGroup([
+     *            $s->setGroup(['Model/Auto' => ['id']])
+     *            $s->setGroup([
      *            'Model/Auto' => ['id', 'mark']
      *            'Model/Distributor' => ['id', 'description']
-     *          ])
-     *          </code>
+     *            ])
+     *            </code>
      * @throws ExceptionFactory {$error}
      * @return Searcher
      */
@@ -187,6 +192,7 @@ class Searcher
 
     /**
      * Prepare query value
+     *
      * @param string|null $query
      * @example <code>
      *          $s->setQuery('what i want to find')
@@ -208,6 +214,7 @@ class Searcher
 
     /**
      * Get qualified valid tables & fields
+     *
      * @return array
      */
     public function getFields()
@@ -219,7 +226,7 @@ class Searcher
      * Search procedure started
      *
      * @param null $hydratorset result mode
-     * @param null $callback post modifier
+     * @param null $callback    post modifier
      * @throws ExceptionFactory {$error}
      * @return Builder|null
      */

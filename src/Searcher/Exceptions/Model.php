@@ -5,24 +5,27 @@ use Searcher\Searcher\Aware\ExceptionInterface;
 
 /**
  * Class Model
- * @package Searcher
+ *
+ * @package    Searcher
  * @subpackage Searcher\Searcher\Exceptions
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanislav WEB
+ * @since      PHP >=5.5.12
+ * @version    1.0
+ * @author     Stanislav WEB | Lugansk <stanisov@gmail.com>
+ * @copyright  Stanislav WEB
  */
 class Model implements ExceptionInterface
 {
 
     /**
      * Invoke array
+     *
      * @var array
      */
     private $invoke = [];
 
     /**
      * Message string
+     *
      * @var string
      */
     private $message = '';
@@ -30,8 +33,8 @@ class Model implements ExceptionInterface
     /**
      * Rise error message for Model Exceptions
      *
-     * @param array $params message params
-     * @param int $line error line
+     * @param array  $params   message params
+     * @param int    $line     error line
      * @param string $filename file error
      * @return \Searcher\Searcher\Exceptions\Model
      */

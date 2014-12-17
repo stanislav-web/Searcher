@@ -2,10 +2,11 @@
 
 /**
  * Class RunListener
+ *
  * @package Phalcon
- * @since PHP >=5.5.12
+ * @since   PHP >=5.5.12
  * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ * @author  Stanislav WEB | Lugansk <stanisov@gmail.com>
  */
 class RunListener implements PHPUnit_Framework_TestListener
 {
@@ -64,8 +65,8 @@ class RunListener implements PHPUnit_Framework_TestListener
      * Error while running test
      *
      * @param PHPUnit_Framework_Test $test
-     * @param Exception $e
-     * @param float $time
+     * @param Exception              $e
+     * @param float                  $time
      * @return null
      */
     public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
@@ -79,9 +80,9 @@ class RunListener implements PHPUnit_Framework_TestListener
     /**
      * Notify while test was failed
      *
-     * @param PHPUnit_Framework_Test $test
+     * @param PHPUnit_Framework_Test                 $test
      * @param PHPUnit_Framework_AssertionFailedError $e
-     * @param float $time
+     * @param float                                  $time
      * @return null
      */
     public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
@@ -96,8 +97,8 @@ class RunListener implements PHPUnit_Framework_TestListener
      * Incomplete test status
      *
      * @param PHPUnit_Framework_Test $test
-     * @param Exception $e
-     * @param float $time
+     * @param Exception              $e
+     * @param float                  $time
      * @return null
      */
     public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
@@ -112,8 +113,8 @@ class RunListener implements PHPUnit_Framework_TestListener
      * Risky test status
      *
      * @param PHPUnit_Framework_Test $test
-     * @param Exception $e
-     * @param float $time
+     * @param Exception              $e
+     * @param float                  $time
      * @return null
      */
     public function addRiskyTest(PHPUnit_Framework_Test $test, Exception $e, $time)
@@ -128,8 +129,8 @@ class RunListener implements PHPUnit_Framework_TestListener
      * Skipped test status
      *
      * @param PHPUnit_Framework_Test $test
-     * @param Exception $e
-     * @param float $time
+     * @param Exception              $e
+     * @param float                  $time
      * @return null
      */
     public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
@@ -158,7 +159,7 @@ class RunListener implements PHPUnit_Framework_TestListener
      * End test status message
      *
      * @param PHPUnit_Framework_Test $test
-     * @param float $time
+     * @param float                  $time
      * @return null
      */
     public function endTest(PHPUnit_Framework_Test $test, $time)
@@ -225,6 +226,7 @@ class RunListener implements PHPUnit_Framework_TestListener
 
     /**
      * Output title
+     *
      * @param      $title
      * @param null $color
      * @uses self::writeLine

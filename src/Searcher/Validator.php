@@ -7,10 +7,11 @@ use Searcher\Searcher\Factories\ExceptionFactory;
 
 /**
  * Columns validator
- * @package Searcher
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ *
+ * @package   Searcher
+ * @since     PHP >=5.5.12
+ * @version   1.0
+ * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
 class Validator
@@ -18,18 +19,21 @@ class Validator
 
     /**
      * The minimum value for the search
+     *
      * @var int
      */
     private $min = 3;
 
     /**
      * The maximum value for the search
+     *
      * @var int
      */
     private $max = 128;
 
     /**
      * Available columns types
+     *
      * @var array
      */
     public $columns = [
@@ -43,6 +47,7 @@ class Validator
 
     /**
      * Available sort types
+     *
      * @var array
      */
     public $sort = [
@@ -54,12 +59,14 @@ class Validator
 
     /**
      * Cast of validate
+     *
      * @var string
      */
     private $cast = '';
 
     /**
      * Verified tables & columns
+     *
      * @var array
      */
     public $fields = [];
@@ -67,8 +74,8 @@ class Validator
     /**
      * Verify transferred according to the rules
      *
-     * @param mixed $data
-     * @param array $callbacks
+     * @param mixed  $data
+     * @param array  $callbacks
      * @param string $cast
      * @return mixed
      */
@@ -317,10 +324,11 @@ class Validator
 
     /**
      * Validate table columns
-     * @param Memory $meta column info
-     * @param array $columns
+     *
+     * @param Memory $meta  column info
+     * @param array  $columns
      * @param string $table
-     * @param mixed $model selected model
+     * @param mixed  $model selected model
      * @throws ExceptionFactory
      * @return boolean
      */

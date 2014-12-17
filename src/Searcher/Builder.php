@@ -8,34 +8,39 @@ use \Phalcon\DI as Di;
 
 /**
  * Query builder class
- * @package Searcher
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ *
+ * @package   Searcher
+ * @since     PHP >=5.5.12
+ * @version   1.0
+ * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
 class Builder implements \Phalcon\DI\InjectionAwareInterface
 {
     /**
      * Dependency Injector
+     *
      * @var Di|\Phalcon\DiInterface $di
      */
     protected $di;
 
     /**
      * Query builder
+     *
      * @var \Phalcon\Mvc\Model\Query\Builder
      */
     private $builder;
 
     /**
      * Client for preparing data
+     *
      * @var Searcher
      */
     private $searcher;
 
     /**
      * Valid searcher data
+     *
      * @var array
      */
     private $data = [];
@@ -55,6 +60,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
     /**
      * Set DI container
+     *
      * @param \Phalcon\DiInterface $di
      */
     public function setDi($di)
@@ -64,6 +70,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
     /**
      * Get DI container
+     *
      * @return Di|\Phalcon\DiInterface
      */
     public function getDi()
@@ -186,9 +193,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     /**
      * Where condition customizer
      *
-     * @param string $table
-     * @param string $field
-     * @param integer $type type of column
+     * @param string  $table
+     * @param string  $field
+     * @param integer $type  type of column
      * @param integer $index counter
      * @return null
      */
@@ -251,8 +258,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
     /**
      * Result set
+     *
      * @param \Searcher\Searcher\Aware\HydratorInterface $hydrator
-     * @param callback|null $callback function to data
+     * @param callback|null                              $callback function to data
      * @return array
      */
     private function setResult(HydratorInterface $hydrator, $callback = null)

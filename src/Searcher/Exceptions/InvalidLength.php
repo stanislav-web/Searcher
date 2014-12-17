@@ -5,18 +5,20 @@ use Searcher\Searcher\Aware\ExceptionInterface;
 
 /**
  * Class InvalidLength
- * @package Searcher
+ *
+ * @package    Searcher
  * @subpackage Searcher\Searcher\Exceptions
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanislav WEB
+ * @since      PHP >=5.5.12
+ * @version    1.0
+ * @author     Stanislav WEB | Lugansk <stanisov@gmail.com>
+ * @copyright  Stanislav WEB
  */
 class InvalidLength implements ExceptionInterface
 {
 
     /**
      * Message string
+     *
      * @var string
      */
     private $message = '';
@@ -24,8 +26,8 @@ class InvalidLength implements ExceptionInterface
     /**
      * Rise error message for Length Exceptions
      *
-     * @param array $params message params
-     * @param int $line error line
+     * @param array  $params   message params
+     * @param int    $line     error line
      * @param string $filename file error
      * @return \Searcher\Searcher\Exceptions\InvalidLength
      */
