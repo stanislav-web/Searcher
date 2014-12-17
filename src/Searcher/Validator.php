@@ -287,9 +287,10 @@ class Validator
 
                 $sort = array_map('strtolower', $sort);
 
-                if (empty($diff = array_diff(array_values($sort), $this->sort)) === false
-                    || (empty($diff = array_diff($sort, $this->sort)) === false)
-                )
+                if (empty($diff = array_diff(array_values($sort), $this->sort)) === false)
+                    throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
+
+                if (empty($diff = array_diff($sort, $this->sort)) === false)
                     throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
 
                 $this->fields[$this->cast][$model->getSource()] = $sort;
@@ -316,7 +317,7 @@ class Validator
 
     /**
      * Validate table columns
-     * @param \Phalcon\Mvc\Model\MetaData\Memory $meta meta info
+     * @param Memory $meta column info
      * @param array $columns
      * @param string $table
      * @param mixed $model selected model
