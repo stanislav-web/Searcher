@@ -1,0 +1,18 @@
+--- /dev/null
++++ /dev/null
+@@ -310,13 +317,14 @@
+                 $this->fields[$this->cast][$model->getSource()] = $sort;
+             }
+         }
++
+         return true;
+     }
+ 
+     /**
+      * Check if field type support in table
+      *
+-     * @param string $value
++     * @param  string           $value
+      * @throws ExceptionFactory
+      * @return boolean
+      */

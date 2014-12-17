@@ -2,7 +2,6 @@
 namespace Searcher;
 
 use Searcher\Searcher\Factories\ExceptionFactory;
-use Searcher\Searcher\Hydrators;
 
 /**
  * Searcher daemon class
@@ -51,58 +50,61 @@ class Searcher
     /**
      * Set minimum value for the search
      *
-     * @param int $min value
+     * @param  int      $min value
      * @return Searcher
      */
     public function setMin($min)
     {
         $this->validator->setMin($min);
+
         return $this;
     }
 
     /**
      * Set maximum value for the search
      *
-     * @param int $max value
+     * @param  int      $max value
      * @return Searcher
      */
     public function setMax($max)
     {
         $this->validator->setMax($max);
+
         return $this;
     }
 
     /**
      * Use Strict mode ?
      *
-     * @param boolean $flag
+     * @param  boolean  $flag
      * @example <code>
-     *          $s->setExact(true) // false
-     *          </code>
+     *                        $s->setExact(true) // false
+     *                        </code>
      * @return Searcher
      */
     public function setExact($flag)
     {
         $this->exact = $flag;
+
         return $this;
     }
 
     /**
      * Prepare models and fields to participate in search
      *
-     * @param array $models
+     * @param  array            $models
      * @example <code>
-     *                $s->setFields([
-     *                'Model/Table1'    =>    [
-     *                'title',
-     *                'text'
-     *                ],
-     *                'Model/Table2'    =>    [
-     *                'name',
-     *                'mark'
-     *                ]....
-     *                ])
-     *                </code>
+     *                                  $s->setFields([
+     *                                  'Model/Table1'    =>    [
+     *                                  'title',
+     *                                  'text'
+     *                                  ],
+     *                                  'Model/Table2'    =>    [
+     *                                  'name',
+     *                                  'mark'
+     *                                  ]....
+     *                                  ])
+     *                                  </code>
      * @throws ExceptionFactory {$error}
      * @return Searcher
      */
@@ -120,14 +122,14 @@ class Searcher
     /**
      * Order results
      *
-     * @param array $order
+     * @param  array            $order
      * @example <code>
-     *            $s->setOrder(['Model/Auto' => ['id' => 'DESC']])
-     *            $s->setOrder([
-     *            'Model/Auto' => ['id' => 'DESC']
-     *            'Model/Distributor' => ['description' =>  'ASC']
-     *            ])
-     *            </code>
+     *                                 $s->setOrder(['Model/Auto' => ['id' => 'DESC']])
+     *                                 $s->setOrder([
+     *                                 'Model/Auto' => ['id' => 'DESC']
+     *                                 'Model/Distributor' => ['description' =>  'ASC']
+     *                                 ])
+     *                                 </code>
      * @throws ExceptionFactory {$error}
      * @return Searcher
      */
@@ -137,21 +139,21 @@ class Searcher
         $this->validator->verify($order, [
             'isArray', 'isNotEmpty', 'isOrdered'
         ], 'order');
+
         return $this;
     }
-
 
     /**
      * Group results
      *
-     * @param array $group
+     * @param  array            $group
      * @example <code>
-     *            $s->setGroup(['Model/Auto' => ['id']])
-     *            $s->setGroup([
-     *            'Model/Auto' => ['id', 'mark']
-     *            'Model/Distributor' => ['id', 'description']
-     *            ])
-     *            </code>
+     *                                 $s->setGroup(['Model/Auto' => ['id']])
+     *                                 $s->setGroup([
+     *                                 'Model/Auto' => ['id', 'mark']
+     *                                 'Model/Distributor' => ['id', 'description']
+     *                                 ])
+     *                                 </code>
      * @throws ExceptionFactory {$error}
      * @return Searcher
      */
@@ -166,15 +168,14 @@ class Searcher
         return $this;
     }
 
-
     /**
      * Setup offset, limit threshold
      *
-     * @param mixed $threshold
+     * @param  mixed            $threshold
      * @example <code>
-     *          $s->setThreshold(100)        //    limit
-     *          $s->setThreshold([0,100])    //    offset, limit
-     *          </code>
+     *                                     $s->setThreshold(100)        //    limit
+     *                                     $s->setThreshold([0,100])    //    offset, limit
+     *                                     </code>
      * @throws ExceptionFactory {$error}
      * @return Searcher
      */
@@ -187,16 +188,17 @@ class Searcher
         else
             $threshold = intval($threshold);
         $this->validator->verify($threshold, [], 'threshold');
+
         return $this;
     }
 
     /**
      * Prepare query value
      *
-     * @param string|null $query
+     * @param  string|null      $query
      * @example <code>
-     *          $s->setQuery('what i want to find')
-     *          </code>
+     *                                 $s->setQuery('what i want to find')
+     *                                 </code>
      * @throws ExceptionFactory {$error}
      * @return Searcher
      */
@@ -209,6 +211,7 @@ class Searcher
             $this->query = ['query' => '%' . $query . '%'];
         else
             $this->query = ['query' => $query];
+
         return $this;
     }
 
@@ -225,8 +228,8 @@ class Searcher
     /**
      * Search procedure started
      *
-     * @param null $hydratorset result mode
-     * @param null $callback    post modifier
+     * @param  null             $hydratorset result mode
+     * @param  null             $callback    post modifier
      * @throws ExceptionFactory {$error}
      * @return Builder|null
      */
