@@ -168,3 +168,6 @@ checks:
         avoid_superglobals: true
         avoid_perl_style_comments: true
         avoid_entity_manager_injection: true
+        prefer_sapi_constant: true
+        more_specific_types_in_doc_comments: true
+        avoid_usage_of_logical_operators: true
