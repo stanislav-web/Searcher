@@ -199,14 +199,11 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         {
 
             // unset mask
-            $query = array_map(function ($v) {
-                    return trim($v, '%');
-                }, $this->searcher->query);
 
             if ($index > 0)
-                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $query);
+                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->ftFilter());
             else
-                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $query);
+                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->ftFilter());
 
         } else {
             // simple where search
@@ -261,5 +258,17 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     private function setResult(HydratorInterface $hydrator, $callback = null)
     {
         return $hydrator->extract($callback);
+    }
+
+    /**
+     * Prepare query data to fulltext search
+     *
+     * @return array
+     */
+    private function ftFilter()
+    {
+        return array_map(function ($v) {
+            return trim($v, '%');
+        }, $this->searcher->query);
     }
 }
