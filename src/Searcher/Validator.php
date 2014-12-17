@@ -74,9 +74,9 @@ class Validator
     /**
      * Verify transferred according to the rules
      *
-     * @param mixed  $data
-     * @param array  $callbacks
-     * @param string $cast
+     * @param  mixed  $data
+     * @param  array  $callbacks
+     * @param  string $cast
      * @return mixed
      */
     public function verify($data, array $callbacks = [], $cast = '')
@@ -93,6 +93,7 @@ class Validator
 
             foreach ($callbacks as $callback) {
                 if ($this->{$callback}($data) === false)
+
                     return false;
             }
         };
@@ -104,50 +105,53 @@ class Validator
     /**
      * Set minimum value for the search
      *
-     * @param int $min value
+     * @param  int       $min value
      * @return Validator
      */
     public function setMin($min)
     {
         if (is_int($min) === false)
-            $this->min = (int)$min;
+            $this->min = (int) $min;
         else
             $this->min = $min;
+
         return $this;
     }
 
     /**
      * Set maximum value for the search
      *
-     * @param int $max value
+     * @param  int       $max value
      * @return Validator
      */
     public function setMax($max)
     {
         if (is_int($max) === false)
-            $this->max = (int)$max;
+            $this->max = (int) $max;
         else
             $this->max = $max;
+
         return $this;
     }
 
     /**
      * Verify by not null
      *
-     * @param string $value
+     * @param  string  $value
      * @return boolean
      */
     protected function isNotNull($value)
     {
         if (is_null($value) === true || empty($value) === true)
             throw new ExceptionFactory('DataType', [$value, 'string']);
+
         return true;
     }
 
     /**
      * Verify by array type
      *
-     * @param mixed $value
+     * @param  mixed            $value
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -155,13 +159,14 @@ class Validator
     {
         if (is_array($value) === false)
             throw new ExceptionFactory('DataType', [$value, 'array']);
+
         return true;
     }
 
     /**
      * Verify by not empty value
      *
-     * @param mixed $value
+     * @param  mixed            $value
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -176,7 +181,7 @@ class Validator
     /**
      * Verify by min length
      *
-     * @param string $value
+     * @param  string           $value
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -191,7 +196,7 @@ class Validator
     /**
      * Verify by max length
      *
-     * @param string $value
+     * @param  string           $value
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -206,7 +211,7 @@ class Validator
     /**
      * Check if is model
      *
-     * @param string $value
+     * @param  string           $value
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -215,13 +220,14 @@ class Validator
 
         if (class_exists($value) === false)
             throw new ExceptionFactory('Model', ['MODEL_DOES_NOT_EXISTS', $value]);
+
         return true;
     }
 
     /**
      * Check if field exist in table
      *
-     * @param array $value
+     * @param  array            $value
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -262,13 +268,14 @@ class Validator
                 }
             }
         }
+
         return true;
     }
 
     /**
      * Check ordered fields
      *
-     * @param array $ordered
+     * @param  array            $ordered
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -309,7 +316,6 @@ class Validator
     /**
      * Check if field type support in table
      *
-     * @param string $value
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -319,16 +325,17 @@ class Validator
         if (in_array($column->getType(), $this->columns) === false) {
             throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_SUPPORT', $column->getType(), $column->getName()]);
         }
+
         return true;
     }
 
     /**
      * Validate table columns
      *
-     * @param Memory $meta  column info
-     * @param array  $columns
-     * @param string $table
-     * @param mixed  $model selected model
+     * @param  Memory           $meta    column info
+     * @param  array            $columns
+     * @param  string           $table
+     * @param  mixed            $model   selected model
      * @throws ExceptionFactory
      * @return boolean
      */
