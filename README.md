@@ -2,7 +2,7 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/stanislav-web/Searcher/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/stanislav-web/Searcher/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/stanislav-web/Searcher/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/stanislav-web/Searcher/?branch=master) [![Build Status](https://travis-ci.org/stanislav-web/Searcher.svg?branch=master)](https://travis-ci.org/stanislav-web/Searcher) [![Total Downloads](https://poser.pugx.org/stanislav-web/phalcon-searcher/downloads.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher) [![Latest Unstable Version](https://poser.pugx.org/stanislav-web/phalcon-searcher/v/unstable.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher)
 
-Extension is used to group search for project models Currently under TTD
+Extension is used to group search for project models. _(Currently under TTD)_
 
 ## Description
 This is the search service is designed to search multiple SQL tables. Convenient to use autocomplete, search documents, search the whole site.

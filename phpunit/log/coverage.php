@@ -517,20 +517,20 @@ $coverage->setData(array (
     147 => 
     array (
     ),
-    149 => 
+    148 => 
     array (
     ),
-    150 => NULL,
-    159 => 
+    150 => 
     array (
     ),
+    151 => NULL,
     160 => 
     array (
     ),
     161 => 
     array (
     ),
-    163 => 
+    162 => 
     array (
     ),
     164 => 
@@ -542,10 +542,10 @@ $coverage->setData(array (
     166 => 
     array (
     ),
-    168 => 
+    167 => 
     array (
     ),
-    170 => 
+    169 => 
     array (
     ),
     171 => 
@@ -554,23 +554,23 @@ $coverage->setData(array (
     172 => 
     array (
     ),
-    176 => 
+    173 => 
     array (
     ),
-    178 => 
+    177 => 
     array (
     ),
-    179 => NULL,
-    189 => 
+    179 => 
     array (
     ),
+    180 => NULL,
     190 => 
     array (
     ),
-    192 => 
+    191 => 
     array (
     ),
-    194 => 
+    193 => 
     array (
     ),
     195 => 
@@ -582,14 +582,14 @@ $coverage->setData(array (
     197 => 
     array (
     ),
-    199 => 
+    198 => 
     array (
     ),
-    200 => NULL,
-    214 => 
+    200 => 
     array (
     ),
-    218 => 
+    201 => NULL,
+    215 => 
     array (
     ),
     219 => 
@@ -598,13 +598,13 @@ $coverage->setData(array (
     220 => 
     array (
     ),
-    222 => 
+    221 => 
     array (
     ),
-    225 => 
+    223 => 
     array (
     ),
-    227 => 
+    226 => 
     array (
     ),
     228 => 
@@ -613,20 +613,20 @@ $coverage->setData(array (
     229 => 
     array (
     ),
-    231 => 
+    230 => 
     array (
     ),
-    235 => 
+    232 => 
     array (
     ),
-    236 => NULL,
-    249 => 
+    236 => 
     array (
     ),
-    251 => 
+    237 => NULL,
+    250 => 
     array (
     ),
-    253 => 
+    252 => 
     array (
     ),
     254 => 
@@ -638,10 +638,10 @@ $coverage->setData(array (
     256 => 
     array (
     ),
-    258 => 
+    257 => 
     array (
     ),
-    260 => 
+    259 => 
     array (
     ),
     261 => 
@@ -656,33 +656,36 @@ $coverage->setData(array (
     264 => 
     array (
     ),
-    266 => 
+    265 => 
     array (
     ),
-    267 => NULL,
-    269 => 
+    267 => 
     array (
     ),
+    268 => NULL,
     270 => 
     array (
     ),
     271 => 
     array (
     ),
-    273 => 
+    272 => 
     array (
     ),
-    284 => 
+    274 => 
     array (
     ),
-    285 => NULL,
-    295 => 
+    285 => 
     array (
     ),
+    286 => NULL,
     296 => 
     array (
     ),
-    297 => NULL,
+    297 => 
+    array (
+    ),
+    298 => NULL,
   ),
   '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Column.php' => 
   array (
@@ -899,6 +902,7 @@ $coverage->setTests(array (
   'Test\\Searcher\\SearcherTest::testLimits' => 0,
   'Test\\Searcher\\SearcherTest::testRun' => 0,
   'Test\\Searcher\\SearcherTest::testThreshold' => 0,
+  'Test\\Searcher\\SearcherTest::testGetFields' => 0,
   'Test\\Searcher\\ValidatorTest::testLimits' => 0,
   'Test\\Searcher\\ValidatorTest::testIsNotNull' => 0,
   'Test\\Searcher\\ValidatorTest::testIsArray' => 0,

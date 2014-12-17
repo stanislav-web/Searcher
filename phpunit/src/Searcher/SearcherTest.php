@@ -2,6 +2,7 @@
 namespace Test\Searcher;
 
 use \Searcher\Searcher;
+use Searcher\Validator;
 
 /**
  * Class SearcherTest
@@ -199,6 +200,28 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
         // check instance method
         $this->assertInstanceOf($this->reflection->getName(), $treshold,
             "[-] setThreshold method must be as instance of Searcher\Searcher"
+        );
+    }
+
+    /**
+     * @covers Searcher\Searcher::getFields
+     */
+    public function testGetFields()
+    {
+        // check method getFields
+        $this->assertTrue(
+            method_exists($this->searcher, 'getFields'),
+            '[-] Class Searcher must have method getFields()'
+        );
+
+        $fields = (new Validator())->fields;
+
+        // check variable type instance
+        $this->assertContainsOnly('array', [$fields],
+            "[-] The `getFields` will return array from Validator"
+        );
+        $this->assertEmpty($fields,
+            "[-] The `getFields` will return an empty array while init"
         );
     }
 }
