@@ -257,11 +257,9 @@ class Validator
             if ($this->isModel($table) === true) {
                 $model = (new Manager())->load($table, new $table);
 
-                $metaData = $model->getModelsMetaData();
-
                 // check fields of table
 
-                $this->validColumns($metaData, $fields, $table, $model);
+                $this->validColumns($model->getModelsMetaData(), $fields, $table, $model);
 
                 // setup clear used tables
                 $columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
@@ -305,11 +303,9 @@ class Validator
             if ($this->isModel($table) === true) {
                 $model = (new Manager())->load($table, new $table);
 
-                $metaData = $model->getModelsMetaData();
-
                 // check fields of table
 
-                $this->validColumns($metaData, array_keys($sort), $table, $model);
+                $this->validColumns($model->getModelsMetaData(), array_keys($sort), $table, $model);
 
                 // check sort clause
 

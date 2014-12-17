@@ -108,7 +108,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         foreach ($this->data['order'] as $alias => $params) {
 
             if (true === $asArray) {
-                $this->builder->orderBy(array_flip($order));
+                $order = array_flip($order);
             }
             else {
                 if (empty($params) === false) {
@@ -118,6 +118,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
                 }
             }
         }
+
         $this->builder->orderBy($order);
 
         return null;
@@ -215,21 +216,25 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         if ($type === Column::TYPE_TEXT) { // match search
 
             // unset mask
+            $query = "MATCH(" . $table . "." . $field . ") AGAINST (:query:)";
 
             if ($index > 0) {
-                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->ftFilter());
+                $this->builder->orWhere($query, $this->ftFilter());
             }
             else {
-                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->ftFilter());
+                $this->builder->where($query, $this->ftFilter());
             }
 
         } else {
+
             // simple where search
+            $query = $table . "." . $field . " LIKE :query:";
+
             if ($index > 0) {
-                $this->builder->orWhere($table . "." . $field . " LIKE :query:", $this->searcher->query);
+                $this->builder->orWhere($query, $this->searcher->query);
             }
             else {
-                $this->builder->where($table . "." . $field . " LIKE :query:", $this->searcher->query);
+                $this->builder->where($query, $this->searcher->query);
             }
         }
 
