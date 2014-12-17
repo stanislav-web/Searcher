@@ -5,11 +5,12 @@ use Searcher\Searcher\Aware\HydratorInterface;
 
 /**
  * Hydrate result as serialized data from Query builder
- * @package Searcher
- * @package Searcher\Searcher\Hydrators
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ *
+ * @package   Searcher
+ * @package   Searcher\Searcher\Hydrators
+ * @since     PHP >=5.5.12
+ * @version   1.0
+ * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
 class SerializeHydrator implements HydratorInterface
@@ -17,6 +18,7 @@ class SerializeHydrator implements HydratorInterface
 
     /**
      * Result data
+     *
      * @var \Phalcon\Mvc\Model\Resultset\Simple $result
      */
     private $result;
@@ -34,20 +36,19 @@ class SerializeHydrator implements HydratorInterface
     /**
      * Extract result data to serialize string
      *
-     * @param callback|null $call function
      * @return array
      */
     public function extract(callable $callback = null)
     {
 
-        if ($callback === null)
+        if ($callback === null) {
             $result = $this->result->serialize();
-        else
+        }
+        else {
             $result = $callback($this->result->serialize());
+        }
 
         return $result;
 
     }
-
-
-} 
+}

@@ -5,24 +5,27 @@ use Searcher\Searcher\Aware\ExceptionInterface;
 
 /**
  * Class Column
- * @package Searcher
+ *
+ * @package    Searcher
  * @subpackage Searcher\Searcher\Exceptions
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
- * @copyright Stanislav WEB
+ * @since      PHP >=5.5.12
+ * @version    1.0
+ * @author     Stanislav WEB | Lugansk <stanisov@gmail.com>
+ * @copyright  Stanislav WEB
  */
 class Column implements ExceptionInterface
 {
 
     /**
      * Invoke array
+     *
      * @var array
      */
     private $invoke = [];
 
     /**
      * Message string
+     *
      * @var string
      */
     private $message = '';
@@ -30,9 +33,9 @@ class Column implements ExceptionInterface
     /**
      * Rise error message for Column Exceptions
      *
-     * @param array $params message params
-     * @param int $line error line
-     * @param string $filename file error
+     * @param  array  $params   message params
+     * @param  int    $line     error line
+     * @param  string $filename file error
      * @return Column
      */
     public function rise(array $params, $line, $filename)
@@ -73,4 +76,3 @@ class Column implements ExceptionInterface
         return $this->message;
     }
 }
-  

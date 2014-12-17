@@ -7,10 +7,11 @@ use Searcher\Searcher\Factories\ExceptionFactory;
 
 /**
  * Columns validator
- * @package Searcher
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ *
+ * @package   Searcher
+ * @since     PHP >=5.5.12
+ * @version   1.0
+ * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
 class Validator
@@ -18,18 +19,21 @@ class Validator
 
     /**
      * The minimum value for the search
+     *
      * @var int
      */
     private $min = 3;
 
     /**
      * The maximum value for the search
+     *
      * @var int
      */
     private $max = 128;
 
     /**
      * Available columns types
+     *
      * @var array
      */
     public $columns = [
@@ -43,6 +47,7 @@ class Validator
 
     /**
      * Available sort types
+     *
      * @var array
      */
     public $sort = [
@@ -54,12 +59,14 @@ class Validator
 
     /**
      * Cast of validate
+     *
      * @var string
      */
     private $cast = '';
 
     /**
      * Verified tables & columns
+     *
      * @var array
      */
     public $fields = [];
@@ -67,26 +74,29 @@ class Validator
     /**
      * Verify transferred according to the rules
      *
-     * @param mixed $data
-     * @param array $callbacks
-     * @param string $cast
+     * @param  mixed  $data
+     * @param  array  $callbacks
+     * @param  string $cast
      * @return mixed
      */
     public function verify($data, array $callbacks = [], $cast = '')
     {
 
-        if (empty($callbacks) === true)
+        if (empty($callbacks) === true) {
             return $this->fields[$cast] = $data;
+        }
 
         // Create a Closure
         $isValid = function ($data) use ($callbacks, $cast) {
 
-            if (empty($cast) === false)
+            if (empty($cast) === false) {
                 $this->cast = $cast;
+            }
 
             foreach ($callbacks as $callback) {
-                if ($this->{$callback}($data) === false)
+                if ($this->{$callback}($data) === false) {
                     return false;
+                }
             }
         };
 
@@ -97,101 +107,105 @@ class Validator
     /**
      * Set minimum value for the search
      *
-     * @param int $min value
+     * @param  int       $min value
      * @return Validator
      */
     public function setMin($min)
     {
-        if (is_int($min) === false)
-            $this->min = (int)$min;
-        else
+        if (is_int($min) === false) {
+            $this->min = (int) $min;
+        }
+        else {
             $this->min = $min;
+        }
+
         return $this;
     }
 
     /**
      * Set maximum value for the search
      *
-     * @param int $max value
+     * @param  int       $max value
      * @return Validator
      */
     public function setMax($max)
     {
-        if (is_int($max) === false)
-            $this->max = (int)$max;
-        else
+        if (is_int($max) === false) {
+            $this->max = (int) $max;
+        }
+        else {
             $this->max = $max;
+        }
+
         return $this;
     }
 
     /**
      * Verify by not null
      *
-     * @param string $value
+     * @param  string  $value
      * @return boolean
      */
     protected function isNotNull($value)
     {
-        if (is_null($value) === true || empty($value) === true)
+        if (is_null($value) === true || empty($value) === true) {
             throw new ExceptionFactory('DataType', [$value, 'string']);
+        }
+
         return true;
     }
 
     /**
      * Verify by array type
      *
-     * @param mixed $value
+     * @param  mixed            $value
      * @throws ExceptionFactory
      * @return boolean
      */
     protected function isArray($value)
     {
-        if (is_array($value) === false)
+        if (is_array($value) === false) {
             throw new ExceptionFactory('DataType', [$value, 'array']);
+        }
+
         return true;
     }
 
     /**
      * Verify by not empty value
      *
-     * @param mixed $value
+     * @param  mixed            $value
      * @throws ExceptionFactory
      * @return boolean
      */
     protected function isNotEmpty($value)
     {
-        if (empty($value) === false)
+        if (empty($value) === false) {
             return true;
-        else
+        }
+        else {
             throw new ExceptionFactory('Column', ['EMPTY_LIST', 'Search list will not contain empty value']);
+        }
+
     }
 
     /**
-     * Verify by min length
+     * Verify by length
      *
-     * @param string $value
+     * @param  string           $value
      * @throws ExceptionFactory
      * @return boolean
      */
-    protected function isNotFew($value)
+    protected function isAcceptLength($value)
     {
-        if (strlen(utf8_decode($value)) < $this->min)
+        $value = strlen(utf8_decode($value));
+
+        if ($value < $this->min) {
             throw new ExceptionFactory('InvalidLength', [$value, 'greater', $this->min]);
-
-        return true;
-    }
-
-    /**
-     * Verify by max length
-     *
-     * @param string $value
-     * @throws ExceptionFactory
-     * @return boolean
-     */
-    protected function isNotMuch($value)
-    {
-        if (strlen(utf8_decode($value)) > $this->max)
+        }
+        else if ($value > $this->max) {
             throw new ExceptionFactory('InvalidLength', [$value, 'less', $this->max]);
+        }
 
         return true;
     }
@@ -199,22 +213,24 @@ class Validator
     /**
      * Check if is model
      *
-     * @param string $value
+     * @param  string           $value
      * @throws ExceptionFactory
      * @return boolean
      */
     protected function isModel($value)
     {
 
-        if (class_exists($value) === false)
+        if (class_exists($value) === false) {
             throw new ExceptionFactory('Model', ['MODEL_DOES_NOT_EXISTS', $value]);
+        }
+
         return true;
     }
 
     /**
      * Check if field exist in table
      *
-     * @param array $value
+     * @param  array            $value
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -230,11 +246,9 @@ class Validator
             if ($this->isModel($table) === true) {
                 $model = (new Manager())->load($table, new $table);
 
-                $metaData = $model->getModelsMetaData();
-
                 // check fields of table
 
-                $this->validColumns($metaData, $fields, $table, $model);
+                $this->validColumns($model->getModelsMetaData(), $fields, $table, $model);
 
                 // setup clear used tables
                 $columnDefines = (new $table)->getReadConnection()->describeColumns($model->getSource());
@@ -255,13 +269,14 @@ class Validator
                 }
             }
         }
+
         return true;
     }
 
     /**
      * Check ordered fields
      *
-     * @param array $ordered
+     * @param  array            $ordered
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -277,32 +292,32 @@ class Validator
             if ($this->isModel($table) === true) {
                 $model = (new Manager())->load($table, new $table);
 
-                $metaData = $model->getModelsMetaData();
-
                 // check fields of table
 
-                $this->validColumns($metaData, array_keys($sort), $table, $model);
+                $this->validColumns($model->getModelsMetaData(), array_keys($sort), $table, $model);
 
                 // check sort clause
 
                 $sort = array_map('strtolower', $sort);
 
-                if (empty($diff = array_diff(array_values($sort), $this->sort)) === false)
+                if (empty($diff = array_diff(array_values($sort), $this->sort)) === false) {
                     throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
+                }
 
-                if (empty($diff = array_diff($sort, $this->sort)) === false)
+                if (empty($diff = array_diff($sort, $this->sort)) === false) {
                     throw new ExceptionFactory('Column', ['ORDER_TYPES_DOES_NOT_EXISTS', $diff]);
+                }
 
                 $this->fields[$this->cast][$model->getSource()] = $sort;
             }
         }
+
         return true;
     }
 
     /**
      * Check if field type support in table
      *
-     * @param string $value
      * @throws ExceptionFactory
      * @return boolean
      */
@@ -312,22 +327,25 @@ class Validator
         if (in_array($column->getType(), $this->columns) === false) {
             throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_SUPPORT', $column->getType(), $column->getName()]);
         }
+
         return true;
     }
 
     /**
      * Validate table columns
-     * @param Memory $meta column info
-     * @param array $columns
-     * @param string $table
-     * @param mixed $model selected model
+     *
+     * @param  Memory           $meta    column info
+     * @param  array            $columns
+     * @param  string           $table
+     * @param  mixed            $model   selected model
      * @throws ExceptionFactory
      * @return boolean
      */
     protected function validColumns(Memory $meta, array $columns, $table, $model)
     {
-        if (empty($not = array_diff($columns, $meta->getAttributes($model))) === false)
+        if (empty($not = array_diff($columns, $meta->getAttributes($model))) === false) {
             throw new ExceptionFactory('Column', ['COLUMN_DOES_NOT_EXISTS', $not, $table, $meta->getAttributes($model)]);
+        }
 
         return true;
 

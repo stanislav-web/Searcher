@@ -1,14 +1,17 @@
 <?php
 namespace Test\Searcher;
 
+use Searcher\Searcher;
+use Searcher\Searcher\Factories\ExceptionFactory;
 use \Searcher\Validator;
 
 /**
  * Class ValidatorTest
+ *
  * @package Test\Searcher
- * @since PHP >=5.5.12
+ * @since   PHP >=5.5.12
  * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ * @author  Stanislav WEB | Lugansk <stanisov@gmail.com>
  *
  */
 class ValidatorTest extends \PHPUnit_Framework_TestCase
@@ -16,18 +19,21 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Validator class object
+     *
      * @var Validator
      */
     private $validator;
 
     /**
      * ReflectionClass
+     *
      * @var \ReflectionClass
      */
     private $reflection;
 
     /**
      * Initialize testing object
+     *
      * @uses Validator
      * @uses \ReflectionClass
      */
@@ -39,6 +45,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Kill testing object
+     *
      * @uses Validator
      */
     public function tearDown()
@@ -49,12 +56,12 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     /**
      * Call protected/private method of a class.
      *
-     * @param object &$object Instantiated object that we will run method on.
+     * @param object &$object    Instantiated object that we will run method on.
      * @param string $methodName Method name to call
-     * @param array $parameters Array of parameters to pass into method.
+     * @param array  $parameters Array of parameters to pass into method.
      * @example <code>
-     *              $this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
-     *          </code>
+     *                           $this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
+     *                           </code>
      * @return mixed Method return.
      */
     protected function invokeMethod(&$object, $methodName, array $parameters = array())
@@ -66,6 +73,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Setup accessible any private (protected) property
+     *
      * @param $name
      * @return \ReflectionMethod
      */
@@ -165,6 +173,131 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         // check return of setMax
         $this->assertSame($this->validator, $this->invokeMethod($this->validator, 'setMax', [128]),
             "[-] setMax method should return object Validator"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isNotNull
+     */
+    public function testIsNotNull()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isNotNull'),
+            '[-] Class Validator must have method isNotNull()'
+        );
+
+        $isNotNull = $this->invokeMethod($this->validator, 'isNotNull', ['data']);
+
+        $this->assertNotNull($isNotNull,
+            "[-] isNotNull method should return non empty data"
+        );
+
+        $this->assertTrue($isNotNull,
+            "[-] isNotNull method should return true if not has an exception"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isArray
+     */
+    public function testIsArray()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isArray'),
+            '[-] Class Validator must have method isArray()'
+        );
+
+        $isArray = $this->invokeMethod($this->validator, 'isArray', ['data' => ['test']]);
+
+        $this->assertTrue($isArray,
+            "[-] isArray method should return true if not has an exception"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isNotEmpty
+     */
+    public function testIsNotEmpty()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isNotEmpty'),
+            '[-] Class Validator must have method isNotEmpty()'
+        );
+
+        $isNotEmpty = $this->invokeMethod($this->validator, 'isNotEmpty', ['data' => ['']]);
+
+        $this->assertTrue($isNotEmpty,
+            "[-] isNotEmpty method should return true if not has an exception"
+        );
+    }
+
+    /**
+     * @covers Searcher\Validator::isAcceptLength
+     */
+    public function testIsAcceptLength()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isAcceptLength'),
+            '[-] Class Validator must have method isAcceptLength()'
+        );
+
+        // get default property value
+        $reflectionProperty = $this->reflection->getProperty('min');
+        $reflectionProperty->setAccessible(true);
+        $min = $reflectionProperty->getValue($this->validator);
+
+        // generate min string length
+        $string = substr(bin2hex(sha1(microtime())), 0, $min);
+
+        // set minimum string length
+        (new Searcher())->setMin(mb_strlen($string));
+
+        // call check isAcceptLength
+        $isAcceptLength = $this->invokeMethod($this->validator, 'isAcceptLength', [$string]);
+
+        // check size of min
+        $this->assertEquals($min, mb_strlen($string),
+            "[-] isAcceptLength compare property `min` must be equal to " . mb_strlen($string));
+
+        // check return
+        $this->assertTrue($isAcceptLength,
+            "[-] isAcceptLength method should return true while gretter than `min` property"
+        );
+
+        // get default property value
+        $reflectionProperty = $this->reflection->getProperty('max');
+        $reflectionProperty->setAccessible(true);
+        $max = $reflectionProperty->getValue($this->validator);
+
+        // generate max string length
+        $string = substr(base64_encode(uniqid(sha1(microtime()), true) . uniqid(sha1(microtime()), true)), 0, $max);
+
+        // set maximum string length
+        (new Searcher())->setMax(mb_strlen($string));
+
+        // call check isAcceptLength
+        $isAcceptLength = $this->invokeMethod($this->validator, 'isAcceptLength', [$string]);
+
+        // check size of min
+        $this->assertEquals($max, mb_strlen($string),
+            "[-] isAcceptLength compare property `max` must be equal to " . mb_strlen($string));
+
+        // check return
+        $this->assertTrue($isAcceptLength,
+            "[-] isAcceptLength method should return true while less than `max` property"
+        );
+
+
+    }
+
+    /**
+     * @covers Searcher\Validator::isModel
+     */
+    public function testIsModel()
+    {
+        $this->assertTrue(
+            method_exists($this->validator, 'isModel'),
+            '[-] Class Validator must have method isModel()'
         );
     }
 }

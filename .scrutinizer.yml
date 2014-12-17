@@ -5,9 +5,11 @@ build:
             version: "5.5.12" # Common versions: 5.4.28, 5.5.12, or hhvm
             ini:
                 'date.timezone': 'UTC'
+        #elasticsearch: false
 
     dependencies:
         before:
+            #- mysql -uroot -e 'CREATE DATABASE phalcon'
             - composer install --prefer-dist -o
             - git clone -q --depth=1 https://github.com/phalcon/cphalcon.git -b master
             - cd cphalcon/ext; export CFLAGS="-g3 -O1 -fno-delete-null-pointer-checks -Wall"; phpize && ./configure --enable-phalcon && make -j4 && sudo make install && sed -i '$ a \\n[Phalcon]\nextension=phalcon.so\n'  /home/scrutinizer/.phpenv/versions/5.5.12/etc/php.ini
@@ -15,7 +17,7 @@ build:
 
 filter:
     paths: [src/*]
-    excluded_paths: [build/*, phpunit/*, vendor/*, api/]
+    excluded_paths: [build/*, phpunit/*, vendor/*]
 
 tools:
     php_sim: true
@@ -33,7 +35,7 @@ tools:
     php_analyzer:
         enabled: true
         filter:
-            excluded_paths: [build/*, phpunit/*, vendor/*, api/*]
+            excluded_paths: [build/*, phpunit/*, vendor/*]
         extensions:
             - php
 
@@ -46,7 +48,7 @@ tools:
             - php
         command: phpcs
         filter:
-           excluded_paths: [build/*, phpunit/*, vendor/*, api/]
+           excluded_paths: [build/*, phpunit/*, vendor/*]
 
     php_cs_fixer:
         enabled: true
@@ -117,3 +119,55 @@ checks:
         avoid_unnecessary_concatenation: true
         avoid_corrupting_byteorder_marks: true
         avoid_conflicting_incrementers: true
+        unreachable_code: true
+        spacing_of_function_arguments: true
+        spacing_around_non_conditional_operators: true
+        spacing_around_conditional_operators: true
+        space_after_cast: true
+        single_namespace_per_use: true
+        simplify_boolean_return: true
+        side_effects_or_types: true
+        require_scope_for_properties: true
+        require_scope_for_methods: true
+        require_braces_around_control_structures: true
+        remove_trailing_whitespace: true
+        remove_php_closing_tag: true
+        remove_extra_empty_lines: true
+        psr2_control_structure_declaration: true
+        psr2_class_declaration: true
+        properties_in_camelcaps: true
+        prefer_unix_line_ending: true
+        no_trait_type_hints: true
+        no_underscore_prefix_in_methods: true
+        no_underscore_prefix_in_properties: true
+        no_short_variable_names:
+            minimum: '1'
+        no_short_open_tag: true
+        no_short_method_names:
+            minimum: '3'
+        no_mixed_inline_html: true
+        no_long_variable_names:
+            maximum: '20'
+        no_goto: true
+        no_global_keyword: true
+        no_exit: true
+        no_empty_statements: true
+        no_debug_code: true
+        no_commented_out_code: true
+        line_length:
+            max_length: '200'
+        fix_php_opening_tag: true
+        fix_linefeed: true
+        fix_line_ending: true
+        fix_identation_4spaces: true
+        fix_doc_comments: true
+        classes_in_camel_caps: true
+        avoid_useless_overridden_methods: true
+        avoid_todo_comments: true
+        avoid_tab_indentation: true
+        avoid_superglobals: true
+        avoid_perl_style_comments: true
+        avoid_entity_manager_injection: true
+        prefer_sapi_constant: true
+        more_specific_types_in_doc_comments: true
+        avoid_usage_of_logical_operators: true

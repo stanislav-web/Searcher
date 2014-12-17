@@ -2,7 +2,7 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/stanislav-web/Searcher/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/stanislav-web/Searcher/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/stanislav-web/Searcher/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/stanislav-web/Searcher/?branch=master) [![Build Status](https://travis-ci.org/stanislav-web/Searcher.svg?branch=master)](https://travis-ci.org/stanislav-web/Searcher) [![Total Downloads](https://poser.pugx.org/stanislav-web/phalcon-searcher/downloads.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher) [![Latest Unstable Version](https://poser.pugx.org/stanislav-web/phalcon-searcher/v/unstable.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher)
 
-Extension is used to group search for project models Currently under TTD
+Extension is used to group search for project models. _(Currently under TTD)_
 
 ## Description
 This is the search service is designed to search multiple SQL tables. Convenient to use autocomplete, search documents, search the whole site.
@@ -25,6 +25,7 @@ This is the search service is designed to search multiple SQL tables. Convenient
 ## System requirements
 - PHP 5.5.x >
 - MySQL
+- Phalcon extension 1.3.x
 
 ## Install
 First update your dependencies through composer. Add to your composer.json:
@@ -195,9 +196,8 @@ Read logs from phpunit/log
 
 ##[Issues](https://github.com/stanislav-web/Searcher/issues "Issues")
 
-## Screen
-```
-Unavailable
-```
+## Screen (For what I use it?)
+![Alt text](http://dl1.joxi.net/drive/0004/0211/323795/141217/a87dd707f6.jpg "Searcher")
+
 [![Project Status](http://stillmaintained.com/stanislav-web/Searcher.svg)](http://stillmaintained.com/stanislav-web/Searcher) [![MIT License](https://poser.pugx.org/stanislav-web/phalcon-searcher/license.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/stanislav-web/Searcher?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 

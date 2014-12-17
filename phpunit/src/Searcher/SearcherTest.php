@@ -2,13 +2,15 @@
 namespace Test\Searcher;
 
 use \Searcher\Searcher;
+use Searcher\Validator;
 
 /**
  * Class SearcherTest
+ *
  * @package Test\Searcher
- * @since PHP >=5.5.12
+ * @since   PHP >=5.5.12
  * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ * @author  Stanislav WEB | Lugansk <stanisov@gmail.com>
  *
  */
 class SearcherTest extends \PHPUnit_Framework_TestCase
@@ -16,18 +18,21 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Searcher class object
+     *
      * @var Searcher
      */
     private $searcher;
 
     /**
      * ReflectionClass
+     *
      * @var \ReflectionClass
      */
     private $reflection;
 
     /**
      * Initialize testing object
+     *
      * @uses Searcher
      * @uses \ReflectionClass
      */
@@ -40,6 +45,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Kill testing object
+     *
      * @uses Searcher
      */
     public function tearDown()
@@ -50,12 +56,12 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
     /**
      * Call protected/private method of a class.
      *
-     * @param object &$object Instantiated object that we will run method on.
+     * @param object &$object    Instantiated object that we will run method on.
      * @param string $methodName Method name to call
-     * @param array $parameters Array of parameters to pass into method.
+     * @param array  $parameters Array of parameters to pass into method.
      * @example <code>
-     *              $this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
-     *          </code>
+     *                           $this->invokeMethod($user, 'cryptPassword', array('passwordToCrypt'));
+     *                           </code>
      * @return mixed Method return.
      */
     protected function invokeMethod(&$object, $methodName, array $parameters = array())
@@ -67,6 +73,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Setup accessible any private (protected) property
+     *
      * @param $name
      * @return \ReflectionMethod
      */
@@ -97,7 +104,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers Searcher\Searcher::__construct()
-     * @group Searcher properties
+     * @group  Searcher properties
      */
     public function testConstructor()
     {
@@ -188,12 +195,33 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
      */
     public function testThreshold()
     {
-        $treshold = $this->searcher->setThreshold([]);
-
+        $treshold = $this->searcher->setThreshold(123);
 
         // check instance method
         $this->assertInstanceOf($this->reflection->getName(), $treshold,
             "[-] setThreshold method must be as instance of Searcher\Searcher"
+        );
+    }
+
+    /**
+     * @covers Searcher\Searcher::getFields
+     */
+    public function testGetFields()
+    {
+        // check method getFields
+        $this->assertTrue(
+            method_exists($this->searcher, 'getFields'),
+            '[-] Class Searcher must have method getFields()'
+        );
+
+        $fields = (new Validator())->fields;
+
+        // check variable type instance
+        $this->assertContainsOnly('array', [$fields],
+            "[-] The `getFields` will return array from Validator"
+        );
+        $this->assertEmpty($fields,
+            "[-] The `getFields` will return an empty array while init"
         );
     }
 }

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\Searcher\Builder</OriginalElement>
+  <nodes>
+    <node x="155.5" y="0.0">\Searcher\Searcher\Aware\HydratorInterface</node>
+    <node x="189.00000000000003" y="1172.0">\Searcher\Searcher\Exceptions\Model</node>
+    <node x="385.0" y="1172.0">\Searcher\Searcher\Exceptions\DataType</node>
+    <node x="596.0" y="1172.0">\Searcher\Searcher\Exceptions\Column</node>
+    <node x="817.0" y="1048.0">\Searcher\Searcher\Factories\ExceptionFactory</node>
+    <node x="0.0" y="554.0">\Searcher\Validator</node>
+    <node x="499.70833333333337" y="0.5">\Phalcon\DI\InjectionAwareInterface</node>
+    <node x="254.75000000000003" y="1048.0">\Searcher\Searcher\Aware\ExceptionInterface</node>
+    <node x="340.0" y="224.0">\Searcher\Searcher\Hydrators\JsonHydrator</node>
+    <node x="566.0" y="125.0">\Searcher\Builder</node>
+    <node x="170.00000000000003" y="268.0">\Searcher\Searcher\Hydrators\ArrayHydrator</node>
+    <node x="0.0" y="268.0">\Searcher\Searcher\Hydrators\SerializeHydrator</node>
+    <node x="0.0" y="1183.0">\Searcher\Searcher\Exceptions\InvalidLength</node>
+    <node x="503.0" y="554.0">\Searcher\Searcher</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\Searcher\Searcher\Hydrators\JsonHydrator" target="\Searcher\Searcher\Aware\HydratorInterface">
+      <point x="-51.5" y="-93.0" />
+      <point x="391.5" y="100.0" />
+      <point x="304.66666666666663" y="100.0" />
+      <point x="59.66666666666666" y="37.5" />
+    </edge>
+    <edge source="\Searcher\Searcher\Exceptions\Column" target="\Searcher\Searcher\Aware\ExceptionInterface">
+      <point x="0.0" y="-59.5" />
+      <point x="684.0" y="1142.0" />
+      <point x="471.75" y="1142.0" />
+      <point x="93.0" y="37.0" />
+    </edge>
+    <edge source="\Searcher\Searcher\Hydrators\JsonHydrator" target="\Phalcon\DI\InjectionAwareInterface">
+      <point x="51.5" y="-93.0" />
+      <point x="494.5" y="100.0" />
+      <point x="564.2083333333334" y="100.0" />
+      <point x="-64.5" y="37.0" />
+    </edge>
+    <edge source="\Searcher\Searcher\Hydrators\ArrayHydrator" target="\Searcher\Searcher\Aware\HydratorInterface">
+      <point x="-2.8421709430404007E-14" y="-49.0" />
+      <point x="0.0" y="37.5" />
+    </edge>
+    <edge source="\Searcher\Builder" target="\Phalcon\DI\InjectionAwareInterface">
+      <point x="0.0" y="-192.0" />
+      <point x="759.0" y="100.0" />
+      <point x="693.2083333333334" y="100.0" />
+      <point x="64.5" y="37.0" />
+    </edge>
+    <edge source="\Searcher\Searcher\Exceptions\DataType" target="\Searcher\Searcher\Aware\ExceptionInterface">
+      <point x="0.0" y="-59.5" />
+      <point x="480.5" y="1152.0" />
+      <point x="409.75" y="1152.0" />
+      <point x="31.0" y="37.0" />
+    </edge>
+    <edge source="\Searcher\Searcher\Hydrators\SerializeHydrator" target="\Searcher\Searcher\Aware\HydratorInterface">
+      <point x="0.0" y="-49.0" />
+      <point x="75.0" y="100.0" />
+      <point x="185.33333333333334" y="100.0" />
+      <point x="-59.66666666666666" y="37.5" />
+    </edge>
+    <edge source="\Searcher\Searcher\Exceptions\Model" target="\Searcher\Searcher\Aware\ExceptionInterface">
+      <point x="0.0" y="-59.5" />
+      <point x="277.0" y="1152.0" />
+      <point x="347.75" y="1152.0" />
+      <point x="-31.0" y="37.0" />
+    </edge>
+    <edge source="\Searcher\Searcher\Exceptions\InvalidLength" target="\Searcher\Searcher\Aware\ExceptionInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="84.5" y="1142.0" />
+      <point x="285.75" y="1142.0" />
+      <point x="-93.0" y="37.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6292906178489702" x="516.7763636363636" y="385.5" />
+  <SelectedNodes>
+    <node>\Searcher\Builder</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constants</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

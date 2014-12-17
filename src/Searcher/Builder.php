@@ -8,34 +8,39 @@ use \Phalcon\DI as Di;
 
 /**
  * Query builder class
- * @package Searcher
- * @since PHP >=5.5.12
- * @version 1.0
- * @author Stanislav WEB | Lugansk <stanisov@gmail.com>
+ *
+ * @package   Searcher
+ * @since     PHP >=5.5.12
+ * @version   1.0
+ * @author    Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright Stanislav WEB
  */
 class Builder implements \Phalcon\DI\InjectionAwareInterface
 {
     /**
      * Dependency Injector
+     *
      * @var Di|\Phalcon\DiInterface $di
      */
     protected $di;
 
     /**
      * Query builder
+     *
      * @var \Phalcon\Mvc\Model\Query\Builder
      */
     private $builder;
 
     /**
      * Client for preparing data
+     *
      * @var Searcher
      */
     private $searcher;
 
     /**
      * Valid searcher data
+     *
      * @var array
      */
     private $data = [];
@@ -43,7 +48,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
     /**
      * Initialize internal params
      *
-     * @param Searcher $searcher
+     * @param  Searcher $searcher
      * @uses \Phalcon\Mvc\Model\Query\Builder
      * @return null
      */
@@ -55,6 +60,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
     /**
      * Set DI container
+     *
      * @param \Phalcon\DiInterface $di
      */
     public function setDi($di)
@@ -64,6 +70,7 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
     /**
      * Get DI container
+     *
      * @return Di|\Phalcon\DiInterface
      */
     public function getDi()
@@ -84,13 +91,14 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
             $this->builder->addFrom($model, $alias);
 
         }
+
         return null;
     }
 
     /**
      * Setup orders positions to Builder
      *
-     * @param boolean $asArray order from an array
+     * @param  boolean $asArray order from an array
      * @return null
      */
     public function setOrder($asArray = false)
@@ -99,16 +107,20 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
         $order = [];
         foreach ($this->data['order'] as $alias => $params) {
 
-            if (true === $asArray)
-                $this->builder->orderBy(array_flip($order));
+            if (true === $asArray) {
+                $order = array_flip($order);
+            }
             else {
                 if (empty($params) === false) {
-                    foreach ($params as $field => $sort)
+                    foreach ($params as $field => $sort) {
                         $order[] = $alias . '.' . $field . ' ' . $sort;
+                    }
                 }
             }
         }
+
         $this->builder->orderBy($order);
+
         return null;
     }
 
@@ -129,11 +141,13 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
             if (empty($params) === false) {
 
-                foreach ($params as $field)
+                foreach ($params as $field) {
                     $group[] = $table . '.' . $field;
+                }
             }
         }
         $this->builder->groupBy($group);
+
         return null;
     }
 
@@ -144,18 +158,21 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
      */
     public function setThreshold()
     {
-        if (is_array($this->data['threshold']) === false)
+        if (is_array($this->data['threshold']) === false) {
             $this->data['threshold'] = ['limit' => $this->data['threshold']];
+        }
         else {
-            if (count($this->data['threshold']) > 1)
+            if (count($this->data['threshold']) > 1) {
                 $this->data['threshold'] = [
                     'limit' => $this->data['threshold'][1],
                     'offset' => $this->data['threshold'][0],
                 ];
-            else
+            }
+            else {
                 $this->data['threshold'] = [
                     'limit' => $this->data['threshold'][0]
                 ];
+            }
         }
 
         $this->builder->limit(implode(',', array_reverse($this->data['threshold'])));
@@ -180,38 +197,47 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
                 ++$index;
             }
         }
+
         return null;
     }
 
     /**
      * Where condition customizer
      *
-     * @param string $table
-     * @param string $field
-     * @param integer $type type of column
-     * @param integer $index counter
+     * @param  string  $table
+     * @param  string  $field
+     * @param  integer $type  type of column
+     * @param  integer $index counter
      * @return null
      */
     public function expressionRun($table, $field, $type, $index)
     {
 
-        if ($type === Column::TYPE_TEXT) // match search
-        {
+        if ($type === Column::TYPE_TEXT) { // match search
 
             // unset mask
+            $query = "MATCH(" . $table . "." . $field . ") AGAINST (:query:)";
 
-            if ($index > 0)
-                $this->builder->orWhere("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->ftFilter());
-            else
-                $this->builder->where("MATCH(" . $table . "." . $field . ") AGAINST (:query:)", $this->ftFilter());
+            if ($index > 0) {
+                $this->builder->orWhere($query, $this->ftFilter());
+            }
+            else {
+                $this->builder->where($query, $this->ftFilter());
+            }
 
         } else {
+
             // simple where search
-            if ($index > 0)
-                $this->builder->orWhere($table . "." . $field . " LIKE :query:", $this->searcher->query);
-            else
-                $this->builder->where($table . "." . $field . " LIKE :query:", $this->searcher->query);
+            $query = $table . "." . $field . " LIKE :query:";
+
+            if ($index > 0) {
+                $this->builder->orWhere($query, $this->searcher->query);
+            }
+            else {
+                $this->builder->where($query, $this->searcher->query);
+            }
         }
+
         return null;
     }
 
@@ -230,8 +256,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
             foreach ($this->data as $key => $values) {
                 // start build interface
-                if (empty($values) === false)
+                if (empty($values) === false) {
                     $this->{'set' . ucfirst($key)}();
+                }
             }
 
             $res = $this->builder->getQuery()->execute();
@@ -241,8 +268,10 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
                     $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
                     $res = $this->setResult(new $call($res), $callback);
                 }
+
                 return $res;
             }
+
             return null;
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
@@ -251,8 +280,9 @@ class Builder implements \Phalcon\DI\InjectionAwareInterface
 
     /**
      * Result set
-     * @param \Searcher\Searcher\Aware\HydratorInterface $hydrator
-     * @param callback|null $callback function to data
+     *
+     * @param  \Searcher\Searcher\Aware\HydratorInterface $hydrator
+     * @param  callback|null                              $callback function to data
      * @return array
      */
     private function setResult(HydratorInterface $hydrator, $callback = null)
