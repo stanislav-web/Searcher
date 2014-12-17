@@ -190,31 +190,20 @@ class Validator
     }
 
     /**
-     * Verify by min length
+     * Verify by length
      *
      * @param  string           $value
      * @throws ExceptionFactory
      * @return boolean
      */
-    protected function isNotFew($value)
+    protected function isAcceptLength($value)
     {
-        if (strlen(utf8_decode($value)) < $this->min) {
+        $value = strlen(utf8_decode($value));
+
+        if ($value < $this->min) {
             throw new ExceptionFactory('InvalidLength', [$value, 'greater', $this->min]);
         }
-
-        return true;
-    }
-
-    /**
-     * Verify by max length
-     *
-     * @param  string           $value
-     * @throws ExceptionFactory
-     * @return boolean
-     */
-    protected function isNotMuch($value)
-    {
-        if (strlen(utf8_decode($value)) > $this->max) {
+        else if ($value > $this->max) {
             throw new ExceptionFactory('InvalidLength', [$value, 'less', $this->max]);
         }
 

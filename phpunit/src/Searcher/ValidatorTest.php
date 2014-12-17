@@ -232,13 +232,13 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Searcher\Validator::isNotFew
+     * @covers Searcher\Validator::isAcceptLength
      */
-    public function testIsNotFew()
+    public function testIsAcceptLength()
     {
         $this->assertTrue(
-            method_exists($this->validator, 'isNotFew'),
-            '[-] Class Validator must have method isNotFew()'
+            method_exists($this->validator, 'isAcceptLength'),
+            '[-] Class Validator must have method isAcceptLength()'
         );
 
         // get default property value
@@ -252,28 +252,16 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         // set minimum string length
         (new Searcher())->setMin(mb_strlen($string));
 
-        // call check isNotFew
-        $isNotFew = $this->invokeMethod($this->validator, 'isNotFew', [$string]);
+        // call check isAcceptLength
+        $isAcceptLength = $this->invokeMethod($this->validator, 'isAcceptLength', [$string]);
 
         // check size of min
         $this->assertEquals($min, mb_strlen($string),
-            "[-] isNotFew compare property `min` must be equal to " . mb_strlen($string));
+            "[-] isAcceptLength compare property `min` must be equal to " . mb_strlen($string));
 
         // check return
-        $this->assertTrue($isNotFew,
-            "[-] isNotFew method should return true while gretter than `min` property"
-        );
-    }
-
-    /**
-     * @covers Searcher\Validator::isNotMuch
-     */
-    public function testIsNotMuch()
-    {
-
-        $this->assertTrue(
-            method_exists($this->validator, 'isNotMuch'),
-            '[-] Class Validator must have method isNotMuch()'
+        $this->assertTrue($isAcceptLength,
+            "[-] isAcceptLength method should return true while gretter than `min` property"
         );
 
         // get default property value
@@ -287,17 +275,19 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         // set maximum string length
         (new Searcher())->setMax(mb_strlen($string));
 
-        // call check isNotFew
-        $isNotFew = $this->invokeMethod($this->validator, 'isNotMuch', [$string]);
+        // call check isAcceptLength
+        $isAcceptLength = $this->invokeMethod($this->validator, 'isAcceptLength', [$string]);
 
         // check size of min
         $this->assertEquals($max, mb_strlen($string),
-            "[-] isNotFew compare property `max` must be equal to " . mb_strlen($string));
+            "[-] isAcceptLength compare property `max` must be equal to " . mb_strlen($string));
 
         // check return
-        $this->assertTrue($isNotFew,
-            "[-] isNotFew method should return true while less than `max` property"
+        $this->assertTrue($isAcceptLength,
+            "[-] isAcceptLength method should return true while less than `max` property"
         );
+
+
     }
 
     /**

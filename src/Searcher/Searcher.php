@@ -208,7 +208,7 @@ class Searcher
     public function setQuery($query = null)
     {
         // need to return << true
-        $this->validator->verify($query, ['isNotNull', 'isNotFew', 'isNotMuch']);
+        $this->validator->verify($query, ['isNotNull', 'isAcceptLength']);
 
         if (false === $this->exact) {
             $this->query = ['query' => '%' . $query . '%'];
