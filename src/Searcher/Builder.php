@@ -216,7 +216,8 @@ class Builder
 
     /**
      * Build query chain
-     *
+     * @param null $hydratorset
+     * @param null $callback
      * @throws ExceptionFactory {$error}
      * @return Builder|null
      */
@@ -235,16 +236,10 @@ class Builder
             }
 
             // execute query
-            $res = $this->builder->getQuery()->execute();
-            $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
-
-            if ($res->valid() === true && class_exists($call) === true) {
-
-                $res = (new $call($res))->extract($callback);
-
-            }
+            $res = $this->setResult($hydratorset, $callback);
 
             return $res;
+
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
         }
@@ -260,5 +255,25 @@ class Builder
         return array_map(function ($v) {
             return trim($v, '%');
         }, $this->searcher->query);
+    }
+
+    /**
+     * Setup output result
+     *
+     * @param null $hydratorset
+     * @param null $callback
+     * @return Builder|null
+     */
+    private function setResult($hydratorset = null, $callback = null) {
+
+        $res = $this->builder->getQuery()->execute();
+        $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
+
+        if ($res->valid() === true && class_exists($call) === true) {
+
+            $res = (new $call($res))->extract($callback);
+
+        }
+        return $res;
     }
 }
