@@ -154,7 +154,7 @@
 <br>
 				<b>Used by:</b>
 				<code><code><a href="class-Searcher.Searcher.html#___construct">Searcher\Searcher::__construct()</a></code></code> <br>
-		<b>Located at</b> <a href="source-class-Searcher.Validator.html#8-335" title="Go to source code">Validator.php</a><br>
+		<b>Located at</b> <a href="source-class-Searcher.Validator.html#8-332" title="Go to source code">Validator.php</a><br>
 	</div>
 
 
@@ -173,7 +173,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_verify">#</a>
-		<code><a href="source-class-Searcher.Validator.html#67-95" title="Go to source code">verify</a>( <span>mixed <var>$data</var></span>, <span>array <var>$callbacks</var> = []</span>, <span>string <var>$cast</var> = <span class="php-quote">''</span></span> )</code>
+		<code><a href="source-class-Searcher.Validator.html#74-105" title="Go to source code">verify</a>( <span>mixed <var>$data</var></span>, <span>array <var>$callbacks</var> = []</span>, <span>string <var>$cast</var> = <span class="php-quote">''</span></span> )</code>
 
 		<div class="description short">
 			<p>Verify transferred according to the rules</p>
@@ -209,7 +209,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="setMin" id="_setMin">
+	<tr data-order="setLength" id="_setLength">
 
 		<td class="attributes"><code>
 			 public 
@@ -220,64 +220,22 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_setMin">#</a>
-		<code><a href="source-class-Searcher.Validator.html#97-110" title="Go to source code">setMin</a>( <span>integer <var>$min</var></span> )</code>
+		<a class="anchor" href="#_setLength">#</a>
+		<code><a href="source-class-Searcher.Validator.html#107-120" title="Go to source code">setLength</a>( <span>array <var>$condition</var></span> )</code>
 
 		<div class="description short">
-			<p>Set minimum value for the search</p>
+			<p>Set value length for the search min and max</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Set minimum value for the search</p>
+			<p>Set value length for the search min and max</p>
 
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$min</var></dt>
-					<dd>value
-</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><code><a href="class-Searcher.Validator.html">Searcher\Validator</a></code></code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setMax" id="_setMax">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-Searcher.Validator.html">Searcher\Validator</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setMax">#</a>
-		<code><a href="source-class-Searcher.Validator.html#112-125" title="Go to source code">setMax</a>( <span>integer <var>$max</var></span> )</code>
-
-		<div class="description short">
-			<p>Set maximum value for the search</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Set maximum value for the search</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$max</var></dt>
+					<dt><var>$condition</var></dt>
 					<dd>value
 </dd>
 				</dl></div>
@@ -305,7 +263,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isNotNull">#</a>
-		<code><a href="source-class-Searcher.Validator.html#127-138" title="Go to source code">isNotNull</a>( <span>string <var>$value</var></span> )</code>
+		<code><a href="source-class-Searcher.Validator.html#122-135" title="Go to source code">isNotNull</a>( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Verify by not null</p>
@@ -347,7 +305,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isArray">#</a>
-		<code><a href="source-class-Searcher.Validator.html#140-152" title="Go to source code">isArray</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Searcher.Validator.html#137-151" title="Go to source code">isArray</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Verify by array type</p>
@@ -393,7 +351,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isNotEmpty">#</a>
-		<code><a href="source-class-Searcher.Validator.html#154-167" title="Go to source code">isNotEmpty</a>( <span>mixed <var>$value</var></span> )</code>
+		<code><a href="source-class-Searcher.Validator.html#153-169" title="Go to source code">isNotEmpty</a>( <span>mixed <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Verify by not empty value</p>
@@ -427,7 +385,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="isNotFew" id="_isNotFew">
+	<tr data-order="isAcceptLength" id="_isAcceptLength">
 
 		<td class="attributes"><code>
 			 protected 
@@ -438,62 +396,16 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_isNotFew">#</a>
-		<code><a href="source-class-Searcher.Validator.html#169-182" title="Go to source code">isNotFew</a>( <span>string <var>$value</var></span> )</code>
+		<a class="anchor" href="#_isAcceptLength">#</a>
+		<code><a href="source-class-Searcher.Validator.html#171-190" title="Go to source code">isAcceptLength</a>( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
-			<p>Verify by min length</p>
+			<p>Verify by length</p>
 
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Verify by min length</p>
-
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$value</var></dt>
-					<dd>
-</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code>boolean</code>
-				</div>
-
-				<h4>Throws</h4>
-				<div class="list">
-					<code><a href="class-Searcher.Searcher.Factories.ExceptionFactory.html">Searcher\Searcher\Factories\ExceptionFactory</a></code>
-				</div>
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isNotMuch" id="_isNotMuch">
-
-		<td class="attributes"><code>
-			 protected 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isNotMuch">#</a>
-		<code><a href="source-class-Searcher.Validator.html#184-197" title="Go to source code">isNotMuch</a>( <span>string <var>$value</var></span> )</code>
-
-		<div class="description short">
-			<p>Verify by max length</p>
-
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Verify by max length</p>
+			<p>Verify by length</p>
 
 
 
@@ -531,7 +443,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isModel">#</a>
-		<code><a href="source-class-Searcher.Validator.html#199-212" title="Go to source code">isModel</a>( <span>string <var>$value</var></span> )</code>
+		<code><a href="source-class-Searcher.Validator.html#192-207" title="Go to source code">isModel</a>( <span>string <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Check if is model</p>
@@ -577,7 +489,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isExists">#</a>
-		<code><a href="source-class-Searcher.Validator.html#214-259" title="Go to source code">isExists</a>( <span>array <var>$value</var></span> )</code>
+		<code><a href="source-class-Searcher.Validator.html#209-253" title="Go to source code">isExists</a>( <span>array <var>$value</var></span> )</code>
 
 		<div class="description short">
 			<p>Check if field exist in table</p>
@@ -623,7 +535,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_isOrdered">#</a>
-		<code><a href="source-class-Searcher.Validator.html#261-300" title="Go to source code">isOrdered</a>( <span>array <var>$ordered</var></span> )</code>
+		<code><a href="source-class-Searcher.Validator.html#255-295" title="Go to source code">isOrdered</a>( <span>array <var>$ordered</var></span> )</code>
 
 		<div class="description short">
 			<p>Check ordered fields</p>
@@ -669,7 +581,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_validTypes">#</a>
-		<code><a href="source-class-Searcher.Validator.html#302-316" title="Go to source code">validTypes</a>( <span><code><a href="class-Phalcon.Db.Column.html">Phalcon\Db\Column</a></code> <var>$column</var></span> )</code>
+		<code><a href="source-class-Searcher.Validator.html#297-311" title="Go to source code">validTypes</a>( <span><code><a href="class-Phalcon.Db.Column.html">Phalcon\Db\Column</a></code> <var>$column</var></span> )</code>
 
 		<div class="description short">
 			<p>Check if field type support in table</p>
@@ -681,12 +593,6 @@
 
 
 
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$column</var></dt>
-					<dd>$value
-</dd>
-				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
@@ -715,7 +621,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_validColumns">#</a>
-		<code><a href="source-class-Searcher.Validator.html#318-334" title="Go to source code">validColumns</a>( <span>Searcher\Memory <var>$meta</var></span>, <span>array <var>$columns</var></span>, <span>string <var>$table</var></span>, <span>mixed <var>$model</var></span> )</code>
+		<code><a href="source-class-Searcher.Validator.html#313-331" title="Go to source code">validColumns</a>( <span>Searcher\Memory <var>$meta</var></span>, <span>array <var>$columns</var></span>, <span>string <var>$table</var></span>, <span>mixed <var>$model</var></span> )</code>
 
 		<div class="description short">
 			<p>Validate table columns</p>
@@ -780,7 +686,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Searcher.Validator.html#31-42" title="Go to source code"><var>$columns</var></a>
+				<a href="source-class-Searcher.Validator.html#34-46" title="Go to source code"><var>$columns</var></a>
 
 			<div class="description short">
 				<p>Available columns types</p>
@@ -814,7 +720,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Searcher.Validator.html#44-53" title="Go to source code"><var>$sort</var></a>
+				<a href="source-class-Searcher.Validator.html#48-58" title="Go to source code"><var>$sort</var></a>
 
 			<div class="description short">
 				<p>Available sort types</p>
@@ -846,7 +752,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Searcher.Validator.html#61-65" title="Go to source code"><var>$fields</var></a>
+				<a href="source-class-Searcher.Validator.html#67-72" title="Go to source code"><var>$fields</var></a>
 
 			<div class="description short">
 				<p>Verified tables &amp; columns</p>

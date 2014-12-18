@@ -152,7 +152,7 @@
 				<b>Since:</b>
 				PHP >=5.5.12
 <br>
-		<b>Located at</b> <a href="source-class-Searcher.Searcher.html#7-241" title="Go to source code">Searcher.php</a><br>
+		<b>Located at</b> <a href="source-class-Searcher.Searcher.html#6-259" title="Go to source code">Searcher.php</a><br>
 	</div>
 
 
@@ -171,7 +171,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#36-44" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-Searcher.Searcher.html#39-48" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			<p>Initialize class</p>
@@ -211,7 +211,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setMin">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#46-56" title="Go to source code">setMin</a>( <span>integer <var>$min</var></span> )</code>
+		<code><a href="source-class-Searcher.Searcher.html#50-63" title="Go to source code">setMin</a>( <span>integer <var>$min</var></span> )</code>
 
 		<div class="description short">
 			<p>Set minimum value for the search</p>
@@ -253,7 +253,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setMax">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#58-68" title="Go to source code">setMax</a>( <span>integer <var>$max</var></span> )</code>
+		<code><a href="source-class-Searcher.Searcher.html#65-77" title="Go to source code">setMax</a>( <span>integer <var>$max</var></span> )</code>
 
 		<div class="description short">
 			<p>Set maximum value for the search</p>
@@ -295,7 +295,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setExact">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#70-83" title="Go to source code">setExact</a>( <span>boolean <var>$flag</var></span> )</code>
+		<code><a href="source-class-Searcher.Searcher.html#79-93" title="Go to source code">setExact</a>( <span>boolean <var>$flag</var></span> )</code>
 
 		<div class="description short">
 			<p>Use Strict mode ?</p>
@@ -342,7 +342,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setFields">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#85-113" title="Go to source code">setFields</a>( <span>array <var>$models</var></span> )</code>
+		<code><a href="source-class-Searcher.Searcher.html#95-123" title="Go to source code">setFields</a>( <span>array <var>$models</var></span> )</code>
 
 		<div class="description short">
 			<p>Prepare models and fields to participate in search</p>
@@ -375,15 +375,15 @@
 				<h4>Example</h4>
 				<div class="list">
 						<pre><span class="php-var">$s</span>-&gt;setFields([
-           <span class="php-quote">'Model/Table1'</span>    =&gt;    [
-               <span class="php-quote">'title'</span>,
-               <span class="php-quote">'text'</span>
-           ],
-               <span class="php-quote">'Model/Table2'</span>    =&gt;    [
-               <span class="php-quote">'name'</span>,
-               <span class="php-quote">'mark'</span>
-           ]....
-         ])</pre>
+                                 <span class="php-quote">'Model/Table1'</span>    =&gt;    [
+                                 <span class="php-quote">'title'</span>,
+                                 <span class="php-quote">'text'</span>
+                                 ],
+                                 <span class="php-quote">'Model/Table2'</span>    =&gt;    [
+                                 <span class="php-quote">'name'</span>,
+                                 <span class="php-quote">'mark'</span>
+                                 ]....
+                                 ])</pre>
 <br>
 				</div>
 
@@ -403,7 +403,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setOrder">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#115-136" title="Go to source code">setOrder</a>( <span>array <var>$order</var></span> )</code>
+		<code><a href="source-class-Searcher.Searcher.html#125-147" title="Go to source code">setOrder</a>( <span>array <var>$order</var></span> )</code>
 
 		<div class="description short">
 			<p>Order results</p>
@@ -436,10 +436,10 @@
 				<h4>Example</h4>
 				<div class="list">
 						<pre><span class="php-var">$s</span>-&gt;setOrder([<span class="php-quote">'Model/Auto'</span> =&gt; [<span class="php-quote">'id'</span> =&gt; <span class="php-quote">'DESC'</span>]])
-         <span class="php-var">$s</span>-&gt;setOrder([
-           <span class="php-quote">'Model/Auto'</span> =&gt; [<span class="php-quote">'id'</span> =&gt; <span class="php-quote">'DESC'</span>]
-           <span class="php-quote">'Model/Distributor'</span> =&gt; [<span class="php-quote">'description'</span> =&gt;  <span class="php-quote">'ASC'</span>]
-         ])</pre>
+                                <span class="php-var">$s</span>-&gt;setOrder([
+                                <span class="php-quote">'Model/Auto'</span> =&gt; [<span class="php-quote">'id'</span> =&gt; <span class="php-quote">'DESC'</span>]
+                                <span class="php-quote">'Model/Distributor'</span> =&gt; [<span class="php-quote">'description'</span> =&gt;  <span class="php-quote">'ASC'</span>]
+                                ])</pre>
 <br>
 				</div>
 
@@ -459,7 +459,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setGroup">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#139-162" title="Go to source code">setGroup</a>( <span>array <var>$group</var></span> )</code>
+		<code><a href="source-class-Searcher.Searcher.html#149-172" title="Go to source code">setGroup</a>( <span>array <var>$group</var></span> )</code>
 
 		<div class="description short">
 			<p>Group results</p>
@@ -492,10 +492,10 @@
 				<h4>Example</h4>
 				<div class="list">
 						<pre><span class="php-var">$s</span>-&gt;setGroup([<span class="php-quote">'Model/Auto'</span> =&gt; [<span class="php-quote">'id'</span>]])
-         <span class="php-var">$s</span>-&gt;setGroup([
-           <span class="php-quote">'Model/Auto'</span> =&gt; [<span class="php-quote">'id'</span>, <span class="php-quote">'mark'</span>]
-           <span class="php-quote">'Model/Distributor'</span> =&gt; [<span class="php-quote">'id'</span>, <span class="php-quote">'description'</span>]
-         ])</pre>
+                                <span class="php-var">$s</span>-&gt;setGroup([
+                                <span class="php-quote">'Model/Auto'</span> =&gt; [<span class="php-quote">'id'</span>, <span class="php-quote">'mark'</span>]
+                                <span class="php-quote">'Model/Distributor'</span> =&gt; [<span class="php-quote">'id'</span>, <span class="php-quote">'description'</span>]
+                                ])</pre>
 <br>
 				</div>
 
@@ -515,7 +515,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setThreshold">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#165-186" title="Go to source code">setThreshold</a>( <span>mixed <var>$threshold</var></span> )</code>
+		<code><a href="source-class-Searcher.Searcher.html#174-199" title="Go to source code">setThreshold</a>( <span>mixed <var>$threshold</var></span> )</code>
 
 		<div class="description short">
 			<p>Setup offset, limit threshold</p>
@@ -548,7 +548,7 @@
 				<h4>Example</h4>
 				<div class="list">
 						<pre><span class="php-var">$s</span>-&gt;setThreshold(<span class="php-num">100</span>)        <span class="php-comment">//    limit</span>
-         <span class="php-var">$s</span>-&gt;setThreshold([<span class="php-num">0</span>,<span class="php-num">100</span>])    <span class="php-comment">//    offset, limit</span></pre>
+                                    <span class="php-var">$s</span>-&gt;setThreshold([<span class="php-num">0</span>,<span class="php-num">100</span>])    <span class="php-comment">//    offset, limit</span></pre>
 <br>
 				</div>
 
@@ -568,7 +568,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setQuery">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#188-207" title="Go to source code">setQuery</a>( <span>string|null <var>$query</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Searcher.Searcher.html#201-224" title="Go to source code">setQuery</a>( <span>string|null <var>$query</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Prepare query value</p>
@@ -620,7 +620,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getFields">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#209-216" title="Go to source code">getFields</a>( )</code>
+		<code><a href="source-class-Searcher.Searcher.html#226-234" title="Go to source code">getFields</a>( )</code>
 
 		<div class="description short">
 			<p>Get qualified valid tables &amp; fields</p>
@@ -656,7 +656,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_run">#</a>
-		<code><a href="source-class-Searcher.Searcher.html#218-240" title="Go to source code">run</a>( <span>null <var>$hydratorset</var> = <span class="php-keyword1">null</span></span>, <span>null <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Searcher.Searcher.html#236-258" title="Go to source code">run</a>( <span>null <var>$hydratorset</var> = <span class="php-keyword1">null</span></span>, <span>null <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Search procedure started</p>
@@ -716,7 +716,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Searcher.Searcher.html#18-22" title="Go to source code"><var>$query</var></a>
+				<a href="source-class-Searcher.Searcher.html#18-23" title="Go to source code"><var>$query</var></a>
 
 			<div class="description short">
 				<p>Query value for DB</p>
@@ -743,7 +743,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Searcher.Searcher.html#24-28" title="Go to source code"><var>$exact</var></a>
+				<a href="source-class-Searcher.Searcher.html#25-30" title="Go to source code"><var>$exact</var></a>
 
 			<div class="description short">
 				<p>Strict flag</p>

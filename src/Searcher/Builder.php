@@ -183,7 +183,7 @@ class Builder
      * @param  integer $index counter
      * @return null
      */
-    public function expressionRun($table, $field, $type, $index)
+    private function expressionRun($table, $field, $type, $index)
     {
 
         if ($type === Column::TYPE_TEXT) { // match search
@@ -269,11 +269,16 @@ class Builder
         $res = $this->builder->getQuery()->execute();
         $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
 
-        if ($res->valid() === true && class_exists($call) === true) {
+        if ($res->valid() === true) {
 
-            $res = (new $call($res))->extract($callback);
+            if(class_exists($call) === true) {
 
+                $res = (new $call($res))->extract($callback);
+
+            }
+            return $res;
         }
-        return $res;
+        return null;
+
     }
 }
