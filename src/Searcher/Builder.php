@@ -1,7 +1,6 @@
 <?php
 namespace Searcher;
 
-use Searcher\Searcher\Aware\HydratorInterface;
 use Searcher\Searcher\Factories\ExceptionFactory;
 use \Phalcon\Db\Column;
 use \Phalcon\DI as Di;
@@ -235,18 +234,17 @@ class Builder
                 }
             }
 
+            // execute query
             $res = $this->builder->getQuery()->execute();
+            $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
 
-            if ($res->valid() === true) {
-                if ($hydratorset !== null) {
-                    $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
-                    $res = (new $call($res))->extract($callback);
-                }
+            if ($res->valid() === true && class_exists($call) === true) {
 
-                return $res;
+                $res = (new $call($res))->extract($callback);
+
             }
 
-            return null;
+            return $res;
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
         }
