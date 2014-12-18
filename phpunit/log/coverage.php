@@ -653,17 +653,13 @@ $coverage->setData(array (
     253 => 
     array (
     ),
+    263 => 
+    array (
+    ),
     264 => 
     array (
     ),
     265 => NULL,
-    275 => 
-    array (
-    ),
-    276 => 
-    array (
-    ),
-    277 => NULL,
   ),
   '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Column.php' => 
   array (

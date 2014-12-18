@@ -112,7 +112,7 @@ class Validator
      */
     public function setLength(array $condition)
     {
-        if (is_array($condition))  {
+        if (is_array($condition) === true)  {
             $this->{key($condition)} = (int) current($condition);
         }
 

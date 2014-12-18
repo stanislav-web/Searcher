@@ -240,7 +240,7 @@ class Builder
             if ($res->valid() === true) {
                 if ($hydratorset !== null) {
                     $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
-                    $res = $this->setResult(new $call($res), $callback);
+                    $res = (new $call($res))->extract($callback);
                 }
 
                 return $res;
@@ -250,18 +250,6 @@ class Builder
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
         }
-    }
-
-    /**
-     * Result set
-     *
-     * @param  \Searcher\Searcher\Aware\HydratorInterface $hydrator
-     * @param  callback|null                              $callback function to data
-     * @return array
-     */
-    private function setResult(HydratorInterface $hydrator, $callback = null)
-    {
-        return $hydrator->extract($callback);
     }
 
     /**
