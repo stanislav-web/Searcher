@@ -27,7 +27,11 @@
 
 	"autoload": {
 		"psr-4": {
-			"Searcher\\": "src/Searcher"
+            "Searcher\\": "src/Searcher",
+            "Searcher\\Searcher\\Aware\\": "src/Searcher/Aware",
+            "Searcher\\Searcher\\Exceptions\\": "src/Searcher/Exceptions",
+            "Searcher\\Searcher\\Factories\\": "src/Searcher/Factories",
+            "Searcher\\Searcher\\Hydrators\\": "src/Searcher/Hydrators"
 		},
 		"classmap": ["phpunit/src/Searcher"]
 	},

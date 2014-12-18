@@ -122,7 +122,6 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers Searcher\Searcher::__construct()
-     * @group  Searcher properties
      */
     public function testConstructor()
     {
