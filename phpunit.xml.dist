@@ -34,6 +34,7 @@
         <blacklist>
             <directory suffix=".php">./build</directory>
             <directory suffix=".php">./vendor</directory>
+            <directory suffix=".php">./src/Searcher/Aware</directory>
             <file>./phpunit/RunListener.php</file>
         </blacklist>
         <whitelist processUncoveredFilesFromWhitelist="true">

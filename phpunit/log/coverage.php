@@ -487,6 +487,126 @@ $coverage->setData(array (
     ),
     40 => NULL,
   ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
+  array (
+    33 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\ArrayHydratorTest::testClass',
+    ),
+    34 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\ArrayHydratorTest::testClass',
+    ),
+    45 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\ArrayHydratorTest::testClass',
+    ),
+    46 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\ArrayHydratorTest::testClass',
+    ),
+    47 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\ArrayHydratorTest::testClass',
+    ),
+    49 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\ArrayHydratorTest::testClass',
+    ),
+    52 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\ArrayHydratorTest::testClass',
+    ),
+    54 => NULL,
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/HydratorInterface.php' => 
+  array (
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
+  array (
+    34 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\JsonHydratorTest::testDI',
+    ),
+    35 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\JsonHydratorTest::testDI',
+    ),
+    44 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\JsonHydratorTest::testDI',
+    ),
+    45 => NULL,
+    68 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\JsonHydratorTest::testDI',
+      1 => 'Test\\Searcher\\Hydrators\\JsonHydratorTest::testClass',
+    ),
+    69 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\JsonHydratorTest::testDI',
+      1 => 'Test\\Searcher\\Hydrators\\JsonHydratorTest::testClass',
+    ),
+    79 => 
+    array (
+    ),
+    81 => 
+    array (
+    ),
+    82 => 
+    array (
+    ),
+    83 => 
+    array (
+    ),
+    86 => 
+    array (
+    ),
+    87 => 
+    array (
+    ),
+    88 => 
+    array (
+    ),
+    91 => 
+    array (
+    ),
+    93 => 
+    array (
+    ),
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/SerializeHydrator.php' => 
+  array (
+    33 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\SerializeHydratorTest::testClass',
+    ),
+    34 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\SerializeHydratorTest::testClass',
+    ),
+    45 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\SerializeHydratorTest::testClass',
+    ),
+    46 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\SerializeHydratorTest::testClass',
+    ),
+    47 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\SerializeHydratorTest::testClass',
+    ),
+    49 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\SerializeHydratorTest::testClass',
+    ),
+    52 => 
+    array (
+      0 => 'Test\\Searcher\\Hydrators\\SerializeHydratorTest::testClass',
+    ),
+    54 => NULL,
+  ),
   '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Validator.php' => 
   array (
     85 => 
@@ -548,58 +668,52 @@ $coverage->setData(array (
       0 => 'Test\\Searcher\\ValidatorTest::testLimits',
     ),
     118 => NULL,
-    128 => 
+    129 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
       1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
     ),
-    129 => 
+    130 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
     ),
-    130 => NULL,
-    132 => 
+    131 => NULL,
+    133 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
     ),
-    133 => NULL,
-    144 => 
+    134 => NULL,
+    145 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
       1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
     ),
-    145 => 
+    146 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
     ),
-    146 => NULL,
-    148 => 
+    147 => NULL,
+    149 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
     ),
-    149 => NULL,
-    160 => 
+    150 => NULL,
+    161 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
       1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
-    161 => 
+    162 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
     ),
-    162 => NULL,
-    164 => 
+    163 => NULL,
+    165 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
-    167 => NULL,
-    178 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    180 => 
+    168 => NULL,
+    179 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
       1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
@@ -607,71 +721,74 @@ $coverage->setData(array (
     ),
     181 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    182 => 
+    array (
       0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
     ),
-    182 => NULL,
-    183 => 
+    183 => NULL,
+    184 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
       1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
-    184 => 
+    185 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
-    185 => NULL,
-    187 => 
+    186 => NULL,
+    188 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
     ),
-    188 => NULL,
-    200 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
-    ),
+    189 => NULL,
     201 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
       1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
       2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
     ),
-    202 => NULL,
-    204 => 
+    202 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    203 => NULL,
+    205 => 
     array (
     ),
-    205 => NULL,
-    219 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
-    ),
-    223 => 
+    206 => NULL,
+    220 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
     ),
     224 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
     ),
-    228 => 
+    225 => 
     array (
     ),
-    231 => 
+    229 => 
     array (
     ),
-    234 => 
+    232 => 
     array (
     ),
-    238 => 
+    235 => 
     array (
     ),
-    240 => 
+    239 => 
     array (
     ),
     241 => 
     array (
     ),
-    244 => 
+    242 => 
     array (
     ),
     245 => 
@@ -686,76 +803,79 @@ $coverage->setData(array (
     248 => 
     array (
     ),
-    250 => 
+    249 => 
     array (
     ),
-    251 => NULL,
-    265 => 
+    251 => 
     array (
-      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
     ),
-    269 => 
+    252 => NULL,
+    266 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
     ),
     270 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
     ),
-    274 => 
+    271 => 
     array (
     ),
-    278 => 
+    275 => 
     array (
     ),
-    280 => 
+    279 => 
     array (
     ),
     281 => 
     array (
     ),
-    282 => NULL,
-    284 => 
+    282 => 
     array (
     ),
+    283 => NULL,
     285 => 
     array (
     ),
-    286 => NULL,
-    288 => 
+    286 => 
     array (
     ),
+    287 => NULL,
     289 => 
     array (
     ),
     290 => 
     array (
     ),
-    292 => 
+    291 => 
     array (
     ),
-    293 => NULL,
-    304 => 
+    293 => 
     array (
     ),
+    294 => NULL,
     305 => 
     array (
     ),
-    306 => NULL,
-    308 => 
+    306 => 
     array (
     ),
-    309 => NULL,
-    323 => 
+    307 => NULL,
+    309 => 
     array (
     ),
+    310 => NULL,
     324 => 
     array (
     ),
-    325 => NULL,
-    327 => 
+    325 => 
     array (
     ),
-    329 => NULL,
+    326 => NULL,
+    328 => 
+    array (
+    ),
+    330 => NULL,
   ),
   '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Searcher.php' => 
   array (
@@ -909,14 +1029,12 @@ $coverage->setData(array (
     234 => NULL,
     250 => 
     array (
-      0 => 'Test\\Searcher\\SearcherTest::testRun',
     ),
     252 => 
     array (
     ),
     254 => 
     array (
-      0 => 'Test\\Searcher\\SearcherTest::testRun',
     ),
     255 => 
     array (
@@ -925,109 +1043,14 @@ $coverage->setData(array (
     array (
     ),
   ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/HydratorInterface.php' => 
-  array (
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
-  array (
-    33 => 
-    array (
-    ),
-    34 => 
-    array (
-    ),
-    45 => 
-    array (
-    ),
-    46 => 
-    array (
-    ),
-    47 => 
-    array (
-    ),
-    49 => 
-    array (
-    ),
-    52 => 
-    array (
-    ),
-    54 => NULL,
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
-  array (
-    34 => 
-    array (
-    ),
-    35 => 
-    array (
-    ),
-    44 => 
-    array (
-    ),
-    45 => NULL,
-    68 => 
-    array (
-    ),
-    69 => 
-    array (
-    ),
-    79 => 
-    array (
-    ),
-    81 => 
-    array (
-    ),
-    82 => 
-    array (
-    ),
-    83 => 
-    array (
-    ),
-    86 => 
-    array (
-    ),
-    87 => 
-    array (
-    ),
-    88 => 
-    array (
-    ),
-    91 => 
-    array (
-    ),
-    93 => 
-    array (
-    ),
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/SerializeHydrator.php' => 
-  array (
-    33 => 
-    array (
-    ),
-    34 => 
-    array (
-    ),
-    44 => 
-    array (
-    ),
-    45 => 
-    array (
-    ),
-    46 => 
-    array (
-    ),
-    48 => 
-    array (
-    ),
-    51 => 
-    array (
-    ),
-    53 => NULL,
-  ),
 ));
 $coverage->setTests(array (
   'Test\\Searcher\\BuilderTest::testConstructor' => 0,
   'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses' => 0,
+  'Test\\Searcher\\Hydrators\\ArrayHydratorTest::testClass' => 0,
+  'Test\\Searcher\\Hydrators\\JsonHydratorTest::testDI' => 0,
+  'Test\\Searcher\\Hydrators\\JsonHydratorTest::testClass' => 0,
+  'Test\\Searcher\\Hydrators\\SerializeHydratorTest::testClass' => 0,
   'Test\\Searcher\\SearcherTest::testProperties' => 0,
   'Test\\Searcher\\SearcherTest::testConstructor' => 0,
   'Test\\Searcher\\SearcherTest::testExact' => 0,
@@ -1053,7 +1076,6 @@ $coverage->setTests(array (
   'Test\\Searcher\\ValidatorTest::testExceptions with data set #5' => 0,
   'Test\\Searcher\\ValidatorTest::testExceptions with data set #6' => 0,
   'Test\\Searcher\\ValidatorTest::testExceptions with data set #7' => 0,
-  'UNCOVERED_FILES_FROM_WHITELIST' => NULL,
 ));
 
 $filter = $coverage->filter();
