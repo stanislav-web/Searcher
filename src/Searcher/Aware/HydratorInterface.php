@@ -10,6 +10,7 @@ namespace Searcher\Searcher\Aware;
  * @version    1.0
  * @author     Stanislav WEB | Lugansk <stanisov@gmail.com>
  * @copyright  Stanislav WEB
+ * @codeCoverageIgnore
  */
 interface HydratorInterface
 {

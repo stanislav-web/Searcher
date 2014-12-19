@@ -94,9 +94,7 @@ class Validator
             }
 
             foreach ($callbacks as $callback) {
-                if ($this->{$callback}($data) === false) {
-                    return false;
-                }
+                $this->{$callback}($data);
             }
         };
 

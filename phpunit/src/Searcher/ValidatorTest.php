@@ -288,6 +288,74 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
             '[-] Class Validator must have method isModel()'
         );
     }
+
+    /**
+     * @covers Searcher\Validator::verify
+     */
+    public function testVerify()
+    {
+
+        $returns = array(
+            null,
+            true,
+            false
+        );
+
+        $this->assertTrue(
+            method_exists($this->validator, 'verify'),
+            '[-] Class Validator must have method verify()'
+        );
+
+        // call method
+        $res = $this->validator->verify('verify', ['isNotNull'], 'verify');
+
+        $this->assertContains($res, $returns,
+            "[-] verify() method should return only `".implode("`,`", $returns)."` but returned ".$res
+        );
+
+        // call with empty callbacks
+        //  must return same
+        $this->assertSame('verify', $this->validator->verify('verify', [], 'verify'),
+            "[-] verify() method should return same value if does not contain callbacks"
+        );
+
+        try {
+            // check fails
+            $this->validator->verify(null, ['isNotNull', 'isArray', 'isNotEmpty'], 'verify');
+        }
+        catch(ExceptionFactory $e) {
+            $this->assertInternalType('string', $e->getMessage(),
+                "[-] Verify() must throw an exception if error called"
+            );
+        }
+    }
+
+    /**
+     * @dataProvider exceptionsProvider
+     */
+    public function testExceptions($method, $params)
+    {
+        try {
+            $this->invokeMethod($this->validator, $method, $params);
+        }
+        catch(ExceptionFactory $e) {
+
+            $this->assertInternalType('string', $e->getMessage(),
+                "[-] Verify() must throw an exception if error called"
+            );
+        }
+    }
+
+    public function exceptionsProvider()
+    {
+        return array(
+            array('isNotNull', array(null)),
+            array('isArray', array(null)),
+            array('isNotEmpty', array('')),
+            array('isAcceptLength', array(1)),
+            array('isAcceptLength', array(str_repeat('-', 1000)))
+        );
+    }
 }
 
 

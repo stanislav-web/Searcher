@@ -5,28 +5,28 @@ $coverage->setData(array (
   array (
     44 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
     ),
     47 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
     ),
     49 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
     ),
     51 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
     ),
     53 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
     ),
     54 => NULL,
     63 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
     ),
     64 => NULL,
   ),
@@ -34,16 +34,22 @@ $coverage->setData(array (
   array (
     37 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
     39 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
     40 => NULL,
     49 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
     50 => NULL,
   ),
@@ -51,20 +57,28 @@ $coverage->setData(array (
   array (
     44 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
     ),
     45 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
     ),
     47 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
     ),
     48 => NULL,
     57 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
     ),
     58 => NULL,
   ),
@@ -72,52 +86,61 @@ $coverage->setData(array (
   array (
     44 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
     47 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
     ),
     48 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
     51 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
     ),
     53 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
     56 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
     ),
     58 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
     61 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
     62 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
     64 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
     66 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
     67 => NULL,
     76 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
     77 => NULL,
   ),
@@ -128,19 +151,39 @@ $coverage->setData(array (
   array (
     32 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
     34 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
     36 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
     39 => 
     array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor',
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
     40 => NULL,
   ),
@@ -148,45 +191,55 @@ $coverage->setData(array (
   array (
     85 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
     86 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
     87 => NULL,
     92 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
     93 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
     94 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
     96 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
     97 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
     98 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
-    99 => NULL,
-    100 => 
+    99 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
-    101 => 
+    102 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
     ),
-    104 => 
-    array (
-    ),
-    105 => NULL,
-    115 => 
+    103 => NULL,
+    113 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testLimits',
     ),
-    116 => 
+    114 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
+    ),
+    115 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testLimits',
     ),
@@ -194,111 +247,126 @@ $coverage->setData(array (
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testLimits',
     ),
-    119 => 
+    118 => NULL,
+    128 => 
     array (
-      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
+      0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
     ),
-    120 => NULL,
-    130 => 
+    129 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+    ),
+    130 => NULL,
+    132 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
     ),
-    131 => 
+    133 => NULL,
+    144 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
     ),
-    132 => NULL,
-    134 => 
+    145 => 
     array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
     ),
-    135 => NULL,
-    146 => 
+    146 => NULL,
+    148 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
     ),
-    147 => 
+    149 => NULL,
+    160 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
-    148 => NULL,
-    150 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
-    ),
-    151 => NULL,
-    162 => 
+    161 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
     ),
-    163 => 
+    162 => NULL,
+    164 => 
     array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
     ),
-    164 => NULL,
-    166 => 
+    167 => NULL,
+    178 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
-    169 => NULL,
     180 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
-    182 => 
+    181 => 
     array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
     ),
+    182 => NULL,
     183 => 
     array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
-    184 => NULL,
-    185 => 
+    184 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    185 => NULL,
+    187 => 
     array (
       0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
     ),
-    186 => 
+    188 => NULL,
+    200 => 
     array (
     ),
-    187 => NULL,
-    189 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
-    ),
-    190 => NULL,
-    202 => 
+    201 => 
     array (
     ),
-    203 => 
+    202 => NULL,
+    204 => 
     array (
     ),
-    204 => NULL,
-    206 => 
+    205 => NULL,
+    219 => 
     array (
     ),
-    207 => NULL,
-    221 => 
+    223 => 
     array (
     ),
-    225 => 
+    224 => 
     array (
     ),
-    226 => 
+    228 => 
     array (
     ),
-    230 => 
+    231 => 
     array (
     ),
-    233 => 
+    234 => 
     array (
     ),
-    236 => 
+    238 => 
     array (
     ),
     240 => 
     array (
     ),
-    242 => 
+    241 => 
     array (
     ),
-    243 => 
+    244 => 
+    array (
+    ),
+    245 => 
     array (
     ),
     246 => 
@@ -310,80 +378,74 @@ $coverage->setData(array (
     248 => 
     array (
     ),
-    249 => 
-    array (
-    ),
     250 => 
     array (
     ),
-    252 => 
+    251 => NULL,
+    265 => 
     array (
     ),
-    253 => NULL,
-    267 => 
+    269 => 
     array (
     ),
-    271 => 
+    270 => 
     array (
     ),
-    272 => 
+    274 => 
     array (
     ),
-    276 => 
+    278 => 
     array (
     ),
     280 => 
     array (
     ),
-    282 => 
+    281 => 
     array (
     ),
-    283 => 
+    282 => NULL,
+    284 => 
     array (
     ),
-    284 => NULL,
-    286 => 
+    285 => 
     array (
     ),
-    287 => 
+    286 => NULL,
+    288 => 
     array (
     ),
-    288 => NULL,
+    289 => 
+    array (
+    ),
     290 => 
-    array (
-    ),
-    291 => 
     array (
     ),
     292 => 
     array (
     ),
-    294 => 
+    293 => NULL,
+    304 => 
     array (
     ),
-    295 => NULL,
-    306 => 
+    305 => 
     array (
     ),
-    307 => 
+    306 => NULL,
+    308 => 
     array (
     ),
-    308 => NULL,
-    310 => 
+    309 => NULL,
+    323 => 
     array (
     ),
-    311 => NULL,
-    325 => 
+    324 => 
     array (
     ),
-    326 => 
+    325 => NULL,
+    327 => 
     array (
     ),
-    327 => NULL,
-    329 => 
-    array (
-    ),
-    331 => NULL,
+    329 => NULL,
   ),
   '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Searcher.php' => 
   array (
@@ -434,12 +496,15 @@ $coverage->setData(array (
     93 => NULL,
     118 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testFields',
     ),
     119 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testFields',
     ),
     120 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testFields',
     ),
     122 => 
     array (
@@ -447,12 +512,15 @@ $coverage->setData(array (
     123 => NULL,
     142 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testOrder',
     ),
     143 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testOrder',
     ),
     144 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testOrder',
     ),
     146 => 
     array (
@@ -460,12 +528,15 @@ $coverage->setData(array (
     147 => NULL,
     167 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testGroup',
     ),
     168 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testGroup',
     ),
     169 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testGroup',
     ),
     171 => 
     array (
@@ -498,25 +569,32 @@ $coverage->setData(array (
     199 => NULL,
     214 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
     ),
     216 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
     ),
     217 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
     ),
     218 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
     ),
     220 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
     ),
     223 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
     ),
     224 => NULL,
     233 => 
     array (
+      0 => 'Test\\Searcher\\SearcherTest::testGetFields',
     ),
     234 => NULL,
     250 => 
@@ -906,19 +984,29 @@ $coverage->setData(array (
   ),
 ));
 $coverage->setTests(array (
-  'Test\\Searcher\\Factories\\ExceptionFactoryTest::testConstructor' => 0,
+  'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses' => 0,
   'Test\\Searcher\\SearcherTest::testProperties' => 0,
   'Test\\Searcher\\SearcherTest::testConstructor' => 0,
   'Test\\Searcher\\SearcherTest::testExact' => 0,
   'Test\\Searcher\\SearcherTest::testLimits' => 0,
+  'Test\\Searcher\\SearcherTest::testQuery' => 0,
   'Test\\Searcher\\SearcherTest::testRun' => 0,
   'Test\\Searcher\\SearcherTest::testThreshold' => 0,
   'Test\\Searcher\\SearcherTest::testGetFields' => 0,
+  'Test\\Searcher\\SearcherTest::testOrder' => 0,
+  'Test\\Searcher\\SearcherTest::testGroup' => 0,
+  'Test\\Searcher\\SearcherTest::testFields' => 0,
   'Test\\Searcher\\ValidatorTest::testLimits' => 0,
   'Test\\Searcher\\ValidatorTest::testIsNotNull' => 0,
   'Test\\Searcher\\ValidatorTest::testIsArray' => 0,
   'Test\\Searcher\\ValidatorTest::testIsNotEmpty' => 0,
   'Test\\Searcher\\ValidatorTest::testIsAcceptLength' => 0,
+  'Test\\Searcher\\ValidatorTest::testVerify' => 0,
+  'Test\\Searcher\\ValidatorTest::testExceptions with data set #0' => 0,
+  'Test\\Searcher\\ValidatorTest::testExceptions with data set #1' => 0,
+  'Test\\Searcher\\ValidatorTest::testExceptions with data set #2' => 0,
+  'Test\\Searcher\\ValidatorTest::testExceptions with data set #3' => 0,
+  'Test\\Searcher\\ValidatorTest::testExceptions with data set #4' => 0,
   'UNCOVERED_FILES_FROM_WHITELIST' => NULL,
 ));
 

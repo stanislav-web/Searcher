@@ -2,7 +2,9 @@
 namespace Test\Searcher;
 
 use \Searcher\Searcher;
-use Searcher\Validator;
+use \Searcher\Searcher\Factories\ExceptionFactory;
+use \Searcher\Searcher\Exceptions\Model;
+
 use \Phalcon\DI as Di;
 
 /**
@@ -185,15 +187,62 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
         // check return of setMin
         $this->assertSame($this->searcher, $this->invokeMethod($this->searcher, 'setMin', [3]),
-            "[-] setMin method should return object Validator"
+            "[-] setMin method should return object Searcher"
         );
 
         // check return of setMax
         $this->assertSame($this->searcher, $this->invokeMethod($this->searcher, 'setMax', [128]),
-            "[-] setMax method should return object Validator"
+            "[-] setMax method should return object Searcher"
         );
     }
 
+    /**
+     * @covers Searcher\Searcher::setQuery
+     */
+    public function testQuery()
+    {
+        // check method setMin
+        $this->assertTrue(
+            method_exists($this->searcher, 'setQuery'),
+            '[-] Class Searcher must have method setQuery()'
+        );
+
+        $this->searcher->exact = true;
+        // check return of setQuery
+        $this->invokeMethod($this->searcher, 'setQuery', ['test']);
+
+        $this->assertInternalType('array', $this->searcher->query,
+           "[-] setQuery method should return array"
+        );
+
+        $this->assertCount(1, $this->searcher->query,
+            "[-] setQuery method should return only 1 element of array [query]"
+        );
+
+        $this->assertArrayHasKey('query', $this->searcher->query,
+            "[-] setQuery method should return array with key [query]"
+        );
+
+        $this->assertContains('test', $this->searcher->query['query'],
+            "[-] setQuery method should return only assigned to the query property value"
+        );
+
+        $this->searcher->exact = false;
+        // check return of setQuery
+        $this->invokeMethod($this->searcher, 'setQuery', ['test']);
+
+        $this->assertInternalType('array', $this->searcher->query,
+            "[-] setQuery method should return array"
+        );
+
+        $this->assertCount(1, $this->searcher->query,
+            "[-] setQuery method should return only 1 element of array [query]"
+        );
+
+        $this->assertArrayHasKey('query', $this->searcher->query,
+            "[-] setQuery method should return array with key [query]"
+        );
+    }
 
     /**
      * @covers Searcher\Searcher::run
@@ -236,7 +285,7 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
             '[-] Class Searcher must have method getFields()'
         );
 
-        $fields = (new Validator())->fields;
+        $fields = $this->searcher->getFields();
 
         // check variable type instance
         $this->assertContainsOnly('array', [$fields],
@@ -245,6 +294,87 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
         $this->assertEmpty($fields,
             "[-] The `getFields` will return an empty array while init"
         );
+    }
+
+    /**
+     * @covers Searcher\Searcher::setOrder
+     */
+    public function testOrder()
+    {
+        // check method setOrder
+        $this->assertTrue(
+            method_exists($this->searcher, 'setOrder'),
+            '[-] Class Searcher must have method setOrder()'
+        );
+
+        try {
+
+            $setOrder = $this->searcher->setOrder(['Model' => ['id' => 'DESC']]);
+
+            // check return of setOrder
+            $this->assertSame($this->searcher, $setOrder,
+                "[-] setOrder method should return object Searcher"
+            );
+        }
+        catch(ExceptionFactory $e) {
+
+            // Expected exception caught! Woohoo! Ignore it
+            //echo $e->getMessage();
+        }
+    }
+
+    /**
+ * @covers Searcher\Searcher::setGroup
+ */
+    public function testGroup()
+    {
+        // check method setGroup
+        $this->assertTrue(
+            method_exists($this->searcher, 'setGroup'),
+            '[-] Class Searcher must have method setGroup()'
+        );
+
+        try {
+
+            $setGroup = $this->searcher->setGroup(['Model' => ['id']]);
+
+            // check return of setGroup
+            $this->assertSame($this->searcher, $setGroup,
+                "[-] setGroup method should return object Searcher"
+            );
+        }
+        catch(ExceptionFactory $e) {
+
+            // Expected exception caught! Woohoo! Ignore it
+            //echo $e->getMessage();
+        }
+    }
+
+    /**
+     * @covers Searcher\Searcher::setFields
+     */
+    public function testFields()
+    {
+        // check method setFields
+        $this->assertTrue(
+            method_exists($this->searcher, 'setFields'),
+            '[-] Class Searcher must have method setFields()'
+        );
+
+        try {
+
+            $setFields = $this->searcher->setFields(['Model' => ['id']]);
+
+            // check return of setFields
+            $this->assertSame($this->searcher, $setFields,
+                "[-] setFields method should return object Searcher"
+            );
+        }
+        catch(ExceptionFactory $e) {
+
+            // Expected exception caught! Woohoo! Ignore it
+            //echo $e->getMessage();
+        }
     }
 }
 
