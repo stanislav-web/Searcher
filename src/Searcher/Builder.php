@@ -245,7 +245,7 @@ class Builder
      * @param integer $type column type
      * @return array
      */
-    protected function ftFilter(Column $type)
+    protected function ftFilter($type)
     {
         if ($type === Column::TYPE_TEXT)
         {
