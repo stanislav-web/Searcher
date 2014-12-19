@@ -312,7 +312,7 @@ class Validator
     /**
      * Validate table columns
      *
-     * @param Manager|Memory $meta  column info
+     * @param  Memory        $meta  column info
      * @param  array         $columns
      * @param  string        $table
      * @param  mixed         $model selected model
