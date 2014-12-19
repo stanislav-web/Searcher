@@ -186,29 +186,23 @@ class Builder
     private function expressionRun($table, $field, $type, $index)
     {
 
-        if ($type === Column::TYPE_TEXT) { // match search
+        if ($type === Column::TYPE_TEXT) {
 
-            // unset mask
+            // match query
             $query = "MATCH(" . $table . "." . $field . ") AGAINST (:query:)";
 
-            if ($index > 0) {
-                $this->builder->orWhere($query, $this->ftFilter());
-            }
-            else {
-                $this->builder->where($query, $this->ftFilter());
-            }
+        }
+        else {
 
-        } else {
-
-            // simple where search
+            // simple query
             $query = $table . "." . $field . " LIKE :query:";
+        }
 
-            if ($index > 0) {
-                $this->builder->orWhere($query, $this->searcher->query);
-            }
-            else {
-                $this->builder->where($query, $this->searcher->query);
-            }
+        if ($index > 0) {
+            $this->builder->orWhere($query, $this->ftFilter($type));
+        }
+        else {
+            $this->builder->where($query, $this->ftFilter($type));
         }
 
         return null;
@@ -248,13 +242,19 @@ class Builder
     /**
      * Prepare query data to fulltext search
      *
+     * @param Column $type column type
      * @return array
      */
-    protected function ftFilter()
+    protected function ftFilter(Column $type)
     {
-        return array_map(function ($v) {
-            return trim($v, '%');
-        }, $this->searcher->query);
+        if ($type === Column::TYPE_TEXT)
+        {
+            return array_map(function ($v) {
+                return trim($v, '%');
+            }, $this->searcher->query);
+        }
+        return $this->searcher->query;
+
     }
 
     /**
