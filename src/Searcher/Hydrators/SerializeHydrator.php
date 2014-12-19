@@ -36,6 +36,7 @@ class SerializeHydrator implements HydratorInterface
     /**
      * Extract result data to serialize string
      *
+     * @param  callback|null $callback function to data
      * @return array
      */
     public function extract(callable $callback = null)

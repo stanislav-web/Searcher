@@ -121,6 +121,7 @@ class Validator
      * Verify by not null
      *
      * @param  string  $value
+     * @throws ExceptionFactory
      * @return boolean
      */
     protected function isNotNull($value)
@@ -311,10 +312,10 @@ class Validator
     /**
      * Validate table columns
      *
-     * @param  Memory           $meta    column info
-     * @param  array            $columns
-     * @param  string           $table
-     * @param  mixed            $model   selected model
+     * @param Manager|Memory $meta  column info
+     * @param  array         $columns
+     * @param  string        $table
+     * @param  mixed         $model selected model
      * @throws ExceptionFactory
      * @return boolean
      */
