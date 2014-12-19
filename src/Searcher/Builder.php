@@ -242,7 +242,7 @@ class Builder
     /**
      * Prepare query data to fulltext search
      *
-     * @param Column $type column type
+     * @param integer $type column type
      * @return array
      */
     protected function ftFilter(Column $type)
