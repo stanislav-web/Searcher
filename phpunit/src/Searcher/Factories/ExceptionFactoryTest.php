@@ -22,7 +22,7 @@ class ExceptionFactoryTest extends \PHPUnit_Framework_TestCase
      * @covers Searcher\Searcher\Exceptions\InvalidLength::<public>
      * @covers Searcher\Searcher\Exceptions\Model::<public>
      */
-    public function testReltionshipClasses()
+    public function testRelationshipClasses()
     {
         // assigned factory classes
         $columns    =   [

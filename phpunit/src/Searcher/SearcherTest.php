@@ -3,7 +3,6 @@ namespace Test\Searcher;
 
 use \Searcher\Searcher;
 use \Searcher\Searcher\Factories\ExceptionFactory;
-use \Searcher\Searcher\Exceptions\Model;
 
 use \Phalcon\DI as Di;
 
@@ -246,14 +245,26 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers Searcher\Searcher::run
+     * @expectedException \Phalcon\DI\Exception
      */
     public function testRun()
     {
-        // check modifier of run
+        // check modifier before run
         $modifiers = (new \ReflectionMethod('\Searcher\Searcher', 'run'))->getModifiers();
         $this->assertEquals(['final', 'public'], \Reflection::getModifierNames($modifiers),
             "[-] run method must be as final public"
         );
+
+        try {
+            //@TODO
+            $run = $this->searcher->run();
+
+        }
+        catch(ExceptionFactory $e) {
+
+            // Expected exception caught! Woohoo! Ignore it
+
+        }
     }
 
     /**
@@ -324,8 +335,8 @@ class SearcherTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
- * @covers Searcher\Searcher::setGroup
- */
+     * @covers Searcher\Searcher::setGroup
+     */
     public function testGroup()
     {
         // check method setGroup

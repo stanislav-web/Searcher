@@ -4,6 +4,7 @@ namespace Test\Searcher;
 use Searcher\Searcher;
 use Searcher\Searcher\Factories\ExceptionFactory;
 use \Searcher\Validator;
+use \Phalcon\Db\Column;
 
 /**
  * Class ValidatorTest
@@ -82,6 +83,18 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $prop = $this->reflection->getProperty($name);
         $prop->setAccessible(true);
         return $prop;
+    }
+    /**
+     * Setup accessible any methods (protected) property
+     *
+     * @param $name
+     * @return \ReflectionMethod
+     */
+    protected function getMethod($name)
+    {
+        $method = $this->reflection->getMethod($name);
+        $method->setAccessible(true);
+        return $method;
     }
 
     public function testProperties()
@@ -341,19 +354,23 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         catch(ExceptionFactory $e) {
 
             $this->assertInternalType('string', $e->getMessage(),
-                "[-] Verify() must throw an exception if error called"
+                "[-] Verify() must throw an exception message if error called"
             );
         }
     }
 
     public function exceptionsProvider()
     {
+        $rand = mt_rand(0,999);
         return array(
             array('isNotNull', array(null)),
             array('isArray', array(null)),
             array('isNotEmpty', array('')),
             array('isAcceptLength', array(1)),
-            array('isAcceptLength', array(str_repeat('-', 1000)))
+            array('isAcceptLength', array(str_repeat('-', 1000))),
+            array('isModel', array($rand)),
+            array('isExists', array([$rand])),
+            array('isOrdered', array([$rand])),
         );
     }
 }

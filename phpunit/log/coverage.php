@@ -1,621 +1,6 @@
 <?php
 $coverage = new PHP_CodeCoverage;
 $coverage->setData(array (
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Model.php' => 
-  array (
-    44 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-    ),
-    47 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-    ),
-    49 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-    ),
-    51 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-    ),
-    53 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-    ),
-    54 => NULL,
-    63 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-    ),
-    64 => NULL,
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/InvalidLength.php' => 
-  array (
-    37 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    39 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    40 => NULL,
-    49 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    50 => NULL,
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/DataType.php' => 
-  array (
-    44 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    45 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    47 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    48 => NULL,
-    57 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    58 => NULL,
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Column.php' => 
-  array (
-    44 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    47 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-    ),
-    48 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    51 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-    ),
-    53 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    56 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-    ),
-    58 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    61 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    62 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    64 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    66 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    67 => NULL,
-    76 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    77 => NULL,
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/ExceptionInterface.php' => 
-  array (
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Factories/ExceptionFactory.php' => 
-  array (
-    32 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    34 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    36 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    39 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    40 => NULL,
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Validator.php' => 
-  array (
-    85 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    86 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    87 => NULL,
-    92 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    93 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    94 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    96 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    97 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    98 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    99 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    102 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
-    ),
-    103 => NULL,
-    113 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
-    ),
-    114 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
-    ),
-    115 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
-    ),
-    117 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
-    ),
-    118 => NULL,
-    128 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-    ),
-    129 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-    ),
-    130 => NULL,
-    132 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
-    ),
-    133 => NULL,
-    144 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    145 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    146 => NULL,
-    148 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
-    ),
-    149 => NULL,
-    160 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    161 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
-    ),
-    162 => NULL,
-    164 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-    ),
-    167 => NULL,
-    178 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    180 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    181 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-    ),
-    182 => NULL,
-    183 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    184 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    185 => NULL,
-    187 => 
-    array (
-      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
-    ),
-    188 => NULL,
-    200 => 
-    array (
-    ),
-    201 => 
-    array (
-    ),
-    202 => NULL,
-    204 => 
-    array (
-    ),
-    205 => NULL,
-    219 => 
-    array (
-    ),
-    223 => 
-    array (
-    ),
-    224 => 
-    array (
-    ),
-    228 => 
-    array (
-    ),
-    231 => 
-    array (
-    ),
-    234 => 
-    array (
-    ),
-    238 => 
-    array (
-    ),
-    240 => 
-    array (
-    ),
-    241 => 
-    array (
-    ),
-    244 => 
-    array (
-    ),
-    245 => 
-    array (
-    ),
-    246 => 
-    array (
-    ),
-    247 => 
-    array (
-    ),
-    248 => 
-    array (
-    ),
-    250 => 
-    array (
-    ),
-    251 => NULL,
-    265 => 
-    array (
-    ),
-    269 => 
-    array (
-    ),
-    270 => 
-    array (
-    ),
-    274 => 
-    array (
-    ),
-    278 => 
-    array (
-    ),
-    280 => 
-    array (
-    ),
-    281 => 
-    array (
-    ),
-    282 => NULL,
-    284 => 
-    array (
-    ),
-    285 => 
-    array (
-    ),
-    286 => NULL,
-    288 => 
-    array (
-    ),
-    289 => 
-    array (
-    ),
-    290 => 
-    array (
-    ),
-    292 => 
-    array (
-    ),
-    293 => NULL,
-    304 => 
-    array (
-    ),
-    305 => 
-    array (
-    ),
-    306 => NULL,
-    308 => 
-    array (
-    ),
-    309 => NULL,
-    323 => 
-    array (
-    ),
-    324 => 
-    array (
-    ),
-    325 => NULL,
-    327 => 
-    array (
-    ),
-    329 => NULL,
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Searcher.php' => 
-  array (
-    47 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testProperties',
-      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
-    ),
-    48 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testProperties',
-      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
-    ),
-    58 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    60 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    62 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    63 => NULL,
-    73 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    75 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    76 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    77 => NULL,
-    90 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testExact',
-    ),
-    92 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testExact',
-    ),
-    93 => NULL,
-    118 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testFields',
-    ),
-    119 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testFields',
-    ),
-    120 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testFields',
-    ),
-    122 => 
-    array (
-    ),
-    123 => NULL,
-    142 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testOrder',
-    ),
-    143 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testOrder',
-    ),
-    144 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testOrder',
-    ),
-    146 => 
-    array (
-    ),
-    147 => NULL,
-    167 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testGroup',
-    ),
-    168 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testGroup',
-    ),
-    169 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testGroup',
-    ),
-    171 => 
-    array (
-    ),
-    172 => NULL,
-    189 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    190 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    191 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    194 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    196 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    198 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    199 => NULL,
-    214 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    216 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    217 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    218 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    220 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    223 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    224 => NULL,
-    233 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testGetFields',
-    ),
-    234 => NULL,
-    250 => 
-    array (
-    ),
-    252 => 
-    array (
-    ),
-    254 => 
-    array (
-    ),
-    255 => 
-    array (
-    ),
-    258 => 
-    array (
-    ),
-  ),
-  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/HydratorInterface.php' => 
-  array (
-  ),
   '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Builder.php' => 
   array (
     50 => 
@@ -886,6 +271,663 @@ $coverage->setData(array (
     ),
     283 => NULL,
   ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Model.php' => 
+  array (
+    44 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    47 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    49 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    51 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    53 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    54 => NULL,
+    63 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    64 => NULL,
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/InvalidLength.php' => 
+  array (
+    37 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    39 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    40 => NULL,
+    49 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    50 => NULL,
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/DataType.php' => 
+  array (
+    44 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    45 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    47 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    48 => NULL,
+    57 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    58 => NULL,
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Column.php' => 
+  array (
+    44 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    47 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+    ),
+    48 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    51 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+    ),
+    53 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    56 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+    ),
+    58 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    61 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    62 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    64 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    66 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    67 => NULL,
+    76 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    77 => NULL,
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/ExceptionInterface.php' => 
+  array (
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Factories/ExceptionFactory.php' => 
+  array (
+    32 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    34 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    36 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    39 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    40 => NULL,
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Validator.php' => 
+  array (
+    85 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    86 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    87 => NULL,
+    92 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    93 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    94 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    96 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    97 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    98 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    99 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    102 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testVerify',
+    ),
+    103 => NULL,
+    113 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
+    ),
+    114 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
+    ),
+    115 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
+    ),
+    117 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testLimits',
+    ),
+    118 => NULL,
+    128 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+    ),
+    129 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+    ),
+    130 => NULL,
+    132 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsNotNull',
+    ),
+    133 => NULL,
+    144 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    145 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    146 => NULL,
+    148 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsArray',
+    ),
+    149 => NULL,
+    160 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    161 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsNotEmpty',
+    ),
+    162 => NULL,
+    164 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+    ),
+    167 => NULL,
+    178 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    180 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    181 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+    ),
+    182 => NULL,
+    183 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    184 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    185 => NULL,
+    187 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testIsAcceptLength',
+    ),
+    188 => NULL,
+    200 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    201 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    202 => NULL,
+    204 => 
+    array (
+    ),
+    205 => NULL,
+    219 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+    ),
+    223 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+    ),
+    224 => 
+    array (
+    ),
+    228 => 
+    array (
+    ),
+    231 => 
+    array (
+    ),
+    234 => 
+    array (
+    ),
+    238 => 
+    array (
+    ),
+    240 => 
+    array (
+    ),
+    241 => 
+    array (
+    ),
+    244 => 
+    array (
+    ),
+    245 => 
+    array (
+    ),
+    246 => 
+    array (
+    ),
+    247 => 
+    array (
+    ),
+    248 => 
+    array (
+    ),
+    250 => 
+    array (
+    ),
+    251 => NULL,
+    265 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    269 => 
+    array (
+      0 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    270 => 
+    array (
+    ),
+    274 => 
+    array (
+    ),
+    278 => 
+    array (
+    ),
+    280 => 
+    array (
+    ),
+    281 => 
+    array (
+    ),
+    282 => NULL,
+    284 => 
+    array (
+    ),
+    285 => 
+    array (
+    ),
+    286 => NULL,
+    288 => 
+    array (
+    ),
+    289 => 
+    array (
+    ),
+    290 => 
+    array (
+    ),
+    292 => 
+    array (
+    ),
+    293 => NULL,
+    304 => 
+    array (
+    ),
+    305 => 
+    array (
+    ),
+    306 => NULL,
+    308 => 
+    array (
+    ),
+    309 => NULL,
+    323 => 
+    array (
+    ),
+    324 => 
+    array (
+    ),
+    325 => NULL,
+    327 => 
+    array (
+    ),
+    329 => NULL,
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Searcher.php' => 
+  array (
+    47 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testProperties',
+      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
+    ),
+    48 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testProperties',
+      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
+    ),
+    58 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    60 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    62 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    63 => NULL,
+    73 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    75 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    76 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    77 => NULL,
+    90 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testExact',
+    ),
+    92 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testExact',
+    ),
+    93 => NULL,
+    118 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testFields',
+    ),
+    119 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testFields',
+    ),
+    120 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testFields',
+    ),
+    122 => 
+    array (
+    ),
+    123 => NULL,
+    142 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testOrder',
+    ),
+    143 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testOrder',
+    ),
+    144 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testOrder',
+    ),
+    146 => 
+    array (
+    ),
+    147 => NULL,
+    167 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testGroup',
+    ),
+    168 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testGroup',
+    ),
+    169 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testGroup',
+    ),
+    171 => 
+    array (
+    ),
+    172 => NULL,
+    189 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    190 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    191 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    194 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    196 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    198 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    199 => NULL,
+    214 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    216 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    217 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    218 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    220 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    223 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    224 => NULL,
+    233 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testGetFields',
+    ),
+    234 => NULL,
+    250 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testRun',
+    ),
+    252 => 
+    array (
+    ),
+    254 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testRun',
+    ),
+    255 => 
+    array (
+    ),
+    258 => 
+    array (
+    ),
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/HydratorInterface.php' => 
+  array (
+  ),
   '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
   array (
     33 => 
@@ -984,7 +1026,8 @@ $coverage->setData(array (
   ),
 ));
 $coverage->setTests(array (
-  'Test\\Searcher\\Factories\\ExceptionFactoryTest::testReltionshipClasses' => 0,
+  'Test\\Searcher\\BuilderTest::testConstructor' => 0,
+  'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses' => 0,
   'Test\\Searcher\\SearcherTest::testProperties' => 0,
   'Test\\Searcher\\SearcherTest::testConstructor' => 0,
   'Test\\Searcher\\SearcherTest::testExact' => 0,
@@ -1007,6 +1050,9 @@ $coverage->setTests(array (
   'Test\\Searcher\\ValidatorTest::testExceptions with data set #2' => 0,
   'Test\\Searcher\\ValidatorTest::testExceptions with data set #3' => 0,
   'Test\\Searcher\\ValidatorTest::testExceptions with data set #4' => 0,
+  'Test\\Searcher\\ValidatorTest::testExceptions with data set #5' => 0,
+  'Test\\Searcher\\ValidatorTest::testExceptions with data set #6' => 0,
+  'Test\\Searcher\\ValidatorTest::testExceptions with data set #7' => 0,
   'UNCOVERED_FILES_FROM_WHITELIST' => NULL,
 ));
 

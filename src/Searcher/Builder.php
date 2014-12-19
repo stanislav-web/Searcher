@@ -250,7 +250,7 @@ class Builder
      *
      * @return array
      */
-    private function ftFilter()
+    protected function ftFilter()
     {
         return array_map(function ($v) {
             return trim($v, '%');
@@ -264,7 +264,7 @@ class Builder
      * @param null $callback
      * @return Builder|null
      */
-    private function setResult($hydratorset = null, $callback = null) {
+    protected function setResult($hydratorset = null, $callback = null) {
 
         $res = $this->builder->getQuery()->execute();
         $call = "Searcher\\Searcher\\Hydrators\\" . ucfirst($hydratorset) . "Hydrator";
