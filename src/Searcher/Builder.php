@@ -230,9 +230,7 @@ class Builder
             }
 
             // execute query
-            $res = $this->setResult($hydratorset, $callback);
-
-            return $res;
+            return $this->setResult($hydratorset, $callback);
 
         } catch (ExceptionFactory $e) {
             echo $e->getMessage();
