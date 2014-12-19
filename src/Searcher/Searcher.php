@@ -244,7 +244,7 @@ class Searcher
     final public function run($hydratorset = null, $callback = null)
     {
 
-        try {exit
+        try {
             // call to get result
 
             $result = (new Builder($this))->loop($hydratorset, $callback);
