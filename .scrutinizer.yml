@@ -9,7 +9,7 @@ build:
 
     dependencies:
         before:
-            - mysql -uroot -e 'CREATE DATABASE phalcon.local'
+            - mysql -uroot -e 'CREATE DATABASE `phalcon.local`'
             - mysql -uroot -p -h localhost phalcon.local < ./build.test.sql
             - composer install --prefer-dist -o
             - git clone -q --depth=1 https://github.com/phalcon/cphalcon.git -b master
