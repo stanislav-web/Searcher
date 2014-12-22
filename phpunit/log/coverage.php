@@ -1,7 +1,7 @@
 <?php
 $coverage = new PHP_CodeCoverage;
 $coverage->setData(array (
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Builder.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Builder.php' => 
   array (
     50 => 
     array (
@@ -266,59 +266,7 @@ $coverage->setData(array (
     ),
     281 => NULL,
   ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/DataType.php' => 
-  array (
-    44 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    45 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    47 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    48 => NULL,
-    57 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-    ),
-    58 => NULL,
-  ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/InvalidLength.php' => 
-  array (
-    37 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    39 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    40 => NULL,
-    49 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-    ),
-    50 => NULL,
-  ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Model.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Model.php' => 
   array (
     44 => 
     array (
@@ -365,59 +313,59 @@ $coverage->setData(array (
     ),
     64 => NULL,
   ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Factories/ExceptionFactory.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/InvalidLength.php' => 
   array (
-    32 => 
+    37 => 
     array (
       0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
-      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
-      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
-    ),
-    34 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
-      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
-      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
-    ),
-    36 => 
-    array (
-      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
-      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
-      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
     39 => 
     array (
       0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
-      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
-      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
-      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
-      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
-      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
-      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
-      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
-      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
     ),
     40 => NULL,
+    49 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+    ),
+    50 => NULL,
   ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Column.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/DataType.php' => 
+  array (
+    44 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    45 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    47 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    48 => NULL,
+    57 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+    ),
+    58 => NULL,
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Column.php' => 
   array (
     44 => 
     array (
@@ -479,10 +427,62 @@ $coverage->setData(array (
     ),
     77 => NULL,
   ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/ExceptionInterface.php' => 
   array (
   ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Factories/ExceptionFactory.php' => 
+  array (
+    32 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    34 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    36 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    39 => 
+    array (
+      0 => 'Test\\Searcher\\Factories\\ExceptionFactoryTest::testRelationshipClasses',
+      1 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #0',
+      2 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #1',
+      3 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #2',
+      4 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #3',
+      5 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #4',
+      6 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #5',
+      7 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #6',
+      8 => 'Test\\Searcher\\ValidatorTest::testExceptions with data set #7',
+    ),
+    40 => NULL,
+  ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/ArrayHydrator.php' => 
   array (
     33 => 
     array (
@@ -514,10 +514,10 @@ $coverage->setData(array (
     ),
     54 => NULL,
   ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/HydratorInterface.php' => 
   array (
   ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/JsonHydrator.php' => 
   array (
     34 => 
     array (
@@ -570,7 +570,7 @@ $coverage->setData(array (
     array (
     ),
   ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/SerializeHydrator.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/SerializeHydrator.php' => 
   array (
     33 => 
     array (
@@ -602,173 +602,7 @@ $coverage->setData(array (
     ),
     54 => NULL,
   ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Searcher.php' => 
-  array (
-    47 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testProperties',
-      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
-    ),
-    48 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testProperties',
-      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
-    ),
-    58 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    60 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    62 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    63 => NULL,
-    73 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    75 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    76 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testLimits',
-    ),
-    77 => NULL,
-    90 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testExact',
-    ),
-    92 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testExact',
-    ),
-    93 => NULL,
-    118 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testFields',
-    ),
-    119 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testFields',
-    ),
-    120 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testFields',
-    ),
-    122 => 
-    array (
-    ),
-    123 => NULL,
-    142 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testOrder',
-    ),
-    143 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testOrder',
-    ),
-    144 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testOrder',
-    ),
-    146 => 
-    array (
-    ),
-    147 => NULL,
-    167 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testGroup',
-    ),
-    168 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testGroup',
-    ),
-    169 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testGroup',
-    ),
-    171 => 
-    array (
-    ),
-    172 => NULL,
-    189 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    190 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    191 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    194 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    196 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    198 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
-    ),
-    199 => NULL,
-    214 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    216 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    217 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    218 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    220 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    223 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testQuery',
-    ),
-    224 => NULL,
-    233 => 
-    array (
-      0 => 'Test\\Searcher\\SearcherTest::testGetFields',
-    ),
-    234 => NULL,
-    250 => 
-    array (
-    ),
-    252 => 
-    array (
-    ),
-    254 => 
-    array (
-    ),
-    255 => 
-    array (
-    ),
-    258 => 
-    array (
-    ),
-  ),
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Validator.php' => 
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Validator.php' => 
   array (
     85 => 
     array (
@@ -1038,6 +872,172 @@ $coverage->setData(array (
     ),
     330 => NULL,
   ),
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Searcher.php' => 
+  array (
+    47 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testProperties',
+      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
+    ),
+    48 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testProperties',
+      1 => 'Test\\Searcher\\SearcherTest::testConstructor',
+    ),
+    58 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    60 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    62 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    63 => NULL,
+    73 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    75 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    76 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testLimits',
+    ),
+    77 => NULL,
+    90 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testExact',
+    ),
+    92 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testExact',
+    ),
+    93 => NULL,
+    118 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testFields',
+    ),
+    119 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testFields',
+    ),
+    120 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testFields',
+    ),
+    122 => 
+    array (
+    ),
+    123 => NULL,
+    142 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testOrder',
+    ),
+    143 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testOrder',
+    ),
+    144 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testOrder',
+    ),
+    146 => 
+    array (
+    ),
+    147 => NULL,
+    167 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testGroup',
+    ),
+    168 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testGroup',
+    ),
+    169 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testGroup',
+    ),
+    171 => 
+    array (
+    ),
+    172 => NULL,
+    189 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    190 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    191 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    194 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    196 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    198 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testThreshold',
+    ),
+    199 => NULL,
+    214 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    216 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    217 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    218 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    220 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    223 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testQuery',
+    ),
+    224 => NULL,
+    233 => 
+    array (
+      0 => 'Test\\Searcher\\SearcherTest::testGetFields',
+    ),
+    234 => NULL,
+    250 => 
+    array (
+    ),
+    252 => 
+    array (
+    ),
+    254 => 
+    array (
+    ),
+    255 => 
+    array (
+    ),
+    258 => 
+    array (
+    ),
+  ),
 ));
 $coverage->setTests(array (
   'Test\\Searcher\\BuilderTest::testConstructor' => 0,
@@ -1075,22 +1075,22 @@ $coverage->setTests(array (
 
 $filter = $coverage->filter();
 $filter->setBlacklistedFiles(array (
-  '/tmp/ide-phpunit.php' => true,
+  '/private/var/folders/mj/djg9_yfd1r50n2b9_cn1mpbh0000gn/T/ide-phpunit.php' => true,
 ));
 $filter->setWhitelistedFiles(array (
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/ExceptionInterface.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Aware/HydratorInterface.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Builder.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Column.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/DataType.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/InvalidLength.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Exceptions/Model.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Factories/ExceptionFactory.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/ArrayHydrator.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/JsonHydrator.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Hydrators/SerializeHydrator.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Searcher.php' => true,
-  '/var/www/phalcon-devtools/phalcon.local/vendor/stanislav-web/phalcon-searcher/src/Searcher/Validator.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/ExceptionInterface.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Aware/HydratorInterface.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Builder.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Column.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/DataType.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/InvalidLength.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Exceptions/Model.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Factories/ExceptionFactory.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/ArrayHydrator.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/JsonHydrator.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Hydrators/SerializeHydrator.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Searcher.php' => true,
+  '/Users/stanislavmenshykh/Projects/Searcher/src/Searcher/Validator.php' => true,
 ));
 
 return $coverage;
