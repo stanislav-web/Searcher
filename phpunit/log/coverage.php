@@ -921,15 +921,18 @@ $coverage->setData(array (
     93 => NULL,
     118 => 
     array (
-      0 => 'Test\\Searcher\\SearcherTest::testFields',
+      0 => 'Test\\Searcher\\ModelsTest::testModels',
+      1 => 'Test\\Searcher\\SearcherTest::testFields',
     ),
     119 => 
     array (
-      0 => 'Test\\Searcher\\SearcherTest::testFields',
+      0 => 'Test\\Searcher\\ModelsTest::testModels',
+      1 => 'Test\\Searcher\\SearcherTest::testFields',
     ),
     120 => 
     array (
-      0 => 'Test\\Searcher\\SearcherTest::testFields',
+      0 => 'Test\\Searcher\\ModelsTest::testModels',
+      1 => 'Test\\Searcher\\SearcherTest::testFields',
     ),
     122 => 
     array (
@@ -1046,6 +1049,7 @@ $coverage->setTests(array (
   'Test\\Searcher\\Hydrators\\JsonHydratorTest::testDI' => 0,
   'Test\\Searcher\\Hydrators\\JsonHydratorTest::testClass' => 0,
   'Test\\Searcher\\Hydrators\\SerializeHydratorTest::testClass' => 0,
+  'Test\\Searcher\\ModelsTest::testModels' => 4,
   'Test\\Searcher\\SearcherTest::testProperties' => 0,
   'Test\\Searcher\\SearcherTest::testConstructor' => 0,
   'Test\\Searcher\\SearcherTest::testExact' => 0,
