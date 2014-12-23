@@ -48,4 +48,3 @@ composer.lock
 composer.phar
 apigen.neon
 apigen.phar
-phpunit/log/coverage

@@ -2,7 +2,6 @@
     "name": "stanislav-web/phalcon-searcher",
     "description": "Phalcon Database Searcher. This is the search service is designed to search multiple SQL tables. Convenient to use autocomplete, search documents, search the whole site.",
     "type": "library",
-    "status": "maintained",
     "keywords" : [
         "phalcon",
         "phalcon search",
