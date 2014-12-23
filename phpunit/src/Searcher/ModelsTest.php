@@ -62,17 +62,13 @@ class ModelsTest extends \PHPUnit_Framework_TestCase
          * Setup DI
          */
         $this->di   =  new DI();
-        $this->di->set('db', function() {
-            return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
-                "host"      => "localhost",
-                "username"  => "root",
-                "password"  => "root",
-                "dbname"    => "phalcon.local"
-            ));
-        });
 
         $this->di->set('modelsManager', function() {
             return new \Phalcon\Mvc\Model\Manager();
+        });
+
+        $this->di->set('modelsMetadata', function() {
+            return new \Phalcon\Mvc\Model\MetaData\Memory();
         });
 
         DI::setDefault($this->di);
@@ -82,26 +78,21 @@ class ModelsTest extends \PHPUnit_Framework_TestCase
         $this->manager  =   $this->di->get('modelsManager');
         $this->manager->initialize(new Models\Auto());
         $this->manager->initialize(new Models\Distributor());
-
-        var_dump($this->manager->getLastInitialized()); exit;
     }
 
-    /**
-     * @covers Searcher\Searcher::setFields()
-     */
     public function testModels()
     {
         $searcher = new Searcher();
-        $searcher->setFields([
-            'Test\Searcher\Models\Auto'    =>    [
-                'name',
-                'description'
-            ],
-            'Test\Searcher\Models\Distributor'    =>    [
-                'name',
-                'description'
-            ]
-        ]);
+        //$searcher->setFields([
+        //    'Test\Searcher\Models\Auto'    =>    [
+        //        'name',
+        //        'description'
+        //    ],
+        //    'Test\Searcher\Models\Distributor'    =>    [
+        //        'name',
+        //        'description'
+        //    ]
+        //]);
     }
 
     /**

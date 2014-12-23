@@ -3,6 +3,7 @@ namespace Searcher;
 
 use \Phalcon\Db\Column;
 use \Phalcon\Mvc\Model\Manager;
+use \Phalcon\Mvc\Model\MetaData\Memory;
 use Searcher\Searcher\Factories\ExceptionFactory;
 
 /**
