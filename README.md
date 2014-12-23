@@ -201,3 +201,4 @@ Read logs from phpunit/log
 
 [![Project Status](http://stillmaintained.com/stanislav-web/Searcher.svg)](http://stillmaintained.com/stanislav-web/Searcher) [![MIT License](https://poser.pugx.org/stanislav-web/phalcon-searcher/license.svg)](https://packagist.org/packages/stanislav-web/phalcon-searcher) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/stanislav-web/Searcher?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/a3111257-4b6b-4a66-810d-6d319a033f56/big.png)](https://insight.sensiolabs.com/projects/a3111257-4b6b-4a66-810d-6d319a033f56)
