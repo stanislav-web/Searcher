@@ -39,6 +39,10 @@ Then run to update dependency and autoloader
 php composer.phar update
 php composer.phar install
 ```
+or just
+```
+php composer.phar require stanislav-web/phalcon-searcher dev-master 
+```
 _(Do not forget to include the composer autoloader)_
 
 Or manual require in your loader service
