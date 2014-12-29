@@ -80,14 +80,12 @@ class Builder
         $order = [];
         foreach ($this->data['order'] as $alias => $params) {
 
-            if (true === $asArray) {
-                $order = array_flip($order);
-            }
-            else {
-                if (empty($params) === false) {
-                    foreach ($params as $field => $sort) {
-                        $order[] = $alias . '.' . $field . ' ' . $sort;
-                    }
+            $order = array_flip($order);
+
+            if (empty($params) === false) {
+
+                foreach ($params as $field => $sort) {
+                    $order[] = $alias . '.' . $field . ' ' . $sort;
                 }
             }
         }
