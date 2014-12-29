@@ -71,7 +71,6 @@ class Builder
     /**
      * Setup orders positions to Builder
      *
-     * @param  boolean $asArray order from an array
      * @return null
      */
     public function setOrder()
