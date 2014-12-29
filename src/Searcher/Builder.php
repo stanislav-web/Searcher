@@ -74,7 +74,7 @@ class Builder
      * @param  boolean $asArray order from an array
      * @return null
      */
-    public function setOrder($asArray = false)
+    public function setOrder()
     {
         // set order position if exist
         $order = [];
