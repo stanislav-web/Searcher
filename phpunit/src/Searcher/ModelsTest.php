@@ -4,7 +4,6 @@ namespace Test\Searcher;
 use Phalcon\DI;
 use Phalcon\DI\FactoryDefault;
 use Searcher\Searcher;
-use Test\Searcher\Models;
 
 /**
  * Class ModelsTest
@@ -77,8 +76,8 @@ class ModelsTest extends \PHPUnit_Framework_TestCase
         // initialize test models
 
         $this->manager  =   $this->di->get('modelsManager');
-        $this->manager->initialize(new Models\Auto());
-        $this->manager->initialize(new Models\Distributor());
+        $this->manager->initialize(new \Test\Searcher\Models\Auto());
+        $this->manager->initialize(new \Test\Searcher\Models\Distributor());
     }
 
     public function testModels()
