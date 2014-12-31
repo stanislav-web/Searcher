@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Test\\Searcher\\Models\\' => array($baseDir . '/phpunit/src/Searcher/Models'),
+    'Test\\Searcher\\Hydrators\\' => array($baseDir . '/phpunit/src/Searcher/Hydrators'),
+    'Test\\Searcher\\Factories\\' => array($baseDir . '/phpunit/src/Searcher/Factories'),
     'Test\\Searcher\\' => array($baseDir . '/phpunit/src/Searcher'),
     'Searcher\\Searcher\\Hydrators\\' => array($baseDir . '/src/Searcher/Hydrators'),
     'Searcher\\Searcher\\Factories\\' => array($baseDir . '/src/Searcher/Factories'),

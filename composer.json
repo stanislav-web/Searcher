@@ -14,33 +14,29 @@
     "homepage" : "https://github.com/stanislav-web/Searcher",
     "license" : "MIT",
     "authors" : [{
-         "name": "Stanislav WEB",
-         "email": "stanisov@gmail.com",
-         "homepage": "http://reds.com",
-         "role": "Developer"
+        "name": "Stanislav WEB",
+        "email": "stanisov@gmail.com",
+        "homepage": "http://reds.com",
+        "role": "Developer"
     }],
 
     "require" : {
-         "php" : ">=5.3"
+        "php" : ">=5.3"
     },
 
-	"autoload": {
-		"psr-4": {
+    "autoload": {
+        "psr-4": {
             "Searcher\\": "src/Searcher",
             "Searcher\\Searcher\\Aware\\": "src/Searcher/Aware",
             "Searcher\\Searcher\\Exceptions\\": "src/Searcher/Exceptions",
             "Searcher\\Searcher\\Factories\\": "src/Searcher/Factories",
-            "Searcher\\Searcher\\Hydrators\\": "src/Searcher/Hydrators"
-		},
-		"classmap": ["phpunit/src/Searcher"]
-	},
-
-    "autoload-dev": {
-        "psr-4": {
-            "Test\\Searcher\\": "phpunit/src/Searcher"
+            "Searcher\\Searcher\\Hydrators\\": "src/Searcher/Hydrators",
+            "Test\\Searcher\\": "phpunit/src/Searcher",
+            "Test\\Searcher\\Factories\\": "phpunit/src/Searcher/Factories",
+            "Test\\Searcher\\Hydrators\\": "phpunit/src/Searcher/Hydrators",
+            "Test\\Searcher\\Models\\": "phpunit/src/Searcher/Models"
         }
     },
-
     "extra": {
         "branch-alias": {
             "dev-master": "1.x-dev"

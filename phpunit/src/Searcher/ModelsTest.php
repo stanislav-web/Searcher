@@ -4,6 +4,7 @@ namespace Test\Searcher;
 use Phalcon\DI;
 use Phalcon\DI\FactoryDefault;
 use Searcher\Searcher;
+use Test\Searcher\Models;
 
 /**
  * Class ModelsTest
