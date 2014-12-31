@@ -16,13 +16,12 @@ use Searcher\Searcher;
  */
 class ModelsTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
-     * Array of reflection classes
+     * Tested object
      *
-     * @var array
+     * @var \Searcher\Searcher
      */
-    private $reflection = [];
+    private $searcher;
 
     /**
      * Dependency Injection container
@@ -76,23 +75,13 @@ class ModelsTest extends \PHPUnit_Framework_TestCase
         // initialize test models
 
         $this->manager  =   $this->di->get('modelsManager');
-        $this->manager->initialize(new \Test\Searcher\Models\Auto());
-        $this->manager->initialize(new \Test\Searcher\Models\Distributor());
+        //$this->manager->initialize(new \Test\Searcher\Models\Auto());
+        //$this->manager->initialize(new \Test\Searcher\Models\Distributor());
     }
 
     public function testModels()
     {
-        $searcher = new Searcher();
-        //$searcher->setFields([
-        //    'Test\Searcher\Models\Auto'    =>    [
-        //        'name',
-        //        'description'
-        //    ],
-        //    'Test\Searcher\Models\Distributor'    =>    [
-        //        'name',
-        //        'description'
-        //    ]
-        //]);
+        $this->searcher = new Searcher();
     }
 
     /**
