@@ -114,10 +114,17 @@ class Searcher
     public function setFields(array $models)
     {
 
-        // need to return << true
-        $this->validator->verify($models, [
-            'isArray', 'isNotEmpty', 'isExists'
-        ], 'where');
+        try {
+            
+            // need to return << true
+            $this->validator->verify($models, [
+                'isArray', 'isNotEmpty', 'isExists'
+            ], 'where');
+       
+        }
+        catch(ExceptionFactory $e) {
+            echo $e->getMessage();
+        }
 
         return $this;
     }
@@ -138,11 +145,18 @@ class Searcher
      */
     public function setOrder(array $order)
     {
-        // need to return << true
-        $this->validator->verify($order, [
-            'isArray', 'isNotEmpty', 'isOrdered'
-        ], 'order');
-
+        try {
+            
+            // need to return << true
+            $this->validator->verify($order, [
+                'isArray', 'isNotEmpty', 'isOrdered'
+            ], 'order');
+            
+        }
+        catch(ExceptionFactory $e) {
+            echo $e->getMessage();
+        }
+        
         return $this;
     }
 
@@ -162,11 +176,17 @@ class Searcher
      */
     public function setGroup(array $group)
     {
-
-        // need to return << true
-        $this->validator->verify($group, [
-            'isArray', 'isNotEmpty', 'isExists'
-        ], 'group');
+        try {
+            
+            // need to return << true
+            $this->validator->verify($group, [
+                'isArray', 'isNotEmpty', 'isExists'
+            ], 'group');           
+            
+        }
+        catch(ExceptionFactory $e) {
+            echo $e->getMessage();
+        }
 
         return $this;
     }
@@ -210,16 +230,24 @@ class Searcher
      */
     public function setQuery($query = null)
     {
-        // need to return << true
-        $this->validator->verify($query, ['isNotNull', 'isAcceptLength']);
+        
+        try {
+            
+            // need to return << true
+            $this->validator->verify($query, ['isNotNull', 'isAcceptLength']);
 
-        if (false === $this->exact) {
-            $this->query = ['query' => '%' . $query . '%'];
-        }
-        else {
-            $this->query = ['query' => $query];
-        }
+            if (false === $this->exact) {
+                $this->query = ['query' => '%' . $query . '%'];
+            }
+            else {
+                $this->query = ['query' => $query];
+            }
 
+        }
+        catch(ExceptionFactory $e) {
+            echo $e->getMessage();
+        }
+        
         return $this;
     }
 
