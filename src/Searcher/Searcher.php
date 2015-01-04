@@ -115,12 +115,12 @@ class Searcher
     {
 
         try {
-            
+
             // need to return << true
             $this->validator->verify($models, [
                 'isArray', 'isNotEmpty', 'isExists'
             ], 'where');
-       
+
         }
         catch(ExceptionFactory $e) {
             echo $e->getMessage();
@@ -146,17 +146,17 @@ class Searcher
     public function setOrder(array $order)
     {
         try {
-            
+
             // need to return << true
             $this->validator->verify($order, [
                 'isArray', 'isNotEmpty', 'isOrdered'
             ], 'order');
-            
+
         }
         catch(ExceptionFactory $e) {
             echo $e->getMessage();
         }
-        
+
         return $this;
     }
 
@@ -177,12 +177,12 @@ class Searcher
     public function setGroup(array $group)
     {
         try {
-            
+
             // need to return << true
             $this->validator->verify($group, [
                 'isArray', 'isNotEmpty', 'isExists'
-            ], 'group');           
-            
+            ], 'group');
+
         }
         catch(ExceptionFactory $e) {
             echo $e->getMessage();
@@ -230,9 +230,9 @@ class Searcher
      */
     public function setQuery($query = null)
     {
-        
+
         try {
-            
+
             // need to return << true
             $this->validator->verify($query, ['isNotNull', 'isAcceptLength']);
 
@@ -247,7 +247,7 @@ class Searcher
         catch(ExceptionFactory $e) {
             echo $e->getMessage();
         }
-        
+
         return $this;
     }
 
